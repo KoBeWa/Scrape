@@ -161,13 +161,13 @@ for file in sorted(DRAFT_DIR.glob("*-draft.tsv")):
                 pdata = grp[matches[0]]
 
         if pdata:
-            final_pos_rank = int(pdata["rank"])
+            EndRank = int(pdata["rank"])
             points = float(pdata["points"])
         else:
-            final_pos_rank = maxrank.get(key, 50) + 10
+            EndRank = maxrank.get(key, 50) + 10
             points = 0.0
 
-        delta_pos_rank = draft_pos_rank - final_pos_rank
+        delta_pos_rank = draft_pos_rank - EndRank
         score = compute_pick_score(delta_pos_rank, overall, pos, points)
 
         draft_rows_out.append({
@@ -177,7 +177,7 @@ for file in sorted(DRAFT_DIR.glob("*-draft.tsv")):
             "Pos": pos,
             "Pick": overall,
             "Draft_Pos_Rank": draft_pos_rank,
-            "Final_Pos_Rank": final_pos_rank,
+            "EndRank": endrank,
             "Delta_Pos_Rank": delta_pos_rank,
             "Points": round(points, 2),
             "Score": score,
@@ -196,7 +196,7 @@ with OUT_FILE.open("w", encoding="utf-8", newline="") as f_out:
             "Pos",
             "Pick",
             "Draft_Pos_Rank",
-            "Final_Pos_Rank",
+            "EndRank",
             "Delta_Pos_Rank",
             "Points",
             "Score",
