@@ -2,14 +2,14 @@
 import csv
 from pathlib import Path
 
-# Pfade relativ zum FF-Scraping Repo (ff-data)
-DRAFT_DIR = Path("output/history-drafts")
-RANKINGS_FILE = Path("output/season_pos_rankings.csv")
-OUT_DIR = Path("public/data/league")
+# Pfade relativ zum FF-Scraping Repo
+ROOT = Path(__file__).resolve().parents[1]
+DRAFT_DIR = ROOT / "output" / "history-drafts"
+RANKINGS_FILE = ROOT / "output" / "season_pos_rankings.csv"
+OUT_DIR = ROOT / "public" / "data" / "league"
 OUT_FILE = OUT_DIR / "draft_scores.tsv"
 
-def sniff_reader(path: Path):
-    """Open a CSV/TSV with auto delimiter detection (',', '\\t', ';')."""
+def sniff_dict_reader(path: Path):
     f = path.open("r", encoding="utf-8", newline="")
     sample = f.read(4096)
     f.seek(0)
@@ -18,81 +18,69 @@ def sniff_reader(path: Path):
         return f, csv.DictReader(f, dialect=dialect)
     except Exception:
         f.seek(0)
-        # fallback: tab, dann komma
-        text = sample
-        delim = "\t" if "\t" in text else ","
+        delim = "\t" if "\t" in sample else ","
         return f, csv.DictReader(f, delimiter=delim)
 
 def to_num(x):
-    if x is None:
-        return None
+    if x is None: return None
     s = str(x).strip()
-    if s == "" or s.upper() in {"-", "BYE"}:
-        return None
+    if s == "" or s.upper() in {"-", "BYE"}: return None
     try:
         return float(s.replace(",", "."))
     except Exception:
         return None
 
-def normalize_pos(p: str) -> str:
+def norm_pos(p: str) -> str:
     p = (p or "").upper().strip()
-    # kleine Normalisierung
     if p in {"D/ST", "DST", "DEF"}:
         return "DST"
     return p
 
+print("=== Evaluate Drafts Script Start ===")
+print(f"Reading rankings from: {RANKINGS_FILE}")
+print(f"Reading drafts from:   {DRAFT_DIR}")
+
+if not RANKINGS_FILE.exists():
+    raise SystemExit("❌ Rankings file missing.")
+if not DRAFT_DIR.exists():
+    raise SystemExit("❌ Draft folder missing.")
+
 # ---------- Rankings laden ----------
-print(f"Loading rankings: {RANKINGS_FILE}")
-fr, reader = sniff_reader(RANKINGS_FILE)
+rankings = {}
+maxrank = {}
 
-rankings = {}   # key: (year, pos) -> { player_lower: {rank, points} }
-maxrank = {}    # key: (year, pos) -> max rank for that group
-
-with fr:
+f, reader = sniff_dict_reader(RANKINGS_FILE)
+with f:
     for row in reader:
-        # Header-Varianten abfangen
         year = row.get("Year") or row.get("year")
         pos  = row.get("Position") or row.get("Pos")
         player = row.get("Player") or row.get("Name")
         rank = row.get("Rank") or row.get("#")
         points = row.get("Points") or row.get("TTL") or row.get("Total")
-
-        if not year or not pos or not player or not rank:
+        if not (year and pos and player and rank):
             continue
-
         try:
-            y = int(str(year).strip())
+            y = int(year)
         except Exception:
             continue
-
-        ppos = normalize_pos(pos)
+        ppos = norm_pos(pos)
         prank = to_num(rank)
         ppoints = to_num(points)
-
         if prank is None:
             continue
-
         key = (y, ppos)
-        d = rankings.setdefault(key, {})
-        d[player.strip().lower()] = {"rank": prank, "points": ppoints}
+        rankings.setdefault(key, {})[player.strip().lower()] = {
+            "rank": int(prank),
+            "points": ppoints
+        }
 
-# max Rank je (Year,Pos)
 for key, players in rankings.items():
-    try:
-        maxrank[key] = int(max(v["rank"] for v in players.values()))
-    except ValueError:
-        maxrank[key] = 50
+    maxrank[key] = max(v["rank"] for v in players.values())
 
-print(f"Groups loaded: {len(rankings)} (with max ranks)")
+print(f"Loaded rankings for {len(rankings)} (year/pos groups)")
 
-# ---------- Drafts laden & bewerten ----------
+# ---------- Drafts laden ----------
 draft_rows = []
-
-def draft_rows_from_file(path: Path):
-    f, rdr = sniff_reader(path)
-    with f:
-        for row in rdr:
-            yield row
 
 for file in sorted(DRAFT_DIR.glob("*-draft.tsv")):
     try:
@@ -100,52 +88,49 @@ for file in sorted(DRAFT_DIR.glob("*-draft.tsv")):
     except Exception:
         continue
 
-    for row in draft_rows_from_file(file):
-        owner  = (row.get("Owner") or row.get("ManagerName") or "").strip()
-        player = (row.get("Player") or "").strip()
-        pos    = normalize_pos(row.get("Pos") or row.get("Position") or "")
-        pick   = to_num(row.get("OverallPick") or row.get("Pick") or row.get("Overall"))
+    f, reader = sniff_dict_reader(file)
+    with f:
+        for row in reader:
+            owner = (row.get("Owner") or row.get("ManagerName") or "").strip()
+            player = (row.get("Player") or "").strip()
+            pos = norm_pos(row.get("Pos") or "")
+            pick = to_num(row.get("Overall") or row.get("OverallPick") or row.get("Pick"))
+            if not owner or not player or not pos or pick is None:
+                continue
 
-        if not owner or not player or not pos or pick is None:
-            continue
+            key = (year, pos)
+            pdata = rankings.get(key, {}).get(player.lower())
+            if not pdata:
+                continue
 
-        key = (year, pos)
-        pkey = player.lower()
-        rank_data = rankings.get(key, {}).get(pkey)
-        if not rank_data:
-            # kein Saisonrang gefunden -> skip
-            continue
+            end_rank = int(pdata["rank"])
+            max_r = maxrank.get(key, end_rank)
+            perf = max(0.0, 1.0 - (end_rank - 1) / max(1, (max_r - 1)))  # 1..0
+            weight = max(0.5, 1.0 - 0.03 * (pick / 10.0))                # leichte Pick-Strafe
+            score = round(10.0 * perf * weight, 2)
 
-        end_rank = int(rank_data["rank"])
-        max_r = maxrank.get(key, 50)
-
-        # Performance skaliert 0..1 (1 = Rank1, 0 = letzter)
-        perf = max(0.0, 1.0 - (end_rank - 1) / max(1, (max_r - 1)))
-
-        # leichte Abwertung extrem früher Picks (damit „späte Steals“ nicht benachteiligt werden)
-        weight = max(0.5, 1.0 - 0.03 * (pick / 10.0))
-
-        score = round(10.0 * perf * weight, 2)
-
-        draft_rows.append({
-            "Year": year,
-            "Owner": owner,
-            "Player": player,
-            "Pos": pos,
-            "Pick": int(pick),
-            "EndRank": end_rank,
-            "Score": score
-        })
+            draft_rows.append({
+                "Year": year,
+                "Owner": owner,
+                "Player": player,
+                "Pos": pos,
+                "Pick": int(pick),
+                "EndRank": end_rank,
+                "Score": score
+            })
 
 print(f"Draft picks scored: {len(draft_rows)}")
 
 # ---------- Output ----------
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 with OUT_FILE.open("w", encoding="utf-8", newline="") as f:
-    w = csv.DictWriter(f, delimiter="\t",
-                       fieldnames=["Year","Owner","Player","Pos","Pick","EndRank","Score"])
+    w = csv.DictWriter(
+        f, delimiter="\t",
+        fieldnames=["Year","Owner","Player","Pos","Pick","EndRank","Score"]
+    )
     w.writeheader()
     for r in draft_rows:
         w.writerow(r)
 
-print(f"✅ Saved: {OUT_FILE}")
+print(f"✅ Wrote: {OUT_FILE}")
+print("=== Evaluate Drafts Done ===")
