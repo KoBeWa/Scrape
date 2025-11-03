@@ -8,17 +8,27 @@ RANKINGS_FILE = ROOT / "output" / "season_pos_rankings.csv"
 OUT_DIR = ROOT / "public" / "data" / "league"
 OUT_FILE = OUT_DIR / "draft_scores.tsv"
 
-# -------------------- Hilfsfunktionen -------------------- #
+# Jahre ohne finale Endrankings hier ausschließen (bei dir z. B. 2025)
+EXCLUDE_YEARS = {2025}
+
+# Positions-Gewichte (kannst du feinjustieren)
+POS_WEIGHTS = {
+    "RB": 1.15,
+    "WR": 1.10,
+    "TE": 1.00,
+    "QB": 0.95,
+    "DST": 0.60,
+    "K" : 0.50,
+}
+
 def sniff_reader(path: Path):
     f = path.open("r", encoding="utf-8-sig", newline="")
-    sample = f.read(4096)
-    f.seek(0)
+    sample = f.read(4096); f.seek(0)
     try:
         dialect = csv.Sniffer().sniff(sample, delimiters=",\t;")
         rdr = csv.DictReader(f, dialect=dialect)
     except Exception:
-        f.seek(0)
-        delim = "\t" if "\t" in sample else ","
+        f.seek(0); delim = "\t" if "\t" in sample else ","
         rdr = csv.DictReader(f, delimiter=delim)
     if rdr.fieldnames:
         rdr.fieldnames = [(h or "").lstrip("\ufeff").strip() for h in rdr.fieldnames]
@@ -28,19 +38,16 @@ def to_num(x):
     if x is None: return None
     s = str(x).strip()
     if s == "" or s.upper() in {"-", "BYE"}: return None
-    try:
-        return float(s.replace(",", "."))
-    except Exception:
-        return None
+    try: return float(s.replace(",", "."))
+    except: return None
 
 def norm_pos(p: str) -> str:
     p = (p or "").upper().strip()
-    if p in {"D/ST", "DEF", "DST"}: return "DST"
+    if p in {"D/ST","DEF","DST"}: return "DST"
     if p == "PK": return "K"
     return p
 
 def clean_name(name: str) -> str:
-    """normalize player name for fuzzy matching"""
     n = name.lower()
     n = re.sub(r"[\.\'\-]", "", n)
     n = re.sub(r"\b(jr|sr|iii|ii|iv)\b", "", n)
@@ -48,9 +55,8 @@ def clean_name(name: str) -> str:
     return n.strip()
 
 # -------------------- Rankings laden -------------------- #
-print("=== Evaluate Drafts Script Start ===")
-rankings = {}
-maxrank = {}
+rankings = {}   # (year,pos)-> {clean_name: {rank, points}}
+maxrank  = {}   # (year,pos)-> max rank
 
 f, rdr = sniff_reader(RANKINGS_FILE)
 with f:
@@ -65,17 +71,39 @@ with f:
         except: continue
         ppos = norm_pos(pos)
         prank = to_num(rank)
-        ppoints = to_num(points)
+        ppoints = to_num(points) or 0.0
         if prank is None: continue
         key = (y, ppos)
-        rankings.setdefault(key, {})[clean_name(player)] = {"rank": int(prank), "points": ppoints or 0.0}
+        rankings.setdefault(key, {})[clean_name(player)] = {"rank": int(prank), "points": ppoints}
 
-for key, players in rankings.items():
-    maxrank[key] = max(v["rank"] for v in players.values())
+for key, grp in rankings.items():
+    maxrank[key] = max(v["rank"] for v in grp.values()) if grp else 50
 
-print(f"Loaded {len(rankings)} position groups from rankings")
+# -------------------- Scoring -------------------- #
+def base_score(pick_overall: int, end_rank: int, max_r_for_pos: int) -> float:
+    """
+    Steal-Bias:
+      - performance: 1 bei Rank 1, → 0 bei (schlecht) max_r
+      - pick_weight: späte Picks werden belohnt, sehr frühe Picks nicht
+    Ergebnis auf 0..10 skaliert.
+    """
+    max_r = max(1, max_r_for_pos)
+    perf = max(0.0, 1.0 - (end_rank - 1) / max(1, (max_r - 1)))  # 1..0
 
-# -------------------- Drafts laden + bewerten -------------------- #
+    max_pick_guess = 200  # bei Bedarf anpassen
+    pick_norm = max(0.0, min(1.0, (pick_overall - 1) / (max_pick_guess - 1)))
+    # früh ~0.35 … spät ~1.00
+    pick_weight = 0.35 + 0.65 * (pick_norm ** 0.8)
+
+    score = 10.0 * perf * pick_weight
+    return max(0.0, min(10.0, score))
+
+def apply_pos_weight(score: float, pos: str) -> float:
+    w = POS_WEIGHTS.get(pos.upper(), 1.0)
+    # nach oben weiterhin bei 10 deckeln
+    return max(0.0, min(10.0, round(score * w, 2)))
+
+# -------------------- Drafts bewerten -------------------- #
 draft_rows = []
 
 for file in sorted(DRAFT_DIR.glob("*-draft.tsv")):
@@ -83,71 +111,59 @@ for file in sorted(DRAFT_DIR.glob("*-draft.tsv")):
         year = int(file.stem.split("-")[0])
     except:
         continue
+    if year in EXCLUDE_YEARS:
+        continue
+
     f, rdr = sniff_reader(file)
     with f:
         for row in rdr:
             owner  = (row.get("Owner") or row.get("ManagerName") or "").strip()
             player = (row.get("Player") or "").strip()
-            pos    = norm_pos(row.get("Pos") or "")
+            pos    = norm_pos(row.get("Pos") or row.get("Position") or "")
             pick   = to_num(row.get("Overall") or row.get("OverallPick") or row.get("Pick"))
             if not owner or not player or not pos or pick is None:
                 continue
+            pick = int(pick)
 
             key = (year, pos)
-            player_key = clean_name(player)
-            group = rankings.get(key, {})
-            pdata = group.get(player_key)
-
-            # fuzzy match fallback (z.B. Odell Beckham vs. Odell Beckham Jr.)
-            if not pdata and group:
-                matches = difflib.get_close_matches(player_key, group.keys(), n=1, cutoff=0.85)
+            grp = rankings.get(key, {})
+            pdata = grp.get(clean_name(player))
+            if not pdata and grp:
+                # Fuzzy Match für Fälle wie "Odell Beckham" vs "Odell Beckham Jr."
+                matches = difflib.get_close_matches(clean_name(player), grp.keys(), n=1, cutoff=0.85)
                 if matches:
-                    pdata = group[matches[0]]
+                    pdata = grp[matches[0]]
 
-            # falls immer noch nichts gefunden → 0 Punkte, sehr schlechter Rank
-            if not pdata:
-                end_rank = maxrank.get(key, 50) + 10
-                points = 0.0
+            if pdata:
+                end_rank = int(pdata["rank"])
+                pts = float(pdata["points"])
             else:
-                end_rank = pdata["rank"]
-                points = pdata["points"]
+                # nicht gefunden → 0 Punkte, sehr schlechter Rank
+                end_rank = maxrank.get(key, 50) + 10
+                pts = 0.0
 
-            max_r = maxrank.get(key, end_rank)
-            total_players = max_r if max_r > 0 else 50
-
-            # -------------- Bewertung ---------------- #
-            # "Steal"-Faktor: wie stark übertroffen
-            # später Pick (große Zahl) + hoher Endrang = bessere Note
-            # normalisiert auf 0..10
-            relative_value = max(0.0, 1.0 - (end_rank - 1) / total_players)
-            draft_depth_factor = 1.0 / (pick ** 0.5)  # frühe Picks leicht bestraft
-            score = 10.0 * relative_value * draft_depth_factor
-            score = max(0.0, min(score, 10.0))
+            raw = base_score(pick, end_rank, maxrank.get(key, end_rank))
+            final = apply_pos_weight(raw, pos)
 
             draft_rows.append({
                 "Year": year,
                 "Owner": owner,
                 "Player": player,
                 "Pos": pos,
-                "Pick": int(pick),
+                "Pick": pick,
                 "EndRank": end_rank,
-                "Points": round(points, 2),
-                "Score": round(score, 2)
+                "Points": round(pts, 2),
+                "Score": round(final, 2)
             })
 
-print(f"Draft picks scored: {len(draft_rows)}")
-
-# -------------------- Output schreiben -------------------- #
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 with OUT_FILE.open("w", encoding="utf-8", newline="") as f_out:
     w = csv.DictWriter(
-        f_out,
-        delimiter="\t",
+        f_out, delimiter="\t",
         fieldnames=["Year","Owner","Player","Pos","Pick","EndRank","Points","Score"]
     )
     w.writeheader()
     for r in draft_rows:
         w.writerow(r)
 
-print(f"✅ Wrote: {OUT_FILE}")
-print("=== Evaluate Drafts Done ===")
+print(f"✅ Wrote: {OUT_FILE} (rows={len(draft_rows)})")
