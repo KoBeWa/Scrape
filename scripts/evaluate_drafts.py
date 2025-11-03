@@ -96,7 +96,7 @@ def compute_draft_pos_ranks(rows):
     return result
 
 def draft_capital_factor(overall_pick: int) -> float:
-    # LN(Overall + 5) – wächst mit späterem Pick
+    # LN(Overall + +8) – wächst mit späterem Pick
     return math.log(max(1.0, overall_pick) + 5.0)
 
 def squash_to_0_10(x: float) -> float:
