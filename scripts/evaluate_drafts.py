@@ -177,7 +177,7 @@ for file in sorted(DRAFT_DIR.glob("*-draft.tsv")):
             "Pos": pos,
             "Pick": overall,
             "Draft_Pos_Rank": draft_pos_rank,
-            "EndRank": endrank,
+            "EndRank": EndRank,
             "Delta_Pos_Rank": delta_pos_rank,
             "Points": round(points, 2),
             "Score": score,
