@@ -24,10 +24,10 @@ def norm_name(s: str) -> str:
     )
 
 def abbrev_key(name: str) -> str:
-    """Nachname + Initiale des Vornamens: 'Mahomes_P' – robust für 'P. Mahomes'."""
+    """Nachname + Initiale (z. B. Mahomes_P) – für P. Mahomes ≈ Patrick Mahomes"""
     parts = norm_name(name).split()
     if not parts: return ""
-    if len(parts) == 1:  # z.B. 'Chiefs'
+    if len(parts) == 1:  # z. B. „Chiefs“
         return parts[0]
     last  = parts[-1]
     first = parts[0][0]
@@ -38,8 +38,8 @@ name_pos_re = re.compile(
 )
 def parse_name_pos(cell: str):
     """
-    'C. Palmer QB - ARI' -> ('C. Palmer','QB')
-    'Chiefs DEF'         -> ('Chiefs','DEF' -> 'DST')
+    'C. Palmer QB - ARI' → ('C. Palmer','QB')
+    'Chiefs DEF' → ('Chiefs','DST')
     """
     cell = (cell or "").strip()
     if not cell or cell == "-": return ("", "")
@@ -54,27 +54,25 @@ def to_float(x):
     try: return float(str(x).replace(",", "."))
     except: return 0.0
 
-# ---------- IO ----------
-def read_draft_keys_for_year(year: int) -> set:
-    """Alle Draft-Spieler eines Jahres als Keys (voll & abgekürzt)"""
+# ---------- Readers ----------
+def read_draft_keys(year: int) -> set:
+    """Alle Draft-Spieler als Keys"""
     p = DRAFTS_DIR / f"{year}-draft.tsv"
     if not p.exists(): return set()
     keys = set()
     with p.open(encoding="utf-8") as f:
         r = csv.DictReader(f, delimiter="\t")
         for row in r:
-            player = (row.get("Player") or "").strip()
-            if not player: continue
-            keys.add(norm_name(player))
-            keys.add(abbrev_key(player))
+            name = (row.get("Player") or "").strip()
+            if not name: continue
+            keys.add(norm_name(name))
+            keys.add(abbrev_key(name))
     return keys
 
-def read_week_rows(year: int, week: int):
-    """Liest eine Teamgamecenter-CSV (Owner, Slots, Bench …, Total, Opponent, Opp Total)."""
+def read_week(year: int, week: int):
     fp = TEAMGC_DIR / str(year) / f"{week}.csv"
     if not fp.exists(): return []
-    with fp.open(encoding="utf-8") as f:
-        rows = list(csv.reader(f))
+    rows = list(csv.reader(fp.open(encoding="utf-8")))
     if not rows: return []
     header = rows[0]
     out = []
@@ -82,13 +80,12 @@ def read_week_rows(year: int, week: int):
         if not line: continue
         owner = (line[0] or "").strip()
         triples = []
-        i = 2  # ab Spalte 2: QB,Points,RB,Points,…
-        # bis vor den letzten drei Spalten (Total, Opponent, OppTotal)
+        i = 2
         while i + 1 < len(line) and i < len(header) - 3:
             name_cell = (line[i] or "").strip()
-            pts_cell  = (line[i+1] or "").strip()
+            pts_cell  = (line[i + 1] or "").strip()
             name, pos = parse_name_pos(name_cell)
-            pts       = to_float(pts_cell) if pts_cell not in ("", "-") else 0.0
+            pts       = to_float(pts_cell)
             if name:
                 triples.append((name, pos, pts))
             i += 2
@@ -98,57 +95,57 @@ def read_week_rows(year: int, week: int):
 # ---------- Main ----------
 def main():
     records = []
-    years = sorted([int(p.name) for p in TEAMGC_DIR.iterdir()
-                    if p.is_dir() and p.name.isdigit()])
+    years = sorted([int(p.name) for p in TEAMGC_DIR.iterdir() if p.is_dir() and p.name.isdigit()])
 
     for year in years:
-        drafted_keys = read_draft_keys_for_year(year)  # alle gedrafteten (egal von wem)
+        drafted = read_draft_keys(year)
 
-        # Tracking ab erster Sichtung beim Owner
-        first_seen = defaultdict(dict)                 # owner -> key_full -> first_week
-        sum_pts    = defaultdict(lambda: defaultdict(float))
+        first_seen = defaultdict(dict)
+        total_pts  = defaultdict(lambda: defaultdict(float))
         weeks_cnt  = defaultdict(lambda: defaultdict(int))
-        pos_seen   = defaultdict(dict)                # owner -> key_full -> pos
+        pos_seen   = defaultdict(dict)
 
-        for w in range(1, 17):  # Regular Season
-            week_rows = read_week_rows(year, w)
-            if not week_rows: continue
-            for row in week_rows:
+        for week in range(1, 17):
+            for row in read_week(year, week):
                 owner = row["owner"]
                 for name, pos, pts in row["players"]:
-                    key_full = norm_name(name)
-                    key_abbr = abbrev_key(name)
+                    key_f = norm_name(name)
+                    key_a = abbrev_key(name)
 
-                    # **Nur undrafted** zählen: kommt in keinem Draft des Jahres vor
-                    if key_full in drafted_keys or key_abbr in drafted_keys:
+                    # Nur undrafted
+                    if key_f in drafted or key_a in drafted:
                         continue
 
-                    if key_full not in first_seen[owner]:
-                        first_seen[owner][key_full] = w
-                    # Position merken, falls vorhanden
-                    if pos and key_full not in pos_seen[owner]:
-                        pos_seen[owner][key_full] = pos
-                    sum_pts[owner][key_full] += pts
-                    weeks_cnt[owner][key_full] += 1
+                    # Initialisierung
+                    if key_f not in first_seen[owner]:
+                        first_seen[owner][key_f] = week
+                    pos_seen[owner][key_f] = pos
+                    # Punkte und Wochen zählen nur, wenn Punkte > 0 oder != None
+                    if pts != 0:
+                        weeks_cnt[owner][key_f] += 1
+                        total_pts[owner][key_f] += pts
 
-        # Ausgabe
+        # Ausgabe vorbereiten
         for owner in first_seen:
-            for key, fw in first_seen[owner].items():
-                pts  = sum_pts[owner][key]
+            for key in first_seen[owner]:
                 wcnt = weeks_cnt[owner][key]
-                pos  = pos_seen[owner].get(key, "")
-                # Optional: K/DST rausfiltern – hier auskommentiert; bei Bedarf aktivieren:
-                # if pos in ("K","DST"): continue
-
-                pretty = " ".join(t.capitalize() for t in key.split())
+                pts  = total_pts[owner][key]
+                if wcnt == 0 and pts == 0:
+                    continue  # nichts gespielt
+                avg = pts / wcnt if wcnt > 0 else 0
+                pos = pos_seen[owner].get(key, "")
+                if pos in ("K", "DST"):
+                    continue  # optional: K/DST ausschließen
+                player_name = " ".join(w.capitalize() for w in key.split())
                 records.append({
                     "Year": year,
                     "Owner": owner,
-                    "Player": pretty,
+                    "Player": player_name,
                     "Pos": pos,
-                    "FirstWeek": fw,
+                    "FirstWeek": first_seen[owner][key],
                     "WeeksPlayed": wcnt,
-                    "PointsAfterPickup": round(pts, 2)
+                    "PointsAfterPickup": round(pts, 2),
+                    "AvgPoints": round(avg, 2),
                 })
 
     # Schreiben
@@ -160,12 +157,12 @@ def main():
             "FirstWeek","WeeksPlayed","PointsAfterPickup","AvgPoints"
         ])
         for r in sorted(records, key=lambda x: (-x["Year"], -x["PointsAfterPickup"])):
-            avg = r["PointsAfterPickup"] / r["WeeksPlayed"] if r["WeeksPlayed"] else 0.0
             w.writerow([
                 r["Year"], r["Owner"], r["Player"], r["Pos"],
                 r["FirstWeek"], r["WeeksPlayed"],
-                f'{r["PointsAfterPickup"]:.2f}', f'{avg:.2f}'
+                f"{r['PointsAfterPickup']:.2f}", f"{r['AvgPoints']:.2f}"
             ])
+
     print(f"✓ Wrote {out_p} ({len(records)} pickups)")
 
 if __name__ == "__main__":
