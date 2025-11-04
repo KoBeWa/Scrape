@@ -152,18 +152,23 @@ def main():
                 })
 
     # Schreiben
+    # am Ende beim Schreiben:
     out_p = OUT_DIR / "waivers.tsv"
     with out_p.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f, delimiter="\t")
-        w.writerow(["Year","Owner","Player","Pos","FirstWeek","WeeksPlayed","PointsAfterPickup"])
-        # primär nach Year desc, dann Punkte desc
+        w.writerow([
+            "Year","Owner","Player","Pos",
+            "FirstWeek","WeeksPlayed","PointsAfterPickup","AvgPoints"
+        ])
         for r in sorted(records, key=lambda x: (-x["Year"], -x["PointsAfterPickup"])):
+            avg = r["PointsAfterPickup"] / r["WeeksPlayed"] if r["WeeksPlayed"] else 0.0
             w.writerow([
                 r["Year"], r["Owner"], r["Player"], r["Pos"],
                 r["FirstWeek"], r["WeeksPlayed"],
-                f'{r["PointsAfterPickup"]:.2f}'
+                f'{r["PointsAfterPickup"]:.2f}', f'{avg:.2f}'
             ])
-    print(f"✓ Wrote {out_p}  ({len(records)} rows)")
+    print(f"✓ Wrote {out_p} ({len(records)} pickups)")
+
 
 if __name__ == "__main__":
     main()
