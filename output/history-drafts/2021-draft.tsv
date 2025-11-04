@@ -53,7 +53,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 7	52	4	Tommy	D.J. Moore	WR	CAR
 7	53	5	Marv	Kenny Golladay	WR	NYG
 7	54	6	Ritz	Adam Thielen	WR	MIN
-7	55	7	Simi	Carolina Panthers	DEF	CAR
+7	55	7	Simi	Carolina Panthers	DST	CAR
 7	56	8	Juschka	Mitchell Trubisky	QB	PIT
 8	57	1	Juschka	Andy Dalton	QB	NO
 8	58	2	Simi	Raheem Mostert	RB	MIA
@@ -90,7 +90,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 12	89	1	Juschka	Stephen Gostkowski	K	
 12	90	2	Simi	Melvin Gordon	RB	DEN
 12	91	3	Ritz	DeVonta Smith	WR	PHI
-12	92	4	Marv	Baltimore Ravens	DEF	BAL
+12	92	4	Marv	Baltimore Ravens	DST	BAL
 12	93	5	Tommy	James Conner	RB	ARI
 12	94	6	Kessi	Justin Tucker	K	BAL
 12	95	7	Benni	David Johnson	RB	HOU
@@ -98,21 +98,21 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 13	97	1	Erik	Matthew Stafford	QB	LA
 13	98	2	Benni	Ryan Tannehill	QB	TEN
 13	99	3	Kessi	Tony Pollard	RB	DAL
-13	100	4	Tommy	San Francisco 49ers	DEF	SF
+13	100	4	Tommy	San Francisco 49ers	DST	SF
 13	101	5	Marv	Laviska Shenault Jr.	WR	JAX
 13	102	6	Ritz	Harrison Butker	K	KC
 13	103	7	Simi	Sam Ficken	K	TEN
 13	104	8	Juschka	Keelan Cole	WR	NYJ
 14	105	1	Juschka	Nick Folk	K	NE
 14	106	2	Simi	Robby Anderson	WR	CAR
-14	107	3	Ritz	Pittsburgh Steelers	DEF	PIT
+14	107	3	Ritz	Pittsburgh Steelers	DST	PIT
 14	108	4	Marv	Leonard Fournette	RB	TB
 14	109	5	Tommy	Trey Sermon	RB	SF
 14	110	6	Kessi	Noah Fant	TE	SEA
 14	111	7	Benni	Michael Pittman	WR	IND
 14	112	8	Erik	Mike Williams	WR	LAC
 15	113	1	Erik	Gus Edwards	RB	BAL
-15	114	2	Benni	Los Angeles Rams	DEF	LA
+15	114	2	Benni	Los Angeles Rams	DST	LA
 15	115	3	Kessi	Tyler Higbee	TE	LA
 15	116	4	Tommy	Younghoe Koo	K	ATL
 15	117	5	Marv	Jaylen Waddle	WR	MIA

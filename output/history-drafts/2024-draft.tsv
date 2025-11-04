@@ -80,7 +80,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 10	79	7	Ritz	Rashee Rice	WR	KC
 10	80	8	Erik	Chris Godwin	WR	TB
 11	81	1	Erik	Gus Edwards	RB	
-11	82	2	Ritz	San Francisco 49ers	DEF	SF
+11	82	2	Ritz	San Francisco 49ers	DST	SF
 11	83	3	Simi	Jayden Reed	WR	GB
 11	84	4	Juschka	Tua Tagovailoa	QB	MIA
 11	85	5	Benni	Javonte Williams	RB	DAL
@@ -97,7 +97,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 12	96	8	Erik	Chase Brown	RB	CIN
 13	97	1	Erik	Jerome Ford	RB	CLE
 13	98	2	Ritz	Valentino Ambrosio	K	
-13	99	3	Simi	Baltimore Ravens	DEF	BAL
+13	99	3	Simi	Baltimore Ravens	DST	BAL
 13	100	4	Juschka	Tyler Lockett	WR	TEN
 13	101	5	Benni	Xavier Worthy	WR	KC
 13	102	6	Tommy	Harrison Butker	K	KC
@@ -110,12 +110,12 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 14	109	5	Juschka	Younghoe Koo	K	NYG
 14	110	6	Simi	Jaxon Smith-Njigba	WR	SEA
 14	111	7	Ritz	Noah Rauschenberg	K	
-14	112	8	Erik	Dallas Cowboys	DEF	DAL
+14	112	8	Erik	Dallas Cowboys	DST	DAL
 15	113	1	Erik	Jason Sanders	K	MIA
 15	114	2	Ritz	Napoleon Maxwell	RB	
 15	115	3	Simi	Ezekiel Elliott	RB	
 15	116	4	Juschka	Rob Gronkowski	TE	
-15	117	5	Benni	New York Jets	DEF	NYJ
+15	117	5	Benni	New York Jets	DST	NYJ
 15	118	6	Tommy	Brock Bowers	TE	LV
-15	119	7	Kessi	Cleveland Browns	DEF	CLE
+15	119	7	Kessi	Cleveland Browns	DST	CLE
 15	120	8	Marv	A.T. Perry	WR	DEN

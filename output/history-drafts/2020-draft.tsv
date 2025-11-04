@@ -83,8 +83,8 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 11	82	2	Simi	Evan Engram	TE	NYG
 11	83	3	Tommy	CeeDee Lamb	WR	DAL
 11	84	4	Kessi	N'Keal Harry	WR	NE
-11	85	5	Juschka	San Francisco 49ers	DEF	SF
-11	86	6	Marv	Baltimore Ravens	DEF	BAL
+11	85	5	Juschka	San Francisco 49ers	DST	SF
+11	86	6	Marv	Baltimore Ravens	DST	BAL
 11	87	7	Benni	Darius Slayton	WR	NYG
 11	88	8	Ritz	Matt Ryan	QB	ATL
 12	89	1	Ritz	Sony Michel	RB	NE
@@ -93,7 +93,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 12	92	4	Juschka	Zack Moss	RB	BUF
 12	93	5	Kessi	Phillip Lindsay	RB	DEN
 12	94	6	Tommy	Matthew Stafford	QB	DET
-12	95	7	Simi	Pittsburgh Steelers	DEF	PIT
+12	95	7	Simi	Pittsburgh Steelers	DST	PIT
 12	96	8	Erik	Keâ€™Shawn Vaughn	RB	TB
 13	97	1	Erik	Diontae Johnson	WR	PIT
 13	98	2	Simi	Henry Ruggs III	WR	LV
@@ -103,15 +103,15 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 13	102	6	Marv	Marlon Mack	RB	IND
 13	103	7	Benni	Damien Williams	RB	
 13	104	8	Ritz	Harrison Butker	K	KC
-14	105	1	Ritz	New England Patriots	DEF	NE
+14	105	1	Ritz	New England Patriots	DST	NE
 14	106	2	Benni	Justin Tucker	K	BAL
 14	107	3	Marv	Anthony Miller	WR	CHI
 14	108	4	Juschka	Sam Ficken	K	
-14	109	5	Kessi	Buffalo Bills	DEF	BUF
+14	109	5	Kessi	Buffalo Bills	DST	BUF
 14	110	6	Tommy	Brandon Aiyuk	WR	SF
 14	111	7	Simi	Matt Prater	K	DET
 14	112	8	Erik	Greg Zuerlein	K	DAL
-15	113	1	Erik	Philadelphia Eagles	DEF	PHI
+15	113	1	Erik	Philadelphia Eagles	DST	PHI
 15	114	2	Simi	Joe Burrow	QB	CIN
 15	115	3	Tommy	Robbie Gould	K	SF
 15	116	4	Kessi	Emmanuel Sanders	WR	NO

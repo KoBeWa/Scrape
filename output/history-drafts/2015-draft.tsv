@@ -56,13 +56,13 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 7	55	7	Ritz	Nelson Agholor	WR	PHI
 7	56	8	Erik	Rashad Jennings	RB	NYG
 8	57	1	Erik	Stephen Gostkowski	K	NE
-8	58	2	Ritz	Houston Texans	DEF	HOU
-8	59	3	Simi	Seattle Seahawks	DEF	SEA
+8	58	2	Ritz	Houston Texans	DST	HOU
+8	59	3	Simi	Seattle Seahawks	DST	SEA
 8	60	4	Kessi	Andre Ellington	RB	ARI
-8	61	5	Tommy	Buffalo Bills	DEF	BUF
+8	61	5	Tommy	Buffalo Bills	DST	BUF
 8	62	6	Benni	Joique Bell	RB	DET
 8	63	7	Marv	Jarvis Landry	WR	MIA
-8	64	8	Juschka	Green Bay Packers	DEF	GB
+8	64	8	Juschka	Green Bay Packers	DST	GB
 9	65	1	Juschka	Kelvin Benjamin	WR	CAR
 9	66	2	Marv	C.J. Spiller	RB	NO
 9	67	3	Benni	Dwayne Allen	TE	IND
@@ -70,14 +70,14 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 9	69	5	Kessi	Brandon LaFell	WR	NE
 9	70	6	Simi	Adam Vinatieri	K	IND
 9	71	7	Ritz	Jeremy Maclin	WR	KC
-9	72	8	Erik	Philadelphia Eagles	DEF	PHI
+9	72	8	Erik	Philadelphia Eagles	DST	PHI
 10	73	1	Erik	Mike Evans	WR	TB
 10	74	2	Ritz	Jonathan Stewart	RB	CAR
 10	75	3	Simi	Matt Ryan	QB	ATL
-10	76	4	Kessi	Miami Dolphins	DEF	MIA
+10	76	4	Kessi	Miami Dolphins	DST	MIA
 10	77	5	Tommy	Carlos Hyde	RB	SF
-10	78	6	Benni	Los Angeles Rams	DEF	LAR
-10	79	7	Marv	Arizona Cardinals	DEF	ARI
+10	78	6	Benni	Los Angeles Rams	DST	LAR
+10	79	7	Marv	Arizona Cardinals	DST	ARI
 10	80	8	Juschka	Torrey Smith	WR	SF
 11	81	1	Juschka	Chris Ivory	RB	NYJ
 11	82	2	Marv	Cam Newton	QB	CAR
@@ -102,17 +102,17 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 13	101	5	Kessi	Matt Bryant	K	ATL
 13	102	6	Simi	Zach Ertz	TE	PHI
 13	103	7	Ritz	Golden Tate	WR	DET
-13	104	8	Erik	Baltimore Ravens	DEF	BAL
+13	104	8	Erik	Baltimore Ravens	DST	BAL
 14	105	1	Erik	Jordan Cameron	TE	MIA
 14	106	2	Ritz	Colin Kaepernick	QB	SF
-14	107	3	Simi	New England Patriots	DEF	NE
-14	108	4	Kessi	Indianapolis Colts	DEF	IND
-14	109	5	Tommy	San Francisco 49ers	DEF	SF
+14	107	3	Simi	New England Patriots	DST	NE
+14	108	4	Kessi	Indianapolis Colts	DST	IND
+14	109	5	Tommy	San Francisco 49ers	DST	SF
 14	110	6	Benni	Keenan Allen	WR	LAC
 14	111	7	Marv	Brandon Marshall	WR	NYJ
 14	112	8	Juschka	Vernon Davis	TE	DEN
 15	113	1	Juschka	Randy Bullock	K	NYJ
-15	114	2	Marv	New Orleans Saints	DEF	NO
+15	114	2	Marv	New Orleans Saints	DST	NO
 15	115	3	Benni	Justin Tucker	K	BAL
 15	116	4	Tommy	T.J. Yeldon	RB	JAC
 15	117	5	Kessi	Todd Gurley	RB	STL

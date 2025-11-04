@@ -58,14 +58,14 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 8	57	1	Tommy	Tevin Coleman	RB	ATL
 8	58	2	Juschka	Golden Tate	WR	DET
 8	59	3	Ritz	Keenan Allen	WR	LAC
-8	60	4	Kessi	Kansas City Chiefs	DEF	KC
+8	60	4	Kessi	Kansas City Chiefs	DST	KC
 8	61	5	Erik	Ty Montgomery	RB	GB
 8	62	6	Simi	Mark Ingram	RB	NO
-8	63	7	Erik	Denver Broncos	DEF	DEN
+8	63	7	Erik	Denver Broncos	DST	DEN
 8	64	8	Benni	Sammy Watkins	WR	LA
 9	65	1	Benni	Dalvin Cook	RB	MIN
 9	66	2	Erik	Stefon Diggs	WR	MIN
-9	67	3	Simi	Seattle Seahawks	DEF	SEA
+9	67	3	Simi	Seattle Seahawks	DST	SEA
 9	68	4	Marv	LeGarrette Blount	RB	PHI
 9	69	5	Kessi	Mike Gillislee	RB	NE
 9	70	6	Ritz	Emmanuel Sanders	WR	DEN
@@ -80,13 +80,13 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 10	79	7	Marv	Eddie Lacy	RB	SEA
 10	80	8	Benni	Martavis Bryant	WR	PIT
 11	81	1	Benni	Doug Martin	RB	TB
-11	82	2	Marv	Minnesota Vikings	DEF	MIN
+11	82	2	Marv	Minnesota Vikings	DST	MIN
 11	83	3	Simi	Latavius Murray	RB	MIN
 11	84	4	Marv	Samaje Perine	RB	WAS
 11	85	5	Kessi	Jeremy Hill	RB	CIN
 11	86	6	Ritz	Tyler Eifert	TE	CIN
 11	87	7	Juschka	Kyle Rudolph	TE	MIN
-11	88	8	Tommy	Houston Texans	DEF	HOU
+11	88	8	Tommy	Houston Texans	DST	HOU
 12	89	1	Tommy	Matt Forte	RB	NYJ
 12	90	2	Juschka	Willie Snead	WR	NO
 12	91	3	Ritz	Ameer Abdullah	RB	DET
@@ -95,7 +95,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 12	94	6	Simi	Brandon Marshall	WR	NYG
 12	95	7	Erik	Jamison Crowder	WR	WAS
 12	96	8	Benni	Adrian Peterson	RB	ARI
-13	97	1	Benni	New York Giants	DEF	NYG
+13	97	1	Benni	New York Giants	DST	NYG
 13	98	2	Erik	Stephen Gostkowski	K	NE
 13	99	3	Simi	Matt Bryant	K	ATL
 13	100	4	Erik	Derrick Henry	RB	TEN
@@ -104,7 +104,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 13	103	7	Juschka	Jonathan Stewart	RB	CAR
 13	104	8	Tommy	Mason Crosby	K	GB
 14	105	1	Tommy	Derek Carr	QB	LV
-14	106	2	Juschka	Atlanta Falcons	DEF	ATL
+14	106	2	Juschka	Atlanta Falcons	DST	ATL
 14	107	3	Ritz	Eric Decker	WR	TEN
 14	108	4	Kessi	Martellus Bennett	TE	NE
 14	109	5	Marv	Wil Lutz	K	NO
@@ -116,6 +116,6 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 15	115	3	Simi	Kareem Hunt	RB	KC
 15	116	4	Marv	David Njoku	TE	CLE
 15	117	5	Kessi	James White	RB	NE
-15	118	6	Ritz	New England Patriots	DEF	NE
+15	118	6	Ritz	New England Patriots	DST	NE
 15	119	7	Juschka	Brandon McManus	K	DEN
-15	120	8	Tommy	Indianapolis Colts	DEF	IND
+15	120	8	Tommy	Indianapolis Colts	DST	IND

@@ -55,7 +55,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 7	54	6	Simi	Ronald Jones	RB	TB
 7	55	7	Juschka	Drew Brees	QB	NO
 7	56	8	Marv	Sony Michel	RB	NE
-8	57	1	Erik	Jacksonville Jaguars	DEF	JAX
+8	57	1	Erik	Jacksonville Jaguars	DST	JAX
 8	58	2	Juschka	Marshawn Lynch	RB	LV
 8	59	3	Simi	Jimmy Graham	TE	GB
 8	60	4	Ritz	Golden Tate	WR	PHI
@@ -78,21 +78,21 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 10	77	5	Marv	Corey Davis	WR	TEN
 10	78	6	Benni	Sammy Watkins	WR	KC
 10	79	7	Kessi	Stephen Gostkowski	K	NE
-10	80	8	Tommy	Los Angeles Rams	DEF	LA
+10	80	8	Tommy	Los Angeles Rams	DST	LA
 11	81	1	Tommy	Marquise Goodwin	WR	SF
-11	82	2	Kessi	Baltimore Ravens	DEF	BAL
+11	82	2	Kessi	Baltimore Ravens	DST	BAL
 11	83	3	Benni	Devin Funchess	WR	CAR
 11	84	4	Erik	Robert Woods	WR	LA
 11	85	5	Ritz	Chris Thompson	RB	WAS
-11	86	6	Simi	Minnesota Vikings	DEF	MIN
-11	87	7	Juschka	Philadelphia Eagles	DEF	PHI
-11	88	8	Marv	Houston Texans	DEF	HOU
+11	86	6	Simi	Minnesota Vikings	DST	MIN
+11	87	7	Juschka	Philadelphia Eagles	DST	PHI
+11	88	8	Marv	Houston Texans	DST	HOU
 12	89	1	Erik	Justin Tucker	K	BAL
 12	90	2	Juschka	Julian Edelman	WR	NE
 12	91	3	Simi	Matt Bryant	K	ATL
 12	92	4	Ritz	Kerryon Johnson	RB	DET
 12	93	5	Erik	DeVante Parker	WR	MIA
-12	94	6	Benni	Los Angeles Chargers	DEF	LAC
+12	94	6	Benni	Los Angeles Chargers	DST	LAC
 12	95	7	Kessi	Nick Chubb	RB	CLE
 12	96	8	Tommy	Cooper Kupp	WR	LA
 13	97	1	Tommy	Delanie Walker	TE	TEN
@@ -115,7 +115,7 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 15	114	2	Kessi	D.J. Moore	WR	CAR
 15	115	3	Benni	Dez Bryant	WR	NO
 15	116	4	Erik	Colin Kaepernick	QB	
-15	117	5	Ritz	Denver Broncos	DEF	DEN
+15	117	5	Ritz	Denver Broncos	DST	DEN
 15	118	6	Simi	Robert Griffin III	QB	BAL
 15	119	7	Juschka	Jay Cutler	QB	
 15	120	8	Marv	David Marvin	K	

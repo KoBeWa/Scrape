@@ -58,18 +58,18 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 8	57	1	Ritz	Donte Moncrief	WR	IND
 8	58	2	Juschka	Emmanuel Sanders	WR	DEN
 8	59	3	Marv	Thomas Rawls	RB	SEA
-8	60	4	Erik	Seattle Seahawks	DEF	SEA
+8	60	4	Erik	Seattle Seahawks	DST	SEA
 8	61	5	Simi	Michael Floyd	WR	NE
 8	62	6	Tommy	Larry Fitzgerald	WR	ARI
-8	63	7	Benni	Denver Broncos	DEF	DEN
-8	64	8	Kessi	Arizona Cardinals	DEF	ARI
+8	63	7	Benni	Denver Broncos	DST	DEN
+8	64	8	Kessi	Arizona Cardinals	DST	ARI
 9	65	1	Kessi	Kelvin Benjamin	WR	CAR
 9	66	2	Benni	Tom Brady	QB	NE
-9	67	3	Tommy	Kansas City Chiefs	DEF	KC
-9	68	4	Simi	Carolina Panthers	DEF	CAR
+9	67	3	Tommy	Kansas City Chiefs	DST	KC
+9	68	4	Simi	Carolina Panthers	DST	CAR
 9	69	5	Erik	Randall Cobb	WR	GB
 9	70	6	Marv	Coby Fleener	TE	NO
-9	71	7	Juschka	Houston Texans	DEF	HOU
+9	71	7	Juschka	Houston Texans	DST	HOU
 9	72	8	Ritz	DeMarco Murray	RB	TEN
 10	73	1	Ritz	Laquon Treadwell	WR	MIN
 10	74	2	Juschka	Chris Ivory	RB	JAX
@@ -103,9 +103,9 @@ Round	Overall	PickInRound	ManagerName	Player	Pos	NFLTeam
 13	102	6	Marv	Dan Bailey	K	DAL
 13	103	7	Juschka	Eli Manning	QB	NYG
 13	104	8	Ritz	Graham Gano	K	CAR
-14	105	1	Ritz	Pittsburgh Steelers	DEF	PIT
+14	105	1	Ritz	Pittsburgh Steelers	DST	PIT
 14	106	2	Juschka	Delanie Walker	TE	TEN
-14	107	3	Marv	New Orleans Saints	DEF	NO
+14	107	3	Marv	New Orleans Saints	DST	NO
 14	108	4	Erik	Ladarius Green	TE	PIT
 14	109	5	Simi	Antonio Gates	TE	LAC
 14	110	6	Tommy	Hunter Henry	TE	LAC
