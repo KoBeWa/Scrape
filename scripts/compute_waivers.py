@@ -1,315 +1,172 @@
-"use client";
+#!/usr/bin/env python3
+import csv, re
+from pathlib import Path
+from collections import defaultdict
 
-import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
+ROOT        = Path(__file__).resolve().parents[1]
+TEAMGC_DIR  = ROOT / "output" / "teamgamecenter"
+DRAFTS_DIR  = ROOT / "output" / "history-drafts"
+OUT_DIR     = ROOT / "public" / "data" / "league"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-type WaiverRow = {
-  Year: number;
-  Owner: string;
-  Player: string;
-  Pos: string;
-  FirstWeek: number;
-  WeeksPlayed: number;
-  PointsAfterPickup: number;
-  AvgPoints: number;
-};
+# ---------- Helpers ----------
+def norm_name(s: str) -> str:
+    return (
+        (s or "").lower()
+        .replace(".", "")
+        .replace("-", " ")
+        .replace("'", "")
+        .replace("’", "")
+        .replace(",", "")
+        .replace(" jr", "").replace(" sr", "")
+        .replace(" iii", "").replace(" ii", "").replace(" iv", "")
+        .replace("  ", " ").strip()
+    )
 
-function parseTSV<T extends Record<string, any>>(text: string): T[] {
-  const lines = text.trim().split(/\r?\n/);
-  const headers = lines.shift()!.split("\t").map((h) => h.trim());
-  return lines.map((line) => {
-    const cols = line.split("\t").map((v) => v.trim());
-    const obj: any = {};
-    headers.forEach((h, i) => (obj[h] = cols[i]));
-    return obj as T;
-  });
-}
+def abbrev_key(name: str) -> str:
+    """Nachname + Initiale des Vornamens: 'Mahomes_P' – robust für 'P. Mahomes'."""
+    parts = norm_name(name).split()
+    if not parts: return ""
+    if len(parts) == 1:  # z.B. 'Chiefs'
+        return parts[0]
+    last  = parts[-1]
+    first = parts[0][0]
+    return f"{last}_{first}"
 
-const num = (x: any, fb = 0) => {
-  const n = Number(String(x ?? "").replace(",", "."));
-  return Number.isFinite(n) ? n : fb;
-};
+name_pos_re = re.compile(
+    r"^\s*([A-Za-z].*?)(?:\s+(QB|RB|WR|TE|K|DEF))?(?:\s*-\s*[A-Z]{2,3})?\s*$"
+)
+def parse_name_pos(cell: str):
+    """
+    'C. Palmer QB - ARI' -> ('C. Palmer','QB')
+    'Chiefs DEF'         -> ('Chiefs','DEF' -> 'DST')
+    """
+    cell = (cell or "").strip()
+    if not cell or cell == "-": return ("", "")
+    m = name_pos_re.match(cell)
+    if not m: return (cell.strip(), "")
+    name = m.group(1).strip()
+    pos  = (m.group(2) or "").strip()
+    if pos == "DEF": pos = "DST"
+    return (name, pos)
 
-export default function WaiversPage() {
-  const [rows, setRows] = useState<WaiverRow[]>([]);
-  const [error, setError] = useState<string | null>(null);
+def to_float(x):
+    try: return float(str(x).replace(",", "."))
+    except: return 0.0
 
-  const [year, setYear] = useState<number | "ALL">("ALL");
-  const [excludeKDST, setExcludeKDST] = useState<boolean>(false);
-  const [excludeQB, setExcludeQB] = useState<boolean>(false);
-  const [minWeeks, setMinWeeks] = useState<number>(1);
-  const [query, setQuery] = useState<string>("");
+# ---------- IO ----------
+def read_draft_keys_for_year(year: int) -> set:
+    """Alle Draft-Spieler eines Jahres als Keys (voll & abgekürzt)"""
+    p = DRAFTS_DIR / f"{year}-draft.tsv"
+    if not p.exists(): return set()
+    keys = set()
+    with p.open(encoding="utf-8") as f:
+        r = csv.DictReader(f, delimiter="\t")
+        for row in r:
+            player = (row.get("Player") or "").strip()
+            if not player: continue
+            keys.add(norm_name(player))
+            keys.add(abbrev_key(player))
+    return keys
 
-  const [sortCol, setSortCol] = useState<string>("PointsAfterPickup");
-  const [sortAsc, setSortAsc] = useState<boolean>(false);
+def read_week_rows(year: int, week: int):
+    """Liest eine Teamgamecenter-CSV (Owner, Slots, Bench …, Total, Opponent, Opp Total)."""
+    fp = TEAMGC_DIR / str(year) / f"{week}.csv"
+    if not fp.exists(): return []
+    with fp.open(encoding="utf-8") as f:
+        rows = list(csv.reader(f))
+    if not rows: return []
+    header = rows[0]
+    out = []
+    for line in rows[1:]:
+        if not line: continue
+        owner = (line[0] or "").strip()
+        triples = []
+        i = 2  # ab Spalte 2: QB,Points,RB,Points,…
+        # bis vor den letzten drei Spalten (Total, Opponent, OppTotal)
+        while i + 1 < len(line) and i < len(header) - 3:
+            name_cell = (line[i] or "").strip()
+            pts_cell  = (line[i+1] or "").strip()
+            name, pos = parse_name_pos(name_cell)
+            pts       = to_float(pts_cell) if pts_cell not in ("", "-") else 0.0
+            if name:
+                triples.append((name, pos, pts))
+            i += 2
+        out.append({"owner": owner, "players": triples})
+    return out
 
-  useEffect(() => {
-    fetch("/fantasy-dashboard/data/league/waivers.tsv")
-      .then((r) => r.text())
-      .then((txt) => {
-        const r = parseTSV<Record<string, string>>(txt).map((x) => ({
-          Year: num(x.Year),
-          Owner: x.Owner,
-          Player: x.Player,
-          Pos: x.Pos,
-          FirstWeek: num(x.FirstWeek),
-          WeeksPlayed: num(x.WeeksPlayed),
-          PointsAfterPickup: num(x.PointsAfterPickup),
-          AvgPoints: num(x.AvgPoints),
-        })) as WaiverRow[];
-        setRows(r);
-      })
-      .catch(() => setError("Konnte waivers.tsv nicht laden."));
-  }, []);
+# ---------- Main ----------
+def main():
+    records = []
+    years = sorted([int(p.name) for p in TEAMGC_DIR.iterdir()
+                    if p.is_dir() and p.name.isdigit()])
 
-  const years = useMemo(() => {
-    return Array.from(new Set(rows.map((r) => r.Year))).sort((a, b) => a - b);
-  }, [rows]);
+    for year in years:
+        drafted_keys = read_draft_keys_for_year(year)  # alle gedrafteten (egal von wem)
 
-  const filtered = useMemo(() => {
-    let list = [...rows];
-    if (year !== "ALL") list = list.filter((r) => r.Year === year);
-    if (excludeKDST) list = list.filter((r) => r.Pos !== "K" && r.Pos !== "DST");
-    if (excludeQB) list = list.filter((r) => r.Pos !== "QB");
-    if (minWeeks > 1) list = list.filter((r) => r.WeeksPlayed >= minWeeks);
-    const q = query.trim().toLowerCase();
-    if (q) {
-      list = list.filter(
-        (r) =>
-          r.Player.toLowerCase().includes(q) ||
-          r.Owner.toLowerCase().includes(q) ||
-          r.Pos.toLowerCase().includes(q)
-      );
-    }
-    return list;
-  }, [rows, year, excludeKDST, excludeQB, minWeeks, query]);
+        # Tracking ab erster Sichtung beim Owner
+        first_seen = defaultdict(dict)                 # owner -> key_full -> first_week
+        sum_pts    = defaultdict(lambda: defaultdict(float))
+        weeks_cnt  = defaultdict(lambda: defaultdict(int))
+        pos_seen   = defaultdict(dict)                # owner -> key_full -> pos
 
-  const sorted = useMemo(() => {
-    const arr = [...filtered];
-    arr.sort((a: any, b: any) => {
-      const numCols = new Set([
-        "Year",
-        "FirstWeek",
-        "WeeksPlayed",
-        "PointsAfterPickup",
-        "AvgPoints",
-      ]);
-      const A = a[sortCol];
-      const B = b[sortCol];
-      let cmp: number;
-      if (numCols.has(sortCol)) cmp = Number(A) - Number(B);
-      else cmp = String(A ?? "").localeCompare(String(B ?? ""), undefined, { numeric: true });
-      return sortAsc ? cmp : -cmp;
-    });
-    return arr;
-  }, [filtered, sortCol, sortAsc]);
+        for w in range(1, 17):  # Regular Season
+            week_rows = read_week_rows(year, w)
+            if not week_rows: continue
+            for row in week_rows:
+                owner = row["owner"]
+                for name, pos, pts in row["players"]:
+                    key_full = norm_name(name)
+                    key_abbr = abbrev_key(name)
 
-  const handleSort = (key: string) => {
-    if (sortCol === key) setSortAsc(!sortAsc);
-    else {
-      setSortCol(key);
-      setSortAsc(key === "Owner" || key === "Player");
-    }
-  };
+                    # **Nur undrafted** zählen: kommt in keinem Draft des Jahres vor
+                    if key_full in drafted_keys or key_abbr in drafted_keys:
+                        continue
 
-  const topAllTime = useMemo(() => {
-    return [...rows]
-      .filter((r) => {
-        if (excludeKDST && (r.Pos === "K" || r.Pos === "DST")) return false;
-        if (excludeQB && r.Pos === "QB") return false;
-        return true;
-      })
-      .sort((a, b) => b.PointsAfterPickup - a.PointsAfterPickup)
-      .slice(0, 20);
-  }, [rows, excludeKDST, excludeQB]);
+                    if key_full not in first_seen[owner]:
+                        first_seen[owner][key_full] = w
+                    # Position merken, falls vorhanden
+                    if pos and key_full not in pos_seen[owner]:
+                        pos_seen[owner][key_full] = pos
+                    sum_pts[owner][key_full] += pts
+                    weeks_cnt[owner][key_full] += 1
 
-  return (
-    <div className="p-6">
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold">Best Waiver Pickups</h1>
-        <Link href="/" className="text-sm underline">
-          ← Back to Dashboard
-        </Link>
-      </div>
+        # Ausgabe
+        for owner in first_seen:
+            for key, fw in first_seen[owner].items():
+                pts  = sum_pts[owner][key]
+                wcnt = weeks_cnt[owner][key]
+                pos  = pos_seen[owner].get(key, "")
+                # Optional: K/DST rausfiltern – hier auskommentiert; bei Bedarf aktivieren:
+                # if pos in ("K","DST"): continue
 
-      {/* Filter Controls */}
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-3 mb-4">
-        <div className="flex items-center gap-2">
-          <label className="text-sm w-20">Season</label>
-          <select
-            className="border rounded px-2 py-1 w-full"
-            value={year}
-            onChange={(e) =>
-              setYear(e.target.value === "ALL" ? "ALL" : Number(e.target.value))
-            }
-          >
-            <option value="ALL">All</option>
-            {years.map((y) => (
-              <option key={y} value={y}>
-                {y}
-              </option>
-            ))}
-          </select>
-        </div>
+                pretty = " ".join(t.capitalize() for t in key.split())
+                records.append({
+                    "Year": year,
+                    "Owner": owner,
+                    "Player": pretty,
+                    "Pos": pos,
+                    "FirstWeek": fw,
+                    "WeeksPlayed": wcnt,
+                    "PointsAfterPickup": round(pts, 2)
+                })
 
-        <div className="flex items-center gap-2">
-          <label className="text-sm w-20">Min Weeks</label>
-          <input
-            type="number"
-            min={1}
-            className="border rounded px-2 py-1 w-full"
-            value={minWeeks}
-            onChange={(e) => setMinWeeks(Number(e.target.value))}
-          />
-        </div>
+    # Schreiben
+    out_p = OUT_DIR / "waivers.tsv"
+    with out_p.open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter="\t")
+        w.writerow([
+            "Year","Owner","Player","Pos",
+            "FirstWeek","WeeksPlayed","PointsAfterPickup","AvgPoints"
+        ])
+        for r in sorted(records, key=lambda x: (-x["Year"], -x["PointsAfterPickup"])):
+            avg = r["PointsAfterPickup"] / r["WeeksPlayed"] if r["WeeksPlayed"] else 0.0
+            w.writerow([
+                r["Year"], r["Owner"], r["Player"], r["Pos"],
+                r["FirstWeek"], r["WeeksPlayed"],
+                f'{r["PointsAfterPickup"]:.2f}', f'{avg:.2f}'
+            ])
+    print(f"✓ Wrote {out_p} ({len(records)} pickups)")
 
-        <div className="flex items-center gap-2">
-          <label className="text-sm w-20">No K/DST</label>
-          <input
-            type="checkbox"
-            checked={excludeKDST}
-            onChange={(e) => setExcludeKDST(e.target.checked)}
-          />
-        </div>
-
-        <div className="flex items-center gap-2">
-          <label className="text-sm w-20">No QB</label>
-          <input
-            type="checkbox"
-            checked={excludeQB}
-            onChange={(e) => setExcludeQB(e.target.checked)}
-          />
-        </div>
-
-        <div className="md:col-span-2 flex items-center gap-2">
-          <label className="text-sm w-20">Search</label>
-          <input
-            className="border rounded px-3 py-1 w-full"
-            placeholder="Player / Owner / Pos ..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
-      </div>
-
-      {/* All-Time Top Box */}
-      <div className="mb-6">
-        <h2 className="text-lg font-semibold mb-2">
-          Top Waiver Pickups (All-Time)
-        </h2>
-        <div className="overflow-x-auto">
-          <table className="w-full border border-gray-300 text-sm">
-            <thead>
-              <tr className="bg-gray-100">
-                {[
-                  "Year",
-                  "Owner",
-                  "Player",
-                  "Pos",
-                  "FirstWeek",
-                  "WeeksPlayed",
-                  "PointsAfterPickup",
-                  "AvgPoints",
-                ].map((col) => (
-                  <th
-                    key={col}
-                    className="border px-2 py-1 text-center cursor-pointer hover:bg-gray-200"
-                    onClick={() => handleSort(col)}
-                  >
-                    {col} {sortCol === col ? (sortAsc ? "▲" : "▼") : ""}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {topAllTime.map((r, i) => (
-                <tr key={i} className="odd:bg-white even:bg-gray-50">
-                  <td className="border px-2 py-1 text-center">{r.Year}</td>
-                  <td className="border px-2 py-1 text-center">{r.Owner}</td>
-                  <td className="border px-2 py-1 text-center">{r.Player}</td>
-                  <td className="border px-2 py-1 text-center">{r.Pos}</td>
-                  <td className="border px-2 py-1 text-center">{r.FirstWeek}</td>
-                  <td className="border px-2 py-1 text-center">{r.WeeksPlayed}</td>
-                  <td className="border px-2 py-1 text-center">
-                    {r.PointsAfterPickup.toFixed(1)}
-                  </td>
-                  <td className="border px-2 py-1 text-center">
-                    {r.AvgPoints.toFixed(1)}
-                  </td>
-                </tr>
-              ))}
-              {topAllTime.length === 0 && (
-                <tr>
-                  <td className="border px-2 py-3 text-center" colSpan={8}>
-                    No data
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Full Table */}
-      <h2 className="text-lg font-semibold mb-2">
-        Pickups {year === "ALL" ? "(All Seasons)" : `(${year})`}
-      </h2>
-      {error && (
-        <div className="mb-4 p-3 border border-red-300 bg-red-50 rounded text-sm">
-          {error}
-        </div>
-      )}
-      <div className="overflow-x-auto">
-        <table className="w-full border border-gray-300 text-sm">
-          <thead>
-            <tr className="bg-gray-100 cursor-pointer select-none">
-              {[
-                { key: "Year", label: "Year" },
-                { key: "Owner", label: "Owner" },
-                { key: "Player", label: "Player" },
-                { key: "Pos", label: "Pos" },
-                { key: "FirstWeek", label: "FirstW" },
-                { key: "WeeksPlayed", label: "Weeks" },
-                { key: "PointsAfterPickup", label: "Points" },
-                { key: "AvgPoints", label: "Avg" },
-              ].map((c) => (
-                <th
-                  key={c.key}
-                  className="border px-2 py-1 text-center hover:bg-gray-200"
-                  onClick={() => handleSort(c.key)}
-                >
-                  {c.label} {sortCol === c.key ? (sortAsc ? "▲" : "▼") : ""}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {sorted.map((r, i) => (
-              <tr key={i} className="odd:bg-white even:bg-gray-50">
-                <td className="border px-2 py-1 text-center">{r.Year}</td>
-                <td className="border px-2 py-1 text-center">{r.Owner}</td>
-                <td className="border px-2 py-1 text-center">{r.Player}</td>
-                <td className="border px-2 py-1 text-center">{r.Pos}</td>
-                <td className="border px-2 py-1 text-center">{r.FirstWeek}</td>
-                <td className="border px-2 py-1 text-center">{r.WeeksPlayed}</td>
-                <td className="border px-2 py-1 text-center">
-                  {r.PointsAfterPickup.toFixed(1)}
-                </td>
-                <td className="border px-2 py-1 text-center">
-                  {r.AvgPoints.toFixed(1)}
-                </td>
-              </tr>
-            ))}
-            {sorted.length === 0 && (
-              <tr>
-                <td className="border px-2 py-3 text-center" colSpan={8}>
-                  No rows
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
+if __name__ == "__main__":
+    main()
