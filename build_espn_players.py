@@ -9,38 +9,63 @@ import requests
 SEASONS = range(2015, 2026)
 
 # Mapping von defaultPositionId -> Text
-# Falls dir hier irgendwas komisch vorkommt, kannst du es später einfach anpassen.
 POSITION_MAP = {
     0: "QB",
     2: "RB",
     4: "WR",
     6: "TE",
-    16: "D/ST",
+    16: "D/ST",  # Defenses / Special Teams
     17: "K",
 }
 
+BASE_URL_TEMPLATE = (
+    "https://fantasy.espn.com/apis/v3/games/ffl/"
+    "seasons/{season}/segments/0/leaguedefaults/1"
+)
+
+
 def fetch_players_for_season(season: int):
     """
-    Holt alle Spieler einer Saison über das öffentliche ESPN-Players-API.
-    Nutzt den players_wl-View und einen x-fantasy-filter, damit nicht nur 50 Spieler kommen.
-    """
-    base_url = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/{season}/players"
-    params = {"view": "players_wl"}
+    Holt alle Spieler einer Saison über leaguedefaults + kona_player_info.
 
-    # Filter: alle aktiven Spieler, Limit hochdrehen
-    filter_obj = {
-        "filterActive": {"value": True},
-        "limit": 10000,
+    Das entspricht einem Call, den ESPN selbst für Player-Projections nutzt.
+    """
+    url = BASE_URL_TEMPLATE.format(season=season)
+
+    params = {
+        "scoringPeriodId": 0,
+        "view": "kona_player_info",
     }
+
+    # sehr vereinfachter Filter: wir wollen einfach "viele Spieler"
+    filter_obj = {
+        "players": {
+            # Positionsslots – kann man erweitern, aber für normale Ligen reicht das
+            "filterSlotIds": {"value": [0, 2, 4, 6, 16, 17]},
+            "limit": 10000,
+            "offset": 0,
+        }
+    }
+
     headers = {"x-fantasy-filter": json.dumps(filter_obj)}
 
     print(f"Hole Spieler für Saison {season} ...")
-    resp = requests.get(base_url, params=params, headers=headers)
-    resp.raise_for_status()
+    resp = requests.get(url, params=params, headers=headers)
+
+    if resp.status_code != 200:
+        # Debug-Ausgabe, falls ESPN wieder etwas ändert
+        print("Fehler beim ESPN-Call:")
+        print("Status:", resp.status_code)
+        print("Response (gekürzt):", resp.text[:500])
+        resp.raise_for_status()
+
     data = resp.json()
 
+    # Im leaguedefaults-Response liegen die Spieler unter data["players"]
+    players = data.get("players", [])
+
     rows = []
-    for p in data:
+    for p in players:
         pid = p.get("id")
         full_name = p.get("fullName")
         pos_id = p.get("defaultPositionId")
@@ -57,6 +82,7 @@ def fetch_players_for_season(season: int):
             }
         )
 
+    print(f"  --> {len(rows)} Spieler gefunden")
     return rows
 
 
@@ -72,7 +98,7 @@ def main():
     df = pd.DataFrame(all_rows)
 
     if df.empty:
-        print("Keine Daten erhalten – prüf deine Internetverbindung oder ob ESPN irgendwas geblockt hat.")
+        print("Keine Daten erhalten – prüf Verbindung oder ob ESPN etwas blockt.")
         return
 
     # Pro espn_id nur eine Zeile behalten (erste Saison, in der der Spieler auftaucht)
