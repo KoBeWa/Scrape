@@ -1,0 +1,255 @@
+block_id,week,teams,players,values
+1,16,oG United,Steve Smith · WR · BAL,
+2,16,oG United,Mark Ingram · RB · NO,
+3,16,oG United,Lamar Miller · RB · MIA,-0.12
+4,16,oG United,Chris Ivory · RB · NYJ,
+5,16,Fetti EV,Kevin White · WR · FA; Karlos Williams · RB · BUF,
+6,16,Fetti EV,Kelvin Benjamin · TE · FA; John Brown · WR · ARI,
+7,16,Fetti EV,Arian Foster · RB · FA; Golden Tate · WR · DET,
+8,16,Fetti EV,Jordy Nelson · WR · FA; Cairo Santos · K · KC,
+9,16,oG United,Tim Tebow · TE · DEN; Travis Kelce · TE · KC,-0.19
+10,16,Fetti EV,Jamaal Charles · RB · KC,
+11,16,Fetti EV,Ryan Mathews · RB · PHI,
+12,16,Fetti EV,Chris Boswell · K · PIT,
+13,16,Fetti EV,Kirk Cousins · QB · WAS,-0.91
+14,16,Fetti EV,Ryan Mathews · RB · PHI; Ronnie Hillman · RB · DEN,
+15,16,Fetti EV,Kirk Cousins · QB · WAS; LeSean McCoy · RB · BUF,0.91
+16,16,colin's edelmaenner,Jameis Winston · QB · TB; A.J. McCarron · QB · FA,0.08
+17,16,WhoDatNation,Houston Texans · DEF · HOU; New England Patriots · DEF · NE,0.81
+18,16,Fetti EV,Golden Tate · WR · DET; Bryce Brown · RB · FA,
+19,16,oG United,Christine Michael · RB · FA; Shaun Draughn · RB · CLE,
+20,15,Promille Boords,James White · RB · FA; Karlos Williams · RB · BUF,0.83
+21,15,colin's edelmaenner,A.J. McCarron · QB · FA; Tyrod Taylor · QB · BUF,
+22,15,Fetti EV,Cairo Santos · K · KC; Chris Boswell · K · PIT,
+23,15,colin's edelmaenner,Antonio Gates · TE · FA; Jimmy Graham · TE · SEA,
+24,15,colin's edelmaenner,Tyrod Taylor · QB · BUF; Andy Dalton · QB · CIN,
+25,15,WhoDatNation,Matthew Stafford · QB · DET; Philadelphia Eagles · DEF · PHI,0.51
+26,15,Die Punter,Marques Colston · WR · NO; Tavon Austin · WR · LAR,
+27,15,Fetti EV,Bryce Brown · RB · FA; Austin Seferian-Jenkins · TE · TB,-0.04
+28,15,Fetti EV,Chris Boswell · K · PIT; Cairo Santos · K · KC,
+29,15,oG United,Pittsburgh Steelers · DEF · PIT; Green Bay Packers · DEF · GB,
+30,15,Promille Boords,Brandon Bolden · RB · NE; LeGarrette Blount · RB · FA,
+31,15,Die Punter,Tyler Lockett · WR · SEA; Blaine Gabbert · QB · FA,
+32,15,WhoDatNation,New England Patriots · DEF · NE; Buffalo Bills · DEF · BUF,0.88
+33,14,oG United,Green Bay Packers · DEF · GB; Kamar Aiken · WR · BAL,-0.96
+34,14,Fetti EV,Austin Seferian-Jenkins · TE · TB; Scott Chandler · TE · NE,
+35,14,Promille Boords,Julian Edelman · WR · NE; Willie Snead · WR · NO,
+36,14,Die Punter,Tavon Austin · WR · LAR; Michael Crabtree · WR · LV,
+37,14,oG United,James White · RB · FA,1.69
+38,14,oG United,Mark Ingram · RB · NO,
+39,14,Die Punter,Charles Sims · RB · TB; Davante Adams · WR · GB,0.82
+40,14,Fetti EV,Tim Hightower · RB · FA; James White · RB · FA,2.06
+41,14,Fetti EV,DeVante Parker · WR · FA; Tavon Austin · WR · LAR,
+42,14,WhoDatNation,Chandler Catanzaro · K · ARI; Jason Myers · K · JAX,1.13
+43,14,Die Punter,Blaine Gabbert · QB · FA; Duke Johnson · RB · CLE,
+44,14,Amari and Dorial GmbH,Richard Rodgers · TE · GB; Jason Witten · TE · DAL,
+45,14,oG United,Shaun Draughn · RB · CLE; Houston Texans · DEF · HOU,-1.88
+46,13,Fetti EV,New England Patriots · DEF · NE,2.5
+47,13,Promille Boords,DeSean Jackson · WR · WAS; Richard Rodgers · TE · GB,
+48,13,colin's edelmaenner,Spencer Ware · RB · FA; Jameis Winston · QB · TB,
+49,13,Fetti EV,Mason Crosby · K · GB,
+50,13,Die Punter,Duke Johnson · RB · CLE; Carlos Hyde · RB · SF,
+51,13,Die Punter,Eric Ebron · TE · DET,
+52,13,Fetti EV,Cairo Santos · K · KC; Connor Barth · K · FA,
+53,13,oG United,Houston Texans · DEF · HOU; DeSean Jackson · WR · WAS,0.75
+54,13,Amari and Dorial GmbH,C.J. Anderson · RB · DEN; Eli Manning · QB · NYG,
+55,13,Promille Boords,Cincinnati Bengals · DEF · CIN; New England Patriots · DEF · NE,-1.5
+56,13,WhoDatNation,Julius Thomas · TE · FA; Ben Watson · TE · NO,
+57,13,WhoDatNation,Jason Myers · K · JAX; Chandler Catanzaro · K · ARI,-1.0
+58,13,Fetti EV,Chris Johnson · RB · ARI,
+59,12,Fetti EV,Connor Barth · K · FA; Houston Texans · DEF · HOU,-2.19
+60,12,oG United,DeSean Jackson · WR · WAS; Jordy Nelson · WR · FA,
+61,12,WhoDatNation|oG United,Latavius Murray · RB · LV; Jordy Nelson · WR · FA; Latavius Murray · RB · LV; Jordy Nelson · WR · FA,26.1;-26.1
+62,12,colin's edelmaenner|WhoDatNation,Jimmy Graham · TE · SEA; Martavis Bryant · WR · FA; Buffalo Bills · DEF · BUF; John Brown · WR · ARI; Jimmy Graham · TE · SEA; Martavis Bryant · WR · FA; Buffalo Bills · DEF · BUF; John Brown · WR · ARI,-8.9;8.9
+63,12,Fetti EV,Tevin Coleman · RB · ATL; Kevin White · WR · FA,
+64,12,Fetti EV,Kevin White · WR · FA,
+65,12,Fetti EV,Tony Romo · QB · DAL,
+66,12,Fetti EV,Mason Crosby · K · GB; Justin Tucker · K · BAL,
+67,12,oG United,Spencer Ware · RB · FA; Tavon Austin · WR · LAR,
+68,12,Die Punter,Justin Forsett · RB · BAL,
+69,12,WhoDatNation,Chandler Catanzaro · K · ARI; Ryan Mathews · RB · PHI,1.56
+70,12,WhoDatNation,Jordy Nelson · WR · FA,
+71,12,oG United,Kamar Aiken · WR · BAL; Matt Ryan · QB · ATL,2.06
+72,12,Die Punter,Javorius Allen · RB · BAL; James White · RB · FA,1.5
+73,12,Amari and Dorial GmbH,Thomas Rawls · RB · SEA; Cairo Santos · K · KC,
+74,12,colin's edelmaenner,Jameis Winston · QB · TB; Derek Carr · QB · LV,
+75,12,WhoDatNation,T.J. Yeldon · RB · JAX,
+76,12,WhoDatNation,Dan Bailey · K · DAL,
+77,12,WhoDatNation,New York Jets · DEF · NYJ,
+78,11,Fetti EV,Kansas City Chiefs · DEF · KC; Cincinnati Bengals · DEF · CIN,8.63
+79,11,WhoDatNation|oG United,Philadelphia Eagles · DEF · PHI; Cam Newton · QB · CAR; Philadelphia Eagles · DEF · PHI; Cam Newton · QB · CAR,-26.16;26.16
+80,11,Fetti EV,Houston Texans · DEF · HOU; Kamar Aiken · WR · BAL,1.35
+81,11,Fetti EV,Cincinnati Bengals · DEF · CIN; Green Bay Packers · DEF · GB,5.25
+82,11,Promille Boords,New England Patriots · DEF · NE; Kansas City Chiefs · DEF · KC,-10.13
+83,11,colin's edelmaenner,Derek Carr · QB · LV; T.J. Yeldon · RB · JAX,
+84,11,Promille Boords|oG United,Blake Bortles · QB · JAX; Matt Ryan · QB · ATL; Blake Bortles · QB · JAX; Matt Ryan · QB · ATL,27.69;-27.69
+85,11,Amari and Dorial GmbH|oG United,Matt Forte · RB · CHI; Latavius Murray · RB · LV; Matt Forte · RB · CHI; Latavius Murray · RB · LV,1.09;-1.09
+86,11,oG United,Tavon Austin · WR · LAR,
+87,11,oG United,Julian Edelman · WR · NE,
+88,11,Fetti EV,Tony Romo · QB · DAL; Derek Carr · QB · LV,
+89,11,Promille Boords,Kansas City Chiefs · DEF · KC; Pittsburgh Steelers · DEF · PIT,13.88
+90,11,Amari and Dorial GmbH,Cairo Santos · K · KC; New England Patriots · DEF · NE,-3.75
+91,11,colin's edelmaenner,Danny Amendola · WR · NE; Adam Vinatieri · K · IND,
+92,10,Amari and Dorial GmbH|oG United,Latavius Murray · RB · LV; Matt Forte · RB · CHI; Latavius Murray · RB · LV; Matt Forte · RB · CHI,4.29;-4.29
+93,10,Promille Boords|oG United,Matt Ryan · QB · ATL; Blake Bortles · QB · JAX; Matt Ryan · QB · ATL; Blake Bortles · QB · JAX,-39.31;39.31
+94,10,Fetti EV,Jordan Matthews · TE · PHI; Rishard Matthews · WR · MIA,4.68
+95,10,WhoDatNation,Ryan Mathews · RB · PHI; Alfred Blue · RB · HOU,
+96,10,Fetti EV,Rishard Matthews · WR · MIA; Kamar Aiken · WR · BAL,-5.34
+97,10,Fetti EV,Derek Carr · QB · LV; Tyrod Taylor · QB · BUF,
+98,10,Kessinho10,Graham Gano · K · CAR; Matt Bryant · K · ATL,5.69
+99,10,Die Punter,James White · RB · FA; Melvin Gordon · RB · LAC,9.32
+100,10,Promille Boords,Pittsburgh Steelers · DEF · PIT; Atlanta Falcons · DEF · ATL,
+101,10,WhoDatNation,New York Jets · DEF · NYJ; New York Giants · DEF · NYG,
+102,10,Amari and Dorial GmbH|oG United,New England Patriots · DEF · NE; Philadelphia Eagles · DEF · PHI; New England Patriots · DEF · NE; Philadelphia Eagles · DEF · PHI,13.13;-13.13
+103,10,Die Punter,C.J. Anderson · RB · DEN,
+104,9,colin's edelmaenner,Buffalo Bills · DEF · BUF; Larry Donnell · TE · NYG,
+105,9,colin's edelmaenner,Adam Vinatieri · K · IND; Duke Johnson · RB · CLE,
+106,9,Die Punter,Jeremy Langford · RB · CHI; Danny Amendola · WR · NE,14.55
+107,9,Fetti EV,Stevie Johnson · WR · LAC; Malcom Floyd · WR · LAC,
+108,9,Promille Boords,Willie Snead · WR · NO,
+109,9,Kessinho10,C.J. Spiller · RB · FA; Andre Ellington · RB · ARI,
+110,9,Fetti EV,Malcom Floyd · WR · LAC; Marvin Jones · WR · CIN,
+111,9,Die Punter,Dan Carpenter · K · BUF; Mason Crosby · K · GB,
+112,9,Fetti EV,Cincinnati Bengals · DEF · CIN; Green Bay Packers · DEF · GB,8.5
+113,9,Fetti EV,Josh Lambo · K · LAC; Kamar Aiken · WR · BAL,-0.65
+114,9,WhoDatNation,New York Giants · DEF · NYG; New York Jets · DEF · NYJ,-1.5
+115,9,Die Punter,Michael Crabtree · WR · LV; Ryan Tannehill · QB · MIA,
+116,9,Fetti EV,Kamar Aiken · WR · BAL; Ladarius Green · TE · LAC,0.65
+117,9,Amari and Dorial GmbH,Eli Manning · QB · NYG; David Johnson · RB · ARI,-17.6
+118,9,WhoDatNation,Dan Bailey · K · DAL; Chandler Catanzaro · K · ARI,-2.0
+119,9,Fetti EV,Keenan Allen · WR · LAC,
+120,9,Promille Boords,Steve Smith · WR · BAL,
+121,8,Fetti EV,Tyrod Taylor · QB · BUF,
+122,8,WhoDatNation,Miami Dolphins · DEF · MIA,
+123,8,WhoDatNation|Fetti EV,Martavis Bryant · WR · FA; Alfred Blue · RB · HOU; Chris Johnson · RB · ARI; Martavis Bryant · WR · FA; Alfred Blue · RB · HOU; Chris Johnson · RB · ARI,20.81;-20.81
+124,8,oG United|Amari and Dorial GmbH,New England Patriots · DEF · NE; Philadelphia Eagles · DEF · PHI; New England Patriots · DEF · NE; Philadelphia Eagles · DEF · PHI,23.63;-23.63
+125,8,colin's edelmaenner,Duke Johnson · RB · CLE; DeSean Jackson · WR · WAS,
+126,8,colin's edelmaenner,Larry Donnell · TE · NYG; Pierre Garcon · WR · WAS,
+127,8,Die Punter,Davante Adams · WR · GB; Dan Carpenter · K · BUF,
+128,8,Die Punter,Danny Amendola · WR · NE,
+129,8,Fetti EV,Marvin Jones · WR · CIN; Donte Moncrief · WR · IND,
+130,8,Kessinho10,Nate Washington · WR · HOU; Minnesota Vikings · DEF · MIN,
+131,8,oG United,Jordan Reed · TE · WAS; Delanie Walker · TE · TEN,-4.39
+132,8,WhoDatNation,Miami Dolphins · DEF · MIA; Rashad Jennings · RB · NYG,
+133,8,Promille Boords,Stefon Diggs · WR · HOU,
+134,8,Die Punter,Arian Foster · RB · FA,
+135,7,colin's edelmaenner,Andy Dalton · QB · CIN; Marcus Mariota · QB · TEN,
+136,7,Promille Boords,Jonathan Stewart · RB · CAR; Mike Wallace · WR · MIN,
+137,7,Fetti EV,Ladarius Green · TE · LAC; Christine Michael · RB · FA,
+138,7,WhoDatNation|Promille Boords,Darren McFadden · RB · DAL; Jarvis Landry · WR · MIA; Darren McFadden · RB · DAL; Jarvis Landry · WR · MIA,-10.72;10.72
+139,7,Kessinho10,Brandon LaFell · WR · FA; Andy Dalton · QB · CIN,
+140,7,Promille Boords,Cairo Santos · K · KC,-5.63
+141,7,Promille Boords,Cairo Santos · K · KC; Ryan Mathews · RB · PHI,5.63
+142,7,oG United,Delanie Walker · TE · TEN,40.69
+143,7,Fetti EV,Buffalo Bills · DEF · BUF; Eli Manning · QB · NYG,
+144,7,WhoDatNation,Ben Watson · TE · NO; Richard Rodgers · TE · GB,3.81
+145,7,Die Punter,Dan Carpenter · K · BUF; C.J. Anderson · RB · DEN,
+146,7,Promille Boords,Atlanta Falcons · DEF · ATL; Detroit Lions · DEF · DET,
+147,7,oG United,Lamar Miller · RB · MIA; Isaiah Crowell · RB · CLE,38.13
+148,7,WhoDatNation,Rashad Jennings · RB · NYG; Vincent Jackson · WR · TB,
+149,7,Fetti EV,Martavis Bryant · WR · FA; Charcandrick West · RB · FA,-3.25
+150,7,Promille Boords,Allen Hurns · WR · JAX; Jordan Matthews · TE · PHI,-14.38
+151,7,Promille Boords,Bishop Sankey · RB · TEN,
+152,7,Promille Boords|oG United,Darren McFadden · RB · DAL; LeGarrette Blount · RB · FA; Julius Thomas · TE · FA; Mark Ingram · RB · NO; Chris Ivory · RB · NYJ; Darren McFadden · RB · DAL; LeGarrette Blount · RB · FA; Julius Thomas · TE · FA; Mark Ingram · RB · NO; Chris Ivory · RB · NYJ,-15.12;15.12
+153,6,Fetti EV,Christine Michael · RB · FA; Delanie Walker · TE · TEN,-49.64
+154,6,oG United,Isaiah Crowell · RB · CLE; Duke Johnson · RB · CLE,
+155,6,colin's edelmaenner,DeSean Jackson · WR · WAS; Rishard Matthews · WR · MIA,
+156,6,Promille Boords,Detroit Lions · DEF · DET; Cincinnati Bengals · DEF · CIN,-8.25
+157,6,oG United,Duke Johnson · RB · CLE,
+158,6,Promille Boords,Mike Wallace · WR · MIN; Kendall Wright · WR · TEN,
+159,6,Kessinho10,Minnesota Vikings · DEF · MIN; Marquess Wilson · WR · CHI,
+160,6,WhoDatNation,Richard Rodgers · TE · GB; Dan Bailey · K · DAL,
+161,6,Kessinho10,Marquess Wilson · WR · CHI; Golden Tate · WR · DET,
+162,6,Fetti EV,Eli Manning · QB · NYG; Peyton Manning · QB · DEN,
+163,6,WhoDatNation,Chandler Catanzaro · K · ARI; Baltimore Ravens · DEF · BAL,4.13
+164,6,Die Punter,Giovani Bernard · RB · CIN; Atlanta Falcons · DEF · ATL,
+165,6,Promille Boords,Gary Barnidge · TE · CLE; Richard Rodgers · TE · GB,19.11
+166,6,Amari and Dorial GmbH,David Johnson · RB · ARI; Lamar Miller · RB · MIA,-35.55
+167,6,oG United,Jamaal Charles · RB · KC,
+168,5,colin's edelmaenner,Pierre Garcon · WR · WAS; Jordan Reed · TE · WAS,-40.05
+169,5,oG United,Ben Roethlisberger · QB · PIT,
+170,5,Die Punter,C.J. Anderson · RB · DEN; Nelson Agholor · WR · PHI,
+171,5,Amari and Dorial GmbH,Danny Woodhead · RB · LAC; Tevin Coleman · RB · ATL,26.03
+172,5,colin's edelmaenner,Alfred Blue · RB · HOU,
+173,5,colin's edelmaenner|oG United,DeMarco Murray · RB · PHI; Rishard Matthews · WR · MIA; Jordan Reed · TE · WAS; Julian Edelman · WR · NE; Julius Thomas · TE · FA; DeMarco Murray · RB · PHI; Rishard Matthews · WR · MIA; Jordan Reed · TE · WAS; Julian Edelman · WR · NE; Julius Thomas · TE · FA,28.95;-28.95
+174,5,colin's edelmaenner,Marcus Mariota · QB · TEN; Buffalo Bills · DEF · BUF,
+175,5,Die Punter|Kessinho10,Ameer Abdullah · RB · DET; Tyler Eifert · TE · CIN; Ameer Abdullah · RB · DET; Tyler Eifert · TE · CIN,-40.8;40.8
+176,5,WhoDatNation,Vincent Jackson · WR · TB; Danny Woodhead · RB · LAC,-26.03
+177,5,WhoDatNation,Baltimore Ravens · DEF · BAL; New York Giants · DEF · NYG,
+178,5,Fetti EV,Delanie Walker · TE · TEN; Jordan Cameron · TE · MIA,51.6
+179,5,WhoDatNation,New York Giants · DEF · NYG; Tennessee Titans · DEF · TEN,
+180,5,oG United,Darren McFadden · RB · DAL,16.8
+181,5,Die Punter,Atlanta Falcons · DEF · ATL; Houston Texans · DEF · HOU,-11.25
+182,5,WhoDatNation,Chris Johnson · RB · ARI; Isaiah Crowell · RB · CLE,
+183,5,Promille Boords,Tavon Austin · WR · LAR; DeAngelo Williams · RB · PIT,-38.78
+184,5,Fetti EV,Ronnie Hillman · RB · DEN; C.J. Anderson · RB · DEN,
+185,5,oG United,Dan Carpenter · K · BUF,
+186,4,WhoDatNation,Tennessee Titans · DEF · TEN; James Starks · RB · GB,
+187,4,oG United,Los Angeles Rams · DEF · LAR; Marcus Mariota · QB · TEN,0.81
+188,4,Fetti EV,Green Bay Packers · DEF · GB; Los Angeles Rams · DEF · LAR,-0.81
+189,4,Die Punter|Kessinho10,Tyler Eifert · TE · CIN; Ameer Abdullah · RB · DET; Tyler Eifert · TE · CIN; Ameer Abdullah · RB · DET,48.75;-48.75
+190,4,oG United,Rishard Matthews · WR · MIA; Miami Dolphins · DEF · MIA,
+191,4,oG United,Marcus Mariota · QB · TEN; Philip Rivers · QB · LAC,
+192,4,oG United,Dan Carpenter · K · BUF; Stevie Johnson · WR · LAC,
+193,4,Promille Boords,Brandon McManus · K · DEN; Randy Bullock · K · HOU,
+194,4,Kessinho10,Golden Tate · WR · DET; Danny Woodhead · RB · LAC,-35.59
+195,4,oG United,Jordan Reed · TE · WAS; Tony Romo · QB · DAL,43.47
+196,4,Amari and Dorial GmbH,Josh Brown · K · NYG; Cody Parkey · K · PHI,
+197,4,colin's edelmaenner,John Brown · WR · ARI; Mike Wallace · WR · MIN,
+198,4,Die Punter,Carolina Panthers · DEF · CAR; Jonathan Stewart · RB · CAR,17.06
+199,4,Fetti EV,Karlos Williams · RB · BUF; Terrance Williams · WR · DAL,
+200,3,oG United,Miami Dolphins · DEF · MIA; Baltimore Ravens · DEF · BAL,
+201,3,colin's edelmaenner,Mike Wallace · WR · MIN; Tyler Lockett · WR · SEA,
+202,3,Amari and Dorial GmbH|oG United,Jason Witten · TE · DAL; Matt Ryan · QB · ATL; Jason Witten · TE · DAL; Matt Ryan · QB · ATL,30.49;-30.49
+203,3,Kessinho10,Eric Decker · WR · NYJ; Darren McFadden · RB · DAL,-3.94
+204,3,oG United,Stevie Johnson · WR · LAC; Roddy White · WR · ATL,
+205,3,WhoDatNation,James Starks · RB · GB; New Orleans Saints · DEF · NO,
+206,3,Kessinho10,Denver Broncos · DEF · DEN; Miami Dolphins · DEF · MIA,9.63
+207,3,WhoDatNation,Isaiah Crowell · RB · CLE; C.J. Spiller · RB · FA,
+208,3,Amari and Dorial GmbH,Travis Benjamin · WR · CLE; Mike Wallace · WR · MIN,
+209,3,Fetti EV,Dion Lewis · RB · NE; Joique Bell · RB · DET,
+210,3,Promille Boords,DeAngelo Williams · RB · PIT; Coby Fleener · TE · IND,30.28
+211,2,Kessinho10,Ladarius Green · TE · LAC; Greg Olsen · TE · CAR,-71.91
+212,2,colin's edelmaenner,Mike Evans · WR · TB; Martavis Bryant · WR · FA,
+213,2,Die Punter,Carlos Hyde · RB · SF; Golden Tate · WR · DET,
+214,2,WhoDatNation,New Orleans Saints · DEF · NO; Green Bay Packers · DEF · GB,
+215,2,Kessinho10,Danny Woodhead · RB · LAC; Jarryd Hayne · RB · SF,44.72
+216,2,Promille Boords,Bishop Sankey · RB · TEN; Torrey Smith · WR · SF,
+217,2,Promille Boords,Kendall Wright · WR · TEN; Mike Evans · WR · TB,
+218,2,Fetti EV,Donte Moncrief · WR · IND; Victor Cruz · WR · FA,
+219,2,Kessinho10,Tyler Eifert · TE · CIN; Zach Ertz · TE · PHI,
+220,2,Fetti EV,Carson Palmer · QB · ARI; Matthew Stafford · QB · DET,13.78
+221,2,oG United,LeGarrette Blount · RB · FA; Giovani Bernard · RB · CIN,-0.56
+222,2,Promille Boords,Austin Seferian-Jenkins · TE · TB,
+223,2,colin's edelmaenner,Tyler Lockett · WR · SEA; Carlos Hyde · RB · SF,
+224,1,Kessinho10,Zach Ertz · TE · PHI; Indianapolis Colts · DEF · IND,
+225,1,colin's edelmaenner,Alfred Blue · RB · HOU; Marcus Mariota · QB · TEN,
+226,1,oG United,Roddy White · WR · ATL,
+227,1,Promille Boords|oG United,Mike Evans · WR · TB; Davante Adams · WR · GB; Demaryius Thomas · WR · DEN; Mike Evans · WR · TB; Davante Adams · WR · GB; Demaryius Thomas · WR · DEN,-176.8;176.8
+228,1,WhoDatNation,Green Bay Packers · DEF · GB; New Orleans Saints · DEF · NO,
+229,1,colin's edelmaenner,Charles Clay · TE · BUF; LeGarrette Blount · RB · FA,
+230,1,WhoDatNation,John Brown · WR · ARI; Charles Johnson · DL · CAR,
+231,1,Kessinho10,Jarryd Hayne · RB · SF; Kevin White · WR · FA,
+232,1,Promille Boords,Jordy Nelson · WR · FA,
+233,1,Promille Boords,Kelvin Benjamin · TE · FA,
+234,1,Promille Boords,Cincinnati Bengals · DEF · CIN; Green Bay Packers · DEF · GB,10
+235,1,Amari and Dorial GmbH,Tevin Coleman · RB · ATL; Anquan Boldin · WR · SF,
+236,1,Amari and Dorial GmbH,Doug Martin · RB · TB; Adam Vinatieri · K · IND,41
+237,1,Amari and Dorial GmbH,Allen Robinson · WR · JAX; Andre Williams · RB · NYG,69.4
+238,1,Fetti EV,Joseph Randle · RB · DAL; Tevin Coleman · RB · ATL,
+239,1,oG United,Latavius Murray · RB · LV; Doug Martin · RB · TB,-19.3
+240,1,Amari and Dorial GmbH,Anquan Boldin · WR · SF; Latavius Murray · RB · LV,-21.7
+241,1,Amari and Dorial GmbH,Andre Williams · RB · NYG; Zach Ertz · TE · PHI,
+242,1,Amari and Dorial GmbH,Mike Wallace · WR · MIN; Joseph Randle · RB · DAL,
+243,1,colin's edelmaenner,Martavis Bryant · WR · FA; Pierre Garcon · WR · WAS,
+244,1,oG United,Jason Witten · TE · DAL; Breshad Perriman · WR · FA,
+245,1,oG United,Doug Martin · RB · TB; Rashad Jennings · RB · NYG,41
+246,1,Fetti EV,Jordan Cameron · TE · MIA; Delanie Walker · TE · TEN,-49.8
+247,1,Fetti EV,Tevin Coleman · RB · ATL; Isaiah Crowell · RB · CLE,
+248,1,oG United,Davante Adams · WR · GB; Jordan Cameron · TE · MIA,
+249,1,Die Punter,Ameer Abdullah · RB · DET; Fred Jackson · RB · SEA,
+250,1,colin's edelmaenner,Arizona Cardinals · DEF · ARI; San Francisco 49ers · DEF · SF,43
+251,1,WhoDatNation,New York Jets · DEF · NYJ; Arizona Cardinals · DEF · ARI,-43
+252,1,Die Punter,Fred Jackson · RB · SEA; Andre Williams · RB · NYG,
+253,1,Fetti EV,Victor Cruz · WR · FA,
+254,1,Fetti EV,Dwayne Allen · TE · IND,
