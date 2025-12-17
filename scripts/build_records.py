@@ -640,48 +640,48 @@ def build_league_records(tg: pd.DataFrame, cfg: dict) -> List[dict]:
         })
 
     # ---- Basic / Matchup-based records (use career(scope)) ----
-    add_record("Total Wins", "Most total wins in league history.", career("R"), "wins", True)
-    add_record("Total Losses", "Most total losses in league history.", career("R"), "losses", True)
-    add_record("Win Percent", "Best win percentage in league history.", career("R"), "win_pct", True)
+    add_record("Total Wins", "Most total wins in league history.", career("R+P"), "wins", True)
+    add_record("Total Losses", "Most total losses in league history.", career("R+P"), "losses", True)
+    add_record("Win Percent", "Best win percentage in league history.", career("R+P"), "win_pct", True)
 
-    add_record("All Play Wins", "Most total all-play wins in league history.", career("R"), "all_play_wins", True)
-    add_record("All Play Losses", "Most total all-play losses in league history.", career("R"), "all_play_losses", True)
-    add_record("All Play Win Percent", "Best all-play win percentage in league history.", career("R"), "all_play_win_pct", True)
+    add_record("All Play Wins", "Most total all-play wins in league history.", career("R+P"), "all_play_wins", True)
+    add_record("All Play Losses", "Most total all-play losses in league history.", career("R+P"), "all_play_losses", True)
+    add_record("All Play Win Percent", "Best all-play win percentage in league history.", career("R+P"), "all_play_win_pct", True)
 
-    add_record("Total Points", "Most total points scored in league history.", career("R"), "points_for", True)
-    add_record("Total Opponent Points", "Most total opponent points allowed in league history.", career("R"), "points_against", True)
+    add_record("Total Points", "Most total points scored in league history.", career("R+P"), "points_for", True)
+    add_record("Total Opponent Points", "Most total opponent points allowed in league history.", career("R+P"), "points_against", True)
 
-    add_record("Points Share Average", "Highest average share of total points scored in matchups over league history.", career("R"), "points_share_avg", True)
-    add_record("Opponent Points Share Average", "Highest average share of total points scored by opponents over league history.", career("R"), "opp_points_share_avg", True)
+    add_record("Points Share Average", "Highest average share of total points scored in matchups over league history.", career("R+P"), "points_share_avg", True)
+    add_record("Opponent Points Share Average", "Highest average share of total points scored by opponents over league history.", career("R+P"), "opp_points_share_avg", True)
 
-    add_record("Luckiest", "Luckiest member in league history (based on opponent performance).", career("R"), "luck_avg", True)
-    add_record("Luckiest (Least)", "Unluckiest member in league history (based on opponent performance).", career("R"), "luck_avg", False)
+    add_record("Luckiest", "Luckiest member in league history (based on opponent performance).", career("R+P"), "luck_avg", True)
+    add_record("Luckiest (Least)", "Unluckiest member in league history (based on opponent performance).", career("R+P"), "luck_avg", False)
 
-    add_record("Strength of Schedule", "Toughest average strength of schedule in league history.", career("R"), "sos_avg_opp_points", True)
-    add_record("Strength of Schedule (Easiest)", "Easiest average strength of schedule in league history.", career("R"), "sos_avg_opp_points", False)
+    add_record("Strength of Schedule", "Toughest average strength of schedule in league history.", career("R+P"), "sos_avg_opp_points", True)
+    add_record("Strength of Schedule (Easiest)", "Easiest average strength of schedule in league history.", career("R+P"), "sos_avg_opp_points", False)
 
-    add_record("High Scores", "Most matchups with the weekly high score in league history.", career("R"), "high_scores", True)
-    add_record("High Scores Percent", "Highest percentage of matchups with the weekly high score.", career("R"), "high_scores", True, as_pct_of_games=True)
+    add_record("High Scores", "Most matchups with the weekly high score in league history.", career("R+P"), "high_scores", True)
+    add_record("High Scores Percent", "Highest percentage of matchups with the weekly high score.", career("R+P"), "high_scores", True, as_pct_of_games=True)
 
-    add_record("Top Scores", "Most matchups with a top score (top tier) in league history.", career("R"), "top_scores", True)
-    add_record("Top Scores Percent", "Highest percentage of matchups with a top score.", career("R"), "top_scores", True, as_pct_of_games=True)
+    add_record("Top Scores", "Most matchups with a top score (top tier) in league history.", career("R+P"), "top_scores", True)
+    add_record("Top Scores Percent", "Highest percentage of matchups with a top score.", career("R+P"), "top_scores", True, as_pct_of_games=True)
 
-    add_record("Top Half Scores", "Most matchups finishing in the top half of weekly scores in league history.", career("R"), "top_half_scores", True)
-    add_record("Top Half Score Percent", "Highest percentage of matchups finishing in the top half.", career("R"), "top_half_scores", True, as_pct_of_games=True)
+    add_record("Top Half Scores", "Most matchups finishing in the top half of weekly scores in league history.", career("R+P"), "top_half_scores", True)
+    add_record("Top Half Score Percent", "Highest percentage of matchups finishing in the top half.", career("R+P"), "top_half_scores", True, as_pct_of_games=True)
 
-    add_record("Worst Scores", "Most matchups with the lowest score of the week in league history.", career("R"), "worst_scores", True)
-    add_record("Worst Scores Percent", "Highest percentage of matchups with the lowest score.", career("R"), "worst_scores", True, as_pct_of_games=True)
+    add_record("Worst Scores", "Most matchups with the lowest score of the week in league history.", career("R+P"), "worst_scores", True)
+    add_record("Worst Scores Percent", "Highest percentage of matchups with the lowest score.", career("R+P"), "worst_scores", True, as_pct_of_games=True)
 
-    add_record("Bottom Scores", "Most matchups with a bottom score (bottom tier) in league history.", career("R"), "bottom_scores", True)
-    add_record("Bottom Scores Percent", "Highest percentage of matchups with a bottom score.", career("R"), "bottom_scores", True, as_pct_of_games=True)
+    add_record("Bottom Scores", "Most matchups with a bottom score (bottom tier) in league history.", career("R+P"), "bottom_scores", True)
+    add_record("Bottom Scores Percent", "Highest percentage of matchups with a bottom score.", career("R+P"), "bottom_scores", True, as_pct_of_games=True)
 
-    add_record("Bottom Half Scores", "Most matchups finishing in the bottom half of weekly scores in league history.", career("R"), "bottom_half_scores", True)
-    add_record("Bottom Half Score Percent", "Highest percentage of matchups finishing in the bottom half.", career("R"), "bottom_half_scores", True, as_pct_of_games=True)
+    add_record("Bottom Half Scores", "Most matchups finishing in the bottom half of weekly scores in league history.", career("R+P"), "bottom_half_scores", True)
+    add_record("Bottom Half Score Percent", "Highest percentage of matchups finishing in the bottom half.", career("R+P"), "bottom_half_scores", True, as_pct_of_games=True)
 
-    add_record("Blowout Wins", "Most wins by a large margin in league history.", career("R"), "blowout_wins", True)
-    add_record("Blowout Losses", "Most losses by a large margin in league history.", career("R"), "blowout_losses", True)
-    add_record("Narrow Wins", "Most wins by a narrow margin in league history.", career("R"), "narrow_wins", True)
-    add_record("Narrow Losses", "Most losses by a narrow margin in league history.", career("R"), "narrow_losses", True)
+    add_record("Blowout Wins", "Most wins by a large margin in league history.", career("R+P"), "blowout_wins", True)
+    add_record("Blowout Losses", "Most losses by a large margin in league history.", career("R+P"), "blowout_losses", True)
+    add_record("Narrow Wins", "Most wins by a narrow margin in league history.", career("R+P"), "narrow_wins", True)
+    add_record("Narrow Losses", "Most losses by a narrow margin in league history.", career("R+P"), "narrow_losses", True)
 
     # ---- Title/Medal/Playoff appearance records (rank rules) ----
     tm = ensure_titles_medals()
