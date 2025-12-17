@@ -1,0 +1,19 @@
+record,description,leader,value
+Win Streak,Most consecutive matchups won.,Marv,16
+Loss Streak,Most consecutive matchups lost.,Kessi,15
+High Score Streak,Most consecutive matchups with the highest weekly score.,Benni,3
+Top Score Streak,Most consecutive matchups finishing among the top scores of the week.,Benni,12
+Top Half Streak,Most consecutive matchups finishing in the top half of weekly scoring.,Marv,16
+High Score Drought,Most consecutive matchups without scoring the highest weekly score.,Kessi,47
+Top Score Drought,Most consecutive matchups without finishing among the top scores of the week.,Kessi,22
+Top Half Drought,Most consecutive matchups without finishing in the top half of scoring.,Tommy,20
+Winning Record Streak,Most consecutive seasons with a winning record.,Benni,6
+Winning Record Drought,Most consecutive seasons without a winning record.,Kessi,8
+Playoff Appearance Streak,Most consecutive seasons making the playoffs.,Benni,7
+Playoff Appearance Drought,Most consecutive seasons without making the playoffs.,Simi,6
+Championship Streak,Most consecutive seasons winning the championship.,Erik,2
+Championship Drought,Most consecutive seasons without winning the championship.,Benni,11
+Title Game Streak,Most consecutive seasons reaching the title game.,Benni,2
+Title Game Drought,Most consecutive seasons without reaching the title game.,Tommy,11
+Medal Streak,Most consecutive seasons finishing in a medal position (e.g. 1st/2nd/3rd).,Benni,5
+Medal Drought,Most consecutive seasons without a medal finish (no top final rank).,Kessi,6

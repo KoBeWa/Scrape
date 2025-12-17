@@ -1,0 +1,729 @@
+{
+  "league": [
+    {
+      "record": "Total Wins",
+      "description": "Most total wins in league history.",
+      "leader": "Benni",
+      "value": 94.0
+    },
+    {
+      "record": "Total Losses",
+      "description": "Most total losses in league history.",
+      "leader": "Juschka",
+      "value": 95.0
+    },
+    {
+      "record": "Win Percent",
+      "description": "Best win percentage in league history.",
+      "leader": "Benni",
+      "value": 0.6103896103896104
+    },
+    {
+      "record": "All Play Wins",
+      "description": "Most total all-play wins (if playing every team each week) in league history.",
+      "leader": "Benni",
+      "value": 656.0
+    },
+    {
+      "record": "All Play Losses",
+      "description": "Most total all-play losses (if playing every team each week) in league history.",
+      "leader": "Kessi",
+      "value": 617.0
+    },
+    {
+      "record": "All Play Win Percent",
+      "description": "Best all-play win percentage in league history.",
+      "leader": "Benni",
+      "value": 0.608534322820037
+    },
+    {
+      "record": "Total Points",
+      "description": "Most total points scored in league history.",
+      "leader": "Benni",
+      "value": 16532.46
+    },
+    {
+      "record": "Total Opponent Points",
+      "description": "Most total opponent points allowed in league history.",
+      "leader": "Erik",
+      "value": 15776.6
+    },
+    {
+      "record": "Points Share Average",
+      "description": "Highest average share of total points scored in matchups over league history.",
+      "leader": "Benni",
+      "value": 0.519169564828107
+    },
+    {
+      "record": "Opponent Points Share Average",
+      "description": "Highest average share of total points scored by opponents over league history.",
+      "leader": "Juschka",
+      "value": 0.5173782757117465
+    },
+    {
+      "record": "Luckiest",
+      "description": "Luckiest member in league history (based on opponent performance).",
+      "leader": "Ritz",
+      "value": 0.0616883116883117
+    },
+    {
+      "record": "Luckiest (Least)",
+      "description": "Unluckiest member in league history (based on opponent performance).",
+      "leader": "Juschka",
+      "value": -0.052875695732838575
+    },
+    {
+      "record": "Strength of Schedule",
+      "description": "Toughest average strength of schedule (highest opponents’ points rank) in league history.",
+      "leader": "Juschka",
+      "value": 1414.1002597402596
+    },
+    {
+      "record": "Strength of Schedule (Easiest)",
+      "description": "Easiest average strength of schedule (lowest opponents’ points rank) in league history.",
+      "leader": "Benni",
+      "value": 1391.067792207792
+    },
+    {
+      "record": "High Scores",
+      "description": "Most matchups with the weekly high score in league history.",
+      "leader": "Benni",
+      "value": 37.0
+    },
+    {
+      "record": "High Scores Percent",
+      "description": "Highest percentage of matchups with the weekly high score in league history.",
+      "leader": "Benni",
+      "value": 0.24025974025974026
+    },
+    {
+      "record": "Top Scores",
+      "description": "Most matchups with a top score (top tier) in league history.",
+      "leader": "Benni",
+      "value": 75.0
+    },
+    {
+      "record": "Top Scores Percent",
+      "description": "Highest percentage of matchups with a top score in league history.",
+      "leader": "Benni",
+      "value": 0.487012987012987
+    },
+    {
+      "record": "Top Half Scores",
+      "description": "Most matchups finishing in the top half of weekly scores in league history.",
+      "leader": "Benni",
+      "value": 97.0
+    },
+    {
+      "record": "Top Half Score Percent",
+      "description": "Highest percentage of matchups finishing in the top half of weekly scores.",
+      "leader": "Benni",
+      "value": 0.6298701298701299
+    },
+    {
+      "record": "Worst Scores",
+      "description": "Most matchups with the lowest score of the week in league history.",
+      "leader": "Juschka",
+      "value": 34.0
+    },
+    {
+      "record": "Worst Scores Percent",
+      "description": "Highest percentage of matchups with the lowest score of the week.",
+      "leader": "Juschka",
+      "value": 0.22077922077922077
+    },
+    {
+      "record": "Bottom Scores",
+      "description": "Most matchups with a bottom score (bottom tier) in league history.",
+      "leader": "Kessi",
+      "value": 73.0
+    },
+    {
+      "record": "Bottom Scores Percent",
+      "description": "Highest percentage of matchups with a bottom score in league history.",
+      "leader": "Kessi",
+      "value": 0.474025974025974
+    },
+    {
+      "record": "Bottom Half Scores",
+      "description": "Most matchups finishing in the bottom half of weekly scores in league history.",
+      "leader": "Kessi",
+      "value": 90.0
+    },
+    {
+      "record": "Bottom Half Score Percent",
+      "description": "Highest percentage of matchups finishing in the bottom half of weekly scores.",
+      "leader": "Kessi",
+      "value": 0.5844155844155844
+    },
+    {
+      "record": "Blowout Wins",
+      "description": "Most wins by a large margin in league history.",
+      "leader": "Benni",
+      "value": 35.0
+    },
+    {
+      "record": "Blowout Losses",
+      "description": "Most losses by a large margin in league history.",
+      "leader": "Simi",
+      "value": 30.0
+    },
+    {
+      "record": "Narrow Wins",
+      "description": "Most wins by a narrow margin in league history.",
+      "leader": "Ritz",
+      "value": 12.0
+    },
+    {
+      "record": "Narrow Losses",
+      "description": "Most losses by a narrow margin in league history.",
+      "leader": "Benni",
+      "value": 13.0
+    },
+    {
+      "record": "Regular Season Titles",
+      "description": "Most regular-season titles in league history.",
+      "leader": "Erik",
+      "value": 3.0
+    },
+    {
+      "record": "Season Points Titles",
+      "description": "Most seasons leading the regular season in points scored.",
+      "leader": "Benni",
+      "value": 5.0
+    },
+    {
+      "record": "Season All Play Titles",
+      "description": "Most seasons with the best all-play record in league history.",
+      "leader": "Benni",
+      "value": 4.0
+    },
+    {
+      "record": "Seasons Winning Record",
+      "description": "Most seasons with an overall winning record in league history.",
+      "leader": "Benni",
+      "value": 8.0
+    },
+    {
+      "record": "Seasons Losing Record",
+      "description": "Most seasons with an overall losing record in league history.",
+      "leader": "Juschka",
+      "value": 9.0
+    },
+    {
+      "record": "Championships",
+      "description": "Most league championships in league history.",
+      "leader": "Erik",
+      "value": 3.0
+    },
+    {
+      "record": "Medal Score",
+      "description": "Best medal score over league history (points based on final rank).",
+      "leader": "Erik",
+      "value": 13.0
+    },
+    {
+      "record": "Total Medals",
+      "description": "Most total medals (finishes counted as medal ranks) in league history.",
+      "leader": "Benni",
+      "value": 7.0
+    },
+    {
+      "record": "Playoff Appearances",
+      "description": "Most playoff appearances in league history.",
+      "leader": "Benni",
+      "value": 8.0
+    },
+    {
+      "record": "Playoff Wins",
+      "description": "Most playoff wins in league history.",
+      "leader": "Erik",
+      "value": 12.0
+    },
+    {
+      "record": "Playoff Losses",
+      "description": "Most playoff losses in league history.",
+      "leader": "Tommy",
+      "value": 12.0
+    },
+    {
+      "record": "Total Playoff Points",
+      "description": "Most total playoff points scored in league history.",
+      "leader": "Erik",
+      "value": 2261.66
+    },
+    {
+      "record": "Total Playoff Opponent Points",
+      "description": "Most total playoff points allowed to opponents in league history.",
+      "leader": "Benni",
+      "value": 2198.88
+    }
+  ],
+  "season": [
+    {
+      "record": "Season Score",
+      "description": "Highest season score in a single season.",
+      "season": 2018,
+      "leader": "Benni",
+      "value": 1709.76
+    },
+    {
+      "record": "Season Score (Lowest)",
+      "description": "Lowest season score in a single season.",
+      "season": 2017,
+      "leader": "Kessi",
+      "value": 1190.3
+    },
+    {
+      "record": "Season Luckiest",
+      "description": "Luckiest team in a season (based on opponents’ performance).",
+      "season": 2021,
+      "leader": "Erik",
+      "value": 0.2448979591836735
+    },
+    {
+      "record": "Season Luckiest (Lowest)",
+      "description": "Unluckiest team in a season (based on opponents’ performance).",
+      "season": 2022,
+      "leader": "Simi",
+      "value": -0.2755102040816327
+    },
+    {
+      "record": "Strength of Schedule",
+      "description": "Toughest strength of schedule in a season (highest opponents’ points rank).",
+      "season": 2018,
+      "leader": "Kessi",
+      "value": 1528.4285714285713
+    },
+    {
+      "record": "Strength of Schedule (Easiest)",
+      "description": "Easiest strength of schedule in a season (lowest opponents’ points rank).",
+      "season": 2017,
+      "leader": "Simi",
+      "value": 1289.7628571428572
+    },
+    {
+      "record": "Most Wins",
+      "description": "Most wins in a single season.",
+      "season": 2018,
+      "leader": "Ritz",
+      "value": 13.0
+    },
+    {
+      "record": "Most Losses",
+      "description": "Most losses in a single season.",
+      "season": 2018,
+      "leader": "Kessi",
+      "value": 14.0
+    },
+    {
+      "record": "Most All Play Wins",
+      "description": "Most all-play wins (vs every team each week) in a season.",
+      "season": 2018,
+      "leader": "Ritz",
+      "value": 77.0
+    },
+    {
+      "record": "Most All Play Losses",
+      "description": "Most all-play losses (vs every team each week) in a season.",
+      "season": 2018,
+      "leader": "Kessi",
+      "value": 82.0
+    },
+    {
+      "record": "Best All Play Win Percent",
+      "description": "Best all-play win percentage in a season.",
+      "season": 2018,
+      "leader": "Ritz",
+      "value": 0.7857142857142857
+    },
+    {
+      "record": "Most Points",
+      "description": "Most points scored in a season.",
+      "season": 2018,
+      "leader": "Benni",
+      "value": 1709.76
+    },
+    {
+      "record": "Most Opponent Points",
+      "description": "Most opponent points allowed in a season.",
+      "season": 2022,
+      "leader": "Simi",
+      "value": 1605.1
+    },
+    {
+      "record": "Fewest Points",
+      "description": "Fewest points scored in a season.",
+      "season": 2017,
+      "leader": "Kessi",
+      "value": 1190.3
+    },
+    {
+      "record": "Fewest Opponent Points",
+      "description": "Fewest opponent points allowed in a season.",
+      "season": 2015,
+      "leader": "Kessi",
+      "value": 1178.28
+    },
+    {
+      "record": "Highest Points Share",
+      "description": "Highest points share in a season (share of total points scored in matchups).",
+      "season": 2022,
+      "leader": "Benni",
+      "value": 0.5549524383992833
+    },
+    {
+      "record": "Lowest Points Share",
+      "description": "Lowest / worst points share in a season.",
+      "season": 2018,
+      "leader": "Kessi",
+      "value": 0.4378209040460125
+    },
+    {
+      "record": "Highest Opponent Points Share",
+      "description": "Highest opponents’ points share in a season.",
+      "season": 2018,
+      "leader": "Kessi",
+      "value": 0.5621790959539875
+    },
+    {
+      "record": "Lowest Opponent Points Share",
+      "description": "Lowest / worst opponents’ points share in a season.",
+      "season": 2022,
+      "leader": "Benni",
+      "value": 0.4450475616007167
+    },
+    {
+      "record": "High Scores",
+      "description": "Most matchups finishing with the weekly high score in a season.",
+      "season": 2022,
+      "leader": "Benni",
+      "value": 8.0
+    },
+    {
+      "record": "Top Scores",
+      "description": "Most matchups finishing among the top scores of the week in a season.",
+      "season": 2016,
+      "leader": "Marv",
+      "value": 11.0
+    },
+    {
+      "record": "Top Half Scores",
+      "description": "Most matchups finishing in the top half of weekly scoring in a season.",
+      "season": 2018,
+      "leader": "Ritz",
+      "value": 14.0
+    },
+    {
+      "record": "Worst Scores",
+      "description": "Most matchups finishing with the lowest score of the week in a season.",
+      "season": 2023,
+      "leader": "Juschka",
+      "value": 6.0
+    },
+    {
+      "record": "Bottom Scores",
+      "description": "Most matchups finishing in the bottom scoring tier in a season.",
+      "season": 2018,
+      "leader": "Kessi",
+      "value": 13.0
+    },
+    {
+      "record": "Bottom Half Scores",
+      "description": "Most matchups finishing in the bottom half of weekly scoring in a season.",
+      "season": 2018,
+      "leader": "Kessi",
+      "value": 14.0
+    },
+    {
+      "record": "Most Blowout Wins",
+      "description": "Most wins by a large margin in a season.",
+      "season": 2019,
+      "leader": "Marv",
+      "value": 7.0
+    },
+    {
+      "record": "Most Blowout Losses",
+      "description": "Most losses by a large margin in a season.",
+      "season": 2021,
+      "leader": "Simi",
+      "value": 6.0
+    },
+    {
+      "record": "Most Narrow Wins",
+      "description": "Most wins by a small margin in a season.",
+      "season": 2016,
+      "leader": "Tommy",
+      "value": 4.0
+    },
+    {
+      "record": "Most Narrow Losses",
+      "description": "Most losses by a small margin in a season.",
+      "season": 2015,
+      "leader": "Marv",
+      "value": 3.0
+    }
+  ],
+  "matchup": [
+    {
+      "record": "Most Matchup Points",
+      "description": "Most points scored by a single team in one matchup.",
+      "season": 2023,
+      "week": 3,
+      "team": "Benni",
+      "opponent": "Kessi",
+      "is_playoff": false,
+      "value": 188.58,
+      "points_for": 188.58,
+      "points_against": 82.68,
+      "margin": 105.9
+    },
+    {
+      "record": "Fewest Matchup Points",
+      "description": "Fewest points scored by a single team in one matchup.",
+      "season": 2017,
+      "week": 16,
+      "team": "Marv",
+      "opponent": "Kessi",
+      "is_playoff": true,
+      "value": 11.0,
+      "points_for": 11.0,
+      "points_against": 11.0,
+      "margin": 0.0
+    },
+    {
+      "record": "Highest Combined Score",
+      "description": "Highest combined score by both teams in a matchup.",
+      "season": 2021,
+      "week": 5,
+      "matchup_key": "2021-5-benni__vs__tommy",
+      "is_playoff": false,
+      "value": 316.2
+    },
+    {
+      "record": "Lowest Combined Score",
+      "description": "Lowest combined score by both teams in a matchup.",
+      "season": 2017,
+      "week": 16,
+      "matchup_key": "2017-16-kessi__vs__marv",
+      "is_playoff": true,
+      "value": 22.0
+    },
+    {
+      "record": "Biggest Blowout",
+      "description": "Largest score margin in any matchup.",
+      "season": 2022,
+      "week": 8,
+      "matchup_key": "2022-8-erik__vs__kessi",
+      "is_playoff": false,
+      "value": 119.06
+    },
+    {
+      "record": "Narrowest Win",
+      "description": "Smallest score margin in any matchup.",
+      "season": 2017,
+      "week": 16,
+      "matchup_key": "2017-16-kessi__vs__marv",
+      "is_playoff": true,
+      "value": 0.0
+    },
+    {
+      "record": "Highest Points Share",
+      "description": "Highest percentage of total points scored by one team in a matchup.",
+      "season": 2015,
+      "week": 3,
+      "team": "Kessi",
+      "opponent": "Juschka",
+      "is_playoff": false,
+      "value": 0.7620534599050711,
+      "points_for": 122.02,
+      "points_against": 38.1,
+      "margin": 83.91999999999999
+    },
+    {
+      "record": "Lowest Points Share",
+      "description": "Lowest percentage of total points scored by one team in a matchup.",
+      "season": 2015,
+      "week": 3,
+      "team": "Juschka",
+      "opponent": "Kessi",
+      "is_playoff": false,
+      "value": 0.2379465400949288,
+      "points_for": 38.1,
+      "points_against": 122.02,
+      "margin": -83.91999999999999
+    },
+    {
+      "record": "Most Playoff Matchup Points",
+      "description": "Most points scored by a single team in a playoff matchup.",
+      "season": 2015,
+      "week": 15,
+      "team": "Erik",
+      "opponent": "Juschka",
+      "is_playoff": true,
+      "value": 164.3,
+      "points_for": 164.3,
+      "points_against": 103.44,
+      "margin": 60.860000000000014
+    },
+    {
+      "record": "Fewest Playoff Matchup Points",
+      "description": "Fewest points scored by a single team in a playoff matchup.",
+      "season": 2017,
+      "week": 16,
+      "team": "Marv",
+      "opponent": "Kessi",
+      "is_playoff": true,
+      "value": 11.0,
+      "points_for": 11.0,
+      "points_against": 11.0,
+      "margin": 0.0
+    },
+    {
+      "record": "Highest Playoff Combined Score",
+      "description": "Highest combined score by both teams in a playoff matchup.",
+      "season": 2024,
+      "week": 15,
+      "matchup_key": "2024-15-marv__vs__tommy",
+      "is_playoff": true,
+      "value": 283.98
+    },
+    {
+      "record": "Lowest Playoff Combined Score",
+      "description": "Lowest combined score by both teams in a playoff matchup.",
+      "season": 2017,
+      "week": 16,
+      "matchup_key": "2017-16-kessi__vs__marv",
+      "is_playoff": true,
+      "value": 22.0
+    },
+    {
+      "record": "Biggest Playoff Win",
+      "description": "Largest score margin in a playoff matchup.",
+      "season": 2023,
+      "week": 15,
+      "matchup_key": "2023-15-erik__vs__simi",
+      "is_playoff": true,
+      "value": 105.05999999999999
+    },
+    {
+      "record": "Narrowest Playoff Win",
+      "description": "Smallest score margin in a playoff matchup.",
+      "season": 2017,
+      "week": 16,
+      "matchup_key": "2017-16-kessi__vs__marv",
+      "is_playoff": true,
+      "value": 0.0
+    }
+  ],
+  "streak": [
+    {
+      "record": "Win Streak",
+      "description": "Most consecutive matchups won.",
+      "leader": "Marv",
+      "value": 16
+    },
+    {
+      "record": "Loss Streak",
+      "description": "Most consecutive matchups lost.",
+      "leader": "Kessi",
+      "value": 15
+    },
+    {
+      "record": "High Score Streak",
+      "description": "Most consecutive matchups with the highest weekly score.",
+      "leader": "Benni",
+      "value": 3
+    },
+    {
+      "record": "Top Score Streak",
+      "description": "Most consecutive matchups finishing among the top scores of the week.",
+      "leader": "Benni",
+      "value": 12
+    },
+    {
+      "record": "Top Half Streak",
+      "description": "Most consecutive matchups finishing in the top half of weekly scoring.",
+      "leader": "Marv",
+      "value": 16
+    },
+    {
+      "record": "High Score Drought",
+      "description": "Most consecutive matchups without scoring the highest weekly score.",
+      "leader": "Kessi",
+      "value": 47
+    },
+    {
+      "record": "Top Score Drought",
+      "description": "Most consecutive matchups without finishing among the top scores of the week.",
+      "leader": "Kessi",
+      "value": 22
+    },
+    {
+      "record": "Top Half Drought",
+      "description": "Most consecutive matchups without finishing in the top half of scoring.",
+      "leader": "Tommy",
+      "value": 20
+    },
+    {
+      "record": "Winning Record Streak",
+      "description": "Most consecutive seasons with a winning record.",
+      "leader": "Benni",
+      "value": 6
+    },
+    {
+      "record": "Winning Record Drought",
+      "description": "Most consecutive seasons without a winning record.",
+      "leader": "Kessi",
+      "value": 8
+    },
+    {
+      "record": "Playoff Appearance Streak",
+      "description": "Most consecutive seasons making the playoffs.",
+      "leader": "Benni",
+      "value": 7
+    },
+    {
+      "record": "Playoff Appearance Drought",
+      "description": "Most consecutive seasons without making the playoffs.",
+      "leader": "Simi",
+      "value": 6
+    },
+    {
+      "record": "Championship Streak",
+      "description": "Most consecutive seasons winning the championship.",
+      "leader": "Erik",
+      "value": 2
+    },
+    {
+      "record": "Championship Drought",
+      "description": "Most consecutive seasons without winning the championship.",
+      "leader": "Benni",
+      "value": 11
+    },
+    {
+      "record": "Title Game Streak",
+      "description": "Most consecutive seasons reaching the title game.",
+      "leader": "Benni",
+      "value": 2
+    },
+    {
+      "record": "Title Game Drought",
+      "description": "Most consecutive seasons without reaching the title game.",
+      "leader": "Tommy",
+      "value": 11
+    },
+    {
+      "record": "Medal Streak",
+      "description": "Most consecutive seasons finishing in a medal position (e.g. 1st/2nd/3rd).",
+      "leader": "Benni",
+      "value": 5
+    },
+    {
+      "record": "Medal Drought",
+      "description": "Most consecutive seasons without a medal finish (no top final rank).",
+      "leader": "Kessi",
+      "value": 6
+    }
+  ]
+}

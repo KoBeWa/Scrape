@@ -1,0 +1,15 @@
+record,description,season,week,team,opponent,is_playoff,value,points_for,points_against,margin,matchup_key
+Most Matchup Points,Most points scored by a single team in one matchup.,2023,3,Benni,Kessi,False,188.58,188.58,82.68,105.9,
+Fewest Matchup Points,Fewest points scored by a single team in one matchup.,2017,16,Marv,Kessi,True,11.0,11.0,11.0,0.0,
+Highest Combined Score,Highest combined score by both teams in a matchup.,2021,5,,,False,316.2,,,,2021-5-benni__vs__tommy
+Lowest Combined Score,Lowest combined score by both teams in a matchup.,2017,16,,,True,22.0,,,,2017-16-kessi__vs__marv
+Biggest Blowout,Largest score margin in any matchup.,2022,8,,,False,119.06,,,,2022-8-erik__vs__kessi
+Narrowest Win,Smallest score margin in any matchup.,2017,16,,,True,0.0,,,,2017-16-kessi__vs__marv
+Highest Points Share,Highest percentage of total points scored by one team in a matchup.,2015,3,Kessi,Juschka,False,0.7620534599050711,122.02,38.1,83.91999999999999,
+Lowest Points Share,Lowest percentage of total points scored by one team in a matchup.,2015,3,Juschka,Kessi,False,0.2379465400949288,38.1,122.02,-83.91999999999999,
+Most Playoff Matchup Points,Most points scored by a single team in a playoff matchup.,2015,15,Erik,Juschka,True,164.3,164.3,103.44,60.860000000000014,
+Fewest Playoff Matchup Points,Fewest points scored by a single team in a playoff matchup.,2017,16,Marv,Kessi,True,11.0,11.0,11.0,0.0,
+Highest Playoff Combined Score,Highest combined score by both teams in a playoff matchup.,2024,15,,,True,283.98,,,,2024-15-marv__vs__tommy
+Lowest Playoff Combined Score,Lowest combined score by both teams in a playoff matchup.,2017,16,,,True,22.0,,,,2017-16-kessi__vs__marv
+Biggest Playoff Win,Largest score margin in a playoff matchup.,2023,15,,,True,105.05999999999999,,,,2023-15-erik__vs__simi
+Narrowest Playoff Win,Smallest score margin in a playoff matchup.,2017,16,,,True,0.0,,,,2017-16-kessi__vs__marv
