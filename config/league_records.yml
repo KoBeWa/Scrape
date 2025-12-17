@@ -1,0 +1,17 @@
+top_tier_count: 3
+bottom_tier_count: 3
+
+blowout_margin: 30
+narrow_margin: 5
+
+# playoffs beginnen ab woche 15 -> regular season wochen = 14
+default_regular_season_weeks: 14
+
+# wie viele teams kommen in die playoffs (meist 4 bei 8 teams)
+playoff_teams: 4
+
+# medal points fürs "Medal Score"
+medal_points:
+  "1": 3
+  "2": 2
+  "3": 1
