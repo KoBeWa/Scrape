@@ -21,7 +21,11 @@ except Exception:
 # ============================================================
 
 DEFAULTS = {
-    # weekly award tiers (e.g. 8 teams -> top 3 / bottom 3)
+    # playoffs begin week 15 -> regular season weeks = 14
+    "default_regular_season_weeks": 14,
+    "regular_season_weeks": {},  # optional: {"2015": 14, ...}
+
+    # weekly award tiers (8 teams -> top 3 / bottom 3)
     "top_tier_count": 3,
     "bottom_tier_count": 3,
 
@@ -29,15 +33,16 @@ DEFAULTS = {
     "blowout_margin": 30,
     "narrow_margin": 5,
 
-    # playoffs begin week 15 -> regular season weeks = 14
-    "default_regular_season_weeks": 14,
-    "regular_season_weeks": {},  # optional: {"2015": 14, ...}
-
-    # playoff settings (for appearances from reg-season rank)
+    # playoff appearance logic from end-of-regular-season rank
     "playoff_teams": 4,
 
     # medal scoring
     "medal_points": {"1": 3, "2": 2, "3": 1},
+
+    # ranking rule split:
+    # 2015-2021 use CSV Rank
+    # 2022+ derive rank by points_for
+    "rank_legacy_end_season": 2021,
 }
 
 
@@ -58,8 +63,91 @@ def load_config(repo_root: Path) -> dict:
     return cfg
 
 
+def reg_end_week(season: int, cfg: dict) -> int:
+    rm = cfg.get("regular_season_weeks", {}) or {}
+    return int(rm.get(str(season), cfg.get("default_regular_season_weeks", 14)))
+
+
+def is_playoff_week(season: int, week: int, cfg: dict) -> bool:
+    return week > reg_end_week(season, cfg)
+
+
 # ============================================================
-# CSV NORMALIZATION (your header is fixed, but robust anyway)
+# RECORD SCOPES (R / P / R+P)
+# ============================================================
+# Du kannst diese Zuordnung jederzeit ändern.
+LEAGUE_RECORD_SCOPES = {
+    # Basic record book (typisch: Regular Season)
+    "Total Wins": "R",
+    "Total Losses": "R",
+    "Win Percent": "R",
+
+    "All Play Wins": "R",
+    "All Play Losses": "R",
+    "All Play Win Percent": "R",
+
+    "Total Points": "R",
+    "Total Opponent Points": "R",
+    "Points Share Average": "R",
+    "Opponent Points Share Average": "R",
+
+    "Luckiest": "R",
+    "Luckiest (Least)": "R",
+
+    "Strength of Schedule": "R",
+    "Strength of Schedule (Easiest)": "R",
+
+    "High Scores": "R",
+    "High Scores Percent": "R",
+    "Top Scores": "R",
+    "Top Scores Percent": "R",
+    "Top Half Scores": "R",
+    "Top Half Score Percent": "R",
+
+    "Worst Scores": "R",
+    "Worst Scores Percent": "R",
+    "Bottom Scores": "R",
+    "Bottom Scores Percent": "R",
+    "Bottom Half Scores": "R",
+    "Bottom Half Score Percent": "R",
+
+    "Blowout Wins": "R",
+    "Blowout Losses": "R",
+    "Narrow Wins": "R",
+    "Narrow Losses": "R",
+
+    "Regular Season Titles": "R",        # aus Saison-Rank (reg end)
+    "Season Points Titles": "R",
+    "Season All Play Titles": "R",
+    "Seasons Winning Record": "R",
+    "Seasons Losing Record": "R",
+
+    "Championships": "R+P",              # aus final rank
+    "Medal Score": "R+P",
+    "Total Medals": "R+P",
+    "Playoff Appearances": "R",          # aus reg end rank
+
+    # Playoff-only records
+    "Playoff Wins": "P",
+    "Playoff Losses": "P",
+    "Total Playoff Points": "P",
+    "Total Playoff Opponent Points": "P",
+}
+
+
+def apply_scope(df: pd.DataFrame, scope: str) -> pd.DataFrame:
+    scope = scope.upper().strip()
+    if scope == "R":
+        return df[df["is_playoff"] == False].copy()
+    if scope == "P":
+        return df[df["is_playoff"] == True].copy()
+    if scope in {"R+P", "RP", "ALL"}:
+        return df.copy()
+    raise ValueError(f"Unknown scope '{scope}' (expected R, P, R+P)")
+
+
+# ============================================================
+# CSV NORMALIZATION (fixed header schema)
 # ============================================================
 
 def norm_col(c: str) -> str:
@@ -86,8 +174,7 @@ def to_int(x) -> Optional[int]:
     if pd.isna(x):
         return None
     try:
-        v = int(float(str(x).strip().replace(",", ".")))
-        return v
+        return int(float(str(x).strip().replace(",", ".")))
     except Exception:
         return None
 
@@ -110,33 +197,22 @@ def make_matchup_key(season: int, week: int, team: str, opp: str) -> str:
     return f"{season}-{week}-{a}__vs__{b}"
 
 
-def infer_is_playoff(season: int, week: int, cfg: dict) -> bool:
-    reg_map = cfg.get("regular_season_weeks", {}) or {}
-    reg_weeks = int(reg_map.get(str(season), cfg.get("default_regular_season_weeks", 14)))
-    return week > reg_weeks
-
-
 def normalize_week_csv(df: pd.DataFrame, season: int, week: int, cfg: dict) -> List[TeamGame]:
     """
-    Supports your schema:
+    Your schema:
       Owner, Rank, ..., Total, Opponent, Opponent Total
-    Ignores duplicate "Points" columns (pandas will make them points, points.1, ...)
+    Duplicate "Points" columns are ignored.
     """
     df = df.copy()
     df.columns = [norm_col(c) for c in df.columns]
 
-    # Required in your export
-    # owner -> team
-    # opponent -> opponent
-    # total -> pf
-    # opponent_total -> pa
     required = ["owner", "opponent", "total", "opponent_total"]
     for r in required:
         if r not in df.columns:
             raise ValueError(f"Missing required column '{r}' in season={season} week={week}. Found: {list(df.columns)}")
 
     out: List[TeamGame] = []
-    is_po = infer_is_playoff(season, week, cfg)
+    po = is_playoff_week(season, week, cfg)
 
     for _, row in df.iterrows():
         team = str(row["owner"]).strip()
@@ -154,7 +230,7 @@ def normalize_week_csv(df: pd.DataFrame, season: int, week: int, cfg: dict) -> L
                 points_for=pf,
                 points_against=pa,
                 rank=rk,
-                is_playoff=is_po,
+                is_playoff=po,
                 matchup_key=make_matchup_key(season, week, team, opp),
             )
         )
@@ -162,23 +238,15 @@ def normalize_week_csv(df: pd.DataFrame, season: int, week: int, cfg: dict) -> L
 
 
 # ============================================================
-# METRICS
+# ENRICHMENT: weekly awards, all-play, matchup flags
 # ============================================================
 
 def compute_week_awards(tg: pd.DataFrame, cfg: dict) -> pd.DataFrame:
-    """
-    Computes weekly ranks, high/low, top/bottom tier, top/bottom half.
-    Done per (season, week) across ALL teams (regular+playoff weeks as they are in that week).
-    """
     tg = tg.copy()
     tg["points_for"] = tg["points_for"].astype(float)
 
     tg["week_team_count"] = tg.groupby(["season", "week"])["team"].transform("nunique").astype(int)
-    tg["week_rank"] = (
-        tg.groupby(["season", "week"])["points_for"]
-        .rank(method="min", ascending=False)
-        .astype(int)
-    )
+    tg["week_rank"] = tg.groupby(["season", "week"])["points_for"].rank(method="min", ascending=False).astype(int)
 
     top_n = int(cfg.get("top_tier_count", 3))
     bottom_n = int(cfg.get("bottom_tier_count", 3))
@@ -196,23 +264,17 @@ def compute_week_awards(tg: pd.DataFrame, cfg: dict) -> pd.DataFrame:
 
 
 def compute_all_play(tg: pd.DataFrame) -> pd.DataFrame:
-    """
-    All-play per week: each team plays every other team that week.
-    Ties get 0.5 win / 0.5 loss vs tied teams.
-    """
     tg = tg.copy()
 
     def _per_week(g: pd.DataFrame) -> pd.DataFrame:
         pts = g["points_for"].astype(float).values
         n = len(pts)
-
-        wins = []
-        losses = []
+        wins, losses = [], []
         for i in range(n):
             p = pts[i]
             less = (pts < p).sum()
             greater = (pts > p).sum()
-            equal = (pts == p).sum() - 1  # exclude self
+            equal = (pts == p).sum() - 1
             w = float(less) + 0.5 * float(equal)
             l = float(greater) + 0.5 * float(equal)
             wins.append(w)
@@ -224,8 +286,7 @@ def compute_all_play(tg: pd.DataFrame) -> pd.DataFrame:
         out["all_play_win_pct"] = out["all_play_wins"] / (n - 1 if n > 1 else 1)
         return out
 
-    tg = tg.groupby(["season", "week"], group_keys=False).apply(_per_week)
-    return tg
+    return tg.groupby(["season", "week"], group_keys=False).apply(_per_week)
 
 
 def compute_matchup_flags(tg: pd.DataFrame, cfg: dict) -> pd.DataFrame:
@@ -254,20 +315,21 @@ def compute_matchup_flags(tg: pd.DataFrame, cfg: dict) -> pd.DataFrame:
 
 
 # ============================================================
-# SEASON + CAREER SUMMARIES
+# CAREER STATS (by scope)
 # ============================================================
 
-def season_team_summary(tg: pd.DataFrame) -> pd.DataFrame:
+def career_from_matchups(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Regular season only aggregation by (season, team).
+    df is already filtered by scope (R / P / R+P)
+    Computes team totals / averages.
     """
-    reg = tg[~tg["is_playoff"]].copy()
+    d = df.copy()
 
-    reg["w"] = reg["is_win"].astype(int)
-    reg["l"] = reg["is_loss"].astype(int)
-    reg["t"] = reg["is_tie"].astype(int)
+    d["w"] = d["is_win"].astype(int)
+    d["l"] = d["is_loss"].astype(int)
+    d["t"] = d["is_tie"].astype(int)
 
-    st = reg.groupby(["season", "team"], as_index=False).agg(
+    agg = d.groupby("team", as_index=False).agg(
         wins=("w", "sum"),
         losses=("l", "sum"),
         ties=("t", "sum"),
@@ -276,6 +338,9 @@ def season_team_summary(tg: pd.DataFrame) -> pd.DataFrame:
 
         points_share_avg=("points_share", "mean"),
         opp_points_share_avg=("opp_points_share", "mean"),
+
+        all_play_wins=("all_play_wins", "sum"),
+        all_play_losses=("all_play_losses", "sum"),
 
         high_scores=("is_week_high", "sum"),
         top_scores=("is_top_tier", "sum"),
@@ -288,139 +353,141 @@ def season_team_summary(tg: pd.DataFrame) -> pd.DataFrame:
         blowout_losses=("is_blowout_loss", "sum"),
         narrow_wins=("is_narrow_win", "sum"),
         narrow_losses=("is_narrow_loss", "sum"),
-
-        all_play_wins=("all_play_wins", "sum"),
-        all_play_losses=("all_play_losses", "sum"),
     )
 
-    st["games"] = st["wins"] + st["losses"] + st["ties"]
-    st["win_pct"] = (st["wins"] + 0.5 * st["ties"]) / st["games"].replace(0, float("nan"))
+    agg["games"] = agg["wins"] + agg["losses"] + agg["ties"]
+    agg["win_pct"] = (agg["wins"] + 0.5 * agg["ties"]) / agg["games"].replace(0, float("nan"))
 
-    ap_games = (st["all_play_wins"] + st["all_play_losses"]).replace(0, float("nan"))
-    st["all_play_win_pct"] = st["all_play_wins"] / ap_games
+    ap_games = (agg["all_play_wins"] + agg["all_play_losses"]).replace(0, float("nan"))
+    agg["all_play_win_pct"] = agg["all_play_wins"] / ap_games
 
-    # winning/losing record flags
-    st["winning_record"] = st["wins"] > st["losses"]
-    st["losing_record"] = st["wins"] < st["losses"]
+    # Luck on this scope: actual win value minus all-play win%
+    d["actual_win_value"] = d["is_win"].astype(float) + 0.5 * d["is_tie"].astype(float)
+    d["luck_week"] = d["actual_win_value"] - d["all_play_win_pct"].astype(float)
+    luck = d.groupby("team", as_index=False)["luck_week"].mean().rename(columns={"luck_week": "luck_avg"})
+    agg = agg.merge(luck, on="team", how="left")
 
-    return st
-
-
-def playoff_team_summary(tg: pd.DataFrame) -> pd.DataFrame:
-    po = tg[tg["is_playoff"]].copy()
-    if po.empty:
-        return pd.DataFrame(columns=["season", "team", "playoff_wins", "playoff_losses", "playoff_points_for", "playoff_points_against"])
-
-    po["w"] = po["is_win"].astype(int)
-    po["l"] = po["is_loss"].astype(int)
-
-    return po.groupby(["season", "team"], as_index=False).agg(
-        playoff_wins=("w", "sum"),
-        playoff_losses=("l", "sum"),
-        playoff_points_for=("points_for", "sum"),
-        playoff_points_against=("points_against", "sum"),
-    )
+    return agg
 
 
-def compute_strength_of_schedule(st: pd.DataFrame, tg: pd.DataFrame) -> pd.DataFrame:
+def compute_sos_on_scope(df: pd.DataFrame) -> pd.DataFrame:
     """
-    SOS = average opponents' regular-season season points_for.
+    SOS (scope-based):
+      For each season: compute each team's season points_for (within scope)
+      SOS(team, season) = avg opponents' season points_for
+      Career SOS = mean over seasons
     """
-    reg = tg[~tg["is_playoff"]].copy()
-    pts_map = st.set_index(["season", "team"])["points_for"].to_dict()
+    d = df.copy()
+    season_pts = d.groupby(["season", "team"], as_index=False)["points_for"].sum().rename(columns={"points_for": "season_points_for"})
+    pts_map = season_pts.set_index(["season", "team"])["season_points_for"].to_dict()
 
-    def opp_season_points(row) -> float:
+    def opp_pts(row) -> float:
         return float(pts_map.get((row["season"], row["opponent"]), float("nan")))
 
-    reg["opp_season_points_for"] = reg.apply(opp_season_points, axis=1)
-    sos = reg.groupby(["season", "team"], as_index=False)["opp_season_points_for"].mean().rename(columns={"opp_season_points_for": "sos_avg_opp_points"})
-
-    return st.merge(sos, on=["season", "team"], how="left")
-
-
-def compute_luck(tg: pd.DataFrame) -> pd.DataFrame:
-    """
-    Luck per matchup (regular season only):
-      luck_week = actual_win_value - all_play_win_pct
-    """
-    reg = tg[~tg["is_playoff"]].copy()
-    reg["actual_win_value"] = reg["is_win"].astype(float) + 0.5 * reg["is_tie"].astype(float)
-    reg["luck_week"] = reg["actual_win_value"] - reg["all_play_win_pct"].astype(float)
-    return reg.groupby("team", as_index=False)["luck_week"].mean().rename(columns={"luck_week": "luck_avg"})
+    d["opp_season_points_for"] = d.apply(opp_pts, axis=1)
+    sos_season = d.groupby(["season", "team"], as_index=False)["opp_season_points_for"].mean().rename(columns={"opp_season_points_for": "sos"})
+    sos_career = sos_season.groupby("team", as_index=False)["sos"].mean().rename(columns={"sos": "sos_avg_opp_points"})
+    return sos_career
 
 
 # ============================================================
-# RANK-BASED TITLES / MEDALS / PLAYOFF APPEARANCES
+# RANK TABLES (2015-2021 from CSV Rank, 2022+ by points_for)
 # ============================================================
 
-def rank_snapshots(tg: pd.DataFrame, cfg: dict) -> Tuple[pd.DataFrame, pd.DataFrame]:
+def build_rank_tables(tg: pd.DataFrame, cfg: dict) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
     Returns:
-      reg_rank: ranks at end of regular season (week = reg_end_week)
-      final_rank: final ranks at last week available per season
+      reg_rank: season/team/reg_rank  (rank at end of regular season)
+      final_rank: season/team/final_rank (rank at end of season)
+
+    Rules:
+      - seasons <= rank_legacy_end_season: use CSV Rank if present
+      - seasons >= legacy_end+1: derive rank by points_for (sorted desc)
+          reg_rank: based on regular season points_for
+          final_rank: based on total points_for (regular + playoffs)
     """
-    if "rank" not in tg.columns:
-        return pd.DataFrame(), pd.DataFrame()
+    legacy_end = int(cfg.get("rank_legacy_end_season", 2021))
 
-    r = tg[["season", "week", "team", "rank"]].dropna(subset=["rank"]).copy()
-    if r.empty:
-        return pd.DataFrame(), pd.DataFrame()
+    # Helper: rank by points_for in a dataframe with columns season, team, points_for
+    def rank_by_pf(df_pf: pd.DataFrame, rank_col: str) -> pd.DataFrame:
+        out = []
+        for season, g in df_pf.groupby("season"):
+            g2 = g.copy()
+            g2 = g2.sort_values(["points_for"], ascending=False)
+            # method="min": ties get same best rank
+            g2[rank_col] = g2["points_for"].rank(method="min", ascending=False).astype(int)
+            out.append(g2[["season", "team", rank_col]])
+        return pd.concat(out, ignore_index=True) if out else pd.DataFrame(columns=["season", "team", rank_col])
 
-    r["rank"] = r["rank"].astype(int)
+    # --- legacy seasons: take Rank snapshot from CSV
+    has_rank = "rank" in tg.columns and tg["rank"].notna().any()
 
-    # regular season end week per season
-    reg_end_default = int(cfg.get("default_regular_season_weeks", 14))
-    reg_map = cfg.get("regular_season_weeks", {}) or {}
+    reg_snapshots = []
+    final_snapshots = []
 
-    def reg_end(season: int) -> int:
-        return int(reg_map.get(str(season), reg_end_default))
+    if has_rank:
+        r = tg[["season", "week", "team", "rank"]].dropna(subset=["rank"]).copy()
+        r["rank"] = r["rank"].astype(int)
 
-    r["reg_end_week"] = r["season"].apply(reg_end)
-    reg_rank = r[r["week"] == r["reg_end_week"]].drop(columns=["reg_end_week"]).copy()
+        # reg snapshot at week 14 (or per-season override)
+        r["reg_end_week"] = r["season"].apply(lambda s: reg_end_week(int(s), cfg))
+        reg_legacy = r[(r["season"] <= legacy_end) & (r["week"] == r["reg_end_week"])].copy()
+        if not reg_legacy.empty:
+            reg_snapshots.append(reg_legacy.rename(columns={"rank": "reg_rank"})[["season", "team", "reg_rank"]])
 
-    # final week per season
-    final_week = r.groupby("season")["week"].max().to_dict()
+        # final snapshot at last week per season
+        last_week = r.groupby("season")["week"].max().to_dict()
+        finals = []
+        for (season, team), g in r[r["season"] <= legacy_end].groupby(["season", "team"]):
+            lw = last_week.get(season)
+            rr = g[g["week"] == lw]["rank"]
+            if not rr.empty:
+                finals.append({"season": int(season), "team": team, "final_rank": int(rr.iloc[0])})
+        if finals:
+            final_snapshots.append(pd.DataFrame(finals))
 
-    finals = []
-    for (season, team), g in r.groupby(["season", "team"]):
-        fw = final_week.get(season)
-        rr = g[g["week"] == fw]["rank"]
-        if not rr.empty:
-            finals.append({"season": int(season), "team": team, "final_week": int(fw), "final_rank": int(rr.iloc[0])})
-    final_rank = pd.DataFrame(finals)
+    # --- derived seasons: 2022+ by PF
+    # reg PF: regular season only
+    reg_df = tg[tg["is_playoff"] == False].groupby(["season", "team"], as_index=False)["points_for"].sum()
+    reg_df = reg_df[reg_df["season"] >= (legacy_end + 1)]
+    if not reg_df.empty:
+        reg_snapshots.append(rank_by_pf(reg_df, "reg_rank"))
+
+    # final PF: all games
+    total_df = tg.groupby(["season", "team"], as_index=False)["points_for"].sum()
+    total_df = total_df[total_df["season"] >= (legacy_end + 1)]
+    if not total_df.empty:
+        final_snapshots.append(rank_by_pf(total_df, "final_rank"))
+
+    reg_rank = pd.concat(reg_snapshots, ignore_index=True) if reg_snapshots else pd.DataFrame(columns=["season", "team", "reg_rank"])
+    final_rank = pd.concat(final_snapshots, ignore_index=True) if final_snapshots else pd.DataFrame(columns=["season", "team", "final_rank"])
+
+    # Deduplicate if anything overlaps (shouldn't, but safe)
+    if not reg_rank.empty:
+        reg_rank = reg_rank.sort_values(["season", "team"]).drop_duplicates(["season", "team"], keep="last")
+    if not final_rank.empty:
+        final_rank = final_rank.sort_values(["season", "team"]).drop_duplicates(["season", "team"], keep="last")
 
     return reg_rank, final_rank
 
 
-def add_title_blocks(career: pd.DataFrame, st: pd.DataFrame, tg: pd.DataFrame, cfg: dict) -> pd.DataFrame:
-    """
-    Adds:
-      regular_season_titles (rank==1 at week 14)
-      playoff_appearances (rank <= playoff_teams at week 14)
-      championships (final_rank==1)
-      title_games (final_rank<=2)
-      total_medals (final_rank<=3)
-      medal_score (medal_points map)
-      season_points_titles (max points_for regular season in season)
-      season_all_play_titles (max all_play_wins regular season in season)
-    """
+def add_titles_medals_blocks(career: pd.DataFrame, tg: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     playoff_teams = int(cfg.get("playoff_teams", 4))
     medal_points = cfg.get("medal_points", {"1": 3, "2": 2, "3": 1})
 
-    reg_rank, final_rank = rank_snapshots(tg, cfg)
+    reg_rank, final_rank = build_rank_tables(tg, cfg)
 
-    # --- Rank-based season outcomes
-    title_df = None
+    # Regular Season Titles + Playoff Appearances from reg_rank
     if not reg_rank.empty:
-        reg_rank = reg_rank.copy()
-        reg_rank["is_reg_title"] = reg_rank["rank"] == 1
-        reg_rank["is_po_app"] = reg_rank["rank"] <= playoff_teams
+        rr = reg_rank.copy()
+        rr["is_reg_title"] = rr["reg_rank"] == 1
+        rr["is_po_app"] = rr["reg_rank"] <= playoff_teams
 
-        t1 = reg_rank.groupby("team", as_index=False)["is_reg_title"].sum().rename(columns={"is_reg_title": "regular_season_titles"})
-        t2 = reg_rank.groupby("team", as_index=False)["is_po_app"].sum().rename(columns={"is_po_app": "playoff_appearances"})
-        title_df = t1.merge(t2, on="team", how="outer").fillna(0)
+        t1 = rr.groupby("team", as_index=False)["is_reg_title"].sum().rename(columns={"is_reg_title": "regular_season_titles"})
+        t2 = rr.groupby("team", as_index=False)["is_po_app"].sum().rename(columns={"is_po_app": "playoff_appearances"})
+        career = career.merge(t1, on="team", how="left").merge(t2, on="team", how="left")
 
-    champ_df = None
+    # Championships / medals from final_rank
     if not final_rank.empty:
         fr = final_rank.copy()
         fr["is_champ"] = fr["final_rank"] == 1
@@ -428,39 +495,16 @@ def add_title_blocks(career: pd.DataFrame, st: pd.DataFrame, tg: pd.DataFrame, c
         fr["is_medal"] = fr["final_rank"] <= 3
         fr["medal_score"] = fr["final_rank"].astype(str).map(medal_points).fillna(0).astype(int)
 
-        champ_df = fr.groupby("team", as_index=False).agg(
+        champs = fr.groupby("team", as_index=False).agg(
             championships=("is_champ", "sum"),
             title_games=("is_title_game", "sum"),
             total_medals=("is_medal", "sum"),
             medal_score=("medal_score", "sum"),
-        ).fillna(0)
+        )
+        career = career.merge(champs, on="team", how="left")
 
-    # --- Season titles by points / all-play (computed from regular season totals)
-    # season_points_titles: max points_for within season
-    points_titles = []
-    allplay_titles = []
-    for season, g in st.groupby("season"):
-        g2 = g.copy()
-        if not g2.empty:
-            pmax = g2["points_for"].max()
-            winners = g2[g2["points_for"] == pmax]["team"].tolist()
-            for w in winners:
-                points_titles.append({"team": w, "season_points_titles": 1})
-
-            apmax = g2["all_play_wins"].max()
-            apwinners = g2[g2["all_play_wins"] == apmax]["team"].tolist()
-            for w in apwinners:
-                allplay_titles.append({"team": w, "season_all_play_titles": 1})
-
-    pts_df = pd.DataFrame(points_titles).groupby("team", as_index=False)["season_points_titles"].sum() if points_titles else pd.DataFrame(columns=["team", "season_points_titles"])
-    ap_df = pd.DataFrame(allplay_titles).groupby("team", as_index=False)["season_all_play_titles"].sum() if allplay_titles else pd.DataFrame(columns=["team", "season_all_play_titles"])
-
-    # Merge into career
-    for add in [title_df, champ_df, pts_df, ap_df]:
-        if add is not None and not add.empty:
-            career = career.merge(add, on="team", how="left")
-
-    for col in ["regular_season_titles", "playoff_appearances", "championships", "title_games", "total_medals", "medal_score", "season_points_titles", "season_all_play_titles"]:
+    # Fill missing
+    for col in ["regular_season_titles", "playoff_appearances", "championships", "title_games", "total_medals", "medal_score"]:
         if col not in career.columns:
             career[col] = 0
         career[col] = career[col].fillna(0).astype(int)
@@ -469,179 +513,250 @@ def add_title_blocks(career: pd.DataFrame, st: pd.DataFrame, tg: pd.DataFrame, c
 
 
 # ============================================================
+# SEASON-SUMMARY (Regular season based; used for some league records)
+# ============================================================
+
+def season_summary_regular(tg: pd.DataFrame) -> pd.DataFrame:
+    reg = tg[tg["is_playoff"] == False].copy()
+    reg["w"] = reg["is_win"].astype(int)
+    reg["l"] = reg["is_loss"].astype(int)
+    reg["t"] = reg["is_tie"].astype(int)
+
+    st = reg.groupby(["season", "team"], as_index=False).agg(
+        wins=("w", "sum"),
+        losses=("l", "sum"),
+        ties=("t", "sum"),
+        points_for=("points_for", "sum"),
+        all_play_wins=("all_play_wins", "sum"),
+    )
+    st["winning_record"] = st["wins"] > st["losses"]
+    st["losing_record"] = st["wins"] < st["losses"]
+    return st
+
+
+def compute_season_titles_points_allplay(st: pd.DataFrame) -> pd.DataFrame:
+    """
+    Counts:
+      season_points_titles: seasons with most PF (regular season)
+      season_all_play_titles: seasons with best all-play wins (regular season)
+    """
+    pts_titles = []
+    ap_titles = []
+
+    for season, g in st.groupby("season"):
+        if g.empty:
+            continue
+        pmax = g["points_for"].max()
+        for t in g[g["points_for"] == pmax]["team"].tolist():
+            pts_titles.append({"team": t, "season_points_titles": 1})
+
+        apmax = g["all_play_wins"].max()
+        for t in g[g["all_play_wins"] == apmax]["team"].tolist():
+            ap_titles.append({"team": t, "season_all_play_titles": 1})
+
+    pts_df = pd.DataFrame(pts_titles).groupby("team", as_index=False)["season_points_titles"].sum() if pts_titles else pd.DataFrame(columns=["team", "season_points_titles"])
+    ap_df = pd.DataFrame(ap_titles).groupby("team", as_index=False)["season_all_play_titles"].sum() if ap_titles else pd.DataFrame(columns=["team", "season_all_play_titles"])
+    out = pts_df.merge(ap_df, on="team", how="outer").fillna(0)
+    out["season_points_titles"] = out["season_points_titles"].astype(int)
+    out["season_all_play_titles"] = out["season_all_play_titles"].astype(int)
+    return out
+
+
+# ============================================================
 # RECORD BUILDERS
 # ============================================================
 
-def pick_leader(df: pd.DataFrame, col: str, higher_is_better: bool = True) -> pd.Series:
+def pick_leader(df: pd.DataFrame, col: str, higher: bool = True) -> pd.Series:
     if df.empty or col not in df.columns:
         return pd.Series(dtype=object)
-    if higher_is_better:
-        idx = df[col].astype(float).idxmax()
-    else:
-        idx = df[col].astype(float).idxmin()
+    s = pd.to_numeric(df[col], errors="coerce")
+    if s.isna().all():
+        return pd.Series(dtype=object)
+    idx = s.idxmax() if higher else s.idxmin()
     return df.loc[idx]
 
 
-def league_records(tg: pd.DataFrame, st: pd.DataFrame, po: pd.DataFrame, cfg: dict) -> List[dict]:
+def build_league_records(tg: pd.DataFrame, cfg: dict) -> List[dict]:
     """
-    Career totals/averages across seasons (regular season only for W/L/PF/PA, etc).
+    Builds league records using per-record scopes.
     """
-    # base career from st
-    career = st.groupby("team", as_index=False).agg(
-        total_wins=("wins", "sum"),
-        total_losses=("losses", "sum"),
-        total_ties=("ties", "sum"),
-        total_points=("points_for", "sum"),
-        total_opp_points=("points_against", "sum"),
-
-        points_share_avg=("points_share_avg", "mean"),
-        opp_points_share_avg=("opp_points_share_avg", "mean"),
-
-        all_play_wins=("all_play_wins", "sum"),
-        all_play_losses=("all_play_losses", "sum"),
-
-        high_scores=("high_scores", "sum"),
-        top_scores=("top_scores", "sum"),
-        top_half_scores=("top_half_scores", "sum"),
-        worst_scores=("worst_scores", "sum"),
-        bottom_scores=("bottom_scores", "sum"),
-        bottom_half_scores=("bottom_half_scores", "sum"),
-
-        blowout_wins=("blowout_wins", "sum"),
-        blowout_losses=("blowout_losses", "sum"),
-        narrow_wins=("narrow_wins", "sum"),
-        narrow_losses=("narrow_losses", "sum"),
-
-        seasons_winning_record=("winning_record", "sum"),
-        seasons_losing_record=("losing_record", "sum"),
-        seasons_played=("season", "nunique"),
-    )
-
-    career["games"] = career["total_wins"] + career["total_losses"] + career["total_ties"]
-    career["win_pct"] = (career["total_wins"] + 0.5 * career["total_ties"]) / career["games"].replace(0, float("nan"))
-
-    ap_games = (career["all_play_wins"] + career["all_play_losses"]).replace(0, float("nan"))
-    career["all_play_win_pct"] = career["all_play_wins"] / ap_games
-
-    # Luck + SOS
-    luck = compute_luck(tg)
-    career = career.merge(luck, on="team", how="left")
-
-    if "sos_avg_opp_points" in st.columns:
-        sos_c = st.groupby("team", as_index=False)["sos_avg_opp_points"].mean()
-        career = career.merge(sos_c, on="team", how="left")
-
-    # Titles/Medals
-    career = add_title_blocks(career, st, tg, cfg)
-
-    # Playoff totals
-    if not po.empty:
-        po_c = po.groupby("team", as_index=False).agg(
-            playoff_wins=("playoff_wins", "sum"),
-            playoff_losses=("playoff_losses", "sum"),
-            total_playoff_points=("playoff_points_for", "sum"),
-            total_playoff_opp_points=("playoff_points_against", "sum"),
-        )
-        career = career.merge(po_c, on="team", how="left")
-
-    for col in ["playoff_wins", "playoff_losses", "total_playoff_points", "total_playoff_opp_points"]:
-        if col not in career.columns:
-            career[col] = 0
-        career[col] = career[col].fillna(0)
-
-    # Helper to add one record
     out: List[dict] = []
 
-    def add(key: str, desc: str, col: str, higher=True):
-        row = pick_leader(career, col, higher)
+    # Precompute season-based (regular season) stuff used by some records
+    st_reg = season_summary_regular(tg)
+
+    # Career "seasons winning/losing record"
+    wl_seasons = st_reg.groupby("team", as_index=False).agg(
+        seasons_winning_record=("winning_record", "sum"),
+        seasons_losing_record=("losing_record", "sum"),
+    )
+    # Season titles (points, all-play) from regular season
+    season_titles = compute_season_titles_points_allplay(st_reg)
+
+    # Helper to get career stats by scope
+    career_cache: Dict[str, pd.DataFrame] = {}
+    sos_cache: Dict[str, pd.DataFrame] = {}
+
+    def career(scope: str) -> pd.DataFrame:
+        if scope not in career_cache:
+            df_scoped = apply_scope(tg, scope)
+            c = career_from_matchups(df_scoped)
+            # SOS for this scope
+            sos = compute_sos_on_scope(df_scoped)
+            c = c.merge(sos, on="team", how="left")
+            career_cache[scope] = c
+        return career_cache[scope]
+
+    # Titles/medals blocks (rank logic rules) — independent of record scope
+    # We merge into whichever career df we output records from (safe).
+    titles_medals = None  # computed lazily
+
+    def ensure_titles_medals():
+        nonlocal titles_medals
+        if titles_medals is None:
+            # start from all-teams list
+            base = pd.DataFrame({"team": sorted(tg["team"].dropna().unique().tolist())})
+            titles_medals = add_titles_medals_blocks(base, tg, cfg)
+            titles_medals = titles_medals.merge(wl_seasons, on="team", how="left").merge(season_titles, on="team", how="left").fillna(0)
+        return titles_medals
+
+    def add_record(key: str, desc: str, df: pd.DataFrame, col: str, higher=True, as_pct_of_games: bool = False):
+        d = df.copy()
+        if as_pct_of_games:
+            d[col + "_pct"] = pd.to_numeric(d[col], errors="coerce") / pd.to_numeric(d["games"], errors="coerce").replace(0, float("nan"))
+            col_use = col + "_pct"
+        else:
+            col_use = col
+
+        row = pick_leader(d, col_use, higher)
         if row.empty:
             return
-        val = row[col]
-        out.append({"record": key, "description": desc, "leader": row["team"], "value": float(val) if pd.notna(val) else None})
+        out.append({
+            "record": key,
+            "description": desc,
+            "leader": row["team"],
+            "scope": LEAGUE_RECORD_SCOPES.get(key, "R"),
+            "value": float(row[col_use]) if pd.notna(row[col_use]) else None,
+        })
 
-    add("Total Wins", "Most total wins in league history.", "total_wins", True)
-    add("Total Losses", "Most total losses in league history.", "total_losses", True)
-    add("Win Percent", "Best win percentage in league history.", "win_pct", True)
+    # ---- Basic / Matchup-based records (use career(scope)) ----
+    add_record("Total Wins", "Most total wins in league history.", career("R"), "wins", True)
+    add_record("Total Losses", "Most total losses in league history.", career("R"), "losses", True)
+    add_record("Win Percent", "Best win percentage in league history.", career("R"), "win_pct", True)
 
-    add("All Play Wins", "Most total all-play wins (if playing every team each week) in league history.", "all_play_wins", True)
-    add("All Play Losses", "Most total all-play losses (if playing every team each week) in league history.", "all_play_losses", True)
-    add("All Play Win Percent", "Best all-play win percentage in league history.", "all_play_win_pct", True)
+    add_record("All Play Wins", "Most total all-play wins in league history.", career("R"), "all_play_wins", True)
+    add_record("All Play Losses", "Most total all-play losses in league history.", career("R"), "all_play_losses", True)
+    add_record("All Play Win Percent", "Best all-play win percentage in league history.", career("R"), "all_play_win_pct", True)
 
-    add("Total Points", "Most total points scored in league history.", "total_points", True)
-    add("Total Opponent Points", "Most total opponent points allowed in league history.", "total_opp_points", True)
+    add_record("Total Points", "Most total points scored in league history.", career("R"), "points_for", True)
+    add_record("Total Opponent Points", "Most total opponent points allowed in league history.", career("R"), "points_against", True)
 
-    add("Points Share Average", "Highest average share of total points scored in matchups over league history.", "points_share_avg", True)
-    add("Opponent Points Share Average", "Highest average share of total points scored by opponents over league history.", "opp_points_share_avg", True)
+    add_record("Points Share Average", "Highest average share of total points scored in matchups over league history.", career("R"), "points_share_avg", True)
+    add_record("Opponent Points Share Average", "Highest average share of total points scored by opponents over league history.", career("R"), "opp_points_share_avg", True)
 
-    add("Luckiest", "Luckiest member in league history (based on opponent performance).", "luck_avg", True)
-    add("Luckiest (Least)", "Unluckiest member in league history (based on opponent performance).", "luck_avg", False)
+    add_record("Luckiest", "Luckiest member in league history (based on opponent performance).", career("R"), "luck_avg", True)
+    add_record("Luckiest (Least)", "Unluckiest member in league history (based on opponent performance).", career("R"), "luck_avg", False)
 
-    if "sos_avg_opp_points" in career.columns:
-        add("Strength of Schedule", "Toughest average strength of schedule (highest opponents’ points rank) in league history.", "sos_avg_opp_points", True)
-        add("Strength of Schedule (Easiest)", "Easiest average strength of schedule (lowest opponents’ points rank) in league history.", "sos_avg_opp_points", False)
+    add_record("Strength of Schedule", "Toughest average strength of schedule in league history.", career("R"), "sos_avg_opp_points", True)
+    add_record("Strength of Schedule (Easiest)", "Easiest average strength of schedule in league history.", career("R"), "sos_avg_opp_points", False)
 
-    # weekly award counts + percents
-    def add_pct(key: str, desc: str, count_col: str):
-        tmp = career.copy()
-        tmp[key] = tmp[count_col] / tmp["games"].replace(0, float("nan"))
-        row = pick_leader(tmp, key, True)
+    add_record("High Scores", "Most matchups with the weekly high score in league history.", career("R"), "high_scores", True)
+    add_record("High Scores Percent", "Highest percentage of matchups with the weekly high score.", career("R"), "high_scores", True, as_pct_of_games=True)
+
+    add_record("Top Scores", "Most matchups with a top score (top tier) in league history.", career("R"), "top_scores", True)
+    add_record("Top Scores Percent", "Highest percentage of matchups with a top score.", career("R"), "top_scores", True, as_pct_of_games=True)
+
+    add_record("Top Half Scores", "Most matchups finishing in the top half of weekly scores in league history.", career("R"), "top_half_scores", True)
+    add_record("Top Half Score Percent", "Highest percentage of matchups finishing in the top half.", career("R"), "top_half_scores", True, as_pct_of_games=True)
+
+    add_record("Worst Scores", "Most matchups with the lowest score of the week in league history.", career("R"), "worst_scores", True)
+    add_record("Worst Scores Percent", "Highest percentage of matchups with the lowest score.", career("R"), "worst_scores", True, as_pct_of_games=True)
+
+    add_record("Bottom Scores", "Most matchups with a bottom score (bottom tier) in league history.", career("R"), "bottom_scores", True)
+    add_record("Bottom Scores Percent", "Highest percentage of matchups with a bottom score.", career("R"), "bottom_scores", True, as_pct_of_games=True)
+
+    add_record("Bottom Half Scores", "Most matchups finishing in the bottom half of weekly scores in league history.", career("R"), "bottom_half_scores", True)
+    add_record("Bottom Half Score Percent", "Highest percentage of matchups finishing in the bottom half.", career("R"), "bottom_half_scores", True, as_pct_of_games=True)
+
+    add_record("Blowout Wins", "Most wins by a large margin in league history.", career("R"), "blowout_wins", True)
+    add_record("Blowout Losses", "Most losses by a large margin in league history.", career("R"), "blowout_losses", True)
+    add_record("Narrow Wins", "Most wins by a narrow margin in league history.", career("R"), "narrow_wins", True)
+    add_record("Narrow Losses", "Most losses by a narrow margin in league history.", career("R"), "narrow_losses", True)
+
+    # ---- Title/Medal/Playoff appearance records (rank rules) ----
+    tm = ensure_titles_medals()
+
+    def add_tm(key: str, desc: str, col: str, higher=True):
+        row = pick_leader(tm, col, higher)
         if row.empty:
             return
-        out.append({"record": key, "description": desc, "leader": row["team"], "value": float(row[key]) if pd.notna(row[key]) else None})
+        out.append({
+            "record": key,
+            "description": desc,
+            "leader": row["team"],
+            "scope": LEAGUE_RECORD_SCOPES.get(key, "R"),
+            "value": float(row[col]) if pd.notna(row[col]) else None,
+        })
 
-    add("High Scores", "Most matchups with the weekly high score in league history.", "high_scores", True)
-    add_pct("High Scores Percent", "Highest percentage of matchups with the weekly high score in league history.", "high_scores")
+    add_tm("Regular Season Titles", "Most regular-season titles in league history.", "regular_season_titles", True)
+    add_tm("Season Points Titles", "Most seasons leading the regular season in points scored.", "season_points_titles", True)
+    add_tm("Season All Play Titles", "Most seasons with the best all-play record in league history.", "season_all_play_titles", True)
+    add_tm("Seasons Winning Record", "Most seasons with an overall winning record in league history.", "seasons_winning_record", True)
+    add_tm("Seasons Losing Record", "Most seasons with an overall losing record in league history.", "seasons_losing_record", True)
 
-    add("Top Scores", "Most matchups with a top score (top tier) in league history.", "top_scores", True)
-    add_pct("Top Scores Percent", "Highest percentage of matchups with a top score in league history.", "top_scores")
+    add_tm("Championships", "Most league championships in league history.", "championships", True)
+    add_tm("Medal Score", "Best medal score over league history.", "medal_score", True)
+    add_tm("Total Medals", "Most total medals in league history.", "total_medals", True)
+    add_tm("Playoff Appearances", "Most playoff appearances in league history.", "playoff_appearances", True)
 
-    add("Top Half Scores", "Most matchups finishing in the top half of weekly scores in league history.", "top_half_scores", True)
-    add_pct("Top Half Score Percent", "Highest percentage of matchups finishing in the top half of weekly scores.", "top_half_scores")
-
-    add("Worst Scores", "Most matchups with the lowest score of the week in league history.", "worst_scores", True)
-    add_pct("Worst Scores Percent", "Highest percentage of matchups with the lowest score of the week.", "worst_scores")
-
-    add("Bottom Scores", "Most matchups with a bottom score (bottom tier) in league history.", "bottom_scores", True)
-    add_pct("Bottom Scores Percent", "Highest percentage of matchups with a bottom score in league history.", "bottom_scores")
-
-    add("Bottom Half Scores", "Most matchups finishing in the bottom half of weekly scores in league history.", "bottom_half_scores", True)
-    add_pct("Bottom Half Score Percent", "Highest percentage of matchups finishing in the bottom half of weekly scores.", "bottom_half_scores")
-
-    add("Blowout Wins", "Most wins by a large margin in league history.", "blowout_wins", True)
-    add("Blowout Losses", "Most losses by a large margin in league history.", "blowout_losses", True)
-    add("Narrow Wins", "Most wins by a narrow margin in league history.", "narrow_wins", True)
-    add("Narrow Losses", "Most losses by a narrow margin in league history.", "narrow_losses", True)
-
-    # titles/medals/playoffs
-    add("Regular Season Titles", "Most regular-season titles in league history.", "regular_season_titles", True)
-    add("Season Points Titles", "Most seasons leading the regular season in points scored.", "season_points_titles", True)
-    add("Season All Play Titles", "Most seasons with the best all-play record in league history.", "season_all_play_titles", True)
-
-    add("Seasons Winning Record", "Most seasons with an overall winning record in league history.", "seasons_winning_record", True)
-    add("Seasons Losing Record", "Most seasons with an overall losing record in league history.", "seasons_losing_record", True)
-
-    add("Championships", "Most league championships in league history.", "championships", True)
-    add("Medal Score", "Best medal score over league history (points based on final rank).", "medal_score", True)
-    add("Total Medals", "Most total medals (finishes counted as medal ranks) in league history.", "total_medals", True)
-
-    add("Playoff Appearances", "Most playoff appearances in league history.", "playoff_appearances", True)
-    add("Playoff Wins", "Most playoff wins in league history.", "playoff_wins", True)
-    add("Playoff Losses", "Most playoff losses in league history.", "playoff_losses", True)
-    add("Total Playoff Points", "Most total playoff points scored in league history.", "total_playoff_points", True)
-    add("Total Playoff Opponent Points", "Most total playoff points allowed to opponents in league history.", "total_playoff_opp_points", True)
+    # ---- Playoff-only totals ----
+    add_record("Playoff Wins", "Most playoff wins in league history.", career("P"), "wins", True)
+    add_record("Playoff Losses", "Most playoff losses in league history.", career("P"), "losses", True)
+    add_record("Total Playoff Points", "Most total playoff points scored in league history.", career("P"), "points_for", True)
+    add_record("Total Playoff Opponent Points", "Most total playoff points allowed to opponents in league history.", career("P"), "points_against", True)
 
     return out
 
 
-def season_records(st: pd.DataFrame, tg: pd.DataFrame, cfg: dict) -> List[dict]:
+def build_season_records(tg: pd.DataFrame, cfg: dict) -> List[dict]:
     """
-    Season best/worst records (single season).
-    Uses regular season only (st is regular season summary).
+    Season records (still regular-season-based like before).
     """
     out: List[dict] = []
+    reg = tg[tg["is_playoff"] == False].copy()
 
-    def add(key: str, desc: str, df: pd.DataFrame, col: str, higher=True):
-        row = pick_leader(df, col, higher)
+    # season/team summary
+    reg_sum = reg.groupby(["season", "team"], as_index=False).agg(
+        wins=("is_win", "sum"),
+        losses=("is_loss", "sum"),
+        points_for=("points_for", "sum"),
+        points_against=("points_against", "sum"),
+        points_share=("points_share", "mean"),
+        opp_points_share=("opp_points_share", "mean"),
+        all_play_wins=("all_play_wins", "sum"),
+        all_play_losses=("all_play_losses", "sum"),
+        high_scores=("is_week_high", "sum"),
+        top_scores=("is_top_tier", "sum"),
+        top_half_scores=("is_top_half", "sum"),
+        worst_scores=("is_week_low", "sum"),
+        bottom_scores=("is_bottom_tier", "sum"),
+        bottom_half_scores=("is_bottom_half", "sum"),
+        blowout_wins=("is_blowout_win", "sum"),
+        blowout_losses=("is_blowout_loss", "sum"),
+        narrow_wins=("is_narrow_win", "sum"),
+        narrow_losses=("is_narrow_loss", "sum"),
+    )
+    ap_games = (reg_sum["all_play_wins"] + reg_sum["all_play_losses"]).replace(0, float("nan"))
+    reg_sum["all_play_win_pct"] = reg_sum["all_play_wins"] / ap_games
+
+    # season luck
+    reg["actual_win_value"] = reg["is_win"].astype(float) + 0.5 * reg["is_tie"].astype(float)
+    reg["luck_week"] = reg["actual_win_value"] - reg["all_play_win_pct"].astype(float)
+    luck = reg.groupby(["season", "team"], as_index=False)["luck_week"].mean().rename(columns={"luck_week": "season_luck"})
+    reg_sum = reg_sum.merge(luck, on=["season", "team"], how="left")
+
+    def add(key: str, desc: str, col: str, higher=True):
+        row = pick_leader(reg_sum, col, higher)
         if row.empty:
             return
         out.append({
@@ -652,62 +767,51 @@ def season_records(st: pd.DataFrame, tg: pd.DataFrame, cfg: dict) -> List[dict]:
             "value": float(row[col]) if pd.notna(row[col]) else None,
         })
 
-    # base
-    add("Season Score", "Highest season score in a single season.", st, "points_for", True)
-    add("Season Score (Lowest)", "Lowest season score in a single season.", st, "points_for", False)
+    add("Season Score", "Highest season score in a single season.", "points_for", True)
+    add("Season Score (Lowest)", "Lowest season score in a single season.", "points_for", False)
+    add("Season Luckiest", "Luckiest team in a season (based on opponents’ performance).", "season_luck", True)
+    add("Season Luckiest (Lowest)", "Unluckiest team in a season (based on opponents’ performance).", "season_luck", False)
 
-    # season luck (regular season only)
-    reg = tg[~tg["is_playoff"]].copy()
-    reg["actual_win_value"] = reg["is_win"].astype(float) + 0.5 * reg["is_tie"].astype(float)
-    reg["luck_week"] = reg["actual_win_value"] - reg["all_play_win_pct"].astype(float)
-    sl = reg.groupby(["season", "team"], as_index=False)["luck_week"].mean().rename(columns={"luck_week": "season_luck"})
-    st2 = st.merge(sl, on=["season", "team"], how="left")
+    add("Most Wins", "Most wins in a single season.", "wins", True)
+    add("Most Losses", "Most losses in a single season.", "losses", True)
 
-    add("Season Luckiest", "Luckiest team in a season (based on opponents’ performance).", st2, "season_luck", True)
-    add("Season Luckiest (Lowest)", "Unluckiest team in a season (based on opponents’ performance).", st2, "season_luck", False)
+    add("Most All Play Wins", "Most all-play wins in a season.", "all_play_wins", True)
+    add("Most All Play Losses", "Most all-play losses in a season.", "all_play_losses", True)
+    add("Best All Play Win Percent", "Best all-play win percentage in a season.", "all_play_win_pct", True)
 
-    if "sos_avg_opp_points" in st.columns:
-        add("Strength of Schedule", "Toughest strength of schedule in a season (highest opponents’ points rank).", st, "sos_avg_opp_points", True)
-        add("Strength of Schedule (Easiest)", "Easiest strength of schedule in a season (lowest opponents’ points rank).", st, "sos_avg_opp_points", False)
+    add("Most Points", "Most points scored in a season.", "points_for", True)
+    add("Most Opponent Points", "Most opponent points allowed in a season.", "points_against", True)
+    add("Fewest Points", "Fewest points scored in a season.", "points_for", False)
+    add("Fewest Opponent Points", "Fewest opponent points allowed in a season.", "points_against", False)
 
-    add("Most Wins", "Most wins in a single season.", st, "wins", True)
-    add("Most Losses", "Most losses in a single season.", st, "losses", True)
-    add("Most All Play Wins", "Most all-play wins (vs every team each week) in a season.", st, "all_play_wins", True)
-    add("Most All Play Losses", "Most all-play losses (vs every team each week) in a season.", st, "all_play_losses", True)
-    add("Best All Play Win Percent", "Best all-play win percentage in a season.", st, "all_play_win_pct", True)
+    add("Highest Points Share", "Highest points share in a season.", "points_share", True)
+    add("Lowest Points Share", "Lowest points share in a season.", "points_share", False)
+    add("Highest Opponent Points Share", "Highest opponents’ points share in a season.", "opp_points_share", True)
+    add("Lowest Opponent Points Share", "Lowest opponents’ points share in a season.", "opp_points_share", False)
 
-    add("Most Points", "Most points scored in a season.", st, "points_for", True)
-    add("Most Opponent Points", "Most opponent points allowed in a season.", st, "points_against", True)
-    add("Fewest Points", "Fewest points scored in a season.", st, "points_for", False)
-    add("Fewest Opponent Points", "Fewest opponent points allowed in a season.", st, "points_against", False)
+    add("High Scores", "Most matchups finishing with the weekly high score in a season.", "high_scores", True)
+    add("Top Scores", "Most matchups finishing among the top scores of the week in a season.", "top_scores", True)
+    add("Top Half Scores", "Most matchups finishing in the top half of weekly scoring in a season.", "top_half_scores", True)
+    add("Worst Scores", "Most matchups finishing with the lowest score of the week in a season.", "worst_scores", True)
+    add("Bottom Scores", "Most matchups finishing in the bottom scoring tier in a season.", "bottom_scores", True)
+    add("Bottom Half Scores", "Most matchups finishing in the bottom half of weekly scoring in a season.", "bottom_half_scores", True)
 
-    add("Highest Points Share", "Highest points share in a season (share of total points scored in matchups).", st, "points_share_avg", True)
-    add("Lowest Points Share", "Lowest / worst points share in a season.", st, "points_share_avg", False)
-    add("Highest Opponent Points Share", "Highest opponents’ points share in a season.", st, "opp_points_share_avg", True)
-    add("Lowest Opponent Points Share", "Lowest / worst opponents’ points share in a season.", st, "opp_points_share_avg", False)
-
-    add("High Scores", "Most matchups finishing with the weekly high score in a season.", st, "high_scores", True)
-    add("Top Scores", "Most matchups finishing among the top scores of the week in a season.", st, "top_scores", True)
-    add("Top Half Scores", "Most matchups finishing in the top half of weekly scoring in a season.", st, "top_half_scores", True)
-    add("Worst Scores", "Most matchups finishing with the lowest score of the week in a season.", st, "worst_scores", True)
-    add("Bottom Scores", "Most matchups finishing in the bottom scoring tier in a season.", st, "bottom_scores", True)
-    add("Bottom Half Scores", "Most matchups finishing in the bottom half of weekly scoring in a season.", st, "bottom_half_scores", True)
-
-    add("Most Blowout Wins", "Most wins by a large margin in a season.", st, "blowout_wins", True)
-    add("Most Blowout Losses", "Most losses by a large margin in a season.", st, "blowout_losses", True)
-    add("Most Narrow Wins", "Most wins by a small margin in a season.", st, "narrow_wins", True)
-    add("Most Narrow Losses", "Most losses by a small margin in a season.", st, "narrow_losses", True)
+    add("Most Blowout Wins", "Most wins by a large margin in a season.", "blowout_wins", True)
+    add("Most Blowout Losses", "Most losses by a large margin in a season.", "blowout_losses", True)
+    add("Most Narrow Wins", "Most wins by a small margin in a season.", "narrow_wins", True)
+    add("Most Narrow Losses", "Most losses by a small margin in a season.", "narrow_losses", True)
 
     return out
 
 
-def matchup_records(tg: pd.DataFrame) -> List[dict]:
+def build_matchup_records(tg: pd.DataFrame) -> List[dict]:
     out: List[dict] = []
     m = tg.copy()
     m["combined_score"] = m["points_for"] + m["points_against"]
 
-    def add_team_matchup(key: str, desc: str, df: pd.DataFrame, col: str, higher=True):
-        row = pick_leader(df, col, higher)
+    def add_team(key: str, desc: str, col: str, higher=True, df=None):
+        d = m if df is None else df
+        row = pick_leader(d, col, higher)
         if row.empty:
             return
         out.append({
@@ -724,18 +828,18 @@ def matchup_records(tg: pd.DataFrame) -> List[dict]:
             "margin": float(row["margin"]),
         })
 
-    add_team_matchup("Most Matchup Points", "Most points scored by a single team in one matchup.", m, "points_for", True)
-    add_team_matchup("Fewest Matchup Points", "Fewest points scored by a single team in one matchup.", m, "points_for", False)
+    add_team("Most Matchup Points", "Most points scored by a single team in one matchup.", "points_for", True)
+    add_team("Fewest Matchup Points", "Fewest points scored by a single team in one matchup.", "points_for", False)
 
-    # combined/margin records: collapse to unique matchup_key per season/week
     g = m.groupby(["season", "week", "matchup_key"], as_index=False).agg(
         combined=("combined_score", "max"),
         abs_margin=("abs_margin", "max"),
         is_playoff=("is_playoff", "max"),
     )
 
-    def add_matchup(key: str, desc: str, df: pd.DataFrame, col: str, higher=True):
-        row = pick_leader(df, col, higher)
+    def add_matchup(key: str, desc: str, col: str, higher=True, df=None):
+        d = g if df is None else df
+        row = pick_leader(d, col, higher)
         if row.empty:
             return
         out.append({
@@ -748,150 +852,25 @@ def matchup_records(tg: pd.DataFrame) -> List[dict]:
             "value": float(row[col]) if pd.notna(row[col]) else None,
         })
 
-    add_matchup("Highest Combined Score", "Highest combined score by both teams in a matchup.", g, "combined", True)
-    add_matchup("Lowest Combined Score", "Lowest combined score by both teams in a matchup.", g, "combined", False)
-    add_matchup("Biggest Blowout", "Largest score margin in any matchup.", g, "abs_margin", True)
-    add_matchup("Narrowest Win", "Smallest score margin in any matchup.", g, "abs_margin", False)
+    add_matchup("Highest Combined Score", "Highest combined score by both teams in a matchup.", "combined", True)
+    add_matchup("Lowest Combined Score", "Lowest combined score by both teams in a matchup.", "combined", False)
+    add_matchup("Biggest Blowout", "Largest score margin in any matchup.", "abs_margin", True)
+    add_matchup("Narrowest Win", "Smallest score margin in any matchup.", "abs_margin", False)
 
-    add_team_matchup("Highest Points Share", "Highest percentage of total points scored by one team in a matchup.", m, "points_share", True)
-    add_team_matchup("Lowest Points Share", "Lowest percentage of total points scored by one team in a matchup.", m, "points_share", False)
+    add_team("Highest Points Share", "Highest % of total points scored by one team in a matchup.", "points_share", True)
+    add_team("Lowest Points Share", "Lowest % of total points scored by one team in a matchup.", "points_share", False)
 
-    # playoff-specific
-    mpo = m[m["is_playoff"]].copy()
+    mpo = m[m["is_playoff"] == True].copy()
     if not mpo.empty:
-        add_team_matchup("Most Playoff Matchup Points", "Most points scored by a single team in a playoff matchup.", mpo, "points_for", True)
-        add_team_matchup("Fewest Playoff Matchup Points", "Fewest points scored by a single team in a playoff matchup.", mpo, "points_for", False)
+        add_team("Most Playoff Matchup Points", "Most points scored by a single team in a playoff matchup.", "points_for", True, df=mpo)
+        add_team("Fewest Playoff Matchup Points", "Fewest points scored by a single team in a playoff matchup.", "points_for", False, df=mpo)
 
-        gpo = g[g["is_playoff"]].copy()
+        gpo = g[g["is_playoff"] == True].copy()
         if not gpo.empty:
-            add_matchup("Highest Playoff Combined Score", "Highest combined score by both teams in a playoff matchup.", gpo, "combined", True)
-            add_matchup("Lowest Playoff Combined Score", "Lowest combined score by both teams in a playoff matchup.", gpo, "combined", False)
-            add_matchup("Biggest Playoff Win", "Largest score margin in a playoff matchup.", gpo, "abs_margin", True)
-            add_matchup("Narrowest Playoff Win", "Smallest score margin in a playoff matchup.", gpo, "abs_margin", False)
-
-    return out
-
-
-def streak_records(tg: pd.DataFrame, st: pd.DataFrame, cfg: dict) -> List[dict]:
-    """
-    Streaks/droughts:
-      - matchup-level: wins/losses/high score/top tier/top half
-      - season-level: winning record, championship/title game/medal/playoff appearance if Rank data exists
-    """
-    out: List[dict] = []
-
-    def longest_streak(flags: List[bool]) -> int:
-        best = cur = 0
-        for v in flags:
-            if v:
-                cur += 1
-                best = max(best, cur)
-            else:
-                cur = 0
-        return best
-
-    def longest_drought(flags: List[bool]) -> int:
-        # drought = consecutive False
-        best = cur = 0
-        for v in flags:
-            if not v:
-                cur += 1
-                best = max(best, cur)
-            else:
-                cur = 0
-        return best
-
-    # matchup-level streaks across all matchups (chronological)
-    s = tg.copy().sort_values(["season", "week"])
-    per_team = []
-    for team, g in s.groupby("team"):
-        g = g.copy()
-        per_team.append({
-            "team": team,
-            "win_streak": longest_streak(g["is_win"].fillna(False).astype(bool).tolist()),
-            "loss_streak": longest_streak(g["is_loss"].fillna(False).astype(bool).tolist()),
-            "high_score_streak": longest_streak(g["is_week_high"].fillna(False).astype(bool).tolist()),
-            "top_score_streak": longest_streak(g["is_top_tier"].fillna(False).astype(bool).tolist()),
-            "top_half_streak": longest_streak(g["is_top_half"].fillna(False).astype(bool).tolist()),
-
-            "high_score_drought": longest_drought(g["is_week_high"].fillna(False).astype(bool).tolist()),
-            "top_score_drought": longest_drought(g["is_top_tier"].fillna(False).astype(bool).tolist()),
-            "top_half_drought": longest_drought(g["is_top_half"].fillna(False).astype(bool).tolist()),
-        })
-    per_team_df = pd.DataFrame(per_team)
-
-    def add(key: str, desc: str, df: pd.DataFrame, col: str):
-        row = pick_leader(df, col, True)
-        if row.empty:
-            return
-        out.append({"record": key, "description": desc, "leader": row["team"], "value": int(row[col])})
-
-    add("Win Streak", "Most consecutive matchups won.", per_team_df, "win_streak")
-    add("Loss Streak", "Most consecutive matchups lost.", per_team_df, "loss_streak")
-    add("High Score Streak", "Most consecutive matchups with the highest weekly score.", per_team_df, "high_score_streak")
-    add("Top Score Streak", "Most consecutive matchups finishing among the top scores of the week.", per_team_df, "top_score_streak")
-    add("Top Half Streak", "Most consecutive matchups finishing in the top half of weekly scoring.", per_team_df, "top_half_streak")
-
-    add("High Score Drought", "Most consecutive matchups without scoring the highest weekly score.", per_team_df, "high_score_drought")
-    add("Top Score Drought", "Most consecutive matchups without finishing among the top scores of the week.", per_team_df, "top_score_drought")
-    add("Top Half Drought", "Most consecutive matchups without finishing in the top half of scoring.", per_team_df, "top_half_drought")
-
-    # season-level streaks/droughts for winning record
-    st_sorted = st.sort_values(["season"])
-    season_blocks = []
-    for team, g in st_sorted.groupby("team"):
-        flags = g["winning_record"].fillna(False).astype(bool).tolist()
-        season_blocks.append({
-            "team": team,
-            "winning_record_streak": longest_streak(flags),
-            "winning_record_drought": longest_drought(flags),
-        })
-    season_df = pd.DataFrame(season_blocks)
-
-    add("Winning Record Streak", "Most consecutive seasons with a winning record.", season_df, "winning_record_streak")
-    add("Winning Record Drought", "Most consecutive seasons without a winning record.", season_df, "winning_record_drought")
-
-    # rank-based season streaks/droughts (if Rank exists)
-    reg_rank, final_rank = rank_snapshots(tg, cfg)
-    playoff_teams = int(cfg.get("playoff_teams", 4))
-
-    if not reg_rank.empty:
-        reg_rank_sorted = reg_rank.sort_values(["season"])
-        blocks = []
-        for team, g in reg_rank_sorted.groupby("team"):
-            po_flags = (g["rank"] <= playoff_teams).astype(bool).tolist()
-            blocks.append({
-                "team": team,
-                "playoff_appearance_streak": longest_streak(po_flags),
-                "playoff_appearance_drought": longest_drought(po_flags),
-            })
-        sdf = pd.DataFrame(blocks)
-        add("Playoff Appearance Streak", "Most consecutive seasons making the playoffs.", sdf, "playoff_appearance_streak")
-        add("Playoff Appearance Drought", "Most consecutive seasons without making the playoffs.", sdf, "playoff_appearance_drought")
-
-    if not final_rank.empty:
-        fr_sorted = final_rank.sort_values(["season"])
-        blocks = []
-        for team, g in fr_sorted.groupby("team"):
-            champ = (g["final_rank"] == 1).astype(bool).tolist()
-            title_game = (g["final_rank"] <= 2).astype(bool).tolist()
-            medal = (g["final_rank"] <= 3).astype(bool).tolist()
-            blocks.append({
-                "team": team,
-                "championship_streak": longest_streak(champ),
-                "championship_drought": longest_drought(champ),
-                "title_game_streak": longest_streak(title_game),
-                "title_game_drought": longest_drought(title_game),
-                "medal_streak": longest_streak(medal),
-                "medal_drought": longest_drought(medal),
-            })
-        sdf = pd.DataFrame(blocks)
-        add("Championship Streak", "Most consecutive seasons winning the championship.", sdf, "championship_streak")
-        add("Championship Drought", "Most consecutive seasons without winning the championship.", sdf, "championship_drought")
-        add("Title Game Streak", "Most consecutive seasons reaching the title game.", sdf, "title_game_streak")
-        add("Title Game Drought", "Most consecutive seasons without reaching the title game.", sdf, "title_game_drought")
-        add("Medal Streak", "Most consecutive seasons finishing in a medal position (e.g. 1st/2nd/3rd).", sdf, "medal_streak")
-        add("Medal Drought", "Most consecutive seasons without a medal finish (no top final rank).", sdf, "medal_drought")
+            add_matchup("Highest Playoff Combined Score", "Highest combined score by both teams in a playoff matchup.", "combined", True, df=gpo)
+            add_matchup("Lowest Playoff Combined Score", "Lowest combined score by both teams in a playoff matchup.", "combined", False, df=gpo)
+            add_matchup("Biggest Playoff Win", "Largest score margin in a playoff matchup.", "abs_margin", True, df=gpo)
+            add_matchup("Narrowest Playoff Win", "Smallest score margin in a playoff matchup.", "abs_margin", False, df=gpo)
 
     return out
 
@@ -910,7 +889,6 @@ def main() -> int:
 
     games: List[TeamGame] = []
 
-    # Read seasons/weeks
     for season_dir in sorted([p for p in in_root.iterdir() if p.is_dir() and p.name.isdigit()], key=lambda p: int(p.name)):
         season = int(season_dir.name)
         week_files = [p for p in season_dir.glob("*.csv") if p.stem.isdigit()]
@@ -929,27 +907,19 @@ def main() -> int:
     tg = compute_all_play(tg)
     tg = compute_matchup_flags(tg, cfg)
 
-    # season summaries
-    st = season_team_summary(tg)
-    st = compute_strength_of_schedule(st, tg)
-
-    po = playoff_team_summary(tg)
-
-    # records
-    records = {
-        "league": league_records(tg, st, po, cfg),
-        "season": season_records(st, tg, cfg),
-        "matchup": matchup_records(tg),
-        "streak": streak_records(tg, st, cfg),
-    }
-
-    # outputs
+    # outputs dir
     out_dir = repo_root / "output" / "records"
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    # records
+    records = {
+        "league": build_league_records(tg, cfg),
+        "season": build_season_records(tg, cfg),
+        "matchup": build_matchup_records(tg),
+    }
+
+    # write tables
     tg.to_csv(out_dir / "team_games_enriched.csv", index=False)
-    st.to_csv(out_dir / "season_team_summary.csv", index=False)
-    po.to_csv(out_dir / "playoff_summary.csv", index=False)
 
     for k, items in records.items():
         pd.DataFrame(items).to_csv(out_dir / f"{k}_records.csv", index=False)
@@ -963,3 +933,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
