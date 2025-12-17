@@ -9,7 +9,7 @@ default_regular_season_weeks: 14
 
 # wie viele teams kommen in die playoffs (meist 4 bei 8 teams)
 playoff_teams: 4
-
+rank_legacy_end_season: 2021
 # medal points fürs "Medal Score"
 medal_points:
   "1": 3
