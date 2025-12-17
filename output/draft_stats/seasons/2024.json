@@ -1,0 +1,550 @@
+{
+  "topWorst": {
+    "top": [
+      {
+        "season": 2024,
+        "owner": "Tommy",
+        "player": "Lamar Jackson",
+        "pos": "QB",
+        "nflTeam": "BAL",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 38,
+        "isKeeper": 0,
+        "grade4": 43.86
+      },
+      {
+        "season": 2024,
+        "owner": "Tommy",
+        "player": "Saquon Barkley",
+        "pos": "RB",
+        "nflTeam": "PHI",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 11,
+        "isKeeper": 0,
+        "grade4": 40.65
+      },
+      {
+        "season": 2024,
+        "owner": "Simi",
+        "player": "Derrick Henry",
+        "pos": "RB",
+        "nflTeam": "BAL",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 14,
+        "isKeeper": 0,
+        "grade4": 29.33
+      },
+      {
+        "season": 2024,
+        "owner": "Ritz",
+        "player": "Joe Burrow",
+        "pos": "QB",
+        "nflTeam": "CIN",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 63,
+        "isKeeper": 0,
+        "grade4": 29.14
+      },
+      {
+        "season": 2024,
+        "owner": "Marv",
+        "player": "Josh Allen",
+        "pos": "QB",
+        "nflTeam": "BUF",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 24,
+        "isKeeper": 0,
+        "grade4": 29.08
+      }
+    ],
+    "worst": [
+      {
+        "season": 2024,
+        "owner": "Erik",
+        "player": "Christian McCaffrey",
+        "pos": "RB",
+        "nflTeam": "SF",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 1,
+        "isKeeper": 0,
+        "grade4": -31.22
+      },
+      {
+        "season": 2024,
+        "owner": "Ritz",
+        "player": "Tyreek Hill",
+        "pos": "WR",
+        "nflTeam": "MIA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 2,
+        "isKeeper": 0,
+        "grade4": -24.61
+      },
+      {
+        "season": 2024,
+        "owner": "Benni",
+        "player": "Brandon Aiyuk",
+        "pos": "WR",
+        "nflTeam": "SF",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 21,
+        "isKeeper": 0,
+        "grade4": -14.69
+      },
+      {
+        "season": 2024,
+        "owner": "Ritz",
+        "player": "Isiah Pacheco",
+        "pos": "RB",
+        "nflTeam": "KC",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 18,
+        "isKeeper": 0,
+        "grade4": -14.5
+      },
+      {
+        "season": 2024,
+        "owner": "Kessi",
+        "player": "Chris Olave",
+        "pos": "WR",
+        "nflTeam": "NO",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 23,
+        "isKeeper": 0,
+        "grade4": -14.1
+      }
+    ]
+  },
+  "ownerRanking": [
+    {
+      "owner": "Tommy",
+      "avgGrade4": 6.749333333333333,
+      "picks": 15
+    },
+    {
+      "owner": "Kessi",
+      "avgGrade4": 1.428,
+      "picks": 15
+    },
+    {
+      "owner": "Simi",
+      "avgGrade4": 1.2566666666666668,
+      "picks": 15
+    },
+    {
+      "owner": "Marv",
+      "avgGrade4": 0.8166666666666667,
+      "picks": 15
+    },
+    {
+      "owner": "Benni",
+      "avgGrade4": 0.2400000000000001,
+      "picks": 15
+    },
+    {
+      "owner": "Juschka",
+      "avgGrade4": -1.0913333333333333,
+      "picks": 15
+    },
+    {
+      "owner": "Erik",
+      "avgGrade4": -2.603333333333333,
+      "picks": 15
+    },
+    {
+      "owner": "Ritz",
+      "avgGrade4": -4.357333333333333,
+      "picks": 15
+    }
+  ],
+  "positions": {
+    "QB": {
+      "bestPick": {
+        "season": 2024,
+        "owner": "Tommy",
+        "player": "Lamar Jackson",
+        "pos": "QB",
+        "nflTeam": "BAL",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 38,
+        "isKeeper": 0,
+        "grade4": 43.86
+      },
+      "worstPick": {
+        "season": 2024,
+        "owner": "Kessi",
+        "player": "Patrick Mahomes",
+        "pos": "QB",
+        "nflTeam": "KC",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 26,
+        "isKeeper": 0,
+        "grade4": -3.74
+      },
+      "ownerRanking": [
+        {
+          "owner": "Ritz",
+          "avgGrade4": 29.14,
+          "picks": 1
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": 25.35,
+          "picks": 2
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": 14.165,
+          "picks": 2
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": 11.835,
+          "picks": 2
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": 2.11,
+          "picks": 1
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": 1.205,
+          "picks": 2
+        },
+        {
+          "owner": "Simi",
+          "avgGrade4": 0.51,
+          "picks": 1
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": -3.74,
+          "picks": 1
+        }
+      ]
+    },
+    "RB": {
+      "bestPick": {
+        "season": 2024,
+        "owner": "Tommy",
+        "player": "Saquon Barkley",
+        "pos": "RB",
+        "nflTeam": "PHI",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 11,
+        "isKeeper": 0,
+        "grade4": 40.65
+      },
+      "worstPick": {
+        "season": 2024,
+        "owner": "Erik",
+        "player": "Christian McCaffrey",
+        "pos": "RB",
+        "nflTeam": "SF",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 1,
+        "isKeeper": 0,
+        "grade4": -31.22
+      },
+      "ownerRanking": [
+        {
+          "owner": "Tommy",
+          "avgGrade4": 11.072,
+          "picks": 5
+        },
+        {
+          "owner": "Simi",
+          "avgGrade4": 8.306000000000001,
+          "picks": 5
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": 6.04,
+          "picks": 4
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": 2.7499999999999996,
+          "picks": 5
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": -0.6859999999999997,
+          "picks": 5
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": -1.3116666666666663,
+          "picks": 6
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": -1.3933333333333333,
+          "picks": 6
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": -5.44,
+          "picks": 5
+        }
+      ]
+    },
+    "WR": {
+      "bestPick": {
+        "season": 2024,
+        "owner": "Kessi",
+        "player": "Ja'Marr Chase",
+        "pos": "WR",
+        "nflTeam": "CIN",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 7,
+        "isKeeper": 0,
+        "grade4": 24.89
+      },
+      "worstPick": {
+        "season": 2024,
+        "owner": "Ritz",
+        "player": "Tyreek Hill",
+        "pos": "WR",
+        "nflTeam": "MIA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 2,
+        "isKeeper": 0,
+        "grade4": -24.61
+      },
+      "ownerRanking": [
+        {
+          "owner": "Marv",
+          "avgGrade4": -0.9814285714285715,
+          "picks": 7
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": -2.266,
+          "picks": 5
+        },
+        {
+          "owner": "Simi",
+          "avgGrade4": -2.417142857142857,
+          "picks": 7
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": -3.8239999999999994,
+          "picks": 5
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": -3.965,
+          "picks": 6
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": -5.398571428571429,
+          "picks": 7
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": -9.514,
+          "picks": 5
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": -11.8625,
+          "picks": 4
+        }
+      ]
+    },
+    "TE": {
+      "bestPick": {
+        "season": 2024,
+        "owner": "Tommy",
+        "player": "Brock Bowers",
+        "pos": "TE",
+        "nflTeam": "LV",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 118,
+        "isKeeper": 0,
+        "grade4": 26.0
+      },
+      "worstPick": {
+        "season": 2024,
+        "owner": "Tommy",
+        "player": "Travis Kelce",
+        "pos": "TE",
+        "nflTeam": "KC",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 27,
+        "isKeeper": 0,
+        "grade4": -11.05
+      },
+      "ownerRanking": [
+        {
+          "owner": "Kessi",
+          "avgGrade4": 19.99,
+          "picks": 1
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": 7.475,
+          "picks": 2
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": 3.82,
+          "picks": 1
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": 2.77,
+          "picks": 1
+        },
+        {
+          "owner": "Simi",
+          "avgGrade4": -5.42,
+          "picks": 1
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": -5.6,
+          "picks": 1
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": -5.78,
+          "picks": 1
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": -9.04,
+          "picks": 1
+        }
+      ]
+    },
+    "K": {
+      "bestPick": {
+        "season": 2024,
+        "owner": "Kessi",
+        "player": "Brandon Aubrey",
+        "pos": "K",
+        "nflTeam": "DAL",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 103,
+        "isKeeper": 0,
+        "grade4": 25.5
+      },
+      "worstPick": {
+        "season": 2024,
+        "owner": "Ritz",
+        "player": "Valentino Ambrosio",
+        "pos": "K",
+        "nflTeam": "nan",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 98,
+        "isKeeper": 0,
+        "grade4": -10.13
+      },
+      "ownerRanking": [
+        {
+          "owner": "Kessi",
+          "avgGrade4": 25.5,
+          "picks": 1
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": 10.97,
+          "picks": 1
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": 0.3,
+          "picks": 1
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": -0.65,
+          "picks": 1
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": -6.423333333333335,
+          "picks": 3
+        }
+      ]
+    },
+    "DEF": {
+      "bestPick": {
+        "season": 2024,
+        "owner": "Erik",
+        "player": "Dallas Cowboys",
+        "pos": "DEF",
+        "nflTeam": "DAL",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 112,
+        "isKeeper": 0,
+        "grade4": 0.54
+      },
+      "worstPick": {
+        "season": 2024,
+        "owner": "Ritz",
+        "player": "San Francisco 49ers",
+        "pos": "DEF",
+        "nflTeam": "SF",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 82,
+        "isKeeper": 0,
+        "grade4": -4.4
+      },
+      "ownerRanking": [
+        {
+          "owner": "Erik",
+          "avgGrade4": 0.54,
+          "picks": 1
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": -0.64,
+          "picks": 1
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": -0.84,
+          "picks": 1
+        },
+        {
+          "owner": "Simi",
+          "avgGrade4": -0.85,
+          "picks": 1
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": -4.4,
+          "picks": 1
+        }
+      ]
+    }
+  }
+}

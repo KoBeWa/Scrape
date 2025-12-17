@@ -1,0 +1,575 @@
+{
+  "topWorst": {
+    "top": [
+      {
+        "season": 2017,
+        "owner": "Tommy",
+        "player": "Todd Gurley ",
+        "pos": "RB",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 24,
+        "isKeeper": 0,
+        "grade4": 62.62
+      },
+      {
+        "season": 2017,
+        "owner": "Simi",
+        "player": "Kareem Hunt",
+        "pos": "RB",
+        "nflTeam": "KC",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 115,
+        "isKeeper": 0,
+        "grade4": 58.11
+      },
+      {
+        "season": 2017,
+        "owner": "Simi",
+        "player": "Mark Ingram ",
+        "pos": "RB",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 62,
+        "isKeeper": 0,
+        "grade4": 33.85
+      },
+      {
+        "season": 2017,
+        "owner": "Simi",
+        "player": "Russell Wilson",
+        "pos": "QB",
+        "nflTeam": "NYG",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 51,
+        "isKeeper": 0,
+        "grade4": 32.42
+      },
+      {
+        "season": 2017,
+        "owner": "Simi",
+        "player": "DeAndre Hopkins",
+        "pos": "WR",
+        "nflTeam": "BAL",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 35,
+        "isKeeper": 0,
+        "grade4": 30.38
+      }
+    ],
+    "worst": [
+      {
+        "season": 2017,
+        "owner": "Benni",
+        "player": "David Johnson",
+        "pos": "RB",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 1,
+        "isKeeper": 0,
+        "grade4": -31.93
+      },
+      {
+        "season": 2017,
+        "owner": "Tommy",
+        "player": "Odell Beckham ",
+        "pos": "WR",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 8,
+        "isKeeper": 0,
+        "grade4": -18.01
+      },
+      {
+        "season": 2017,
+        "owner": "Kessi",
+        "player": "Spencer Ware",
+        "pos": "RB",
+        "nflTeam": "KC",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 28,
+        "isKeeper": 0,
+        "grade4": -16.56
+      },
+      {
+        "season": 2017,
+        "owner": "Benni",
+        "player": "Jordy Nelson",
+        "pos": "WR",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 16,
+        "isKeeper": 0,
+        "grade4": -14.4
+      },
+      {
+        "season": 2017,
+        "owner": "Kessi",
+        "player": "DeMarco Murray",
+        "pos": "RB",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 12,
+        "isKeeper": 0,
+        "grade4": -13.79
+      }
+    ]
+  },
+  "ownerRanking": [
+    {
+      "owner": "Simi",
+      "avgGrade4": 7.498666666666666,
+      "picks": 15
+    },
+    {
+      "owner": "Erik",
+      "avgGrade4": 0.14866666666666692,
+      "picks": 15
+    },
+    {
+      "owner": "Tommy",
+      "avgGrade4": -0.6173333333333336,
+      "picks": 15
+    },
+    {
+      "owner": "Ritz",
+      "avgGrade4": -1.376,
+      "picks": 15
+    },
+    {
+      "owner": "Juschka",
+      "avgGrade4": -2.3993333333333333,
+      "picks": 15
+    },
+    {
+      "owner": "Marv",
+      "avgGrade4": -2.67,
+      "picks": 15
+    },
+    {
+      "owner": "Kessi",
+      "avgGrade4": -3.3573333333333335,
+      "picks": 15
+    },
+    {
+      "owner": "Benni",
+      "avgGrade4": -6.812,
+      "picks": 15
+    }
+  ],
+  "positions": {
+    "QB": {
+      "bestPick": {
+        "season": 2017,
+        "owner": "Simi",
+        "player": "Russell Wilson",
+        "pos": "QB",
+        "nflTeam": "NYG",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 51,
+        "isKeeper": 0,
+        "grade4": 32.42
+      },
+      "worstPick": {
+        "season": 2017,
+        "owner": "Erik",
+        "player": "Andrew Luck",
+        "pos": "QB",
+        "nflTeam": "IND",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 50,
+        "isKeeper": 0,
+        "grade4": -13.74
+      },
+      "ownerRanking": [
+        {
+          "owner": "Simi",
+          "avgGrade4": 32.42,
+          "picks": 1
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": 8.274999999999999,
+          "picks": 2
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": 6.92,
+          "picks": 1
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": 4.17,
+          "picks": 1
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": -0.31,
+          "picks": 1
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": -0.68,
+          "picks": 1
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": -1.52,
+          "picks": 1
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": -8.18,
+          "picks": 1
+        }
+      ]
+    },
+    "RB": {
+      "bestPick": {
+        "season": 2017,
+        "owner": "Tommy",
+        "player": "Todd Gurley ",
+        "pos": "RB",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 24,
+        "isKeeper": 0,
+        "grade4": 62.62
+      },
+      "worstPick": {
+        "season": 2017,
+        "owner": "Benni",
+        "player": "David Johnson",
+        "pos": "RB",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 1,
+        "isKeeper": 0,
+        "grade4": -31.93
+      },
+      "ownerRanking": [
+        {
+          "owner": "Simi",
+          "avgGrade4": 16.636000000000003,
+          "picks": 5
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": 7.605999999999999,
+          "picks": 5
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": -0.338,
+          "picks": 5
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": -1.3766666666666667,
+          "picks": 6
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": -3.248,
+          "picks": 5
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": -5.456666666666667,
+          "picks": 6
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": -9.088,
+          "picks": 5
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": -10.004,
+          "picks": 5
+        }
+      ]
+    },
+    "WR": {
+      "bestPick": {
+        "season": 2017,
+        "owner": "Simi",
+        "player": "DeAndre Hopkins",
+        "pos": "WR",
+        "nflTeam": "BAL",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 35,
+        "isKeeper": 0,
+        "grade4": 30.38
+      },
+      "worstPick": {
+        "season": 2017,
+        "owner": "Tommy",
+        "player": "Odell Beckham ",
+        "pos": "WR",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 8,
+        "isKeeper": 0,
+        "grade4": -18.01
+      },
+      "ownerRanking": [
+        {
+          "owner": "Simi",
+          "avgGrade4": 1.3116666666666665,
+          "picks": 6
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": 1.2079999999999997,
+          "picks": 5
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": -1.8066666666666666,
+          "picks": 6
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": -3.4074999999999998,
+          "picks": 4
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": -3.9933333333333336,
+          "picks": 6
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": -6.338333333333334,
+          "picks": 6
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": -7.116,
+          "picks": 5
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": -12.540000000000001,
+          "picks": 5
+        }
+      ]
+    },
+    "TE": {
+      "bestPick": {
+        "season": 2017,
+        "owner": "Tommy",
+        "player": "Rob Gronkowski",
+        "pos": "TE",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 25,
+        "isKeeper": 0,
+        "grade4": 18.4
+      },
+      "worstPick": {
+        "season": 2017,
+        "owner": "Benni",
+        "player": "Jordan Reed",
+        "pos": "TE",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 48,
+        "isKeeper": 0,
+        "grade4": -10.73
+      },
+      "ownerRanking": [
+        {
+          "owner": "Tommy",
+          "avgGrade4": 18.4,
+          "picks": 1
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": 16.17,
+          "picks": 1
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": 5.77,
+          "picks": 1
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": 0.7150000000000001,
+          "picks": 2
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": -1.0549999999999997,
+          "picks": 2
+        },
+        {
+          "owner": "Ritz",
+          "avgGrade4": -9.35,
+          "picks": 1
+        },
+        {
+          "owner": "Simi",
+          "avgGrade4": -10.48,
+          "picks": 1
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": -10.73,
+          "picks": 1
+        }
+      ]
+    },
+    "K": {
+      "bestPick": {
+        "season": 2017,
+        "owner": "Erik",
+        "player": "Stephen Gostkowski",
+        "pos": "K",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 98,
+        "isKeeper": 0,
+        "grade4": 12.21
+      },
+      "worstPick": {
+        "season": 2017,
+        "owner": "Tommy",
+        "player": "Mason Crosby",
+        "pos": "K",
+        "nflTeam": "FA",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 104,
+        "isKeeper": 0,
+        "grade4": -1.84
+      },
+      "ownerRanking": [
+        {
+          "owner": "Erik",
+          "avgGrade4": 12.21,
+          "picks": 1
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": 7.49,
+          "picks": 1
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": 4.22,
+          "picks": 1
+        },
+        {
+          "owner": "Simi",
+          "avgGrade4": 1.1,
+          "picks": 1
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": 0.59,
+          "picks": 1
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": 0.18,
+          "picks": 1
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": -1.84,
+          "picks": 1
+        }
+      ]
+    },
+    "DEF": {
+      "bestPick": {
+        "season": 2017,
+        "owner": "Ritz",
+        "player": "New England Patriots",
+        "pos": "DEF",
+        "nflTeam": "NE",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 118,
+        "isKeeper": 0,
+        "grade4": 0.89
+      },
+      "worstPick": {
+        "season": 2017,
+        "owner": "Erik",
+        "player": "Denver Broncos",
+        "pos": "DEF",
+        "nflTeam": "DEN",
+        "round": null,
+        "pickInRound": null,
+        "overallPick": 63,
+        "isKeeper": 0,
+        "grade4": -5.43
+      },
+      "ownerRanking": [
+        {
+          "owner": "Ritz",
+          "avgGrade4": 0.89,
+          "picks": 1
+        },
+        {
+          "owner": "Marv",
+          "avgGrade4": -1.08,
+          "picks": 1
+        },
+        {
+          "owner": "Juschka",
+          "avgGrade4": -1.47,
+          "picks": 1
+        },
+        {
+          "owner": "Simi",
+          "avgGrade4": -1.61,
+          "picks": 1
+        },
+        {
+          "owner": "Tommy",
+          "avgGrade4": -2.6599999999999997,
+          "picks": 2
+        },
+        {
+          "owner": "Benni",
+          "avgGrade4": -3.27,
+          "picks": 1
+        },
+        {
+          "owner": "Kessi",
+          "avgGrade4": -4.89,
+          "picks": 1
+        },
+        {
+          "owner": "Erik",
+          "avgGrade4": -5.43,
+          "picks": 1
+        }
+      ]
+    }
+  }
+}
