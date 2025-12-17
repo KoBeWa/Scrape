@@ -5,210 +5,210 @@
       "description": "Most total wins in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 94.0
+      "value": 104.0
     },
     {
       "record": "Total Losses",
       "description": "Most total losses in league history.",
       "leader": "Juschka",
       "scope": "R+P",
-      "value": 95.0
+      "value": 105.0
     },
     {
       "record": "Win Percent",
       "description": "Best win percentage in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 0.6103896103896104
+      "value": 0.5942857142857143
     },
     {
       "record": "All Play Wins",
       "description": "Most total all-play wins in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 656.0
+      "value": 744.0
     },
     {
       "record": "All Play Losses",
       "description": "Most total all-play losses in league history.",
       "leader": "Kessi",
       "scope": "R+P",
-      "value": 617.0
+      "value": 699.5
     },
     {
       "record": "All Play Win Percent",
       "description": "Best all-play win percentage in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 0.608534322820037
+      "value": 0.6073469387755102
     },
     {
       "record": "Total Points",
       "description": "Most total points scored in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 16532.46
+      "value": 18761.04
     },
     {
       "record": "Total Opponent Points",
       "description": "Most total opponent points allowed in league history.",
-      "leader": "Erik",
+      "leader": "Juschka",
       "scope": "R+P",
-      "value": 15776.6
+      "value": 17871.46
     },
     {
       "record": "Points Share Average",
       "description": "Highest average share of total points scored in matchups over league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 0.519169564828107
+      "value": 0.5172955518127585
     },
     {
       "record": "Opponent Points Share Average",
       "description": "Highest average share of total points scored by opponents over league history.",
       "leader": "Juschka",
       "scope": "R+P",
-      "value": 0.5173782757117464
+      "value": 0.5153428913327142
     },
     {
       "record": "Luckiest",
       "description": "Luckiest member in league history (based on opponent performance).",
       "leader": "Ritz",
       "scope": "R+P",
-      "value": 0.0616883116883117
+      "value": 0.06571428571428573
     },
     {
       "record": "Luckiest (Least)",
       "description": "Unluckiest member in league history (based on opponent performance).",
       "leader": "Juschka",
       "scope": "R+P",
-      "value": -0.052875695732838575
+      "value": -0.04653061224489795
     },
     {
       "record": "Strength of Schedule",
       "description": "Toughest average strength of schedule in league history.",
-      "leader": "Juschka",
+      "leader": "Kessi",
       "scope": "R+P",
-      "value": 1414.1002597402596
+      "value": 1603.2718484848485
     },
     {
       "record": "Strength of Schedule (Easiest)",
       "description": "Easiest average strength of schedule in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 1391.067792207792
+      "value": 1586.7299924242425
     },
     {
       "record": "High Scores",
       "description": "Most matchups with the weekly high score in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 37.0
+      "value": 38.0
     },
     {
       "record": "High Scores Percent",
       "description": "Highest percentage of matchups with the weekly high score.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 0.24025974025974026
+      "value": 0.21714285714285714
     },
     {
       "record": "Top Scores",
       "description": "Most matchups with a top score (top tier) in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 75.0
+      "value": 88.0
     },
     {
       "record": "Top Scores Percent",
       "description": "Highest percentage of matchups with a top score.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 0.487012987012987
+      "value": 0.5028571428571429
     },
     {
       "record": "Top Half Scores",
       "description": "Most matchups finishing in the top half of weekly scores in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 97.0
+      "value": 110.0
     },
     {
       "record": "Top Half Score Percent",
       "description": "Highest percentage of matchups finishing in the top half.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 0.6298701298701299
+      "value": 0.6285714285714286
     },
     {
       "record": "Worst Scores",
       "description": "Most matchups with the lowest score of the week in league history.",
       "leader": "Juschka",
       "scope": "R+P",
-      "value": 34.0
+      "value": 36.0
     },
     {
       "record": "Worst Scores Percent",
       "description": "Highest percentage of matchups with the lowest score.",
       "leader": "Juschka",
       "scope": "R+P",
-      "value": 0.22077922077922077
+      "value": 0.2057142857142857
     },
     {
       "record": "Bottom Scores",
       "description": "Most matchups with a bottom score (bottom tier) in league history.",
       "leader": "Kessi",
       "scope": "R+P",
-      "value": 73.0
+      "value": 79.0
     },
     {
       "record": "Bottom Scores Percent",
       "description": "Highest percentage of matchups with a bottom score.",
       "leader": "Kessi",
       "scope": "R+P",
-      "value": 0.474025974025974
+      "value": 0.4514285714285714
     },
     {
       "record": "Bottom Half Scores",
       "description": "Most matchups finishing in the bottom half of weekly scores in league history.",
       "leader": "Kessi",
       "scope": "R+P",
-      "value": 90.0
+      "value": 101.0
     },
     {
       "record": "Bottom Half Score Percent",
       "description": "Highest percentage of matchups finishing in the bottom half.",
       "leader": "Kessi",
       "scope": "R+P",
-      "value": 0.5844155844155844
+      "value": 0.5771428571428572
     },
     {
       "record": "Blowout Wins",
       "description": "Most wins by a large margin in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 35.0
+      "value": 39.0
     },
     {
       "record": "Blowout Losses",
       "description": "Most losses by a large margin in league history.",
-      "leader": "Simi",
+      "leader": "Juschka",
       "scope": "R+P",
-      "value": 30.0
+      "value": 35.0
     },
     {
       "record": "Narrow Wins",
       "description": "Most wins by a narrow margin in league history.",
-      "leader": "Ritz",
+      "leader": "Erik",
       "scope": "R+P",
-      "value": 12.0
+      "value": 13.0
     },
     {
       "record": "Narrow Losses",
       "description": "Most losses by a narrow margin in league history.",
       "leader": "Benni",
       "scope": "R+P",
-      "value": 13.0
+      "value": 15.0
     },
     {
       "record": "Regular Season Titles",

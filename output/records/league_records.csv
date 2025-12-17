@@ -1,34 +1,34 @@
 record,description,leader,scope,value
-Total Wins,Most total wins in league history.,Benni,R+P,94.0
-Total Losses,Most total losses in league history.,Juschka,R+P,95.0
-Win Percent,Best win percentage in league history.,Benni,R+P,0.6103896103896104
-All Play Wins,Most total all-play wins in league history.,Benni,R+P,656.0
-All Play Losses,Most total all-play losses in league history.,Kessi,R+P,617.0
-All Play Win Percent,Best all-play win percentage in league history.,Benni,R+P,0.608534322820037
-Total Points,Most total points scored in league history.,Benni,R+P,16532.46
-Total Opponent Points,Most total opponent points allowed in league history.,Erik,R+P,15776.6
-Points Share Average,Highest average share of total points scored in matchups over league history.,Benni,R+P,0.519169564828107
-Opponent Points Share Average,Highest average share of total points scored by opponents over league history.,Juschka,R+P,0.5173782757117464
-Luckiest,Luckiest member in league history (based on opponent performance).,Ritz,R+P,0.0616883116883117
-Luckiest (Least),Unluckiest member in league history (based on opponent performance).,Juschka,R+P,-0.052875695732838575
-Strength of Schedule,Toughest average strength of schedule in league history.,Juschka,R+P,1414.1002597402596
-Strength of Schedule (Easiest),Easiest average strength of schedule in league history.,Benni,R+P,1391.067792207792
-High Scores,Most matchups with the weekly high score in league history.,Benni,R+P,37.0
-High Scores Percent,Highest percentage of matchups with the weekly high score.,Benni,R+P,0.24025974025974026
-Top Scores,Most matchups with a top score (top tier) in league history.,Benni,R+P,75.0
-Top Scores Percent,Highest percentage of matchups with a top score.,Benni,R+P,0.487012987012987
-Top Half Scores,Most matchups finishing in the top half of weekly scores in league history.,Benni,R+P,97.0
-Top Half Score Percent,Highest percentage of matchups finishing in the top half.,Benni,R+P,0.6298701298701299
-Worst Scores,Most matchups with the lowest score of the week in league history.,Juschka,R+P,34.0
-Worst Scores Percent,Highest percentage of matchups with the lowest score.,Juschka,R+P,0.22077922077922077
-Bottom Scores,Most matchups with a bottom score (bottom tier) in league history.,Kessi,R+P,73.0
-Bottom Scores Percent,Highest percentage of matchups with a bottom score.,Kessi,R+P,0.474025974025974
-Bottom Half Scores,Most matchups finishing in the bottom half of weekly scores in league history.,Kessi,R+P,90.0
-Bottom Half Score Percent,Highest percentage of matchups finishing in the bottom half.,Kessi,R+P,0.5844155844155844
-Blowout Wins,Most wins by a large margin in league history.,Benni,R+P,35.0
-Blowout Losses,Most losses by a large margin in league history.,Simi,R+P,30.0
-Narrow Wins,Most wins by a narrow margin in league history.,Ritz,R+P,12.0
-Narrow Losses,Most losses by a narrow margin in league history.,Benni,R+P,13.0
+Total Wins,Most total wins in league history.,Benni,R+P,104.0
+Total Losses,Most total losses in league history.,Juschka,R+P,105.0
+Win Percent,Best win percentage in league history.,Benni,R+P,0.5942857142857143
+All Play Wins,Most total all-play wins in league history.,Benni,R+P,744.0
+All Play Losses,Most total all-play losses in league history.,Kessi,R+P,699.5
+All Play Win Percent,Best all-play win percentage in league history.,Benni,R+P,0.6073469387755102
+Total Points,Most total points scored in league history.,Benni,R+P,18761.04
+Total Opponent Points,Most total opponent points allowed in league history.,Juschka,R+P,17871.46
+Points Share Average,Highest average share of total points scored in matchups over league history.,Benni,R+P,0.5172955518127585
+Opponent Points Share Average,Highest average share of total points scored by opponents over league history.,Juschka,R+P,0.5153428913327142
+Luckiest,Luckiest member in league history (based on opponent performance).,Ritz,R+P,0.06571428571428573
+Luckiest (Least),Unluckiest member in league history (based on opponent performance).,Juschka,R+P,-0.04653061224489795
+Strength of Schedule,Toughest average strength of schedule in league history.,Kessi,R+P,1603.2718484848485
+Strength of Schedule (Easiest),Easiest average strength of schedule in league history.,Benni,R+P,1586.7299924242425
+High Scores,Most matchups with the weekly high score in league history.,Benni,R+P,38.0
+High Scores Percent,Highest percentage of matchups with the weekly high score.,Benni,R+P,0.21714285714285714
+Top Scores,Most matchups with a top score (top tier) in league history.,Benni,R+P,88.0
+Top Scores Percent,Highest percentage of matchups with a top score.,Benni,R+P,0.5028571428571429
+Top Half Scores,Most matchups finishing in the top half of weekly scores in league history.,Benni,R+P,110.0
+Top Half Score Percent,Highest percentage of matchups finishing in the top half.,Benni,R+P,0.6285714285714286
+Worst Scores,Most matchups with the lowest score of the week in league history.,Juschka,R+P,36.0
+Worst Scores Percent,Highest percentage of matchups with the lowest score.,Juschka,R+P,0.2057142857142857
+Bottom Scores,Most matchups with a bottom score (bottom tier) in league history.,Kessi,R+P,79.0
+Bottom Scores Percent,Highest percentage of matchups with a bottom score.,Kessi,R+P,0.4514285714285714
+Bottom Half Scores,Most matchups finishing in the bottom half of weekly scores in league history.,Kessi,R+P,101.0
+Bottom Half Score Percent,Highest percentage of matchups finishing in the bottom half.,Kessi,R+P,0.5771428571428572
+Blowout Wins,Most wins by a large margin in league history.,Benni,R+P,39.0
+Blowout Losses,Most losses by a large margin in league history.,Juschka,R+P,35.0
+Narrow Wins,Most wins by a narrow margin in league history.,Erik,R+P,13.0
+Narrow Losses,Most losses by a narrow margin in league history.,Benni,R+P,15.0
 Regular Season Titles,Most regular-season titles in league history.,Benni,R,2.0
 Season Points Titles,Most seasons leading the regular season in points scored.,Benni,R,5.0
 Season All Play Titles,Most seasons with the best all-play record in league history.,Benni,R,4.0
