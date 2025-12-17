@@ -1,44 +1,44 @@
-record,description,leader,value
-Total Wins,Most total wins in league history.,Benni,94.0
-Total Losses,Most total losses in league history.,Juschka,95.0
-Win Percent,Best win percentage in league history.,Benni,0.6103896103896104
-All Play Wins,Most total all-play wins (if playing every team each week) in league history.,Benni,656.0
-All Play Losses,Most total all-play losses (if playing every team each week) in league history.,Kessi,617.0
-All Play Win Percent,Best all-play win percentage in league history.,Benni,0.608534322820037
-Total Points,Most total points scored in league history.,Benni,16532.46
-Total Opponent Points,Most total opponent points allowed in league history.,Erik,15776.6
-Points Share Average,Highest average share of total points scored in matchups over league history.,Benni,0.519169564828107
-Opponent Points Share Average,Highest average share of total points scored by opponents over league history.,Juschka,0.5173782757117465
-Luckiest,Luckiest member in league history (based on opponent performance).,Ritz,0.0616883116883117
-Luckiest (Least),Unluckiest member in league history (based on opponent performance).,Juschka,-0.052875695732838575
-Strength of Schedule,Toughest average strength of schedule (highest opponents’ points rank) in league history.,Juschka,1414.1002597402596
-Strength of Schedule (Easiest),Easiest average strength of schedule (lowest opponents’ points rank) in league history.,Benni,1391.067792207792
-High Scores,Most matchups with the weekly high score in league history.,Benni,37.0
-High Scores Percent,Highest percentage of matchups with the weekly high score in league history.,Benni,0.24025974025974026
-Top Scores,Most matchups with a top score (top tier) in league history.,Benni,75.0
-Top Scores Percent,Highest percentage of matchups with a top score in league history.,Benni,0.487012987012987
-Top Half Scores,Most matchups finishing in the top half of weekly scores in league history.,Benni,97.0
-Top Half Score Percent,Highest percentage of matchups finishing in the top half of weekly scores.,Benni,0.6298701298701299
-Worst Scores,Most matchups with the lowest score of the week in league history.,Juschka,34.0
-Worst Scores Percent,Highest percentage of matchups with the lowest score of the week.,Juschka,0.22077922077922077
-Bottom Scores,Most matchups with a bottom score (bottom tier) in league history.,Kessi,73.0
-Bottom Scores Percent,Highest percentage of matchups with a bottom score in league history.,Kessi,0.474025974025974
-Bottom Half Scores,Most matchups finishing in the bottom half of weekly scores in league history.,Kessi,90.0
-Bottom Half Score Percent,Highest percentage of matchups finishing in the bottom half of weekly scores.,Kessi,0.5844155844155844
-Blowout Wins,Most wins by a large margin in league history.,Benni,35.0
-Blowout Losses,Most losses by a large margin in league history.,Simi,30.0
-Narrow Wins,Most wins by a narrow margin in league history.,Ritz,12.0
-Narrow Losses,Most losses by a narrow margin in league history.,Benni,13.0
-Regular Season Titles,Most regular-season titles in league history.,Erik,3.0
-Season Points Titles,Most seasons leading the regular season in points scored.,Benni,5.0
-Season All Play Titles,Most seasons with the best all-play record in league history.,Benni,4.0
-Seasons Winning Record,Most seasons with an overall winning record in league history.,Benni,8.0
-Seasons Losing Record,Most seasons with an overall losing record in league history.,Juschka,9.0
-Championships,Most league championships in league history.,Erik,3.0
-Medal Score,Best medal score over league history (points based on final rank).,Erik,13.0
-Total Medals,Most total medals (finishes counted as medal ranks) in league history.,Benni,7.0
-Playoff Appearances,Most playoff appearances in league history.,Benni,8.0
-Playoff Wins,Most playoff wins in league history.,Erik,12.0
-Playoff Losses,Most playoff losses in league history.,Tommy,12.0
-Total Playoff Points,Most total playoff points scored in league history.,Erik,2261.66
-Total Playoff Opponent Points,Most total playoff points allowed to opponents in league history.,Benni,2198.88
+record,description,leader,scope,value
+Total Wins,Most total wins in league history.,Benni,R,94.0
+Total Losses,Most total losses in league history.,Juschka,R,95.0
+Win Percent,Best win percentage in league history.,Benni,R,0.6103896103896104
+All Play Wins,Most total all-play wins in league history.,Benni,R,656.0
+All Play Losses,Most total all-play losses in league history.,Kessi,R,617.0
+All Play Win Percent,Best all-play win percentage in league history.,Benni,R,0.608534322820037
+Total Points,Most total points scored in league history.,Benni,R,16532.46
+Total Opponent Points,Most total opponent points allowed in league history.,Erik,R,15776.6
+Points Share Average,Highest average share of total points scored in matchups over league history.,Benni,R,0.519169564828107
+Opponent Points Share Average,Highest average share of total points scored by opponents over league history.,Juschka,R,0.5173782757117464
+Luckiest,Luckiest member in league history (based on opponent performance).,Ritz,R,0.0616883116883117
+Luckiest (Least),Unluckiest member in league history (based on opponent performance).,Juschka,R,-0.052875695732838575
+Strength of Schedule,Toughest average strength of schedule in league history.,Juschka,R,1414.1002597402596
+Strength of Schedule (Easiest),Easiest average strength of schedule in league history.,Benni,R,1391.067792207792
+High Scores,Most matchups with the weekly high score in league history.,Benni,R,37.0
+High Scores Percent,Highest percentage of matchups with the weekly high score.,Benni,R,0.24025974025974026
+Top Scores,Most matchups with a top score (top tier) in league history.,Benni,R,75.0
+Top Scores Percent,Highest percentage of matchups with a top score.,Benni,R,0.487012987012987
+Top Half Scores,Most matchups finishing in the top half of weekly scores in league history.,Benni,R,97.0
+Top Half Score Percent,Highest percentage of matchups finishing in the top half.,Benni,R,0.6298701298701299
+Worst Scores,Most matchups with the lowest score of the week in league history.,Juschka,R,34.0
+Worst Scores Percent,Highest percentage of matchups with the lowest score.,Juschka,R,0.22077922077922077
+Bottom Scores,Most matchups with a bottom score (bottom tier) in league history.,Kessi,R,73.0
+Bottom Scores Percent,Highest percentage of matchups with a bottom score.,Kessi,R,0.474025974025974
+Bottom Half Scores,Most matchups finishing in the bottom half of weekly scores in league history.,Kessi,R,90.0
+Bottom Half Score Percent,Highest percentage of matchups finishing in the bottom half.,Kessi,R,0.5844155844155844
+Blowout Wins,Most wins by a large margin in league history.,Benni,R,35.0
+Blowout Losses,Most losses by a large margin in league history.,Simi,R,30.0
+Narrow Wins,Most wins by a narrow margin in league history.,Ritz,R,12.0
+Narrow Losses,Most losses by a narrow margin in league history.,Benni,R,13.0
+Regular Season Titles,Most regular-season titles in league history.,Benni,R,2.0
+Season Points Titles,Most seasons leading the regular season in points scored.,Benni,R,5.0
+Season All Play Titles,Most seasons with the best all-play record in league history.,Benni,R,4.0
+Seasons Winning Record,Most seasons with an overall winning record in league history.,Benni,R,8.0
+Seasons Losing Record,Most seasons with an overall losing record in league history.,Juschka,R,9.0
+Championships,Most league championships in league history.,Erik,R+P,3.0
+Medal Score,Best medal score over league history.,Erik,R+P,14.0
+Total Medals,Most total medals in league history.,Benni,R+P,8.0
+Playoff Appearances,Most playoff appearances in league history.,Benni,R,10.0
+Playoff Wins,Most playoff wins in league history.,Erik,P,12.0
+Playoff Losses,Most playoff losses in league history.,Tommy,P,12.0
+Total Playoff Points,Most total playoff points scored in league history.,Erik,P,2261.66
+Total Playoff Opponent Points,Most total playoff points allowed to opponents in league history.,Benni,P,2198.88

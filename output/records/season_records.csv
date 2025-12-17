@@ -3,21 +3,19 @@ Season Score,Highest season score in a single season.,2018,Benni,1709.76
 Season Score (Lowest),Lowest season score in a single season.,2017,Kessi,1190.3
 Season Luckiest,Luckiest team in a season (based on opponents’ performance).,2021,Erik,0.2448979591836735
 Season Luckiest (Lowest),Unluckiest team in a season (based on opponents’ performance).,2022,Simi,-0.2755102040816327
-Strength of Schedule,Toughest strength of schedule in a season (highest opponents’ points rank).,2018,Kessi,1528.4285714285713
-Strength of Schedule (Easiest),Easiest strength of schedule in a season (lowest opponents’ points rank).,2017,Simi,1289.7628571428572
 Most Wins,Most wins in a single season.,2018,Ritz,13.0
 Most Losses,Most losses in a single season.,2018,Kessi,14.0
-Most All Play Wins,Most all-play wins (vs every team each week) in a season.,2018,Ritz,77.0
-Most All Play Losses,Most all-play losses (vs every team each week) in a season.,2018,Kessi,82.0
+Most All Play Wins,Most all-play wins in a season.,2018,Ritz,77.0
+Most All Play Losses,Most all-play losses in a season.,2018,Kessi,82.0
 Best All Play Win Percent,Best all-play win percentage in a season.,2018,Ritz,0.7857142857142857
 Most Points,Most points scored in a season.,2018,Benni,1709.76
 Most Opponent Points,Most opponent points allowed in a season.,2022,Simi,1605.1
 Fewest Points,Fewest points scored in a season.,2017,Kessi,1190.3
 Fewest Opponent Points,Fewest opponent points allowed in a season.,2015,Kessi,1178.28
-Highest Points Share,Highest points share in a season (share of total points scored in matchups).,2022,Benni,0.5549524383992833
-Lowest Points Share,Lowest / worst points share in a season.,2018,Kessi,0.4378209040460125
+Highest Points Share,Highest points share in a season.,2022,Benni,0.5549524383992833
+Lowest Points Share,Lowest points share in a season.,2018,Kessi,0.4378209040460125
 Highest Opponent Points Share,Highest opponents’ points share in a season.,2018,Kessi,0.5621790959539875
-Lowest Opponent Points Share,Lowest / worst opponents’ points share in a season.,2022,Benni,0.4450475616007167
+Lowest Opponent Points Share,Lowest opponents’ points share in a season.,2022,Benni,0.4450475616007167
 High Scores,Most matchups finishing with the weekly high score in a season.,2022,Benni,8.0
 Top Scores,Most matchups finishing among the top scores of the week in a season.,2016,Marv,11.0
 Top Half Scores,Most matchups finishing in the top half of weekly scoring in a season.,2018,Ritz,14.0
