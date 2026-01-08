@@ -136,7 +136,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
   - 8. Juschka — -2.905 (picks: 8)
 
 
-## Einzelne Saisons (2015–2024)
+## Einzelne Saisons (2015–2025)
 
 ### Season 2015
 
