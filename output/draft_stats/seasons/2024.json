@@ -133,12 +133,12 @@
     },
     {
       "owner": "Kessi",
-      "avgGrade4": 1.428,
+      "avgGrade4": 1.427710529733333,
       "picks": 15
     },
     {
       "owner": "Simi",
-      "avgGrade4": 1.2566666666666668,
+      "avgGrade4": 1.2563361318000001,
       "picks": 15
     },
     {
@@ -148,7 +148,7 @@
     },
     {
       "owner": "Benni",
-      "avgGrade4": 0.2400000000000001,
+      "avgGrade4": 0.24019406720000008,
       "picks": 15
     },
     {
@@ -158,12 +158,12 @@
     },
     {
       "owner": "Erik",
-      "avgGrade4": -2.603333333333333,
+      "avgGrade4": -2.6036226685333332,
       "picks": 15
     },
     {
       "owner": "Ritz",
-      "avgGrade4": -4.357333333333333,
+      "avgGrade4": -4.357014746266667,
       "picks": 15
     }
   ],
@@ -504,7 +504,7 @@
         "pickInRound": null,
         "overallPick": 112,
         "isKeeper": 0,
-        "grade4": 0.54
+        "grade4": 0.535659972
       },
       "worstPick": {
         "season": 2024,
@@ -516,32 +516,32 @@
         "pickInRound": null,
         "overallPick": 82,
         "isKeeper": 0,
-        "grade4": -4.4
+        "grade4": -4.395221194
       },
       "ownerRanking": [
         {
           "owner": "Erik",
-          "avgGrade4": 0.54,
+          "avgGrade4": 0.535659972,
           "picks": 1
         },
         {
           "owner": "Kessi",
-          "avgGrade4": -0.64,
+          "avgGrade4": -0.644342054,
           "picks": 1
         },
         {
           "owner": "Benni",
-          "avgGrade4": -0.84,
+          "avgGrade4": -0.837088992,
           "picks": 1
         },
         {
           "owner": "Simi",
-          "avgGrade4": -0.85,
+          "avgGrade4": -0.854958023,
           "picks": 1
         },
         {
           "owner": "Ritz",
-          "avgGrade4": -4.4,
+          "avgGrade4": -4.395221194,
           "picks": 1
         }
       ]

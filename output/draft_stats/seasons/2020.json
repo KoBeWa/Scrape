@@ -133,27 +133,27 @@
     },
     {
       "owner": "Marv",
-      "avgGrade4": 3.3280000000000003,
+      "avgGrade4": 3.3279839960000004,
       "picks": 15
     },
     {
       "owner": "Juschka",
-      "avgGrade4": 2.8113333333333332,
+      "avgGrade4": 2.8116004500000003,
       "picks": 15
     },
     {
       "owner": "Ritz",
-      "avgGrade4": 1.5979999999999999,
+      "avgGrade4": 1.5977503113333331,
       "picks": 15
     },
     {
       "owner": "Erik",
-      "avgGrade4": 0.7926666666666665,
+      "avgGrade4": 0.7925411415999998,
       "picks": 15
     },
     {
       "owner": "Kessi",
-      "avgGrade4": -0.48799999999999977,
+      "avgGrade4": -0.48806405039999984,
       "picks": 15
     },
     {
@@ -163,7 +163,7 @@
     },
     {
       "owner": "Simi",
-      "avgGrade4": -3.6086666666666662,
+      "avgGrade4": -3.608375648,
       "picks": 15
     }
   ],
@@ -514,7 +514,7 @@
         "pickInRound": null,
         "overallPick": 95,
         "isKeeper": 0,
-        "grade4": 20.44
+        "grade4": 20.44436528
       },
       "worstPick": {
         "season": 2020,
@@ -526,37 +526,37 @@
         "pickInRound": null,
         "overallPick": 85,
         "isKeeper": 0,
-        "grade4": -3.65
+        "grade4": -3.64599325
       },
       "ownerRanking": [
         {
           "owner": "Simi",
-          "avgGrade4": 20.44,
+          "avgGrade4": 20.44436528,
           "picks": 1
         },
         {
           "owner": "Marv",
-          "avgGrade4": 12.38,
+          "avgGrade4": 12.37975994,
           "picks": 1
         },
         {
           "owner": "Kessi",
-          "avgGrade4": 0.15,
+          "avgGrade4": 0.149039244,
           "picks": 1
         },
         {
           "owner": "Erik",
-          "avgGrade4": -1.03,
+          "avgGrade4": -1.031882876,
           "picks": 1
         },
         {
           "owner": "Ritz",
-          "avgGrade4": -2.4,
+          "avgGrade4": -2.40374533,
           "picks": 1
         },
         {
           "owner": "Juschka",
-          "avgGrade4": -3.65,
+          "avgGrade4": -3.64599325,
           "picks": 1
         }
       ]
