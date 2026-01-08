@@ -16,7 +16,7 @@ Output:
 
 Features:
 - Overview (All-Time): Top/Worst Picks, Best/Worst Drafts (Season+Owner), Owner-Ranking, Position Blocks
-- Einzelne Seasons (2015-2024): Top/Worst Picks, Draft Ranking, Position Blocks
+- Einzelne Seasons (2015-2025): Top/Worst Picks, Draft Ranking, Position Blocks
 - Draft Stats & Records (All-Time & Season Records): wie in deiner Liste
 - Robust CSV read:
     - auto delimiter detect (, ; \t |)
@@ -427,7 +427,7 @@ def build_report(all_time: Dict[str, Any],
             md.append("  - _(none)_")
         md.append("")
 
-    md.append("\n## Einzelne Saisons (2015–2024)\n")
+    md.append("\n## Einzelne Saisons (2015–2025)\n")
     for year in sorted(seasons.keys()):
         s = seasons[year]
         md.append(f"### Season {year}\n")
@@ -484,7 +484,7 @@ def main() -> None:
     ap.add_argument("--input", default="output/PlayerRanks_with_vorp_draftpick.csv")
     ap.add_argument("--outdir", default="output/draft_stats")
     ap.add_argument("--min-year", type=int, default=2015)
-    ap.add_argument("--max-year", type=int, default=2024)
+    ap.add_argument("--max-year", type=int, default=2025)
     ap.add_argument("--encoding", default="utf-8")
     args = ap.parse_args()
 
@@ -531,7 +531,7 @@ def main() -> None:
             "positions": pos_blocks(d, cols, positions),
         }
 
-    # Records (league history within year filter, as requested 2015–2024)
+    # Records (league history within year filter, as requested 2015–2025)
     records = build_records(years_df, cols, positions)
 
     # Write outputs
