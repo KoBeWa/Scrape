@@ -8,55 +8,66 @@ from collections import defaultdict
 SEASONS = range(2015, 2026)   # 2015–2025
 WEEKS = range(1, 17)          # 1–16
 
-ADD_CONTEXT_COLUMNS = True    # True => Season + Week vorne rein; False => wirklich exakt nur dein Format
-
+ADD_CONTEXT_COLUMNS = True    # True => Season+Week vorne rein (empfohlen)
 REPO_ROOT = Path(__file__).resolve().parents[1]
 BASE = REPO_ROOT / "output" / "teamgamecenter"
 OUT = REPO_ROOT / "output" / "teamgamecenter_all_2015_2025_w1_16.csv"
 
-# Dein gewünschter Header (aus deinem Beispiel) – inkl. mehrfach "Points"
-TEMPLATE_HEADER = [
+# ---- Templates: bis 2021 (6 BN) und ab 2022 (7 BN) ----
+TEMPLATE_6BN = [
     "Owner","Rank","QB","Points","RB","Points","RB","Points","WR","Points","WR","Points",
     "TE","Points","W/R","Points","K","Points","DEF","Points",
     "BN","Points","BN","Points","BN","Points","BN","Points","BN","Points","BN","Points",
     "Total","Opponent","Opponent Total"
 ]
 
+TEMPLATE_7BN = [
+    "Owner","Rank","QB","Points","RB","Points","RB","Points","WR","Points","WR","Points",
+    "TE","Points","W/R","Points","K","Points","DEF","Points",
+    "BN","Points","BN","Points","BN","Points","BN","Points","BN","Points","BN","Points","BN","Points",
+    "Total","Opponent","Opponent Total"
+]
+
+# Wir schreiben IMMER im "7 BN" Outputformat (Superset), damit nichts fehlt
+OUTPUT_TEMPLATE = TEMPLATE_7BN
+
+
 def sniff_dialect(sample_path: Path) -> csv.Dialect:
-    """Auto-detect delimiter (Komma/Tab/;) aus einer Beispieldatei."""
     sample = sample_path.read_text(encoding="utf-8", errors="replace")[:4096]
     sniffer = csv.Sniffer()
     try:
         return sniffer.sniff(sample, delimiters=[",", "\t", ";"])
     except csv.Error:
-        # Fallback: Tab ist bei solchen Exports häufig
+        # Fallback: Tab (deine Beispiele sind tab-getrennt)
         class _D(csv.excel_tab): pass
         return _D
 
-def build_occurrence_map(header: list[str]) -> dict[tuple[str,int], int]:
+
+def build_occurrence_map(header: list[str]) -> dict[tuple[str, int], int]:
     """
     Mappe (colname, occurrence_index) -> position
-    Beispiel: header = ["Points","Points"] => ("Points",1)->0, ("Points",2)->1
+    Beispiel: ["Points","Points"] => ("Points",1)->0, ("Points",2)->1
     """
     seen = defaultdict(int)
-    occ_map = {}
+    occ_map: dict[tuple[str, int], int] = {}
     for i, col in enumerate(header):
         col = col.strip()
         seen[col] += 1
         occ_map[(col, seen[col])] = i
     return occ_map
 
-def align_row_to_template(src_header: list[str], src_row: list[str], template: list[str]) -> list[str]:
+
+def align_row(src_header: list[str], src_row: list[str], out_template: list[str]) -> list[str]:
     """
-    Erzeuge eine Ausgabezeile exakt in Template-Reihenfolge.
-    Match nach (Spaltenname, Vorkommensnummer), damit doppelte Namen korrekt zugeordnet werden.
+    Erzeuge Ausgabezeile exakt in out_template-Reihenfolge.
+    Zuordnung über (Spaltenname, Vorkommensnummer) - damit doppelte 'Points' passen.
     """
     src_occ = build_occurrence_map([c.strip() for c in src_header])
 
-    # für Template ebenfalls die Vorkommensnummern zählen
     tpl_seen = defaultdict(int)
-    out = [""] * len(template)
-    for j, col in enumerate(template):
+    out = [""] * len(out_template)
+
+    for j, col in enumerate(out_template):
         tpl_seen[col] += 1
         key = (col, tpl_seen[col])
         if key in src_occ:
@@ -64,6 +75,7 @@ def align_row_to_template(src_header: list[str], src_row: list[str], template: l
             if idx < len(src_row):
                 out[j] = src_row[idx]
     return out
+
 
 def find_first_existing_file() -> Path | None:
     for season in SEASONS:
@@ -73,6 +85,7 @@ def find_first_existing_file() -> Path | None:
                 return p
     return None
 
+
 def main() -> None:
     first = find_first_existing_file()
     if not first:
@@ -80,7 +93,7 @@ def main() -> None:
 
     dialect = sniff_dialect(first)
 
-    out_header = TEMPLATE_HEADER.copy()
+    out_header = OUTPUT_TEMPLATE.copy()
     if ADD_CONTEXT_COLUMNS:
         out_header = ["Season", "Week"] + out_header
 
@@ -106,11 +119,13 @@ def main() -> None:
                     except StopIteration:
                         continue
 
-                    # Header matchen (inkl. "Points" mehrfach)
                     for src_row in reader:
-                        aligned = align_row_to_template(src_header, src_row, TEMPLATE_HEADER)
+                        aligned = align_row(src_header, src_row, OUTPUT_TEMPLATE)
+
+                        # Optional Season/Week vorne rein
                         if ADD_CONTEXT_COLUMNS:
                             aligned = [str(season), str(week)] + aligned
+
                         writer.writerow(aligned)
                         rows_written += 1
 
@@ -119,6 +134,7 @@ def main() -> None:
     print(f"[ok] Dateien verwendet: {files_used}")
     print(f"[ok] Zeilen geschrieben: {rows_written}")
     print(f"[ok] Output: {OUT}")
+
 
 if __name__ == "__main__":
     main()
