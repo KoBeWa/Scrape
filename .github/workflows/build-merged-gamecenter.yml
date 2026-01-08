@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - "output/teamgamecenter/**.csv"
-      - "scripts/merge_teamgamecenter.py"
+      - "scripts/merge_teamgamecenter_strict.py"
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
 
       - run: pip install pandas
 
-      - run: python scripts/merge_teamgamecenter.py
+      - run: python scripts/merge_teamgamecenter_strict.py
 
       - run: |
           git config --global user.name "github-actions[bot]"
