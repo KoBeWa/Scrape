@@ -26,8 +26,8 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 
 1. 2017 — Simi — avg Grade4: 7.499 (picks: 15)
 2. 2022 — Benni — avg Grade4: 7.221 (picks: 15)
-3. 2024 — Tommy — avg Grade4: 6.749 (picks: 15)
-4. 2018 — Ritz — avg Grade4: 6.062 (picks: 15)
+3. 2018 — Ritz — avg Grade4: 7.076 (picks: 14)
+4. 2024 — Tommy — avg Grade4: 6.749 (picks: 15)
 5. 2019 — Marv — avg Grade4: 6.028 (picks: 15)
 
 ### Worst all time Draft (top 5)
@@ -41,13 +41,13 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 ### All time Draft Ranking (nach Owner & avg draft pick value)
 
 1. Marv — avg Grade4: 1.667 (picks: 166)
-2. Ritz — avg Grade4: 0.526 (picks: 165)
-3. Tommy — avg Grade4: 0.432 (picks: 165)
+2. Ritz — avg Grade4: 0.579 (picks: 164)
+3. Tommy — avg Grade4: 0.496 (picks: 164)
 4. Benni — avg Grade4: 0.186 (picks: 165)
-5. Juschka — avg Grade4: -0.385 (picks: 165)
-6. Erik — avg Grade4: -0.438 (picks: 164)
-7. Simi — avg Grade4: -0.513 (picks: 165)
-8. Kessi — avg Grade4: -0.694 (picks: 165)
+5. Juschka — avg Grade4: -0.308 (picks: 164)
+6. Simi — avg Grade4: -0.405 (picks: 165)
+7. Erik — avg Grade4: -0.438 (picks: 164)
+8. Kessi — avg Grade4: -0.578 (picks: 164)
 
 ### Position Overview (All-Time)
 
@@ -84,14 +84,14 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 - Best WR Pick: 2021 (Overall 51) Cooper Kupp [WR] (SEA) — Kessi — Grade4: 59.730
 - Worst WR Pick: 2020 (Overall 3) Michael Thomas [WR] (FA) — Tommy — Grade4: -25.000
 - Pos WR Draft Ranking (8 Owner):
-  - 1. Kessi — 0.021 (picks: 59)
+  - 1. Kessi — 0.364 (picks: 58)
   - 2. Marv — -0.482 (picks: 60)
-  - 3. Ritz — -0.630 (picks: 55)
-  - 4. Benni — -2.286 (picks: 65)
-  - 5. Simi — -2.400 (picks: 57)
-  - 6. Tommy — -2.821 (picks: 65)
+  - 3. Ritz — -0.491 (picks: 54)
+  - 4. Simi — -2.260 (picks: 57)
+  - 5. Benni — -2.286 (picks: 65)
+  - 6. Tommy — -2.708 (picks: 64)
   - 7. Erik — -3.624 (picks: 58)
-  - 8. Juschka — -5.182 (picks: 56)
+  - 8. Juschka — -5.041 (picks: 55)
 
 #### TE
 
@@ -118,8 +118,8 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
   - 4. Marv — 1.735 (picks: 10)
   - 5. Juschka — 0.844 (picks: 14)
   - 6. Ritz — -0.205 (picks: 12)
-  - 7. Tommy — -0.718 (picks: 8)
-  - 8. Simi — -1.175 (picks: 11)
+  - 7. Simi — -0.283 (picks: 11)
+  - 8. Tommy — -0.717 (picks: 8)
 
 #### DEF
 
@@ -272,7 +272,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 4. Benni — avg Grade4: 0.422 (picks: 15)
 5. Kessi — avg Grade4: -0.302 (picks: 15)
 6. Ritz — avg Grade4: -0.553 (picks: 15)
-7. Simi — avg Grade4: -3.864 (picks: 15)
+7. Simi — avg Grade4: -3.210 (picks: 15)
 8. Tommy — avg Grade4: -4.095 (picks: 15)
 
 ##### Position Blocks
@@ -326,15 +326,15 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
     - 8. Ritz — -18.810 (picks: 1)
 - **K**
   - Best K Pick: 2016 (Overall 119) Mason Crosby [K] (FA) — Juschka — Grade4: 2.760
-  - Worst K Pick: 2016 (Overall 93) Steven Hauschka [K] (SEA) — Simi — Grade4: -10.440
+  - Worst K Pick: 2016 (Overall 56) Stephen Gostkowski [K] (FA) — Ritz — Grade4: -3.930
   - Pos K Draft Ranking (8 Owner):
     - 1. Juschka — 2.760 (picks: 1)
     - 2. Kessi — 1.170 (picks: 1)
     - 3. Marv — 1.140 (picks: 1)
     - 4. Tommy — -0.420 (picks: 1)
-    - 5. Ritz — -1.145 (picks: 2)
-    - 6. Benni — -2.030 (picks: 1)
-    - 7. Simi — -10.440 (picks: 1)
+    - 5. Simi — -0.635 (picks: 1)
+    - 6. Ritz — -1.145 (picks: 2)
+    - 7. Benni — -2.030 (picks: 1)
 - **DEF**
   - Best DEF Pick: 2016 (Overall 67) Kansas City Chiefs [DEF] (KC) — Tommy — Grade4: 8.538
   - Worst DEF Pick: 2016 (Overall 60) Seattle Seahawks [DEF] (SEA) — Erik — Grade4: -4.862
@@ -475,7 +475,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 
 ##### Draft Ranking (1–8)
 
-1. Ritz — avg Grade4: 6.062 (picks: 15)
+1. Ritz — avg Grade4: 7.076 (picks: 14)
 2. Juschka — avg Grade4: 2.256 (picks: 15)
 3. Erik — avg Grade4: 1.787 (picks: 14)
 4. Benni — avg Grade4: -0.399 (picks: 15)
@@ -514,7 +514,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
   - Best WR Pick: 2018 (Overall 28) Davante Adams [WR] (LAR) — Ritz — Grade4: 26.490
   - Worst WR Pick: 2018 (Overall 22) A.J. Green [WR] (FA) — Simi — Grade4: -11.580
   - Pos WR Draft Ranking (8 Owner):
-    - 1. Ritz — 3.792 (picks: 5)
+    - 1. Ritz — 6.775 (picks: 4)
     - 2. Juschka — 1.898 (picks: 5)
     - 3. Erik — 1.558 (picks: 4)
     - 4. Marv — 1.102 (picks: 6)
@@ -583,9 +583,9 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 2. Ritz — avg Grade4: 2.690 (picks: 15)
 3. Juschka — avg Grade4: 1.313 (picks: 15)
 4. Erik — avg Grade4: -0.238 (picks: 15)
-5. Tommy — avg Grade4: -0.990 (picks: 15)
-6. Benni — avg Grade4: -2.076 (picks: 15)
-7. Kessi — avg Grade4: -2.482 (picks: 15)
+5. Tommy — avg Grade4: -0.341 (picks: 14)
+6. Kessi — avg Grade4: -1.869 (picks: 15)
+7. Benni — avg Grade4: -2.076 (picks: 15)
 8. Simi — avg Grade4: -2.566 (picks: 15)
 
 ##### Position Blocks
@@ -618,10 +618,10 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
   - Best WR Pick: 2019 (Overall 14) Michael Thomas [WR] (FA) — Tommy — Grade4: 19.250
   - Worst WR Pick: 2019 (Overall 8) Davante Adams [WR] (LAR) — Benni — Grade4: -15.820
   - Pos WR Draft Ranking (8 Owner):
-    - 1. Tommy — 1.289 (picks: 7)
+    - 1. Tommy — 3.182 (picks: 6)
     - 2. Ritz — -1.066 (picks: 5)
-    - 3. Marv — -1.602 (picks: 5)
-    - 4. Kessi — -2.633 (picks: 6)
+    - 3. Kessi — -1.101 (picks: 6)
+    - 4. Marv — -1.602 (picks: 5)
     - 5. Juschka — -4.010 (picks: 5)
     - 6. Benni — -4.563 (picks: 6)
     - 7. Erik — -7.286 (picks: 5)
@@ -787,7 +787,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 
 1. Marv — avg Grade4: 4.304 (picks: 15)
 2. Ritz — avg Grade4: 2.726 (picks: 15)
-3. Simi — avg Grade4: 1.888 (picks: 15)
+3. Simi — avg Grade4: 2.421 (picks: 15)
 4. Benni — avg Grade4: 1.064 (picks: 15)
 5. Tommy — avg Grade4: 0.698 (picks: 15)
 6. Kessi — avg Grade4: 0.239 (picks: 15)
@@ -827,7 +827,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
     - 1. Kessi — 7.260 (picks: 5)
     - 2. Benni — 5.698 (picks: 5)
     - 3. Ritz — 4.660 (picks: 6)
-    - 4. Simi — 2.975 (picks: 6)
+    - 4. Simi — 4.306 (picks: 6)
     - 5. Erik — -3.123 (picks: 6)
     - 6. Tommy — -5.875 (picks: 6)
     - 7. Marv — -5.938 (picks: 5)
@@ -881,16 +881,16 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 2. 2022 (Overall 17) Javonte Williams [RB] (DAL) — Kessi — Grade4: -15.710
 3. 2022 (Overall 13) Deebo Samuel [WR] (WAS) — Tommy — Grade4: -14.510
 4. 2022 (Overall 15) D'Andre Swift [RB] (CHI) — Simi — Grade4: -13.490
-5. 2022 (Overall 59) Marquise Brown [WR] (KC) — Juschka — Grade4: -12.920
+5. 2022 (Overall 9) Cooper Kupp [WR] (SEA) — Benni — Grade4: -12.700
 
 ##### Draft Ranking (1–8)
 
 1. Benni — avg Grade4: 7.221 (picks: 15)
 2. Tommy — avg Grade4: 4.483 (picks: 15)
 3. Erik — avg Grade4: 1.593 (picks: 15)
-4. Marv — avg Grade4: 1.330 (picks: 15)
-5. Simi — avg Grade4: 1.235 (picks: 15)
-6. Juschka — avg Grade4: 0.425 (picks: 15)
+4. Juschka — avg Grade4: 1.378 (picks: 14)
+5. Marv — avg Grade4: 1.330 (picks: 15)
+6. Simi — avg Grade4: 1.235 (picks: 15)
 7. Ritz — avg Grade4: -0.169 (picks: 15)
 8. Kessi — avg Grade4: -2.259 (picks: 15)
 
@@ -931,7 +931,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
     - 5. Tommy — -1.003 (picks: 7)
     - 6. Benni — -2.318 (picks: 6)
     - 7. Erik — -3.737 (picks: 7)
-    - 8. Juschka — -8.123 (picks: 7)
+    - 8. Juschka — -7.323 (picks: 6)
 - **TE**
   - Best TE Pick: 2022 (Overall 8) Travis Kelce [TE] (KC) — Benni — Grade4: 22.730
   - Worst TE Pick: 2022 (Overall 29) Kyle Pitts [TE] (ATL) — Tommy — Grade4: -12.500
@@ -1089,7 +1089,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 ##### Draft Ranking (1–8)
 
 1. Tommy — avg Grade4: 6.749 (picks: 15)
-2. Kessi — avg Grade4: 1.428 (picks: 15)
+2. Kessi — avg Grade4: 2.290 (picks: 14)
 3. Simi — avg Grade4: 1.256 (picks: 15)
 4. Marv — avg Grade4: 0.817 (picks: 15)
 5. Benni — avg Grade4: 0.240 (picks: 15)
@@ -1127,8 +1127,8 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
   - Best WR Pick: 2024 (Overall 7) Ja'Marr Chase [WR] (CIN) — Kessi — Grade4: 24.890
   - Worst WR Pick: 2024 (Overall 2) Tyreek Hill [WR] (MIA) — Ritz — Grade4: -24.610
   - Pos WR Draft Ranking (8 Owner):
-    - 1. Marv — -0.981 (picks: 7)
-    - 2. Kessi — -2.266 (picks: 5)
+    - 1. Kessi — -0.172 (picks: 4)
+    - 2. Marv — -0.981 (picks: 7)
     - 3. Simi — -2.417 (picks: 7)
     - 4. Tommy — -3.824 (picks: 5)
     - 5. Juschka — -3.965 (picks: 6)
@@ -1274,7 +1274,7 @@ Bad-lines log: `output/draft_stats_bad_lines.log` (nur wenn Zeilen kaputt waren)
 - **Overall Draft Value**: Marv — avg Grade4: 1.667 (picks: 166)
 - **QB Draft Value**: Tommy — avg Grade4: 12.785 (picks: 16)
 - **RB Draft Value**: Juschka — avg Grade4: 3.291 (picks: 56)
-- **WR Draft Value**: Kessi — avg Grade4: 0.021 (picks: 59)
+- **WR Draft Value**: Kessi — avg Grade4: 0.364 (picks: 58)
 - **TE Draft Value**: Ritz — avg Grade4: 1.389 (picks: 12)
 - **K Draft Value**: Erik — avg Grade4: 8.439 (picks: 8)
 - **DEF Draft Value**: Benni — avg Grade4: 4.105 (picks: 9)

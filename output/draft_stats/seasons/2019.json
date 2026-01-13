@@ -148,17 +148,17 @@
     },
     {
       "owner": "Tommy",
-      "avgGrade4": -0.9899999999999999,
+      "avgGrade4": -0.34142857142857125,
+      "picks": 14
+    },
+    {
+      "owner": "Kessi",
+      "avgGrade4": -1.8694798532,
       "picks": 15
     },
     {
       "owner": "Benni",
       "avgGrade4": -2.075874074066667,
-      "picks": 15
-    },
-    {
-      "owner": "Kessi",
-      "avgGrade4": -2.4824676582666663,
       "picks": 15
     },
     {
@@ -332,8 +332,8 @@
       "ownerRanking": [
         {
           "owner": "Tommy",
-          "avgGrade4": 1.2885714285714285,
-          "picks": 7
+          "avgGrade4": 3.1816666666666666,
+          "picks": 6
         },
         {
           "owner": "Ritz",
@@ -341,14 +341,14 @@
           "picks": 5
         },
         {
+          "owner": "Kessi",
+          "avgGrade4": -1.1008638206666665,
+          "picks": 6
+        },
+        {
           "owner": "Marv",
           "avgGrade4": -1.6019999999999999,
           "picks": 5
-        },
-        {
-          "owner": "Kessi",
-          "avgGrade4": -2.6333333333333333,
-          "picks": 6
         },
         {
           "owner": "Juschka",

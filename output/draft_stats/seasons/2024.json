@@ -133,8 +133,8 @@
     },
     {
       "owner": "Kessi",
-      "avgGrade4": 1.427710529733333,
-      "picks": 15
+      "avgGrade4": 2.289689853285714,
+      "picks": 14
     },
     {
       "owner": "Simi",
@@ -331,14 +331,14 @@
       },
       "ownerRanking": [
         {
+          "owner": "Kessi",
+          "avgGrade4": -0.17249999999999976,
+          "picks": 4
+        },
+        {
           "owner": "Marv",
           "avgGrade4": -0.9814285714285715,
           "picks": 7
-        },
-        {
-          "owner": "Kessi",
-          "avgGrade4": -2.266,
-          "picks": 5
         },
         {
           "owner": "Simi",

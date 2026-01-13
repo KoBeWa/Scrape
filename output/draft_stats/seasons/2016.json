@@ -158,7 +158,7 @@
     },
     {
       "owner": "Simi",
-      "avgGrade4": -3.8639676577999995,
+      "avgGrade4": -3.2102902748666664,
       "picks": 15
     },
     {
@@ -450,15 +450,15 @@
       },
       "worstPick": {
         "season": 2016,
-        "owner": "Simi",
-        "player": "Steven Hauschka",
+        "owner": "Ritz",
+        "player": "Stephen Gostkowski",
         "pos": "K",
-        "nflTeam": "SEA",
+        "nflTeam": "FA",
         "round": null,
         "pickInRound": null,
-        "overallPick": 93,
+        "overallPick": 56,
         "isKeeper": 0,
-        "grade4": -10.44
+        "grade4": -3.93
       },
       "ownerRanking": [
         {
@@ -482,6 +482,11 @@
           "picks": 1
         },
         {
+          "owner": "Simi",
+          "avgGrade4": -0.634839256,
+          "picks": 1
+        },
+        {
           "owner": "Ritz",
           "avgGrade4": -1.145,
           "picks": 2
@@ -489,11 +494,6 @@
         {
           "owner": "Benni",
           "avgGrade4": -2.03,
-          "picks": 1
-        },
-        {
-          "owner": "Simi",
-          "avgGrade4": -10.44,
           "picks": 1
         }
       ]

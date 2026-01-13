@@ -113,15 +113,15 @@
       },
       {
         "season": 2022,
-        "owner": "Juschka",
-        "player": "Marquise Brown",
+        "owner": "Benni",
+        "player": "Cooper Kupp",
         "pos": "WR",
-        "nflTeam": "KC",
+        "nflTeam": "SEA",
         "round": null,
         "pickInRound": null,
-        "overallPick": 59,
+        "overallPick": 9,
         "isKeeper": 0,
-        "grade4": -12.92
+        "grade4": -12.7
       }
     ]
   },
@@ -142,6 +142,11 @@
       "picks": 15
     },
     {
+      "owner": "Juschka",
+      "avgGrade4": 1.3782740568571434,
+      "picks": 14
+    },
+    {
       "owner": "Marv",
       "avgGrade4": 1.3297748838,
       "picks": 15
@@ -149,11 +154,6 @@
     {
       "owner": "Simi",
       "avgGrade4": 1.235038788,
-      "picks": 15
-    },
-    {
-      "owner": "Juschka",
-      "avgGrade4": 0.42505578640000047,
       "picks": 15
     },
     {
@@ -367,8 +367,8 @@
         },
         {
           "owner": "Juschka",
-          "avgGrade4": -8.122857142857143,
-          "picks": 7
+          "avgGrade4": -7.323333333333333,
+          "picks": 6
         }
       ]
     },
