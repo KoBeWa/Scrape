@@ -159,10 +159,7 @@ def detect_slot_groups(header):
 
 def percentile_ranks(values):
     """
-    values: list[float]
-    returns dict(value->percentile) is not safe for duplicates,
-    so we compute percentile per index using stable sorting and then map back by index externally.
-    We'll instead return a list aligned with values.
+    Perzentil-Rang pro Index (0..1), stabil.
     """
     n = len(values)
     if n <= 1:
@@ -198,13 +195,8 @@ def read_playerranks():
         col_vorp   = pick_col(fns, ["vorp"])
         col_dp     = pick_col(fns, ["draftpick", "draft_pick", "draft overall", "draftposition", "draft_position"])
 
-        # sleeper/espn id columns (verschiedene Varianten)
-        col_sid = pick_col(fns, [
-            "tabelle4.sleeper_id.1", "sleeper_id", "sleeperid", "sleeper id"
-        ])
-        col_eid = pick_col(fns, [
-            "tabelle4.espn_id.1", "espn_id", "espnid", "espn id"
-        ])
+        col_sid = pick_col(fns, ["tabelle4.sleeper_id.1", "sleeper_id", "sleeperid", "sleeper id"])
+        col_eid = pick_col(fns, ["tabelle4.espn_id.1", "espn_id", "espnid", "espn id"])
 
         for row in r:
             try:
@@ -245,10 +237,8 @@ def read_playerranks():
             }
 
             for k in keys:
-                # erstes meta gewinnt (sollte identisch sein)
                 meta_by_year[year].setdefault(k, meta)
 
-            # drafted?
             draftpick_val = (row.get(col_dp) if col_dp else "")
             if str(draftpick_val).strip() not in ("", "nan", "None", "none"):
                 for k in keys:
@@ -265,7 +255,6 @@ def main():
 
     drafted_by_year, meta_by_year = read_playerranks()
 
-    # stats per year: key=(owner,pkey)
     first_week   = defaultdict(lambda: defaultdict(lambda: 99))
     roster_weeks = defaultdict(lambda: defaultdict(int))
     weeks_scored = defaultdict(lambda: defaultdict(int))
@@ -317,7 +306,6 @@ def main():
                 if not pkey:
                     continue
 
-                # nur UNDRAFTED
                 if is_drafted(drafted_set, name, pkey):
                     continue
 
@@ -349,7 +337,6 @@ def main():
             avg = pts / wsc if wsc else 0.0
             mx  = max_pts[year].get((owner, pkey), 0.0)
 
-            # meta lookup
             seen_name = name_seen[year].get(pkey, "")
             meta = (
                 meta_by_year.get(year, {}).get(pkey)
@@ -364,23 +351,13 @@ def main():
 
             season_ttl = float(meta.get("SeasonTTL", 0.0) or 0.0)
             pickup_share = (pts / season_ttl) if season_ttl else 0.0
-            if pickup_share < 0:
-                pickup_share = 0.0
-            if pickup_share > 1.0:
-                pickup_share = 1.0
+            pickup_share = max(0.0, min(1.0, pickup_share))
 
             reliability = (wsc / rw) if rw else 0.0
-            if reliability < 0:
-                reliability = 0.0
-            if reliability > 1.0:
-                reliability = 1.0
+            reliability = max(0.0, min(1.0, reliability))
 
-            # early factor: week 1 => 1.0, week 16 => 0.0625
             early = (17 - fw) / 16.0
-            if early < 0:
-                early = 0.0
-            if early > 1.0:
-                early = 1.0
+            early = max(0.0, min(1.0, early))
 
             records.append({
                 "Year": year,
@@ -400,11 +377,10 @@ def main():
                 "PickupShare": round(pickup_share, 3) if season_ttl else 0.0,
                 "Reliability": round(reliability, 3),
                 "EarlyFactor": round(early, 3),
-                "PlayerKey": pkey,  # intern hilfreich
+                "PlayerKey": pkey,
             })
 
     # --- Score berechnen (pro Jahr normalisieren) ---
-    # Score = 100 * (0.50*P_pct + 0.20*A_pct + 0.15*Share + 0.10*Early + 0.05*Reliability)
     by_year = defaultdict(list)
     for rec in records:
         by_year[rec["Year"]].append(rec)
@@ -415,7 +391,6 @@ def main():
         P_pct = percentile_ranks(P)
         A_pct = percentile_ranks(A)
 
-        # zusätzlich pos-spezifische Perzentile (für Vergleich innerhalb Position)
         idx_by_pos = defaultdict(list)
         for i, x in enumerate(lst):
             idx_by_pos[(x["Pos"] or "").strip()].append(i)
@@ -436,26 +411,45 @@ def main():
             early = float(x["EarlyFactor"])
             rel   = float(x["Reliability"])
 
-            score = 100.0 * (
-                0.50 * P_pct[i] +
-                0.20 * A_pct[i] +
-                0.15 * share +
-                0.10 * early +
-                0.05 * rel
-            )
-
-            score_pos = 100.0 * (
-                0.50 * P_pos_pct[i] +
-                0.20 * A_pos_pct[i] +
-                0.15 * share +
-                0.10 * early +
-                0.05 * rel
-            )
+            score = 100.0 * (0.50 * P_pct[i] + 0.20 * A_pct[i] + 0.15 * share + 0.10 * early + 0.05 * rel)
+            score_pos = 100.0 * (0.50 * P_pos_pct[i] + 0.20 * A_pos_pct[i] + 0.15 * share + 0.10 * early + 0.05 * rel)
 
             x["PickupScore"] = round(score, 2)
             x["PickupScorePos"] = round(score_pos, 2)
 
-    # --- waivers.tsv schreiben ---
+    # --- All-time Scores (über alle Jahre) ---
+    P_all = [float(x["PointsAfterPickup"]) for x in records]
+    A_all = [float(x["AvgPoints"]) for x in records]
+    P_all_pct = percentile_ranks(P_all)
+    A_all_pct = percentile_ranks(A_all)
+
+    idx_by_pos_all = defaultdict(list)
+    for i, x in enumerate(records):
+        idx_by_pos_all[(x["Pos"] or "").strip()].append(i)
+
+    P_all_pos_pct = [0.0] * len(records)
+    A_all_pos_pct = [0.0] * len(records)
+    for pos, idxs in idx_by_pos_all.items():
+        P2 = [P_all[i] for i in idxs]
+        A2 = [A_all[i] for i in idxs]
+        pp = percentile_ranks(P2)
+        ap = percentile_ranks(A2)
+        for k, i in enumerate(idxs):
+            P_all_pos_pct[i] = pp[k]
+            A_all_pos_pct[i] = ap[k]
+
+    for i, x in enumerate(records):
+        share = float(x["PickupShare"])
+        early = float(x["EarlyFactor"])
+        rel   = float(x["Reliability"])
+
+        score_all = 100.0 * (0.50 * P_all_pct[i] + 0.20 * A_all_pct[i] + 0.15 * share + 0.10 * early + 0.05 * rel)
+        score_all_pos = 100.0 * (0.50 * P_all_pos_pct[i] + 0.20 * A_all_pos_pct[i] + 0.15 * share + 0.10 * early + 0.05 * rel)
+
+        x["PickupScoreAllTime"] = round(score_all, 2)
+        x["PickupScoreAllTimePos"] = round(score_all_pos, 2)
+
+    # --- waivers.csv schreiben (inkl. All-Time Scores) ---
     out_waivers = OUT_DIR / "waivers.csv"
     cols = [
         "Year","Owner","Player","Pos",
@@ -463,20 +457,21 @@ def main():
         "PointsAfterPickup","AvgPoints","MaxWeekPoints",
         "SeasonTTL","SeasonAVG","SeasonGP","SeasonVORP",
         "PickupShare","Reliability","EarlyFactor",
-        "PickupScore","PickupScorePos"
+        "PickupScore","PickupScorePos",
+        "PickupScoreAllTime","PickupScoreAllTimePos"
     ]
-    
+
     float_cols_2 = {
         "PointsAfterPickup","AvgPoints","MaxWeekPoints","SeasonTTL","SeasonAVG","SeasonVORP",
-        "PickupScore","PickupScorePos"
+        "PickupScore","PickupScorePos","PickupScoreAllTime","PickupScoreAllTimePos"
     }
     float_cols_3 = {"PickupShare","Reliability","EarlyFactor"}
-    
+
     with out_waivers.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f, delimiter=";")
         w.writerow(cols)
-    
-        for r in sorted(records, key=lambda x: (-x["Year"], -x.get("PickupScore", 0), -x["PointsAfterPickup"], x["Owner"], x["Player"])):
+
+        for r in sorted(records, key=lambda x: (-x.get("PickupScoreAllTimePos", 0), -x.get("PickupScoreAllTime", 0), -x["PointsAfterPickup"], -x["Year"])):
             row_out = []
             for c in cols:
                 val = r.get(c, "")
@@ -485,16 +480,67 @@ def main():
                 elif c in float_cols_3:
                     row_out.append(fmt_num(val, 3))
                 else:
-                    # ints bleiben ints (Year/Week counts), strings bleiben strings
                     row_out.append(val)
             w.writerow(row_out)
 
-    # --- Owner-Yearly Ranking ---
-    # Kennzahlen:
-    #  - TotalPickupScore, AvgPickupScore, PickupsCount
-    #  - TotalPickupPoints, AvgPickupPoints
-    #  - BestPickupScore, BestPickupPlayer
-    #  - Top3AvgScore
+    # --- Extra: All-Time Ranking Datei ---
+    # RankOverall = Rank nach PickupScoreAllTime
+    # RankPos     = Rank nach PickupScoreAllTimePos innerhalb Position
+    out_alltime = OUT_DIR / "waivers_alltime.csv"
+    all_cols = [
+        "RankOverall","RankPos",
+        "Year","Owner","Player","Pos",
+        "FirstWeek","RosterWeeks","WeeksScored",
+        "PointsAfterPickup","AvgPoints","MaxWeekPoints",
+        "SeasonTTL","PickupShare","Reliability","EarlyFactor",
+        "PickupScoreAllTime","PickupScoreAllTimePos"
+    ]
+
+    # overall ranks
+    order_overall = sorted(records, key=lambda x: (-x.get("PickupScoreAllTime", 0), -x["PointsAfterPickup"], -x["Year"]))
+    rank_overall = {}
+    for i, r in enumerate(order_overall, start=1):
+        rank_overall[id(r)] = i  # unique per object
+
+    # pos ranks
+    by_pos = defaultdict(list)
+    for r in records:
+        by_pos[(r["Pos"] or "").strip()].append(r)
+
+    rank_pos = {}
+    for pos, lst in by_pos.items():
+        ordered = sorted(lst, key=lambda x: (-x.get("PickupScoreAllTimePos", 0), -x["PointsAfterPickup"], -x["Year"]))
+        for i, r in enumerate(ordered, start=1):
+            rank_pos[id(r)] = i
+
+    float_cols_2_all = {
+        "PointsAfterPickup","AvgPoints","MaxWeekPoints","SeasonTTL",
+        "PickupScoreAllTime","PickupScoreAllTimePos"
+    }
+    float_cols_3_all = {"PickupShare","Reliability","EarlyFactor"}
+
+    with out_alltime.open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter=";")
+        w.writerow(all_cols)
+
+        for r in sorted(records, key=lambda x: (-x.get("PickupScoreAllTimePos", 0), -x.get("PickupScoreAllTime", 0), -x["PointsAfterPickup"], -x["Year"])):
+            out_row = []
+            for c in all_cols:
+                if c == "RankOverall":
+                    out_row.append(rank_overall.get(id(r), ""))
+                elif c == "RankPos":
+                    out_row.append(rank_pos.get(id(r), ""))
+                else:
+                    val = r.get(c, "")
+                    if c in float_cols_2_all:
+                        out_row.append(fmt_num(val, 2))
+                    elif c in float_cols_3_all:
+                        out_row.append(fmt_num(val, 3))
+                    else:
+                        out_row.append(val)
+            w.writerow(out_row)
+
+    # --- Owner-Yearly Ranking (wie bisher, auf YEAR-Score) ---
     owner_rows = []
     for year, lst in by_year.items():
         by_owner = defaultdict(list)
@@ -530,16 +576,16 @@ def main():
         "BestPickupScore","BestPickupPlayer",
         "TotalPickupPoints","AvgPickupPoints",
     ]
-    
+
     float_cols_owner = {
         "TotalPickupScore","AvgPickupScore","Top3AvgScore",
         "BestPickupScore","TotalPickupPoints","AvgPickupPoints"
     }
-    
+
     with out_owner.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f, delimiter=";")
         w.writerow(owner_cols)
-    
+
         for r in sorted(owner_rows, key=lambda x: (-x["Year"], -x["TotalPickupScore"], -x["TotalPickupPoints"], x["Owner"])):
             row_out = []
             for c in owner_cols:
@@ -551,7 +597,9 @@ def main():
             w.writerow(row_out)
 
     print(f"✓ Wrote {out_waivers} ({len(records)} pickups)")
+    print(f"✓ Wrote {out_alltime} ({len(records)} pickups)")
     print(f"✓ Wrote {out_owner} ({len(owner_rows)} owner-year rows)")
 
 if __name__ == "__main__":
     main()
+
