@@ -72,7 +72,7 @@ def pick_col(fieldnames, candidates_lower):
     return None
 
 def make_player_key(name, sleeper_id=None, espn_id=None):
-    # IDs wenn vorhanden, sonst Name
+    """IDs wenn vorhanden, sonst Name"""
     sid = to_intish_str(sleeper_id)
     if sid:
         return f"s:{sid}"
@@ -87,6 +87,7 @@ def make_player_key(name, sleeper_id=None, espn_id=None):
 def detect_slot_groups(header):
     """
     Erwartet Spaltenblöcke: SLOT, SLOT_Sleeper_ID, SLOT_ESPN_ID, PointsX
+    Gibt Liste: (slot, sleeper_col, espn_col, points_col)
     """
     groups = []
     if not header:
@@ -97,9 +98,11 @@ def detect_slot_groups(header):
     while i < len(header) - 3:
         c = header[i]
         cl = (c or "").strip().lower()
+
         if cl in reserved:
             i += 1
             continue
+
         if c.endswith("_Sleeper_ID") or c.endswith("_ESPN_ID") or (c or "").startswith("Points"):
             i += 1
             continue
@@ -113,14 +116,23 @@ def detect_slot_groups(header):
             i += 4
         else:
             i += 1
+
     return groups
+
+def write_csv(path: Path, rows, cols):
+    with path.open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter=",", quoting=csv.QUOTE_MINIMAL)
+        w.writerow(cols)
+        for r in rows:
+            w.writerow([r.get(c, "") for c in cols])
 
 # ---------------- Draft Frequencies ----------------
 def read_draft_frequencies():
     """
     Liest output/history-drafts/*-draft.tsv
     Erwartete Spalten (typisch): ManagerName, Player, Overall (oder Round/PickInRound)
-    Gibt:
+
+    Returns:
       draft_counts[(owner, pkey)] = count
       draft_years[(owner, pkey)]  = set(years)
       name_by_key[pkey]           = display name
@@ -133,7 +145,6 @@ def read_draft_frequencies():
         return draft_counts, draft_years, name_by_key
 
     for p in sorted(DRAFTS_DIR.glob("*-draft.tsv")):
-        # year aus filename
         try:
             year = int(p.name.split("-")[0])
         except:
@@ -154,7 +165,11 @@ def read_draft_frequencies():
                 if not owner or not player:
                     continue
 
-                pkey = make_player_key(player, row.get(col_sid) if col_sid else None, row.get(col_eid) if col_eid else None)
+                pkey = make_player_key(
+                    player,
+                    row.get(col_sid) if col_sid else None,
+                    row.get(col_eid) if col_eid else None
+                )
                 if not pkey:
                     continue
 
@@ -164,22 +179,32 @@ def read_draft_frequencies():
 
     return draft_counts, draft_years, name_by_key
 
-# ---------------- Roster Frequencies ----------------
+# ---------------- Roster Frequencies (mit LineupWeeks) ----------------
 def read_roster_frequencies():
     """
     Liest teamgamecenter_all_2015_2025_w1_16.csv
+
     Zählt:
-      roster_weeks[(owner,pkey)] += 1  (jede Woche, in der er irgendwo im Roster auftaucht)
-      roster_years[(owner,pkey)]  = set(Seasons)
-      points_total[(owner,pkey)] += Points (egal ob 0 oder nicht — kann man ändern)
+      roster_weeks[(owner,pkey)] += 1  (jede Woche, in der er irgendwo im Team auftaucht inkl. Bench)
+      lineup_weeks[(owner,pkey)] += 1  (nur Wochen in aktiven Slots, nicht BN/RES/IR/Taxi)
+      roster_years[(owner,pkey)]  = set(Seasons)  (Roster)
+      lineup_years[(owner,pkey)]  = set(Seasons)  (Lineup; optional, aber hilfreich)
+      points_total[(owner,pkey)] += Points (wie in der Quelle; inkl. 0 möglich)
+
+    Returns:
+      roster_weeks, lineup_weeks, roster_years, lineup_years, points_total, name_by_key
     """
     roster_weeks = defaultdict(int)
+    lineup_weeks = defaultdict(int)
     roster_years = defaultdict(set)
+    lineup_years = defaultdict(set)
     points_total = defaultdict(float)
     name_by_key = {}
 
     if not TEAMGC_ALL.exists():
-        return roster_weeks, roster_years, points_total, name_by_key
+        return roster_weeks, lineup_weeks, roster_years, lineup_years, points_total, name_by_key
+
+    inactive_slots = {"BN", "BENCH", "RES", "IR", "INJ", "TAXI"}
 
     delim = sniff_delimiter(TEAMGC_ALL, default=";")
 
@@ -224,20 +249,18 @@ def read_roster_frequencies():
                 points_total[key] += to_float(row.get(p_col))
                 name_by_key.setdefault(pkey, name)
 
-    return roster_weeks, roster_years, points_total, name_by_key
+                # NEU: LineupWeeks (aktive Slots)
+                slot_clean = (slot or "").strip().upper()
+                if slot_clean not in inactive_slots:
+                    lineup_weeks[key] += 1
+                    lineup_years[key].add(season)
 
-# ---------------- Writers ----------------
-def write_csv(path: Path, rows, cols):
-    with path.open("w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f, delimiter=",", quoting=csv.QUOTE_MINIMAL)
-        w.writerow(cols)
-        for r in rows:
-            w.writerow([r.get(c, "") for c in cols])
+    return roster_weeks, lineup_weeks, roster_years, lineup_years, points_total, name_by_key
 
 # ---------------- Main ----------------
 def main():
     draft_counts, draft_years, draft_name = read_draft_frequencies()
-    roster_weeks, roster_years, roster_pts, roster_name = read_roster_frequencies()
+    roster_weeks, lineup_weeks, roster_years, lineup_years, roster_pts, roster_name = read_roster_frequencies()
 
     # unify name map
     name_by_key = dict(roster_name)
@@ -253,39 +276,58 @@ def main():
             "Player": name_by_key.get(pkey, ""),
             "PlayerKey": pkey,
             "DraftCount": cnt,
-            "DraftYears": ",".join(map(str, yrs)),
             "DraftSeasonsCount": len(yrs),
+            "DraftYears": ",".join(map(str, yrs)),
         })
 
     draft_cols = ["Owner","Player","PlayerKey","DraftCount","DraftSeasonsCount","DraftYears"]
     draft_out = OUT_DIR / "owner_player_draft_freq.csv"
-    write_csv(draft_out, sorted(draft_rows, key=lambda x: (-x["DraftCount"], x["Owner"], x["Player"])), draft_cols)
+    write_csv(
+        draft_out,
+        sorted(draft_rows, key=lambda x: (-x["DraftCount"], x["Owner"], x["Player"])),
+        draft_cols
+    )
 
-    # 2) roster freq rows
+    # 2) roster freq rows (mit LineupWeeks)
     roster_rows = []
     for (owner, pkey), wcnt in roster_weeks.items():
         yrs = sorted(list(roster_years.get((owner, pkey), set())))
+        lw  = lineup_weeks.get((owner, pkey), 0)
+
         roster_rows.append({
             "Owner": owner,
             "Player": name_by_key.get(pkey, ""),
             "PlayerKey": pkey,
             "RosterWeeks": wcnt,
+            "LineupWeeks": lw,
             "RosterSeasonsCount": len(yrs),
             "RosterSeasons": ",".join(map(str, yrs)),
             "TotalPointsWhileRostered": round(roster_pts.get((owner, pkey), 0.0), 2),
         })
 
-    roster_cols = ["Owner","Player","PlayerKey","RosterWeeks","RosterSeasonsCount","RosterSeasons","TotalPointsWhileRostered"]
+    roster_cols = [
+        "Owner","Player","PlayerKey",
+        "RosterWeeks","LineupWeeks",
+        "RosterSeasonsCount","RosterSeasons",
+        "TotalPointsWhileRostered"
+    ]
     roster_out = OUT_DIR / "owner_player_roster_freq.csv"
-    write_csv(roster_out, sorted(roster_rows, key=lambda x: (-x["RosterWeeks"], x["Owner"], x["Player"])), roster_cols)
+    write_csv(
+        roster_out,
+        sorted(roster_rows, key=lambda x: (-x["RosterWeeks"], -x["LineupWeeks"], x["Owner"], x["Player"])),
+        roster_cols
+    )
 
-    # 3) combined (outer join)
+    # 3) combined (outer join) inkl. LineupWeeks
     combined_rows = []
     all_keys = set(draft_counts.keys()) | set(roster_weeks.keys())
+
     for (owner, pkey) in all_keys:
         dcnt = draft_counts.get((owner, pkey), 0)
         dyrs = sorted(list(draft_years.get((owner, pkey), set())))
+
         rw   = roster_weeks.get((owner, pkey), 0)
+        lw   = lineup_weeks.get((owner, pkey), 0)
         ryrs = sorted(list(roster_years.get((owner, pkey), set())))
         pts  = roster_pts.get((owner, pkey), 0.0)
 
@@ -297,6 +339,7 @@ def main():
             "DraftSeasonsCount": len(dyrs),
             "DraftYears": ",".join(map(str, dyrs)),
             "RosterWeeks": rw,
+            "LineupWeeks": lw,
             "RosterSeasonsCount": len(ryrs),
             "RosterSeasons": ",".join(map(str, ryrs)),
             "TotalPointsWhileRostered": round(pts, 2),
@@ -305,13 +348,13 @@ def main():
     combined_cols = [
         "Owner","Player","PlayerKey",
         "DraftCount","DraftSeasonsCount","DraftYears",
-        "RosterWeeks","RosterSeasonsCount","RosterSeasons",
+        "RosterWeeks","LineupWeeks","RosterSeasonsCount","RosterSeasons",
         "TotalPointsWhileRostered"
     ]
     combined_out = OUT_DIR / "owner_player_combined_freq.csv"
     write_csv(
         combined_out,
-        sorted(combined_rows, key=lambda x: (-x["RosterWeeks"], -x["DraftCount"], x["Owner"], x["Player"])),
+        sorted(combined_rows, key=lambda x: (-x["RosterWeeks"], -x["LineupWeeks"], -x["DraftCount"], x["Owner"], x["Player"])),
         combined_cols
     )
 
