@@ -439,7 +439,7 @@ def main():
             x["PickupScorePos"] = round(score_pos, 2)
 
     # --- waivers.tsv schreiben ---
-    out_waivers = OUT_DIR / "waivers.tsv"
+    out_waivers = OUT_DIR / "waivers.csv"
     cols = [
         "Year","Owner","Player","Pos",
         "FirstWeek","RosterWeeks","WeeksScored",
@@ -450,7 +450,7 @@ def main():
     ]
 
     with out_waivers.open("w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f, delimiter="\t")
+        w = csv.writer(f, delimiter=";", quoting=csv.QUOTE_MINIMAL)
         w.writerow(cols)
         for r in sorted(records, key=lambda x: (-x["Year"], -x.get("PickupScore", 0), -x["PointsAfterPickup"], x["Owner"], x["Player"])):
             w.writerow([r.get(c, "") for c in cols])
