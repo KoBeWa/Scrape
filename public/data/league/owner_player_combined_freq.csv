@@ -1,0 +1,3086 @@
+Owner,Player,PlayerKey,DraftCount,DraftSeasonsCount,DraftYears,RosterWeeks,RosterSeasonsCount,RosterSeasons,TotalPointsWhileRostered
+Simi,Russell Wilson,s:1234,0,0,,80,5,"2015,2016,2017,2020,2021",1428.5
+Marv,Wil Lutz,s:3678,0,0,,76,6,"2017,2018,2019,2020,2021,2022",619.6
+Erik,Christian McCaffrey,s:4034,0,0,,74,5,"2020,2021,2022,2023,2024",744.06
+Juschka,Stefon Diggs,s:2449,0,0,,73,5,"2015,2018,2019,2021,2023",678.1
+Kessi,Jonathan Taylor,s:6813,0,0,,64,4,"2020,2022,2023,2024",570.3
+Benni,Travis Kelce,s:1466,0,0,,58,4,"2016,2021,2022,2023",552.3
+Marv,Leonard Fournette,s:3969,0,0,,56,4,"2017,2018,2021,2022",548.2
+Ritz,Aaron Rodgers,s:96,0,0,,51,5,"2016,2019,2020,2021,2022",1022.04
+Simi,Derrick Henry,s:3198,0,0,,51,4,"2017,2019,2022,2024",775.16
+Ritz,Mike Evans,s:2216,0,0,,50,4,"2018,2020,2023,2025",572.4
+Ritz,Rob Gronkowski,s:515,0,0,,49,4,"2015,2016,2020,2021",418.4
+Tommy,Sammy Watkins,s:1817,0,0,,49,6,"2015,2016,2017,2018,2019,2020",302.3
+Benni,Davante Adams,s:2133,0,0,,48,3,"2019,2021,2023",437.8
+Benni,James Conner,s:4137,0,0,,48,4,"2018,2019,2022,2025",481.3
+Erik,CeeDee Lamb,s:6786,0,0,,48,3,"2022,2023,2025",512.8
+Juschka,Josh Jacobs,s:5850,0,0,,48,3,"2020,2022,2025",633.0
+Kessi,Cooper Kupp,s:4039,0,0,,48,3,"2019,2021,2024",525.1
+Marv,Josh Allen,s:4984,0,0,,48,3,"2021,2024,2025",1055.32
+Marv,Terry McLaurin,s:5927,0,0,,48,3,"2020,2022,2024",434.8
+Tommy,Alvin Kamara,s:4035,0,0,,48,3,"2019,2021,2024",502.62
+Tommy,Saquon Barkley,s:4866,0,0,,48,3,"2023,2024,2025",648.6
+Erik,Travis Kelce,s:1466,0,0,,47,3,"2015,2017,2018",442.1
+Ritz,Davante Adams,s:2133,0,0,,47,4,"2015,2016,2018,2022",544.2
+Ritz,Kyren Williams,s:8150,0,0,,47,3,"2023,2024,2025",608.6
+Tommy,Mike Evans,s:2216,0,0,,47,3,"2015,2017,2021",408.2
+Juschka,Devonta Freeman,s:2168,0,0,,45,3,"2015,2016,2017",529.9
+Ritz,Alvin Kamara,s:4035,0,0,,44,3,"2018,2022,2025",476.6
+Ritz,Keenan Allen,s:1479,0,0,,44,4,"2016,2017,2019,2020",386.3
+Tommy,Keenan Allen,s:1479,0,0,,44,3,"2023,2024,2025",341.26
+Simi,A.J. Green,s:830,0,0,,43,3,"2015,2018,2019",281.7
+Benni,Robert Woods,s:1352,0,0,,42,4,"2017,2018,2019,2020",380.0
+Erik,Justin Tucker,s:1264,0,0,,41,3,"2018,2020,2023",360.6
+Juschka,Marshawn Lynch,s:745,0,0,,41,3,"2015,2017,2018",266.0
+Kessi,Jaylen Waddle,s:7526,0,0,,41,3,"2023,2024,2025",315.02
+Benni,David Johnson,s:2391,0,0,,40,4,"2017,2018,2019,2020",296.2
+Juschka,Austin Ekeler,s:4663,0,0,,40,3,"2018,2019,2021",489.0
+Kessi,George Kittle,s:4217,0,0,,40,3,"2020,2023,2024",341.1
+Tommy,Michael Thomas,s:3199,0,0,,40,3,"2018,2019,2020",411.2
+Benni,Odell Beckham,s:2078,0,0,,39,4,"2015,2016,2018,2022",413.14
+Erik,Amari Cooper,s:2309,0,0,,39,4,"2016,2017,2019,2024",218.2
+Marv,Kenny Golladay,s:4131,0,0,,39,3,"2019,2020,2021",167.5
+Ritz,Amari Cooper,s:2309,0,0,,39,5,"2018,2019,2021,2022,2024",380.2
+Erik,Kyler Murray,s:5849,0,0,,37,3,"2020,2023,2024",694.26
+Juschka,Jarvis Landry,s:1825,0,0,,37,5,"2015,2016,2017,2019,2020",272.56
+Marv,Travis Kelce,s:1466,0,0,,37,3,"2019,2020,2021",423.56
+Ritz,Carlos Hyde,s:2257,0,0,,37,3,"2015,2017,2018",267.8
+Ritz,Tom Brady,s:167,0,0,,37,4,"2017,2020,2021,2022",675.24
+Erik,Alshon Jeffery,s:1149,0,0,,36,3,"2016,2017,2018",269.8
+Erik,Chris Godwin,s:4037,0,0,,36,4,"2020,2022,2024,2025",247.7
+Kessi,Stephen Gostkowski,s:110,0,0,,36,3,"2018,2019,2020",272.0
+Marv,Joe Mixon,s:4018,0,0,,36,3,"2017,2021,2022",386.5
+Marv,Michael Thomas,s:3199,0,0,,36,3,"2016,2017,2023",296.5
+Marv,Sony Michel,s:4962,0,0,,36,3,"2018,2019,2021",266.1
+Simi,JuJu Smith-Schuster,s:4040,0,0,,36,3,"2019,2020,2022",203.3
+Benni,Dalvin Cook,s:4029,0,0,,35,3,"2017,2019,2021",456.6
+Erik,David Johnson,s:2391,0,0,,35,3,"2015,2016,2019",507.5
+Juschka,Davante Adams,s:2133,0,0,,35,3,"2015,2017,2025",320.6
+Juschka,Demaryius Thomas,s:560,0,0,,35,3,"2016,2017,2018",248.9
+Juschka,Garrett Wilson,s:8146,0,0,,35,3,"2022,2024,2025",211.5
+Marv,Kareem Hunt,s:4098,0,0,,35,3,"2021,2022,2024",160.2
+Simi,Allen Robinson,s:1992,0,0,,35,3,"2015,2016,2022",342.0
+Juschka,D.J. Chark,s:4951,0,0,,34,3,"2019,2020,2021",231.7
+Juschka,Drew Brees,s:289,0,0,,34,3,"2015,2018,2019",612.08
+Marv,Tyler Lockett,s:2374,0,0,,34,3,"2016,2018,2019",269.4
+Simi,Antonio Brown,s:536,0,0,,34,3,"2017,2018,2020",453.8
+Benni,Justin Tucker,s:1264,0,0,,33,3,"2015,2016,2020",308.0
+Ritz,Harrison Butker,s:4227,0,0,,33,3,"2018,2020,2021",253.0
+Ritz,Kareem Hunt,s:4098,0,0,,33,3,"2018,2020,2023",418.2
+Simi,Amari Cooper,s:2309,0,0,,33,3,"2015,2018,2023",294.7
+Simi,Jordan Howard,s:3306,0,0,,33,3,"2017,2019,2021",285.0
+Benni,Lamar Jackson,s:4881,0,0,,32,3,"2018,2020,2023",598.62
+Benni,Mark Ingram,s:956,0,0,,32,3,"2016,2018,2021",299.3
+Erik,Ezekiel Elliott,s:3164,0,0,,32,2,"2017,2018",415.2
+Erik,Joe Mixon,s:4018,0,0,,32,2,"2023,2024",374.4
+Erik,Stephen Gostkowski,s:110,0,0,,32,2,"2015,2017",313.0
+Juschka,Brian Robinson,s:8154,0,0,,32,2,"2023,2024",278.3
+Juschka,Ja'Marr Chase,s:7564,0,0,,32,2,"2022,2025",295.8
+Juschka,Melvin Gordon,s:2320,0,0,,32,2,"2017,2018",436.6
+Kessi,Amon-Ra St. Brown,s:7547,0,0,,32,2,"2022,2025",336.8
+Kessi,Brandin Cooks,s:2197,0,0,,32,2,"2018,2023",242.0
+Kessi,Brandon Aubrey,s:11533,0,0,,32,2,"2024,2025",370.1
+Kessi,Ezekiel Elliott,s:3164,0,0,,32,2,"2019,2020",392.9
+Kessi,Julio Jones,s:947,0,0,,32,2,"2015,2017",380.1
+Kessi,Justin Tucker,s:1264,0,0,,32,2,"2017,2021",271.0
+Kessi,Patrick Mahomes II,s:4046,0,0,,32,2,"2024,2025",540.7
+Kessi,Terry McLaurin,s:5927,0,0,,32,2,"2021,2023",233.6
+Kessi,Todd Gurley,s:2315,0,0,,32,2,"2015,2020",322.1
+Marv,DeAndre Hopkins,s:1426,0,0,,32,2,"2016,2022",194.8
+Marv,James Cook,s:8138,0,0,,32,2,"2024,2025",474.6
+Marv,Javonte Williams,s:7588,0,0,,32,2,"2023,2025",309.3
+Ritz,Frank Gore,s:232,0,0,,32,2,"2016,2017",302.1
+Ritz,Lamar Miller,s:1048,0,0,,32,2,"2016,2017",313.9
+Ritz,Tyreek Hill,s:3321,0,0,,32,2,"2021,2024",305.8
+Simi,CeeDee Lamb,s:6786,0,0,,32,2,"2021,2024",306.6
+Simi,D.J. Moore,s:4983,0,0,,32,2,"2023,2024",283.0
+Simi,David Montgomery,s:5892,0,0,,32,2,"2019,2023",296.8
+Simi,Deebo Samuel,s:5872,0,0,,32,2,"2021,2024",317.3
+Simi,Mark Andrews,s:5012,0,0,,32,2,"2021,2022",284.2
+Simi,Tyler Lockett,s:2374,0,0,,32,2,"2020,2022",284.8
+Tommy,Aaron Jones,s:4199,0,0,,32,2,"2024,2025",253.8
+Tommy,Amon-Ra St. Brown,s:7547,0,0,,32,2,"2023,2024",356.88
+Tommy,DK Metcalf,s:5846,0,0,,32,2,"2022,2025",260.7
+Tommy,David Montgomery,s:5892,0,0,,32,2,"2021,2025",260.42
+Tommy,Dez Bryant,s:574,0,0,,32,2,"2015,2016",188.1
+Tommy,Justin Herbert,s:6797,0,0,,32,2,"2021,2025",607.4
+Tommy,Todd Gurley,s:2315,0,0,,32,2,"2017,2018",632.4
+Tommy,Travis Etienne,s:7543,0,0,,32,2,"2022,2023",338.6
+Benni,Aaron Rodgers,s:96,0,0,,31,3,"2017,2018,2019",499.18
+Benni,Christian McCaffrey,s:4034,0,0,,31,2,"2017,2018",398.1
+Benni,George Kittle,s:4217,0,0,,31,3,"2018,2019,2025",229.4
+Benni,Justin Jefferson,s:6794,0,0,,31,2,"2021,2025",295.1
+Erik,Calvin Ridley,s:4981,0,0,,31,3,"2019,2020,2023",296.5
+Erik,Lamar Jackson,s:4881,0,0,,31,2,"2019,2025",576.56
+Kessi,Jarvis Landry,s:1825,0,0,,31,3,"2018,2020,2021",203.04
+Simi,Julio Jones,s:947,0,0,,31,2,"2016,2020",256.4
+Tommy,Patrick Mahomes II,s:4046,0,0,,31,2,"2018,2019",647.38
+Benni,Chris Godwin,s:4037,0,0,,30,3,"2019,2021,2023",293.1
+Erik,George Kittle,s:4217,0,0,,30,3,"2019,2020,2022",213.1
+Kessi,Brandon McManus,s:1433,0,0,,30,2,"2016,2022",237.1
+Kessi,Doug Martin,s:1195,0,0,,30,3,"2016,2017,2018",167.9
+Marv,Brandin Cooks,s:2197,0,0,,30,3,"2015,2020,2021",262.1
+Ritz,Isiah Pacheco,s:8205,0,0,,30,3,"2022,2024,2025",147.1
+Ritz,Zach Ertz,s:1339,0,0,,30,3,"2018,2020,2022",240.3
+Erik,Cam Newton,s:954,0,0,,29,3,"2015,2016,2017",545.62
+Juschka,Adrian Peterson,s:184,0,0,,29,3,"2018,2019,2020",229.2
+Juschka,Justin Jefferson,s:6794,0,0,,29,2,"2020,2024",342.28
+Kessi,Derrick Henry,s:3198,0,0,,29,2,"2021,2025",381.6
+Marv,Myles Gaskin,s:5980,0,0,,29,2,"2020,2021",206.5
+Ritz,Justin Tucker,s:1264,0,0,,29,2,"2022,2024",269.0
+Simi,DeAndre Hopkins,s:1426,0,0,,29,2,"2017,2024",287.6
+Tommy,Adrian Peterson,s:184,0,0,,29,4,"2015,2016,2017,2021",262.0
+Tommy,John Brown,s:2238,0,0,,29,3,"2015,2016,2018",134.7
+Tommy,Tevin Coleman,s:2378,0,0,,29,2,"2016,2017",233.5
+Benni,Mark Andrews,s:5012,0,0,,28,2,"2019,2020",218.5
+Juschka,Diontae Johnson,s:5937,0,0,,28,2,"2021,2022",208.0
+Kessi,James Conner,s:4137,0,0,,28,2,"2021,2023",278.4
+Kessi,Joe Mixon,s:4018,0,0,,28,2,"2019,2025",160.8
+Benni,Brandin Cooks,s:2197,0,0,,27,3,"2017,2020,2022",194.5
+Benni,Jameson Williams,s:8148,0,0,,27,4,"2022,2023,2024,2025",182.1
+Erik,Antonio Brown,s:536,0,0,,27,3,"2015,2019,2021",355.0
+Marv,Deebo Samuel,s:5872,0,0,,27,2,"2020,2023",215.0
+Ritz,Adam Thielen,s:1689,0,0,,27,3,"2017,2021,2023",201.2
+Simi,Courtland Sutton,s:5045,0,0,,27,2,"2021,2022",152.7
+Tommy,Devonta Freeman,s:2168,0,0,,27,2,"2018,2019",140.4
+Tommy,Steven Hauschka,s:775,0,0,,27,3,"2015,2016,2017",209.0
+Erik,Jordan Reed,s:1500,0,0,,26,3,"2015,2016,2017",186.7
+Erik,Nick Chubb,s:4988,0,0,,26,2,"2018,2022",367.8
+Juschka,Drake London,s:8112,0,0,,26,2,"2023,2024",199.78
+Juschka,Khalil Herbert,s:7608,0,0,,26,2,"2021,2023",115.4
+Kessi,Le'Veon Bell,s:1408,0,0,,26,2,"2015,2018",87.2
+Kessi,Tyler Eifert,s:1388,0,0,,26,2,"2015,2016",168.5
+Marv,A.J. Brown,s:5859,0,0,,26,3,"2021,2022,2024",209.2
+Marv,Marcus Mariota,s:2307,0,0,,26,2,"2016,2017",368.94
+Ritz,DK Metcalf,s:5846,0,0,,26,2,"2023,2024",176.9
+Ritz,Derrick Henry,s:3198,0,0,,26,3,"2016,2018,2023",329.4
+Ritz,Josh Jacobs,s:5850,0,0,,26,2,"2021,2023",253.1
+Simi,Cam Newton,s:954,0,0,,26,3,"2017,2018,2019",407.46
+Tommy,James Robinson,s:6955,0,0,,26,2,"2021,2022",200.6
+Tommy,Miles Sanders,s:6151,0,0,,26,2,"2022,2023",223.5
+Tommy,Tyreek Hill,s:3321,0,0,,26,2,"2020,2022",383.2
+Benni,Dak Prescott,s:3294,0,0,,25,3,"2018,2021,2025",420.94
+Erik,Lamar Miller,s:1048,0,0,,25,2,"2015,2018",262.3
+Erik,Stefon Diggs,s:2449,0,0,,25,2,"2016,2017",187.0
+Juschka,Younghoe Koo,s:4666,0,0,,25,2,"2020,2024",241.5
+Kessi,Allen Lazard,s:5185,0,0,,25,2,"2020,2022",108.9
+Kessi,Carson Wentz,s:3161,0,0,,25,2,"2018,2019",345.46
+Kessi,Courtland Sutton,s:5045,0,0,,25,2,"2024,2025",233.5
+Kessi,Darren Waller,s:2505,0,0,,25,2,"2021,2022",99.8
+Kessi,Derek Carr,s:2028,0,0,,25,4,"2016,2020,2021,2022",393.2
+Ritz,Melvin Gordon,s:2320,0,0,,25,2,"2015,2019",167.7
+Tommy,Chase Claypool,s:6886,0,0,,25,3,"2020,2021,2022",155.5
+Benni,Diontae Johnson,s:5937,0,0,,24,3,"2020,2023,2024",143.3
+Benni,Nick Chubb,s:4988,0,0,,24,3,"2020,2023,2025",217.5
+Erik,Mark Ingram,s:956,0,0,,24,2,"2015,2019",294.2
+Erik,Tyler Boyd,s:3225,0,0,,24,2,"2018,2020",191.14
+Juschka,Mike Evans,s:2216,0,0,,24,3,"2015,2022,2025",129.7
+Kessi,Drew Brees,s:289,0,0,,24,2,"2016,2019",469.82
+Kessi,Emmanuel Sanders,s:538,0,0,,24,2,"2015,2019",203.1
+Kessi,Kenyan Drake,s:3242,0,0,,24,3,"2017,2021,2022",148.2
+Ritz,Ladd McConkey,s:11635,0,0,,24,2,"2024,2025",176.2
+Ritz,Stefon Diggs,s:2449,0,0,,24,2,"2020,2024",268.92
+Simi,D'Andre Swift,s:6790,0,0,,24,2,"2020,2022",175.6
+Simi,Daniel Carlson,s:5095,0,0,,24,3,"2020,2021,2022",199.4
+Tommy,Nico Collins,s:7569,0,0,,24,2,"2023,2024",185.4
+Benni,Dameon Pierce,s:8129,0,0,,23,2,"2022,2023",183.5
+Benni,Jayden Daniels,s:11566,0,0,,23,2,"2024,2025",375.16
+Benni,Josh Gordon,s:1244,0,0,,23,3,"2017,2018,2019",136.5
+Benni,Tyreek Hill,s:3321,0,0,,23,3,"2021,2022,2023",317.96
+Erik,DeAndre Hopkins,s:1426,0,0,,23,2,"2018,2019",277.24
+Erik,Trey McBride,s:8130,0,0,,23,2,"2023,2024",148.7
+Kessi,Tony Pollard,s:5967,0,0,,23,3,"2020,2021,2024",209.6
+Marv,Breece Hall,s:8155,0,0,,23,2,"2022,2024",259.5
+Ritz,Emmanuel Sanders,s:538,0,0,,23,3,"2017,2018,2019",202.92
+Ritz,Joe Burrow,s:6770,0,0,,23,2,"2024,2025",415.78
+Ritz,Julian Edelman,s:344,0,0,,23,3,"2016,2018,2020",178.24
+Ritz,T.Y. Hilton,s:1110,0,0,,23,2,"2017,2019",112.7
+Simi,Aaron Jones,s:4199,0,0,,23,2,"2018,2023",173.2
+Simi,Dak Prescott,s:3294,0,0,,23,3,"2016,2022,2023",469.94
+Simi,Rhamondre Stevenson,s:7611,0,0,,23,2,"2021,2024",190.1
+Tommy,D.J. Moore,s:4983,0,0,,23,2,"2019,2021",212.2
+Tommy,Tom Brady,s:167,0,0,,23,2,"2018,2020",385.62
+Benni,Alexander Mattison,s:5987,0,0,,22,4,"2019,2020,2021,2022",110.5
+Benni,Javonte Williams,s:7588,0,0,,22,2,"2021,2024",177.5
+Benni,Josh Allen,s:4984,0,0,,22,3,"2018,2019,2020",482.44
+Erik,Aaron Jones,s:4199,0,0,,22,3,"2017,2018,2019",281.5
+Erik,Matthew Stafford,s:421,0,0,,22,3,"2017,2021,2023",393.76
+Erik,Rachaad White,s:8136,0,0,,22,2,"2022,2023",233.1
+Juschka,D'Andre Swift,s:6790,0,0,,22,2,"2024,2025",212.6
+Juschka,Josh Allen,s:4984,0,0,,22,2,"2019,2022",497.86
+Juschka,Marquise Brown,s:5848,0,0,,22,2,"2021,2022",198.3
+Kessi,Deshaun Watson,s:4017,0,0,,22,3,"2017,2020,2023",480.46
+Kessi,Greg Olsen,s:58,0,0,,22,2,"2015,2019",167.2
+Kessi,Tarik Cohen,s:4157,0,0,,22,2,"2017,2019",99.04
+Kessi,Tee Higgins,s:6801,0,0,,22,2,"2021,2025",165.4
+Kessi,Zach Ertz,s:1339,0,0,,22,3,"2015,2019,2024",155.2
+Marv,Justin Herbert,s:6797,0,0,,22,2,"2020,2022",375.76
+Marv,Kyle Pitts,s:7553,0,0,,22,2,"2021,2024",131.5
+Marv,Melvin Gordon,s:2320,0,0,,22,2,"2016,2020",238.9
+Simi,Matt Bryant,s:127,0,0,,22,2,"2017,2018",184.0
+Simi,Michael Pittman,s:6819,0,0,,22,2,"2023,2025",173.1
+Simi,T.J. Hockenson,s:5844,0,0,,22,3,"2019,2023,2025",150.9
+Tommy,Austin Ekeler,s:4663,0,0,,22,2,"2020,2024",139.3
+Tommy,Larry Fitzgerald,s:223,0,0,,22,2,"2016,2018",169.58
+Benni,DeVante Parker,s:2319,0,0,,21,4,"2015,2017,2019,2020",161.1
+Benni,Mike Williams,s:4068,0,0,,21,3,"2017,2022,2023",133.6
+Erik,A.J. Brown,s:5859,0,0,,21,2,"2021,2022",166.4
+Erik,Jordan Mason,s:8408,0,0,,21,2,"2024,2025",174.9
+Erik,Keenan Allen,s:1479,0,0,,21,2,"2019,2021",201.5
+Juschka,Calvin Ridley,s:4981,0,0,,21,2,"2018,2025",116.4
+Juschka,Gary Barnidge,s:176,0,0,,21,2,"2015,2016",141.7
+Juschka,Jason Sanders,s:5119,0,0,,21,3,"2020,2023,2024",199.6
+Juschka,Jayden Reed,s:10222,0,0,,21,2,"2023,2025",61.7
+Marv,LeGarrette Blount,s:730,0,0,,21,2,"2016,2017",213.1
+Ritz,Michael Crabtree,s:455,0,0,,21,2,"2015,2017",163.8
+Ritz,Randall Cobb,s:928,0,0,,21,2,"2015,2016",148.9
+Tommy,Jimmy Graham,s:616,0,0,,21,3,"2015,2016,2020",131.9
+Tommy,Julio Jones,s:947,0,0,,21,2,"2019,2021",97.6
+Tommy,Latavius Murray,s:1476,0,0,,21,2,"2016,2019",232.5
+Benni,Doug Baldwin,s:988,0,0,,20,2,"2015,2016",237.1
+Benni,Malik Nabers,s:11632,0,0,,20,2,"2024,2025",162.2
+Erik,Russell Wilson,s:1234,0,0,,20,2,"2018,2022",354.94
+Kessi,Antonio Brown,s:536,0,0,,20,2,"2016,2019",213.4
+Kessi,Dion Lewis,s:788,0,0,,20,2,"2016,2018",39.2
+Kessi,Tyrell Williams,s:2583,0,0,,20,2,"2017,2019",91.7
+Marv,Justin Jefferson,s:6794,0,0,,20,2,"2022,2023",213.32
+Ritz,Matt Ryan,s:24,0,0,,20,2,"2019,2020",321.56
+Simi,Michael Crabtree,s:455,0,0,,20,2,"2016,2018",176.6
+Simi,Tyreek Hill,s:3321,0,0,,20,2,"2019,2025",156.7
+Tommy,Julian Edelman,s:344,0,0,,20,2,"2015,2019",195.68
+Tommy,T.J. Yeldon,s:2341,0,0,,20,2,"2015,2018",170.2
+Benni,Ben Roethlisberger,s:138,0,0,,19,2,"2016,2017",337.94
+Benni,Derrick Henry,s:3198,0,0,,19,2,"2017,2020",286.2
+Erik,Allen Robinson,s:1992,0,0,,19,2,"2020,2022",172.0
+Erik,Demaryius Thomas,s:560,0,0,,19,2,"2015,2018",165.1
+Erik,Devin Funchess,s:2346,0,0,,19,2,"2017,2018",137.1
+Erik,Devin Singletary,s:6130,0,0,,19,3,"2022,2024,2025",140.1
+Erik,Greg Zuerlein,s:1266,0,0,,19,2,"2019,2020",132.0
+Kessi,Jeremy Hill,s:1892,0,0,,19,2,"2015,2017",145.0
+Kessi,Tyreek Hill,s:3321,0,0,,19,2,"2016,2017",199.7
+Marv,Andrew Luck,s:1111,0,0,,19,2,"2016,2018",333.84
+Marv,Brandon Marshall,s:648,0,0,,19,2,"2015,2018",211.6
+Marv,Deshaun Watson,s:4017,0,0,,19,2,"2019,2022",354.3
+Tommy,Amari Cooper,s:2309,0,0,,19,2,"2018,2020",155.8
+Benni,Ezekiel Elliott,s:3164,0,0,,18,2,"2021,2023",209.66
+Erik,Brandon Aiyuk,s:6803,0,0,,18,2,"2021,2023",137.8
+Erik,Justin Herbert,s:6797,0,0,,18,2,"2022,2023",284.96
+Juschka,Michael Pittman,s:6819,0,0,,18,2,"2020,2024",80.1
+Juschka,Ryan Succop,s:391,0,0,,18,2,"2017,2022",136.2
+Kessi,T.Y. Hilton,s:1110,0,0,,18,2,"2018,2021",158.5
+Marv,Philip Rivers,s:331,0,0,,18,2,"2017,2018",299.1
+Simi,Greg Olsen,s:58,0,0,,18,2,"2016,2017",127.9
+Simi,Saquon Barkley,s:4866,0,0,,18,2,"2019,2020",183.8
+Tommy,DeSean Jackson,s:147,0,0,,18,2,"2015,2017",88.6
+Tommy,George Kittle,s:4217,0,0,,18,3,"2018,2019,2021",135.0
+Tommy,Kyle Pitts,s:7553,0,0,,18,2,"2022,2023",85.5
+Tommy,Rob Gronkowski,s:515,0,0,,18,2,"2017,2020",159.5
+Benni,Alvin Kamara,s:4035,0,0,,17,2,"2017,2023",186.1
+Benni,Bijan Robinson,s:9509,0,0,,17,2,"2024,2025",231.7
+Benni,Jalen Hurts,s:6904,0,0,,17,2,"2020,2024",333.7
+Benni,Tom Brady,s:167,0,0,,17,2,"2016,2018",254.6
+Erik,Andrew Luck,s:1111,0,0,,17,2,"2017,2018",200.88
+Erik,Ben Roethlisberger,s:138,0,0,,17,3,"2015,2017,2018",265.16
+Erik,Chase Edmonds,s:5000,0,0,,17,2,"2020,2021",91.5
+Erik,Cooper Kupp,s:4039,0,0,,17,2,"2017,2023",100.0
+Erik,Najee Harris,s:7528,0,0,,17,2,"2021,2025",195.6
+Erik,Odell Beckham,s:2078,0,0,,17,2,"2019,2021",115.0
+Erik,Rhamondre Stevenson,s:7611,0,0,,17,2,"2022,2025",146.6
+Juschka,Baker Mayfield,s:4892,0,0,,17,2,"2023,2025",261.08
+Juschka,Matt Ryan,s:24,0,0,,17,2,"2015,2017",210.02
+Kessi,D.J. Moore,s:4983,0,0,,17,2,"2018,2020",135.7
+Kessi,J.D. McKissic,s:3664,0,0,,17,2,"2020,2021",110.2
+Marv,Aaron Rodgers,s:96,0,0,,17,2,"2015,2025",310.96
+Marv,Coby Fleener,s:1107,0,0,,17,2,"2016,2017",88.1
+Marv,Dan Bailey,s:899,0,0,,17,2,"2015,2016",131.0
+Marv,Eddie Lacy,s:1527,0,0,,17,2,"2015,2017",116.8
+Ritz,Austin Ekeler,s:4663,0,0,,17,2,"2018,2022",232.6
+Ritz,Kenyan Drake,s:3242,0,0,,17,2,"2019,2020",164.8
+Simi,Austin Ekeler,s:4663,0,0,,17,2,"2018,2023",132.5
+Simi,Jimmy Graham,s:616,0,0,,17,2,"2018,2019",75.5
+Simi,Kyle Rudolph,s:943,0,0,,17,2,"2017,2019",118.5
+Simi,Martellus Bennett,s:40,0,0,,17,2,"2015,2016",62.4
+Simi,Trevor Lawrence,s:7523,0,0,,17,2,"2022,2023",264.6
+Tommy,Allen Robinson,s:1992,0,0,,17,2,"2017,2019",151.3
+Tommy,Brandon Aiyuk,s:6803,0,0,,17,2,"2020,2025",124.5
+Tommy,DeVonta Smith,s:7525,0,0,,17,2,"2021,2024",110.5
+Tommy,Hunter Henry,s:3214,0,0,,17,3,"2016,2019,2021",73.6
+Tommy,Stephen Anderson,s:3496,0,0,,17,2,"2017,2020",98.4
+Benni,A.J. Brown,s:5859,0,0,,16,1,2020,150.4
+Benni,Adam Thielen,s:1689,0,0,,16,1,2018,190.6
+Benni,DeAndre Hopkins,s:1426,0,0,,16,1,2015,211.2
+Benni,Drew Brees,s:289,0,0,,16,1,2017,248.56
+Benni,Emeka Egbuka,s:12514,0,0,,16,1,2025,129.9
+Benni,Jahmyr Gibbs,s:9221,0,0,,16,1,2024,247.6
+Benni,Jake Elliott,s:4195,0,0,,16,5,"2017,2018,2019,2023,2024",122.3
+Benni,Jonathan Taylor,s:6813,0,0,,16,1,2025,298.0
+Benni,Patrick Mahomes II,s:4046,0,0,,16,1,2022,376.9
+Benni,Saquon Barkley,s:4866,0,0,,16,1,2022,221.7
+Benni,Tee Higgins,s:6801,0,0,,16,1,2024,114.7
+Benni,Tetairoa McMillan,s:12526,0,0,,16,1,2025,134.4
+Benni,Tony Pollard,s:5967,0,0,,16,2,"2021,2022",201.5
+Erik,Antonio Gibson,s:6945,0,0,,16,1,2021,166.0
+Erik,D.J. Moore,s:4983,0,0,,16,1,2022,117.4
+Erik,David Montgomery,s:5892,0,0,,16,1,2020,191.6
+Erik,Drake London,s:8112,0,0,,16,1,2025,119.7
+Erik,George Pickens,s:8137,0,0,,16,1,2024,100.4
+Erik,Jalen Hurts,s:6904,0,0,,16,1,2021,299.2
+Erik,Jordan Howard,s:3306,0,0,,16,1,2018,136.6
+Erik,Josh Jacobs,s:5850,0,0,,16,1,2019,171.6
+Erik,Kenneth Walker III,s:8151,0,0,,16,1,2025,141.9
+Erik,Le'Veon Bell,s:1408,0,0,,16,1,2017,256.6
+Erik,Marvin Harrison Jr.,s:11628,0,0,,16,1,2024,112.6
+Erik,Michael Thomas,s:3199,0,0,,16,2,"2020,2021",42.2
+Erik,Mike Evans,s:2216,0,0,,16,1,2016,195.6
+Erik,Miles Sanders,s:6151,0,0,,16,1,2020,142.4
+Erik,Nico Collins,s:7569,0,0,,16,1,2025,149.5
+Erik,T.Y. Hilton,s:1110,0,0,,16,1,2015,138.0
+Erik,Thomas Rawls,s:2585,0,0,,16,1,2016,55.1
+Erik,Todd Gurley,s:2315,0,0,,16,1,2016,147.5
+Juschka,A.J. Green,s:830,0,0,,16,1,2016,120.4
+Juschka,Aaron Jones,s:4199,0,0,,16,1,2021,166.4
+Juschka,Adam Thielen,s:1689,0,0,,16,1,2020,174.3
+Juschka,Alvin Kamara,s:4035,0,0,,16,1,2020,294.8
+Juschka,Breece Hall,s:8155,0,0,,16,1,2023,168.9
+Juschka,Chris Olave,s:8144,0,0,,16,1,2023,130.1
+Juschka,Christian McCaffrey,s:4034,0,0,,16,1,2025,284.8
+Juschka,Cooper Kupp,s:4039,0,0,,16,1,2020,116.7
+Juschka,Cordarrelle Patterson,s:1535,0,0,,16,1,2022,111.4
+Juschka,Dallas Goedert,s:5022,0,0,,16,2,"2021,2024",108.0
+Juschka,Darren Waller,s:2505,0,0,,16,1,2020,153.9
+Juschka,David Montgomery,s:5892,0,0,,16,1,2022,138.0
+Juschka,De'Von Achane,s:9226,0,0,,16,1,2024,200.0
+Juschka,DeVonta Smith,s:7525,0,0,,16,1,2023,143.6
+Juschka,Delanie Walker,s:284,0,0,,16,1,2016,119.6
+Juschka,Emmanuel Sanders,s:538,0,0,,16,1,2016,133.6
+Juschka,Evan Engram,s:4066,0,0,,16,1,2019,65.4
+Juschka,Golden Tate,s:642,0,0,,16,1,2017,114.1
+Juschka,Greg Zuerlein,s:1266,0,0,,16,1,2018,110.0
+Juschka,Harrison Butker,s:4227,0,0,,16,1,2019,146.0
+Juschka,Jahmyr Gibbs,s:9221,0,0,,16,1,2023,176.8
+Juschka,James Conner,s:4137,0,0,,16,1,2024,206.0
+Juschka,Jonathan Stewart,s:218,0,0,,16,2,"2015,2017",135.1
+Juschka,Kelvin Benjamin,s:2182,0,0,,16,1,2017,84.5
+Juschka,Kenneth Gainwell,s:7567,0,0,,16,2,"2021,2023",57.8
+Juschka,Lamar Jackson,s:4881,0,0,,16,1,2021,239.98
+Juschka,LeSean McCoy,s:676,0,0,,16,1,2016,246.7
+Juschka,Leonard Fournette,s:3969,0,0,,16,1,2019,183.4
+Juschka,Mark Andrews,s:5012,0,0,,16,1,2025,78.8
+Juschka,Najee Harris,s:7528,0,0,,16,1,2022,151.16
+Juschka,Nick Folk,s:650,0,0,,16,2,"2021,2022",141.1
+Juschka,Patrick Mahomes II,s:4046,0,0,,16,1,2020,374.4
+Juschka,Rico Dowdle,s:7021,0,0,,16,1,2025,170.0
+Juschka,Saquon Barkley,s:4866,0,0,,16,1,2018,274.6
+Juschka,Tevin Coleman,s:2378,0,0,,16,1,2018,150.2
+Juschka,Todd Gurley,s:2315,0,0,,16,1,2019,179.5
+Juschka,Travis Etienne,s:7543,0,0,,16,1,2024,77.7
+Juschka,Trevor Etienne,s:12531,0,0,,16,1,2025,204.9
+Juschka,Tyjae Spears,s:9508,0,0,,16,1,2025,63.9
+Juschka,Tyreek Hill,s:3321,0,0,,16,1,2018,217.4
+Kessi,Aaron Jones,s:4199,0,0,,16,1,2022,173.5
+Kessi,Bijan Robinson,s:9509,0,0,,16,1,2023,160.6
+Kessi,Brock Bowers,s:11604,0,0,,16,1,2025,112.2
+Kessi,Carlos Hyde,s:2257,0,0,,16,1,2016,165.1
+Kessi,Chase Brown,s:9224,0,0,,16,1,2025,172.5
+Kessi,Chris Olave,s:8144,0,0,,16,1,2024,44.7
+Kessi,DK Metcalf,s:5846,0,0,,16,1,2021,138.6
+Kessi,Damien Harris,s:5890,0,0,,16,1,2021,162.1
+Kessi,Davante Adams,s:2133,0,0,,16,1,2020,232.8
+Kessi,David Montgomery,s:5892,0,0,,16,1,2024,185.72
+Kessi,DeAndre Hopkins,s:1426,0,0,,16,1,2023,130.8
+Kessi,DeMarco Murray,s:904,0,0,,16,1,2017,132.5
+Kessi,DeSean Jackson,s:147,0,0,,16,1,2016,121.1
+Kessi,DeVonta Smith,s:7525,0,0,,16,1,2022,141.4
+Kessi,Gabriel Davis,s:6943,0,0,,16,1,2023,114.3
+Kessi,Garrett Wilson,s:8146,0,0,,16,1,2023,109.9
+Kessi,J.K. Dobbins,s:6806,0,0,,16,1,2025,104.9
+Kessi,Ja'Marr Chase,s:7564,0,0,,16,1,2024,250.2
+Kessi,Jalen Hurts,s:6904,0,0,,16,1,2023,337.04
+Kessi,Jared Goff,s:3163,0,0,,16,1,2018,286.36
+Kessi,Jimmy Graham,s:616,0,0,,16,1,2017,109.5
+Kessi,Joe Burrow,s:6770,0,0,,16,1,2022,339.1
+Kessi,Jordy Nelson,s:175,0,0,,16,1,2016,201.1
+Kessi,Keenan Allen,s:1479,0,0,,16,1,2022,69.0
+Kessi,Kelvin Benjamin,s:2182,0,0,,16,1,2016,118.8
+Kessi,Kyler Murray,s:5849,0,0,,16,1,2021,260.46
+Kessi,Larry Fitzgerald,s:223,0,0,,16,1,2017,146.94
+Kessi,LeSean McCoy,s:676,0,0,,16,1,2018,82.8
+Kessi,Michael Pittman,s:6819,0,0,,16,1,2022,98.4
+Kessi,Najee Harris,s:7528,0,0,,16,1,2024,148.9
+Kessi,Noah Fant,s:5857,0,0,,16,1,2021,74.2
+Kessi,Peyton Barber,s:3594,0,0,,16,1,2019,97.0
+Kessi,Quinshon Judkins,s:12512,0,0,,16,1,2025,143.8
+Kessi,Rob Gronkowski,s:515,0,0,,16,1,2018,81.8
+Kessi,Sterling Shepard,s:3200,0,0,,16,1,2019,80.9
+Kessi,Tom Brady,s:167,0,0,,16,1,2015,338.44
+Kessi,Zach Charbonnet,s:9753,0,0,,16,1,2023,63.0
+Marv,Ashton Jeanty,s:12527,0,0,,16,1,2025,173.4
+Marv,Calvin Johnson,s:6857,0,0,,16,1,2015,135.6
+Marv,Chris Carson,s:4273,0,0,,16,1,2020,142.5
+Marv,Chris Olave,s:8144,0,0,,16,1,2025,150.1
+Marv,Christian McCaffrey,s:4034,0,0,,16,1,2019,339.4
+Marv,DK Metcalf,s:5846,0,0,,16,1,2020,186.2
+Marv,Dalvin Cook,s:4029,0,0,,16,1,2020,293.8
+Marv,Davante Adams,s:2133,0,0,,16,1,2024,136.8
+Marv,Doug Baldwin,s:988,0,0,,16,1,2017,127.3
+Marv,Ezekiel Elliott,s:3164,0,0,,16,1,2016,293.4
+Marv,Frank Gore,s:232,0,0,,16,1,2015,151.8
+Marv,George Pickens,s:8137,0,0,,16,1,2023,132.4
+Marv,Harrison Butker,s:4227,0,0,,16,1,2023,132.2
+Marv,Isiah Pacheco,s:8205,0,0,,16,1,2023,147.4
+Marv,Jamaal Williams,s:4149,0,0,,16,2,"2022,2023",68.4
+Marv,Jerry Jeudy,s:6783,0,0,,16,1,2025,63.1
+Marv,Julio Jones,s:947,0,0,,16,1,2018,193.1
+Marv,Justin Fields,s:7591,0,0,,16,1,2023,196.34
+Marv,Ka'imi Fairbairn,s:3451,0,0,,16,1,2024,178.8
+Marv,Keenan Allen,s:1479,0,0,,16,1,2018,156.7
+Marv,Kirk Cousins,s:1166,0,0,,16,5,"2016,2017,2021,2022,2023",272.32
+Marv,Le'Veon Bell,s:1408,0,0,,16,1,2016,242.4
+Marv,LeSean McCoy,s:676,0,0,,16,1,2019,90.6
+Marv,Marvin Harrison Jr.,s:11628,0,0,,16,1,2025,86.8
+Marv,Miles Sanders,s:6151,0,0,,16,1,2019,163.6
+Marv,Omarion Hampton,s:12507,0,0,,16,1,2025,91.7
+Marv,Puka Nacua,s:9493,0,0,,16,1,2025,219.3
+Marv,Rachaad White,s:8136,0,0,,16,1,2024,145.2
+Marv,Rhamondre Stevenson,s:7611,0,0,,16,1,2023,107.7
+Marv,T.Y. Hilton,s:1110,0,0,,16,1,2016,173.3
+Marv,Xavier Worthy,s:11624,0,0,,16,1,2025,67.8
+Marv,Zay Flowers,s:9997,0,0,,16,1,2024,130.3
+Ritz,A.J. Green,s:830,0,0,,16,1,2017,150.1
+Ritz,Aaron Jones,s:4199,0,0,,16,1,2020,197.4
+Ritz,Bijan Robinson,s:9509,0,0,,16,1,2025,252.6
+Ritz,Cameron Dicker,s:8259,0,0,,16,1,2025,176.8
+Ritz,D'Andre Swift,s:6790,0,0,,16,1,2021,132.4
+Ritz,DeAndre Hopkins,s:1426,0,0,,16,1,2020,169.3
+Ritz,Deshaun Watson,s:4017,0,0,,16,1,2018,309.74
+Ritz,Ezekiel Elliott,s:3164,0,0,,16,1,2022,158.1
+Ritz,Jaxon Smith-Njigba,s:9488,0,0,,16,1,2025,225.3
+Ritz,Jaylen Warren,s:8228,0,0,,16,1,2025,160.8
+Ritz,Jeremy Maclin,s:411,0,0,,16,1,2015,143.0
+Ritz,Joe Mixon,s:4018,0,0,,16,1,2018,189.7
+Ritz,Lamar Jackson,s:4881,0,0,,16,1,2022,236.08
+Ritz,Le'Veon Bell,s:1408,0,0,,16,1,2019,141.3
+Ritz,LeSean McCoy,s:676,0,0,,16,1,2017,201.4
+Ritz,Mark Andrews,s:5012,0,0,,16,1,2024,109.6
+Ritz,Nick Chubb,s:4988,0,0,,16,1,2019,215.0
+Ritz,Patrick Mahomes II,s:4046,0,0,,16,1,2023,268.22
+Ritz,Phillip Lindsay,s:5170,0,0,,16,1,2019,157.4
+Ritz,Saquon Barkley,s:4866,0,0,,16,1,2021,92.5
+Ritz,Tee Higgins,s:6801,0,0,,16,1,2023,93.7
+Ritz,Travis Kelce,s:1466,0,0,,16,1,2025,112.4
+Ritz,Tyler Boyd,s:3225,0,0,,16,3,"2019,2022,2023",77.8
+Simi,A.J. Brown,s:5859,0,0,,16,1,2023,179.4
+Simi,Adam Thielen,s:1689,0,0,,16,1,2019,84.4
+Simi,Breece Hall,s:8155,0,0,,16,1,2025,152.76
+Simi,Brian Thomas Jr.,s:11631,0,0,,16,1,2025,82.0
+Simi,Bucky Irving,s:11584,0,0,,16,1,2025,95.4
+Simi,DK Metcalf,s:5846,0,0,,16,1,2019,115.0
+Simi,Dalvin Cook,s:4029,0,0,,16,1,2018,106.0
+Simi,Dez Bryant,s:574,0,0,,16,1,2017,115.0
+Simi,Dorial Green-Beckham,s:2345,0,0,,16,1,2015,72.8
+Simi,Doug Martin,s:1195,0,0,,16,1,2015,188.5
+Simi,Isaiah Crowell,s:1901,0,0,,16,1,2017,113.4
+Simi,Jahmyr Gibbs,s:9221,0,0,,16,1,2025,268.2
+Simi,Jalen Hurts,s:6904,0,0,,16,1,2025,290.16
+Simi,Jayden Reed,s:10222,0,0,,16,1,2024,138.3
+Simi,Jeremy Hill,s:1892,0,0,,16,1,2016,155.3
+Simi,Jonathan Stewart,s:218,0,0,,16,1,2016,125.2
+Simi,Josh Jacobs,s:5850,0,0,,16,1,2024,235.6
+Simi,Justin Tucker,s:1264,0,0,,16,1,2019,129.0
+Simi,Kareem Hunt,s:4098,0,0,,16,1,2017,232.7
+Simi,Kenyan Drake,s:3242,0,0,,16,1,2018,143.7
+Simi,Kyler Murray,s:5849,0,0,,16,1,2022,200.52
+Simi,Mark Ingram,s:956,0,0,,16,1,2017,214.6
+Simi,Matt Forte,s:103,0,0,,16,2,"2015,2017",153.7
+Simi,Melvin Gordon,s:2320,0,0,,16,1,2021,144.3
+Simi,Mike Evans,s:2216,0,0,,16,1,2024,135.8
+Simi,Najee Harris,s:7528,0,0,,16,1,2023,123.0
+Simi,Patrick Mahomes II,s:4046,0,0,,16,1,2021,314.6
+Simi,Rachaad White,s:8136,0,0,,16,1,2025,97.2
+Simi,Raheem Mostert,s:2749,0,0,,16,2,"2020,2021",85.7
+Simi,Rashee Rice,s:10229,0,0,,16,1,2025,97.1
+Simi,Stefon Diggs,s:2449,0,0,,16,1,2022,192.2
+Simi,Tee Higgins,s:6801,0,0,,16,1,2022,146.2
+Simi,Tyler Bass,s:7042,0,0,,16,2,"2022,2023",129.7
+Simi,Zach Charbonnet,s:9753,0,0,,16,1,2025,121.5
+Simi,Zay Flowers,s:9997,0,0,,16,1,2025,122.5
+Tommy,A.J. Brown,s:5859,0,0,,16,1,2025,135.5
+Tommy,Adam Thielen,s:1689,0,0,,16,1,2022,101.2
+Tommy,Alshon Jeffery,s:1149,0,0,,16,1,2015,104.7
+Tommy,Andrew Luck,s:1111,0,0,,16,1,2015,130.84
+Tommy,Brandin Cooks,s:2197,0,0,,16,1,2016,166.4
+Tommy,Brock Bowers,s:11604,0,0,,16,1,2024,132.1
+Tommy,CeeDee Lamb,s:6786,0,0,,16,1,2020,133.1
+Tommy,Charles Clay,s:801,0,0,,16,1,2015,70.8
+Tommy,D'Andre Swift,s:6790,0,0,,16,1,2023,153.7
+Tommy,Dalvin Cook,s:4029,0,0,,16,1,2022,192.7
+Tommy,De'Von Achane,s:9226,0,0,,16,1,2025,244.6
+Tommy,DeAndre Hopkins,s:1426,0,0,,16,1,2021,105.2
+Tommy,Deebo Samuel,s:5872,0,0,,16,1,2022,110.0
+Tommy,George Pickens,s:8137,0,0,,16,1,2025,190.2
+Tommy,Ja'Marr Chase,s:7564,0,0,,16,1,2023,156.72
+Tommy,Jalen Hurts,s:6904,0,0,,16,1,2022,369.58
+Tommy,Josh Allen,s:4984,0,0,,16,1,2023,348.42
+Tommy,JuJu Smith-Schuster,s:4040,0,0,,16,1,2018,176.2
+Tommy,Kareem Hunt,s:4098,0,0,,16,1,2019,60.8
+Tommy,Lamar Jackson,s:4881,0,0,,16,1,2024,377.98
+Tommy,Robbie Gould,s:49,0,0,,16,4,"2018,2019,2020,2021",120.0
+Tommy,Rome Odunze,s:11620,0,0,,16,1,2025,102.1
+Tommy,Travis Kelce,s:1466,0,0,,16,1,2024,84.0
+Tommy,Trey McBride,s:8130,0,0,,16,1,2025,169.8
+Tommy,Tyler Warren,s:12518,0,0,,16,1,2025,105.6
+Tommy,Zay Flowers,s:9997,0,0,,16,1,2023,112.8
+Benni,Antonio Gibson,s:6945,0,0,,15,1,2020,151.2
+Benni,Carson Palmer,s:91,0,0,,15,1,2015,276.4
+Benni,Darrell Henderson,s:5916,0,0,,15,1,2021,132.7
+Benni,LeSean McCoy,s:676,0,0,,15,1,2015,146.7
+Benni,Matt Forte,s:103,0,0,,15,1,2016,153.6
+Benni,Puka Nacua,s:9493,0,0,,15,1,2023,157.8
+Erik,Cam Akers,s:6938,0,0,,15,3,"2020,2022,2023",73.1
+Erik,Darren Waller,s:2505,0,0,,15,2,"2019,2023",103.8
+Erik,Phillip Lindsay,s:5170,0,0,,15,1,2018,171.6
+Erik,Puka Nacua,s:9493,0,0,,15,1,2024,114.7
+Erik,T.J. Hockenson,s:5844,0,0,,15,2,"2021,2024",85.6
+Erik,Trey Benson,s:11589,0,0,,15,1,2025,14.9
+Juschka,Brandon McManus,s:1433,0,0,,15,2,"2015,2017",106.0
+Juschka,Jared Cook,s:367,0,0,,15,1,2018,104.8
+Kessi,Brandon LaFell,s:613,0,0,,15,2,"2015,2016",72.3
+Kessi,James Jones,s:253,0,0,,15,1,2015,113.7
+Kessi,N'Keal Harry,s:5878,0,0,,15,2,"2019,2020",45.0
+Kessi,Phillip Lindsay,s:5170,0,0,,15,1,2020,59.0
+Kessi,Spencer Ware,s:1601,0,0,,15,2,"2016,2017",126.4
+Marv,Allen Robinson,s:1992,0,0,,15,1,2018,73.0
+Marv,Chase Edmonds,s:5000,0,0,,15,2,"2020,2022",91.2
+Marv,Isaiah Crowell,s:1901,0,0,,15,2,"2015,2018",92.6
+Marv,James Robinson,s:6955,0,0,,15,1,2020,192.4
+Marv,Jaylen Waddle,s:7526,0,0,,15,2,"2021,2022",137.6
+Marv,Marquise Brown,s:5848,0,0,,15,1,2019,72.2
+Marv,Mike Evans,s:2216,0,0,,15,1,2019,165.7
+Marv,Nick Chubb,s:4988,0,0,,15,1,2024,58.3
+Marv,T.J. Hockenson,s:5844,0,0,,15,3,"2019,2022,2024",89.0
+Ritz,Brandon Aiyuk,s:6803,0,0,,15,1,2022,120.4
+Ritz,Dak Prescott,s:3294,0,0,,15,1,2019,274.76
+Ritz,Ryan Tannehill,s:1049,0,0,,15,1,2015,222.14
+Simi,Calvin Ridley,s:4981,0,0,,15,1,2021,40.1
+Simi,Christian Kirk,s:4950,0,0,,15,2,"2020,2023",88.16
+Simi,Jason Witten,s:23,0,0,,15,3,"2015,2017,2019",50.4
+Simi,Joe Mixon,s:4018,0,0,,15,1,2020,78.6
+Simi,Latavius Murray,s:1476,0,0,,15,4,"2015,2017,2018,2022",108.0
+Simi,Matt Ryan,s:24,0,0,,15,2,"2015,2018",281.0
+Simi,Nick Chubb,s:4988,0,0,,15,1,2021,183.5
+Simi,Tom Brady,s:167,0,0,,15,1,2019,231.6
+Tommy,Mike Williams,s:4068,0,0,,15,2,"2018,2021",112.2
+Benni,Brandon Marshall,s:648,0,0,,14,1,2016,92.4
+Benni,Marvin Jones,s:1067,0,0,,14,3,"2015,2016,2018",86.4
+Benni,RJ Harvey,s:12489,0,0,,14,1,2025,125.3
+Erik,Latavius Murray,s:1476,0,0,,14,3,"2015,2019,2020",113.1
+Juschka,Chris Ivory,s:717,0,0,,14,2,"2015,2016",97.2
+Juschka,Damien Williams,s:1833,0,0,,14,2,"2019,2021",83.7
+Juschka,Jeffery Wilson,s:5284,0,0,,14,1,2022,115.0
+Juschka,Jerick McKinnon,s:2161,0,0,,14,2,"2016,2017",104.4
+Juschka,Russell Wilson,s:1234,0,0,,14,1,2019,267.58
+Kessi,Drake Maye,s:11564,0,0,,14,1,2025,261.7
+Kessi,Eric Decker,s:558,0,0,,14,1,2015,136.3
+Kessi,Jerry Jeudy,s:6783,0,0,,14,1,2020,65.4
+Marv,Amari Cooper,s:2309,0,0,,14,1,2016,122.9
+Marv,Carlos Hyde,s:2257,0,0,,14,1,2019,124.4
+Marv,Dallas Goedert,s:5022,0,0,,14,3,"2023,2024,2025",86.8
+Marv,Damien Harris,s:5890,0,0,,14,2,"2021,2022",70.8
+Marv,Larry Fitzgerald,s:223,0,0,,14,1,2015,122.1
+Marv,Matt Breida,s:4455,0,0,,14,1,2018,108.5
+Ritz,Ameer Abdullah,s:2359,0,0,,14,2,"2015,2017",90.2
+Ritz,Giovani Bernard,s:1386,0,0,,14,2,"2015,2016",90.3
+Ritz,Jonathon Brooks,s:11583,0,0,,14,1,2024,4.5
+Ritz,Mike Wallace,s:365,0,0,,14,1,2016,95.2
+Ritz,Miles Sanders,s:6151,0,0,,14,1,2021,91.2
+Ritz,Philip Rivers,s:331,0,0,,14,2,"2015,2016",228.82
+Simi,Chris Boswell,s:1945,0,0,,14,3,"2021,2024,2025",144.6
+Simi,Cordarrelle Patterson,s:1535,0,0,,14,1,2021,150.6
+Simi,Theo Riddick,s:1517,0,0,,14,1,2016,79.5
+Simi,Travis Benjamin,s:1077,0,0,,14,1,2015,80.1
+Tommy,Dak Prescott,s:3294,0,0,,14,2,"2017,2022",204.22
+Tommy,Harrison Butker,s:4227,0,0,,14,3,"2022,2024,2025",125.4
+Tommy,Isaiah Crowell,s:1901,0,0,,14,1,2016,115.7
+Tommy,Matt Ryan,s:24,0,0,,14,1,2016,265.82
+Benni,Antonio Gates,s:322,0,0,,13,1,2015,66.1
+Benni,Chris Carson,s:4273,0,0,,13,2,"2018,2019",143.4
+Benni,Delanie Walker,s:284,0,0,,13,2,"2015,2017",115.2
+Benni,Devin Singletary,s:6130,0,0,,13,3,"2019,2023,2024",80.6
+Benni,Dion Lewis,s:788,0,0,,13,2,"2015,2017",128.3
+Benni,Jordy Nelson,s:175,0,0,,13,2,"2015,2017",77.9
+Erik,Baker Mayfield,s:4892,0,0,,13,2,"2019,2024",208.54
+Erik,Golden Tate,s:642,0,0,,13,2,"2016,2019",80.6
+Erik,Hunter Henry,s:3214,0,0,,13,3,"2020,2021,2025",79.9
+Juschka,James White,s:1848,0,0,,13,3,"2015,2019,2020",99.5
+Juschka,Joe Burrow,s:6770,0,0,,13,2,"2021,2023",198.04
+Juschka,Larry Fitzgerald,s:223,0,0,,13,2,"2018,2019",78.9
+Juschka,Mike Davis,s:2431,0,0,,13,1,2020,140.0
+Juschka,Sam LaPorta,s:10859,0,0,,13,1,2023,111.4
+Kessi,Chris Carson,s:4273,0,0,,13,1,2018,135.8
+Kessi,Drake London,s:8112,0,0,,13,1,2022,77.3
+Kessi,Mark Ingram,s:956,0,0,,13,1,2020,43.0
+Marv,Adam Thielen,s:1689,0,0,,13,1,2017,114.7
+Marv,Christian Kirk,s:4950,0,0,,13,2,"2019,2022",105.6
+Marv,Clyde Edwards-Helaire,s:6820,0,0,,13,1,2021,98.6
+Marv,Jason Myers,s:2747,0,0,,13,4,"2015,2022,2023,2025",171.8
+Marv,Jay Ajayi,s:2452,0,0,,13,1,2017,82.9
+Marv,Jimmy Graham,s:616,0,0,,13,2,"2015,2020",77.6
+Marv,Sam LaPorta,s:10859,0,0,,13,1,2025,66.9
+Ritz,Ricky Pearsall,s:11638,0,0,,13,1,2025,34.5
+Simi,Alexander Mattison,s:5987,0,0,,13,2,"2022,2023",94.8
+Simi,Chuba Hubbard,s:7594,0,0,,13,1,2024,166.7
+Simi,De'Von Achane,s:9226,0,0,,13,1,2023,83.7
+Simi,Josh Brown,s:102,0,0,,13,1,2015,92.0
+Tommy,Alex Collins,s:3327,0,0,,13,1,2018,93.6
+Tommy,Derek Carr,s:2028,0,0,,13,2,"2015,2017",154.92
+Tommy,Jerry Jeudy,s:6783,0,0,,13,2,"2021,2022",59.4
+Tommy,Ronald Jones,s:5052,0,0,,13,1,2020,120.3
+Benni,Jay Ajayi,s:2452,0,0,,12,2,"2016,2017",141.8
+Benni,Sterling Shepard,s:3200,0,0,,12,2,"2016,2017",70.3
+Benni,Terrelle Pryor,s:1020,0,0,,12,1,2016,89.54
+Erik,Brandin Cooks,s:2197,0,0,,12,2,"2019,2021",97.0
+Erik,Chase Brown,s:9224,0,0,,12,1,2024,138.0
+Erik,Justin Jefferson,s:6794,0,0,,12,2,"2022,2023",126.34
+Erik,Zack Moss,s:6845,0,0,,12,2,"2021,2023",63.2
+Juschka,Alex Smith,s:268,0,0,,12,1,2017,205.6
+Juschka,Brock Purdy,s:8183,0,0,,12,2,"2023,2024",165.8
+Juschka,Cameron Brate,s:2214,0,0,,12,1,2017,65.7
+Juschka,Dak Prescott,s:3294,0,0,,12,2,"2023,2024",145.22
+Juschka,Jordan Matthews,s:1800,0,0,,12,2,"2015,2016",87.3
+Juschka,Willie Snead,s:1911,0,0,,12,2,"2015,2017",15.6
+Kessi,Brian Robinson,s:8154,0,0,,12,1,2022,95.0
+Kessi,Dalton Kincaid,s:10236,0,0,,12,1,2025,46.4
+Kessi,Daniel Carlson,s:5095,0,0,,12,1,2023,91.1
+Kessi,Jamison Crowder,s:2410,0,0,,12,2,"2018,2020",54.6
+Kessi,Jordan Howard,s:3306,0,0,,12,1,2016,162.1
+Marv,J.K. Dobbins,s:6806,0,0,,12,1,2024,118.1
+Ritz,AJ Dillon,s:6828,0,0,,12,2,"2022,2023",85.8
+Ritz,Antonio Gibson,s:6945,0,0,,12,1,2022,100.4
+Ritz,Austin Hooper,s:3202,0,0,,12,1,2019,69.5
+Ritz,Bucky Irving,s:11584,0,0,,12,1,2024,134.3
+Ritz,C.J. Anderson,s:1451,0,0,,12,3,"2015,2016,2017",111.7
+Ritz,Christine Michael,s:1596,0,0,,12,1,2016,76.6
+Ritz,D'Onta Foreman,s:4111,0,0,,12,2,"2022,2023",58.6
+Ritz,DeVonta Smith,s:7525,0,0,,12,2,"2021,2025",72.2
+Ritz,Donte Moncrief,s:1971,0,0,,12,1,2016,72.6
+Ritz,Golden Tate,s:642,0,0,,12,2,"2015,2018",82.2
+Ritz,Jarvis Landry,s:1825,0,0,,12,1,2017,116.9
+Ritz,Jordan Addison,s:9756,0,0,,12,1,2024,116.7
+Ritz,Michael Floyd,s:1219,0,0,,12,1,2015,110.4
+Ritz,Tevin Coleman,s:2378,0,0,,12,2,"2019,2020",92.5
+Ritz,Tyler Lockett,s:2374,0,0,,12,2,"2015,2021",93.0
+Simi,Adam Vinatieri,s:120,0,0,,12,1,2016,93.0
+Simi,Dallas Goedert,s:5022,0,0,,12,2,"2022,2025",89.2
+Simi,Danny Woodhead,s:735,0,0,,12,1,2015,110.2
+Tommy,Cooper Kupp,s:4039,0,0,,12,2,"2017,2018",101.3
+Tommy,Danny Amendola,s:491,0,0,,12,2,"2015,2017",51.54
+Tommy,DeMarco Murray,s:904,0,0,,12,1,2015,105.2
+Tommy,Greg Zuerlein,s:1266,0,0,,12,1,2017,112.0
+Tommy,Rico Dowdle,s:7021,0,0,,12,1,2024,108.8
+Benni,Denver Broncos,n:denver broncos,2,2,"2016,2025",11,4,"2016,2023,2024,2025",39.0
+Simi,Minnesota Vikings,n:minnesota vikings,1,1,2018,11,2,"2018,2024",47.0
+Benni,David Njoku,s:4033,0,0,,11,2,"2018,2024",73.2
+Benni,DeAngelo Williams,s:306,0,0,,11,2,"2015,2016",186.3
+Benni,DeMarco Murray,s:904,0,0,,11,1,2016,147.6
+Benni,Doug Martin,s:1195,0,0,,11,1,2017,54.3
+Benni,Jaylen Waddle,s:7526,0,0,,11,3,"2021,2022,2024",90.3
+Benni,Julio Jones,s:947,0,0,,11,1,2019,107.3
+Benni,Raheem Mostert,s:2749,0,0,,11,2,"2019,2023",173.4
+Benni,Ronnie Hillman,s:1123,0,0,,11,1,2015,79.6
+Benni,Tucker Kraft,s:9484,0,0,,11,2,"2024,2025",77.7
+Benni,Tyrone Tracy,s:11655,0,0,,11,1,2024,110.4
+Erik,Chuba Hubbard,s:7594,0,0,,11,2,"2021,2025",69.0
+Erik,LeGarrette Blount,s:730,0,0,,11,2,"2015,2016",137.7
+Erik,New England Patriots,n:new england patriots,0,0,,11,7,"2015,2016,2019,2020,2021,2022,2025",79.0
+Erik,Tua Tagovailoa,s:6768,0,0,,11,3,"2022,2023,2024",151.32
+Juschka,Jake Ferguson,s:8110,0,0,,11,2,"2024,2025",46.0
+Juschka,Matt Bryant,s:127,0,0,,11,1,2016,109.0
+Juschka,Michael Gallup,s:5038,0,0,,11,1,2019,79.0
+Juschka,Wil Lutz,s:3678,0,0,,11,1,2025,89.6
+Kessi,Aaron Rodgers,s:96,0,0,,11,2,"2017,2022",176.88
+Kessi,Tyler Higbee,s:3271,0,0,,11,2,"2020,2022",76.5
+Marv,Ja'Marr Chase,s:7564,0,0,,11,1,2021,101.0
+Marv,Mark Andrews,s:5012,0,0,,11,1,2023,90.4
+Marv,Mike Gesicki,s:4993,0,0,,11,1,2021,56.0
+Marv,Raheem Mostert,s:2749,0,0,,11,1,2022,77.6
+Ritz,Dalton Schultz,s:5001,0,0,,11,3,"2020,2021,2022",70.1
+Ritz,David Njoku,s:4033,0,0,,11,2,"2018,2023",82.2
+Ritz,Greg Olsen,s:58,0,0,,11,2,"2017,2019",27.0
+Ritz,Jeremy Langford,s:2411,0,0,,11,2,"2015,2016",125.4
+Ritz,Jonathan Taylor,s:6813,0,0,,11,1,2021,235.8
+Ritz,Justin Forsett,s:458,0,0,,11,1,2015,91.4
+Ritz,Odell Beckham,s:2078,0,0,,11,1,2016,149.3
+Ritz,Stephen Gostkowski,s:110,0,0,,11,1,2016,73.0
+Simi,C.J. Stroud,s:9758,0,0,,11,1,2024,150.52
+Simi,Clyde Edwards-Helaire,s:6820,0,0,,11,1,2022,81.3
+Simi,Evan Engram,s:4066,0,0,,11,3,"2017,2020,2023",63.4
+Simi,Frank Gore,s:232,0,0,,11,2,"2019,2020",66.2
+Simi,Leonard Fournette,s:3969,0,0,,11,1,2020,60.2
+Tommy,Chris Godwin,s:4037,0,0,,11,1,2019,103.0
+Tommy,Dallas Goedert,s:5022,0,0,,11,1,2023,53.0
+Tommy,Jamaal Charles,s:323,0,0,,11,1,2016,11.4
+Tommy,Nelson Agholor,s:2325,0,0,,11,1,2017,85.1
+Tommy,Odell Beckham,s:2078,0,0,,11,1,2017,49.0
+Tommy,Tank Dell,s:9502,0,0,,11,1,2024,72.3
+Marv,New Orleans Saints,n:new orleans saints,3,3,"2015,2016,2022",10,3,"2016,2017,2022",48.0
+Simi,Baltimore Ravens,n:baltimore ravens,2,2,"2019,2024",10,5,"2016,2017,2019,2023,2024",61.0
+Benni,Charcandrick West,s:2024,0,0,,10,1,2015,85.0
+Benni,Chris Hogan,s:1329,0,0,,10,1,2017,40.4
+Benni,Cooper Kupp,s:4039,0,0,,10,1,2022,126.4
+Benni,D'Andre Swift,s:6790,0,0,,10,1,2025,109.2
+Benni,Gabriel Davis,s:6943,0,0,,10,1,2022,84.4
+Benni,Jacory Croskey-Merritt,s:12533,0,0,,10,1,2025,73.3
+Benni,Kareem Hunt,s:4098,0,0,,10,2,"2021,2022",127.4
+Benni,Tyler Bass,s:7042,0,0,,10,2,"2020,2022",113.9
+Erik,Alfred Morris,s:1170,0,0,,10,1,2017,56.4
+Erik,C.J. Anderson,s:1451,0,0,,10,2,"2017,2018",72.8
+Erik,Devonta Freeman,s:2168,0,0,,10,2,"2020,2021",67.5
+Erik,Melvin Gordon,s:2320,0,0,,10,1,2016,120.1
+Erik,Will Fuller,s:3157,0,0,,10,2,"2016,2020",44.7
+Juschka,Allen Hurns,s:1984,0,0,,10,1,2015,91.4
+Juschka,Andy Dalton,s:829,0,0,,10,2,"2016,2018",131.92
+Juschka,Chris Carson,s:4273,0,0,,10,1,2021,42.1
+Juschka,Darrel Williams,s:5549,0,0,,10,1,2021,86.7
+Juschka,Devin Singletary,s:6130,0,0,,10,2,"2020,2021",77.6
+Juschka,Eric Ebron,s:2118,0,0,,10,1,2018,75.7
+Juschka,Matthew Stafford,s:421,0,0,,10,1,2016,136.58
+Kessi,James White,s:1848,0,0,,10,2,"2017,2018",59.3
+Kessi,Zack Moss,s:6845,0,0,,10,1,2024,58.9
+Marv,Cairo Santos,s:2020,0,0,,10,1,2016,81.0
+Marv,Cam Newton,s:954,0,0,,10,1,2015,192.08
+Marv,Cooper Kupp,s:4039,0,0,,10,1,2025,40.7
+Marv,Darren McFadden,s:326,0,0,,10,1,2015,114.1
+Marv,Duke Johnson,s:2382,0,0,,10,1,2017,72.0
+Marv,Kerryon Johnson,s:5068,0,0,,10,1,2018,66.0
+Marv,Marlon Mack,s:4152,0,0,,10,2,"2019,2020",100.3
+Marv,Ryan Mathews,s:571,0,0,,10,2,"2015,2016",69.6
+Marv,Tony Pollard,s:5967,0,0,,10,1,2023,83.9
+Marv,Will Fuller,s:3157,0,0,,10,1,2019,63.8
+Ritz,Darrell Henderson,s:5916,0,0,,10,1,2020,75.2
+Ritz,James Cook,s:8138,0,0,,10,1,2023,93.7
+Ritz,JuJu Smith-Schuster,s:4040,0,0,,10,1,2022,60.7
+Ritz,Kenneth Walker III,s:8151,0,0,,10,1,2024,129.3
+Ritz,Kimani Vidal,s:11647,0,0,,10,1,2025,79.2
+Ritz,Kirk Cousins,s:1166,0,0,,10,3,"2018,2019,2022",188.28
+Ritz,Marvin Jones,s:1067,0,0,,10,2,"2016,2019",84.3
+Ritz,Matt Gay,s:6083,0,0,,10,1,2019,85.0
+Ritz,Tua Tagovailoa,s:6768,0,0,,10,2,"2023,2024",203.46
+Simi,AJ Dillon,s:6828,0,0,,10,1,2022,61.3
+Simi,Dalton Kincaid,s:10236,0,0,,10,1,2024,47.6
+Simi,Dalton Schultz,s:5001,0,0,,10,2,"2020,2021",59.8
+Simi,Jamaal Williams,s:4149,0,0,,10,1,2021,63.1
+Simi,Jared Cook,s:367,0,0,,10,3,"2017,2019,2020",75.3
+Simi,Jordan Addison,s:9756,0,0,,10,1,2025,52.8
+Simi,Tarik Cohen,s:4157,0,0,,10,1,2018,100.84
+Simi,Will Fuller,s:3157,0,0,,10,1,2020,96.5
+Tommy,Brett Maher,s:4958,0,0,,10,3,"2018,2022,2023",77.9
+Tommy,Chris Olave,s:8144,0,0,,10,1,2022,77.8
+Tommy,Chris Thompson,s:1502,0,0,,10,1,2017,100.8
+Tommy,Zane Gonzalez,s:4233,0,0,,10,1,2019,78.0
+Erik,Philadelphia Eagles,n:philadelphia eagles,2,2,"2015,2020",9,3,"2015,2023,2025",54.0
+Simi,New England Patriots,n:new england patriots,2,2,"2015,2023",9,2,"2015,2023",52.0
+Benni,Elijah Mitchell,s:7561,0,0,,9,1,2021,90.6
+Benni,Greg Zuerlein,s:1266,0,0,,9,1,2021,58.0
+Benni,Kansas City Chiefs,n:kansas city chiefs,0,0,,9,4,"2015,2021,2023,2025",45.0
+Benni,Kerryon Johnson,s:5068,0,0,,9,2,"2018,2019",72.2
+Benni,Mason Crosby,s:59,0,0,,9,5,"2015,2016,2018,2019,2020",65.0
+Benni,P.J. Walker,s:4335,0,0,,9,1,2023,55.3
+Erik,Carson Wentz,s:3161,0,0,,9,2,"2017,2020",169.7
+Erik,Chris Ivory,s:717,0,0,,9,1,2015,84.2
+Erik,Dalton Kincaid,s:10236,0,0,,9,1,2023,40.9
+Erik,Deebo Samuel,s:5872,0,0,,9,1,2025,65.6
+Erik,Jordan Addison,s:9756,0,0,,9,2,"2023,2024",76.7
+Erik,Kenyan Drake,s:3242,0,0,,9,1,2019,117.1
+Erik,Robert Woods,s:1352,0,0,,9,3,"2017,2018,2021",72.2
+Erik,Tee Higgins,s:6801,0,0,,9,1,2021,101.3
+Erik,Tyler Lockett,s:2374,0,0,,9,2,"2021,2023",77.3
+Erik,Woody Marks,s:12474,0,0,,9,1,2025,70.0
+Juschka,Blake Bortles,s:1979,0,0,,9,1,2015,178.44
+Juschka,DeAndre Hopkins,s:1426,0,0,,9,1,2019,91.1
+Juschka,Gus Edwards,s:5248,0,0,,9,1,2022,38.9
+Juschka,Kai Forbath,s:1287,0,0,,9,1,2017,71.0
+Juschka,Mason Crosby,s:59,0,0,,9,4,"2016,2018,2020,2021",75.0
+Juschka,Zach Ertz,s:1339,0,0,,9,1,2021,59.4
+Kessi,Alshon Jeffery,s:1149,0,0,,9,1,2019,59.5
+Kessi,Kenny Golladay,s:4131,0,0,,9,1,2019,104.0
+Kessi,Khalil Shakir,s:8134,0,0,,9,1,2025,58.4
+Kessi,Matt Bryant,s:127,0,0,,9,1,2015,65.0
+Kessi,Nate Washington,s:370,0,0,,9,1,2015,43.5
+Kessi,Robert Tonyan,s:4602,0,0,,9,2,"2020,2021",56.7
+Kessi,Royce Freeman,s:5046,0,0,,9,1,2018,57.0
+Marv,Ben Watson,s:663,0,0,,9,1,2015,58.2
+Marv,Corey Davis,s:4036,0,0,,9,3,"2017,2018,2019",22.4
+Marv,Evan McPherson,s:7839,0,0,,9,1,2021,86.0
+Marv,Gus Edwards,s:5248,0,0,,9,1,2023,103.5
+Marv,James White,s:1848,0,0,,9,1,2018,136.6
+Marv,Sterling Shepard,s:3200,0,0,,9,1,2021,11.7
+Marv,Zach Ertz,s:1339,0,0,,9,2,"2016,2017",44.7
+Ritz,Calvin Ridley,s:4981,0,0,,9,1,2019,86.5
+Ritz,Dan Carpenter,s:45,0,0,,9,1,2015,64.0
+Ritz,Eric Ebron,s:2118,0,0,,9,4,"2015,2016,2019,2020",41.1
+Ritz,Mason Crosby,s:59,0,0,,9,2,"2015,2018",61.0
+Ritz,Matt Prater,s:17,0,0,,9,2,"2017,2019",60.0
+Ritz,Pierre Garcon,s:269,0,0,,9,2,"2017,2018",52.1
+Ritz,Raheem Mostert,s:2749,0,0,,9,2,"2023,2024",109.1
+Ritz,Sam LaPorta,s:10859,0,0,,9,1,2024,67.5
+Ritz,Tyler Bass,s:7042,0,0,,9,2,"2020,2021",71.0
+Simi,Eddie Lacy,s:1527,0,0,,9,1,2016,38.8
+Simi,Julian Edelman,s:344,0,0,,9,1,2016,74.6
+Simi,Kirk Cousins,s:1166,0,0,,9,3,"2018,2019,2024",141.1
+Simi,Matthew Stafford,s:421,0,0,,9,1,2025,176.52
+Simi,Michael Floyd,s:1219,0,0,,9,1,2016,43.7
+Simi,Sterling Shepard,s:3200,0,0,,9,1,2018,68.2
+Tommy,Chris Boswell,s:1945,0,0,,9,2,"2019,2025",67.4
+Tommy,Dustin Hopkins,s:1348,0,0,,9,1,2023,75.3
+Tommy,J.K. Dobbins,s:6806,0,0,,9,1,2022,28.2
+Tommy,James Conner,s:4137,0,0,,9,2,"2020,2021",97.6
+Tommy,T.J. Hockenson,s:5844,0,0,,9,1,2020,54.2
+Tommy,Tee Higgins,s:6801,0,0,,9,1,2020,66.4
+Simi,Philadelphia Eagles,n:philadelphia eagles,1,1,2025,8,3,"2015,2017,2018",68.0
+Benni,Giovani Bernard,s:1386,0,0,,8,3,"2016,2018,2020",87.7
+Benni,Jerome Ford,s:8143,0,0,,8,1,2023,68.6
+Benni,Ka'imi Fairbairn,s:3451,0,0,,8,3,"2018,2019,2025",94.3
+Benni,Keenan Allen,s:1479,0,0,,8,1,2015,94.5
+Benni,Leonard Fournette,s:3969,0,0,,8,1,2017,65.4
+Benni,Marlon Mack,s:4152,0,0,,8,1,2018,97.7
+Benni,Matt Gay,s:6083,0,0,,8,2,"2021,2022",63.6
+Benni,Ryan Tannehill,s:1049,0,0,,8,2,"2019,2021",150.26
+Benni,Stefon Diggs,s:2449,0,0,,8,1,2025,52.6
+Benni,T.Y. Hilton,s:1110,0,0,,8,2,"2017,2019",75.9
+Benni,TreVeyon Henderson,s:12529,0,0,,8,1,2025,109.0
+Erik,Antonio Gates,s:322,0,0,,8,1,2016,52.1
+Erik,Chase McLaughlin,s:6650,0,0,,8,1,2025,71.4
+Erik,Clyde Edwards-Helaire,s:6820,0,0,,8,1,2020,89.6
+Erik,David Njoku,s:4033,0,0,,8,2,"2018,2025",43.4
+Erik,Evan Engram,s:4066,0,0,,8,1,2017,56.4
+Erik,Jake Bates,s:11539,0,0,,8,2,"2024,2025",72.6
+Erik,James Conner,s:4137,0,0,,8,1,2020,31.1
+Erik,Jerry Jeudy,s:6783,0,0,,8,2,"2022,2023",39.9
+Erik,Matt Gay,s:6083,0,0,,8,1,2021,73.0
+Erik,Matt Ryan,s:24,0,0,,8,1,2015,126.24
+Erik,Tony Pollard,s:5967,0,0,,8,3,"2019,2021,2023",66.9
+Juschka,Christian Kirk,s:4950,0,0,,8,1,2024,43.9
+Juschka,DeSean Jackson,s:147,0,0,,8,2,"2015,2019",41.6
+Juschka,Eli Manning,s:188,0,0,,8,1,2016,94.86
+Juschka,Joe Flacco,s:19,0,0,,8,1,2025,50.34
+Juschka,Josh Downs,s:9500,0,0,,8,1,2023,23.0
+Juschka,LeGarrette Blount,s:730,0,0,,8,1,2015,59.2
+Juschka,Steve Smith,s:169,0,0,,8,1,2015,85.0
+Juschka,Tim Hightower,s:83,0,0,,8,1,2016,76.4
+Juschka,Van Jefferson,s:6853,0,0,,8,2,"2021,2022",36.3
+Kessi,Andre Ellington,s:1575,0,0,,8,1,2015,34.2
+Kessi,Latavius Murray,s:1476,0,0,,8,1,2017,81.6
+Kessi,Robbie Chosen,s:3423,0,0,,8,1,2019,36.9
+Kessi,Ronald Jones,s:5052,0,0,,8,1,2019,54.3
+Kessi,Samaje Perine,s:4147,0,0,,8,1,2023,29.4
+Marv,Delanie Walker,s:284,0,0,,8,1,2017,36.2
+Marv,Hassan Haskins,s:8123,0,0,,8,1,2025,2.8
+Marv,Jake Elliott,s:4195,0,0,,8,1,2025,56.9
+Marv,Julius Thomas,s:874,0,0,,8,3,"2015,2016,2017",36.0
+Marv,Marvin Jones,s:1067,0,0,,8,1,2017,91.2
+Marv,Mitchell Trubisky,s:3976,0,0,,8,1,2018,94.74
+Marv,Taysom Hill,s:4381,0,0,,8,2,"2022,2023",21.42
+Ritz,Christian Watson,s:8167,0,0,,8,1,2023,23.1
+Ritz,Darren Waller,s:2505,0,0,,8,2,"2019,2025",50.0
+Ritz,Indianapolis Colts,n:indianapolis colts,0,0,,8,1,2020,59.0
+Ritz,Kyle Rudolph,s:943,0,0,,8,2,"2016,2017",47.8
+Ritz,Marquise Brown,s:5848,0,0,,8,2,"2022,2023",36.1
+Ritz,Michael Carter,s:7607,0,0,,8,2,"2021,2022",78.2
+Ritz,Michael Thomas,s:3199,0,0,,8,1,2022,35.1
+Ritz,Xavier Worthy,s:11624,0,0,,8,1,2024,42.0
+Simi,Andy Dalton,s:829,0,0,,8,1,2016,145.36
+Simi,Donte Moncrief,s:1971,0,0,,8,1,2017,33.1
+Simi,Evan McPherson,s:7839,0,0,,8,3,"2023,2024,2025",64.0
+Simi,Henry Ruggs,s:6789,0,0,,8,1,2020,30.2
+Simi,Hunter Henry,s:3214,0,0,,8,2,"2020,2025",43.8
+Simi,Ka'imi Fairbairn,s:3451,0,0,,8,2,"2018,2025",104.4
+Simi,Kenneth Walker III,s:8151,0,0,,8,1,2022,119.0
+Simi,Paul Richardson,s:2279,0,0,,8,1,2017,38.9
+Tommy,Andy Dalton,s:829,0,0,,8,1,2015,106.46
+Tommy,Dan Bailey,s:899,0,0,,8,2,"2018,2020",61.0
+Tommy,Daniel Carlson,s:5095,0,0,,8,3,"2018,2021,2022",83.8
+Tommy,Devin Singletary,s:6130,0,0,,8,1,2019,83.9
+Tommy,Greg Olsen,s:58,0,0,,8,1,2018,49.8
+Erik,Baltimore Ravens,n:baltimore ravens,1,1,2015,7,4,"2015,2017,2022,2023",40.0
+Benni,Amari Cooper,s:2309,0,0,,7,2,"2016,2022",65.6
+Benni,Brandon Aiyuk,s:6803,0,0,,7,1,2024,37.4
+Benni,Brandon Aubrey,s:11533,0,0,,7,1,2023,79.5
+Benni,Brian Thomas Jr.,s:11631,0,0,,7,1,2024,64.0
+Benni,Dallas Cowboys,n:dallas cowboys,0,0,,7,2,"2022,2023",32.0
+Benni,Harrison Butker,s:4227,0,0,,7,3,"2017,2021,2022",46.0
+Benni,Houston Texans,n:houston texans,0,0,,7,3,"2015,2024,2025",77.0
+Benni,Jaxon Smith-Njigba,s:9488,0,0,,7,2,"2023,2024",55.4
+Benni,Joseph Randle,s:1487,0,0,,7,1,2015,64.1
+Benni,Kenneth Walker III,s:8151,0,0,,7,1,2023,93.5
+Benni,Kyle Pitts,s:7553,0,0,,7,2,"2021,2025",49.5
+Benni,Matt Breida,s:4455,0,0,,7,1,2019,61.8
+Benni,Michael Pittman,s:6819,0,0,,7,1,2021,62.5
+Benni,Sam LaPorta,s:10859,0,0,,7,1,2024,28.4
+Benni,Sammy Watkins,s:1817,0,0,,7,2,"2016,2017",54.4
+Benni,Zach Ertz,s:1339,0,0,,7,2,"2016,2017",71.5
+Benni,Zack Moss,s:6845,0,0,,7,1,2023,63.8
+Erik,Evan McPherson,s:7839,0,0,,7,1,2022,64.0
+Erik,Jamaal Williams,s:4149,0,0,,7,1,2022,76.4
+Erik,Jerome Ford,s:8143,0,0,,7,1,2024,60.2
+Erik,John Brown,s:2238,0,0,,7,1,2019,73.22
+Erik,Julius Thomas,s:874,0,0,,7,2,"2015,2016",46.1
+Erik,Matt Prater,s:17,0,0,,7,2,"2021,2025",58.5
+Erik,TreVeyon Henderson,s:12529,0,0,,7,1,2025,31.2
+Erik,Ty Montgomery,s:2399,0,0,,7,1,2017,50.7
+Erik,Tyrell Williams,s:2583,0,0,,7,1,2016,63.4
+Juschka,Cade Otton,s:8111,0,0,,7,1,2024,31.6
+Juschka,Courtland Sutton,s:5045,0,0,,7,1,2019,51.32
+Juschka,Gerald Everett,s:4089,0,0,,7,2,"2019,2022",24.7
+Juschka,Isaiah Likely,s:8131,0,0,,7,1,2024,28.0
+Juschka,JuJu Smith-Schuster,s:4040,0,0,,7,1,2017,47.0
+Juschka,Matt Gay,s:6083,0,0,,7,1,2023,49.5
+Juschka,Matt Prater,s:17,0,0,,7,2,"2019,2022",31.0
+Juschka,Odell Beckham,s:2078,0,0,,7,1,2020,63.82
+Juschka,Parker Washington,s:9487,0,0,,7,1,2025,58.4
+Juschka,Romeo Doubs,s:8121,0,0,,7,1,2022,27.7
+Juschka,Ronald Jones,s:5052,0,0,,7,1,2019,57.2
+Juschka,Tim Patrick,s:4351,0,0,,7,1,2021,46.9
+Juschka,Tyler Bass,s:7042,0,0,,7,1,2021,65.0
+Kessi,Austin Hooper,s:3202,0,0,,7,1,2018,35.1
+Kessi,Graham Gano,s:503,0,0,,7,1,2015,68.0
+Kessi,Jake Bates,s:11539,0,0,,7,1,2025,75.4
+Kessi,Jake Ferguson,s:8110,0,0,,7,2,"2023,2024",45.1
+Kessi,James Starks,s:762,0,0,,7,1,2015,53.0
+Kessi,Josh Lambo,s:2671,0,0,,7,1,2019,43.0
+Kessi,Kirk Cousins,s:1166,0,0,,7,2,"2017,2021",117.66
+Kessi,Mac Jones,s:7527,0,0,,7,1,2021,99.66
+Kessi,Marlon Mack,s:4152,0,0,,7,1,2019,52.9
+Kessi,Martellus Bennett,s:40,0,0,,7,1,2017,23.3
+Marv,Alvin Kamara,s:4035,0,0,,7,1,2017,137.6
+Marv,Chandler Catanzaro,s:2242,0,0,,7,1,2015,61.0
+Marv,D.J. Moore,s:4983,0,0,,7,1,2019,49.0
+Marv,Rishard Matthews,s:1046,0,0,,7,1,2016,52.1
+Marv,Trey Burton,s:1793,0,0,,7,1,2018,22.5
+Ritz,Arian Foster,s:669,0,0,,7,1,2015,55.0
+Ritz,Baltimore Ravens,n:baltimore ravens,0,0,,7,2,"2019,2022",48.0
+Ritz,Ben Roethlisberger,s:138,0,0,,7,1,2018,155.98
+Ritz,Chuba Hubbard,s:7594,0,0,,7,2,"2021,2024",60.7
+Ritz,Jamison Crowder,s:2410,0,0,,7,1,2016,50.0
+Ritz,Javorius Allen,s:2430,0,0,,7,2,"2015,2017",65.4
+Ritz,Robbie Gould,s:49,0,0,,7,3,"2018,2019,2022",51.0
+Simi,Dion Lewis,s:788,0,0,,7,2,"2018,2019",44.8
+Simi,Tony Pollard,s:5967,0,0,,7,1,2025,58.2
+Tommy,Clyde Edwards-Helaire,s:6820,0,0,,7,1,2020,50.4
+Tommy,Devontae Booker,s:3209,0,0,,7,1,2021,48.9
+Tommy,Greg Joseph,s:5272,0,0,,7,1,2021,64.0
+Tommy,Gus Edwards,s:5248,0,0,,7,2,"2018,2023",63.6
+Tommy,Mark Ingram,s:956,0,0,,7,2,"2018,2021",19.3
+Tommy,Marquise Brown,s:5848,0,0,,7,1,2020,43.7
+Tommy,Rishard Matthews,s:1046,0,0,,7,2,"2015,2017",31.0
+Tommy,Ryan Mathews,s:571,0,0,,7,1,2016,64.5
+Tommy,Terry McLaurin,s:5927,0,0,,7,1,2025,14.9
+Tommy,Zach Charbonnet,s:9753,0,0,,7,1,2024,56.8
+Benni,Los Angeles Rams,n:los angeles rams,2,2,"2015,2021",6,2,"2020,2021",36.0
+Benni,Chicago Bears,n:chicago bears,1,1,2019,6,2,"2018,2019",44.0
+Marv,Minnesota Vikings,n:minnesota vikings,1,1,2017,6,1,2017,44.0
+Benni,Antonio Brown,s:536,0,0,,6,1,2020,16.6
+Benni,Austin Ekeler,s:4663,0,0,,6,1,2020,55.0
+Benni,C.J. Anderson,s:1451,0,0,,6,3,"2015,2017,2018",60.9
+Benni,Christian Watson,s:8167,0,0,,6,1,2022,65.0
+Benni,DK Metcalf,s:5846,0,0,,6,1,2023,80.6
+Benni,Darnell Mooney,s:7090,0,0,,6,2,"2022,2024",14.7
+Benni,Donte Moncrief,s:1971,0,0,,6,1,2015,57.5
+Benni,Jake Moody,s:10937,0,0,,6,2,"2023,2024",50.3
+Benni,Josh Jacobs,s:5850,0,0,,6,1,2023,28.6
+Benni,Martavis Bryant,s:1916,0,0,,6,2,"2015,2017",43.6
+Benni,Rex Burkhead,s:1387,0,0,,6,2,"2017,2018",53.0
+Benni,Robbie Chosen,s:3423,0,0,,6,2,"2017,2018",75.2
+Benni,Trey Burton,s:1793,0,0,,6,1,2018,38.1
+Erik,Brett Maher,s:4958,0,0,,6,1,2022,76.4
+Erik,Devontae Booker,s:3209,0,0,,6,1,2016,36.3
+Erik,Graham Gano,s:503,0,0,,6,1,2016,43.0
+Erik,Jeremy Maclin,s:411,0,0,,6,1,2016,31.4
+Erik,Jonnu Smith,s:4144,0,0,,6,1,2020,27.2
+Erik,Josh Downs,s:9500,0,0,,6,1,2024,30.3
+Erik,Julian Edelman,s:344,0,0,,6,1,2015,69.5
+Erik,Kenny Golladay,s:4131,0,0,,6,1,2018,52.2
+Erik,Los Angeles Rams,n:los angeles rams,0,0,,6,1,2015,38.0
+Erik,Mike Davis,s:2431,0,0,,6,1,2021,30.1
+Erik,Oronde Gadsden II,s:12493,0,0,,6,1,2025,15.6
+Erik,Terrance West,s:1912,0,0,,6,1,2016,42.1
+Erik,Terrelle Pryor,s:1020,0,0,,6,1,2017,26.9
+Erik,Terry McLaurin,s:5927,0,0,,6,1,2019,36.0
+Juschka,Carson Palmer,s:91,0,0,,6,1,2016,70.52
+Juschka,Coby Fleener,s:1107,0,0,,6,2,"2015,2017",6.7
+Juschka,Cole Kmet,s:6826,0,0,,6,1,2022,18.6
+Juschka,Curtis Samuel,s:4082,0,0,,6,1,2021,2.7
+Juschka,Julian Edelman,s:344,0,0,,6,2,"2015,2018",0.0
+Juschka,Kenny Britt,s:366,0,0,,6,1,2016,42.9
+Juschka,Mark Ingram,s:956,0,0,,6,1,2015,75.7
+Juschka,Mike Gillislee,s:1353,0,0,,6,1,2016,34.2
+Juschka,Ryan Mathews,s:571,0,0,,6,1,2015,45.8
+Juschka,Sam Howell,s:8162,0,0,,6,1,2023,60.74
+Juschka,Tyler Lockett,s:2374,0,0,,6,1,2023,31.9
+Kessi,Calvin Ridley,s:4981,0,0,,6,1,2024,29.0
+Kessi,Cole Beasley,s:1144,0,0,,6,2,"2016,2021",27.3
+Kessi,Gerald Everett,s:4089,0,0,,6,1,2022,16.9
+Kessi,Javorius Allen,s:2430,0,0,,6,1,2017,31.4
+Kessi,Jaylen Warren,s:8228,0,0,,6,1,2023,46.4
+Kessi,Marquez Valdes-Scantling,s:5086,0,0,,6,1,2024,36.2
+Kessi,Matthew Stafford,s:421,0,0,,6,1,2017,87.58
+Kessi,Melvin Gordon,s:2320,0,0,,6,1,2022,31.9
+Kessi,Mike Wallace,s:365,0,0,,6,1,2017,6.4
+Kessi,Trey Benson,s:11589,0,0,,6,1,2024,7.9
+Marv,Alshon Jeffery,s:1149,0,0,,6,1,2017,45.7
+Marv,Blake Bortles,s:1979,0,0,,6,2,"2016,2017",79.46
+Marv,Brandon Aiyuk,s:6803,0,0,,6,1,2023,68.8
+Marv,Chris Godwin,s:4037,0,0,,6,1,2022,49.3
+Marv,Dak Prescott,s:3294,0,0,,6,2,"2020,2022",139.1
+Marv,Geno Smith,s:1373,0,0,,6,2,"2022,2023",104.14
+Marv,Hunter Renfrow,s:5955,0,0,,6,2,"2021,2022",14.1
+Marv,Jarvis Landry,s:1825,0,0,,6,1,2015,46.4
+Marv,Keaton Mitchell,s:9511,0,0,,6,1,2023,28.0
+Marv,Kyle Rudolph,s:943,0,0,,6,1,2018,21.8
+Marv,Latavius Murray,s:1476,0,0,,6,2,"2015,2022",52.3
+Marv,Robert Woods,s:1352,0,0,,6,2,"2019,2021",60.2
+Marv,Tua Tagovailoa,s:6768,0,0,,6,1,2023,82.2
+Marv,Tyrone Tracy,s:11655,0,0,,6,1,2025,12.8
+Ritz,Chris Thompson,s:1502,0,0,,6,1,2018,17.2
+Ritz,Dawson Knox,s:5906,0,0,,6,2,"2021,2022",45.2
+Ritz,Devontez Walker,s:11629,0,0,,6,1,2024,5.9
+Ritz,Jake Elliott,s:4195,0,0,,6,2,"2023,2024",53.1
+Ritz,Jerome Ford,s:8143,0,0,,6,1,2023,48.6
+Ritz,Jordan Love,s:6804,0,0,,6,1,2025,83.38
+Ritz,Nico Collins,s:7569,0,0,,6,1,2023,59.1
+Ritz,Nyheim Hines,s:5347,0,0,,6,1,2020,43.3
+Simi,Cody Parkey,s:1974,0,0,,6,2,"2015,2018",35.0
+Simi,DeSean Jackson,s:147,0,0,,6,1,2018,44.6
+Simi,DeVonta Smith,s:7525,0,0,,6,1,2021,27.8
+Simi,Doug Baldwin,s:988,0,0,,6,1,2018,61.6
+Simi,Eric Decker,s:558,0,0,,6,2,"2016,2017",32.4
+Simi,Giovani Bernard,s:1386,0,0,,6,1,2020,48.4
+Simi,Jason Myers,s:2747,0,0,,6,4,"2018,2019,2023,2025",56.0
+Simi,Jerick McKinnon,s:2161,0,0,,6,1,2020,37.2
+Simi,Justin Herbert,s:6797,0,0,,6,1,2024,99.66
+Simi,Matt Prater,s:17,0,0,,6,2,"2020,2025",33.0
+Simi,Steven Hauschka,s:775,0,0,,6,1,2016,41.0
+Tommy,Calvin Ridley,s:4981,0,0,,6,1,2023,73.3
+Tommy,Cam Skattebo,s:12481,0,0,,6,1,2025,90.9
+Tommy,Dede Westbrook,s:4146,0,0,,6,1,2019,34.6
+Tommy,Gabriel Davis,s:6943,0,0,,6,1,2022,35.3
+Tommy,Jake Ferguson,s:8110,0,0,,6,1,2023,36.5
+Tommy,James Cook,s:8138,0,0,,6,1,2023,85.4
+Tommy,Jason Myers,s:2747,0,0,,6,3,"2020,2023,2025",61.6
+Tommy,Jimmy Garoppolo,s:1837,0,0,,6,2,"2017,2019",89.22
+Tommy,Joe Mixon,s:4018,0,0,,6,1,2022,33.0
+Tommy,Justin Fields,s:7591,0,0,,6,1,2022,75.32
+Tommy,Le'Veon Bell,s:1408,0,0,,6,1,2020,16.2
+Tommy,Marqise Lee,s:1987,0,0,,6,1,2017,26.9
+Tommy,Martavis Bryant,s:1916,0,0,,6,1,2015,46.1
+Tommy,New York Jets,n:new york jets,0,0,,6,1,2023,44.0
+Tommy,Tyler Allgeier,s:8132,0,0,,6,2,"2022,2023",45.8
+Tommy,Tyler Loop,s:12711,0,0,,6,1,2025,50.9
+Tommy,Tyrod Taylor,s:827,0,0,,6,1,2016,103.96
+Erik,Jacksonville Jaguars,n:jacksonville jaguars,2,2,"2018,2019",5,3,"2018,2019,2025",29.0
+Ritz,San Francisco 49ers,n:san francisco 49ers,2,2,"2023,2024",5,3,"2022,2023,2024",3.0
+Simi,Seattle Seahawks,n:seattle seahawks,2,2,"2015,2017",5,3,"2015,2017,2018",21.0
+Kessi,Kansas City Chiefs,n:kansas city chiefs,1,1,2017,5,2,"2017,2019",42.0
+Benni,Allen Robinson,s:1992,0,0,,5,1,2021,24.1
+Benni,Calvin Ridley,s:4981,0,0,,5,1,2024,31.5
+Benni,Chris Johnson,s:272,0,0,,5,1,2015,20.9
+Benni,Chris Olave,s:8144,0,0,,5,1,2022,34.2
+Benni,Eddy Pineiro,s:5189,0,0,,5,1,2025,43.7
+Benni,Jarvis Landry,s:1825,0,0,,5,1,2019,51.7
+Benni,Joe Mixon,s:4018,0,0,,5,1,2022,84.9
+Benni,Joey Slye,s:6528,0,0,,5,1,2019,40.0
+Benni,Matt Ryan,s:24,0,0,,5,1,2019,38.66
+Benni,Michael Gallup,s:5038,0,0,,5,1,2020,40.8
+Benni,Peyton Manning,s:294,0,0,,5,1,2015,58.96
+Benni,Rashaad Penny,s:4985,0,0,,5,1,2022,48.2
+Benni,Steve Johnson,s:108,0,0,,5,1,2015,27.4
+Erik,Alex Collins,s:3327,0,0,,5,1,2017,67.9
+Erik,Chris Rodriguez Jr.,s:10219,0,0,,5,1,2025,28.2
+Erik,Darrell Henderson,s:5916,0,0,,5,1,2022,26.6
+Erik,DeVonta Smith,s:7525,0,0,,5,2,"2021,2025",27.9
+Erik,Doug Baldwin,s:988,0,0,,5,1,2018,15.9
+Erik,Gus Edwards,s:5248,0,0,,5,2,"2023,2024",25.8
+Erik,Harrison Butker,s:4227,0,0,,5,2,"2021,2024",30.2
+Erik,Jamaal Charles,s:323,0,0,,5,1,2015,80.1
+Erik,Josh Lambo,s:2671,0,0,,5,1,2016,23.0
+Erik,Philip Rivers,s:331,0,0,,5,2,"2015,2016",84.9
+Erik,Roschon Johnson,s:10235,0,0,,5,1,2023,6.1
+Juschka,AJ Dillon,s:6828,0,0,,5,1,2021,41.3
+Juschka,Bishop Sankey,s:1937,0,0,,5,1,2015,14.6
+Juschka,Brandon LaFell,s:613,0,0,,5,1,2016,49.6
+Juschka,J.K. Dobbins,s:6806,0,0,,5,1,2020,31.9
+Juschka,Jimmy Graham,s:616,0,0,,5,1,2019,8.8
+Juschka,Karlos Williams,s:2458,0,0,,5,1,2015,12.6
+Juschka,Nick Westbrook-Ikhine,s:7496,0,0,,5,1,2024,39.4
+Juschka,Tavon Austin,s:1567,0,0,,5,1,2015,45.2
+Juschka,Tre'Quan Smith,s:5026,0,0,,5,1,2018,2.6
+Juschka,Tyler Loop,s:12711,0,0,,5,1,2025,37.4
+Juschka,Wan'Dale Robinson,s:8126,0,0,,5,1,2022,18.4
+Juschka,Will Fuller,s:3157,0,0,,5,1,2018,40.9
+Kessi,Austin Ekeler,s:4663,0,0,,5,1,2017,27.6
+Kessi,Brett Maher,s:4958,0,0,,5,1,2019,31.0
+Kessi,Damien Williams,s:1833,0,0,,5,1,2017,31.4
+Kessi,Elijah Mitchell,s:7561,0,0,,5,1,2021,11.5
+Kessi,Joshua Palmer,s:7670,0,0,,5,1,2023,29.4
+Kessi,Kenny Stills,s:1555,0,0,,5,2,"2017,2018",22.3
+Kessi,Rashaad Penny,s:4985,0,0,,5,1,2018,12.7
+Marv,Anthony Miller,s:5013,0,0,,5,1,2020,29.0
+Marv,Anthony Richardson,s:9229,0,0,,5,1,2024,46.26
+Marv,Cam Akers,s:6938,0,0,,5,1,2022,72.7
+Marv,Cole Kmet,s:6826,0,0,,5,1,2024,8.9
+Marv,John Brown,s:2238,0,0,,5,2,"2015,2018",42.1
+Marv,Jonathan Taylor,s:6813,0,0,,5,1,2021,70.4
+Marv,JuJu Smith-Schuster,s:4040,0,0,,5,2,"2021,2023",22.5
+Marv,Stefon Diggs,s:2449,0,0,,5,1,2016,43.0
+Marv,T.J. Yeldon,s:2341,0,0,,5,1,2015,34.1
+Marv,Tank Dell,s:9502,0,0,,5,1,2023,41.3
+Ritz,Adrian Peterson,s:184,0,0,,5,2,"2016,2021",2.3
+Ritz,Brock Purdy,s:8183,0,0,,5,2,"2023,2025",74.48
+Ritz,Carson Wentz,s:3161,0,0,,5,2,"2019,2021",98.96
+Ritz,Christian Kirk,s:4950,0,0,,5,1,2023,11.5
+Ritz,Courtland Sutton,s:5045,0,0,,5,2,"2018,2023",33.8
+Ritz,D.J. Moore,s:4983,0,0,,5,1,2025,21.1
+Ritz,Daniel Jones,s:5870,0,0,,5,1,2025,92.24
+Ritz,DeMarco Murray,s:904,0,0,,5,1,2016,91.3
+Ritz,Evan Engram,s:4066,0,0,,5,1,2023,24.1
+Ritz,Evan McPherson,s:7839,0,0,,5,1,2023,44.6
+Ritz,Hunter Henry,s:3214,0,0,,5,1,2017,30.3
+Ritz,Ja'Marr Chase,s:7564,0,0,,5,1,2021,75.4
+Ritz,T.J. Hockenson,s:5844,0,0,,5,2,"2019,2022",42.0
+Ritz,Tampa Bay Buccaneers,n:tampa bay buccaneers,0,0,,5,2,"2020,2025",35.0
+Simi,Alex Collins,s:3327,0,0,,5,1,2021,29.5
+Simi,Elijah Mitchell,s:7561,0,0,,5,1,2022,4.1
+Simi,Jake Elliott,s:4195,0,0,,5,2,"2017,2025",19.0
+Simi,James Starks,s:762,0,0,,5,1,2016,30.7
+Simi,Jay Ajayi,s:2452,0,0,,5,1,2018,38.4
+Simi,Jonnu Smith,s:4144,0,0,,5,1,2024,53.4
+Simi,Jordan Reed,s:1500,0,0,,5,2,"2017,2018",24.2
+Simi,Josh Adams,s:5136,0,0,,5,1,2018,37.4
+Simi,Lamar Miller,s:1048,0,0,,5,1,2015,21.8
+Simi,O.J. Howard,s:4055,0,0,,5,1,2018,46.1
+Simi,Odell Beckham,s:2078,0,0,,5,1,2021,13.8
+Simi,Randy Bullock,s:1099,0,0,,5,2,"2020,2021",36.0
+Simi,Robert Kelley,s:3657,0,0,,5,1,2016,45.0
+Simi,Thomas Rawls,s:2585,0,0,,5,1,2015,34.8
+Simi,Wayne Gallman,s:4150,0,0,,5,1,2020,44.1
+Simi,Will Dissly,s:5010,0,0,,5,2,"2018,2019",31.1
+Tommy,Brock Purdy,s:8183,0,0,,5,1,2023,89.42
+Tommy,Cairo Santos,s:2020,0,0,,5,2,"2016,2024",36.0
+Tommy,Cameron Dicker,s:8259,0,0,,5,1,2024,52.8
+Tommy,Chris Carson,s:4273,0,0,,5,1,2019,60.5
+Tommy,Chris Hogan,s:1329,0,0,,5,1,2018,26.3
+Tommy,Colin Kaepernick,s:980,0,0,,5,1,2016,78.32
+Tommy,Darnell Mooney,s:7090,0,0,,5,1,2021,29.6
+Tommy,DeVante Parker,s:2319,0,0,,5,1,2016,33.4
+Tommy,Diontae Johnson,s:5937,0,0,,5,1,2023,4.8
+Tommy,Jamaal Williams,s:4149,0,0,,5,2,"2017,2018",72.5
+Tommy,Jarvis Landry,s:1825,0,0,,5,2,"2019,2021",4.5
+Tommy,Jordy Nelson,s:175,0,0,,5,2,"2017,2018",27.1
+Tommy,Kyler Murray,s:5849,0,0,,5,1,2019,56.7
+Tommy,Peyton Barber,s:3594,0,0,,5,1,2018,45.7
+Tommy,Steve Smith,s:169,0,0,,5,1,2016,38.9
+Erik,Denver Broncos,n:denver broncos,2,2,"2017,2023",4,2,"2017,2019",23.0
+Simi,Pittsburgh Steelers,n:pittsburgh steelers,1,1,2020,4,3,"2020,2024,2025",21.0
+Benni,C.J. Stroud,s:9758,0,0,,4,1,2023,65.9
+Benni,Chase McLaughlin,s:6650,0,0,,4,2,"2024,2025",29.0
+Benni,Chris Boswell,s:1945,0,0,,4,2,"2015,2017",34.0
+Benni,Courtland Sutton,s:5045,0,0,,4,1,2019,35.8
+Benni,D'Onta Foreman,s:4111,0,0,,4,1,2022,67.4
+Benni,Dallas Goedert,s:5022,0,0,,4,3,"2020,2022,2024",26.4
+Benni,Garrett Wilson,s:8146,0,0,,4,1,2022,34.8
+Benni,J.K. Dobbins,s:6806,0,0,,4,1,2020,40.5
+Benni,Jack Doyle,s:1706,0,0,,4,2,"2017,2018",19.1
+Benni,Jaxson Dart,s:12508,0,0,,4,1,2025,39.84
+Benni,Jerry Jeudy,s:6783,0,0,,4,2,"2022,2024",30.5
+Benni,Jordan Addison,s:9756,0,0,,4,1,2023,30.5
+Benni,Jordan Cameron,s:833,0,0,,4,1,2015,17.0
+Benni,Joshua Kelley,s:7045,0,0,,4,1,2020,8.3
+Benni,Malcolm Mitchell,s:3273,0,0,,4,1,2016,22.6
+Benni,Matt Prater,s:17,0,0,,4,3,"2017,2018,2019",28.0
+Benni,Spencer Shrader,s:12185,0,0,,4,1,2025,44.0
+Benni,Spencer Ware,s:1601,0,0,,4,1,2018,24.1
+Benni,Tank Dell,s:9502,0,0,,4,1,2024,13.4
+Benni,Tevin Coleman,s:2378,0,0,,4,2,"2015,2019",27.6
+Benni,Travis Hunter,s:12530,0,0,,4,1,2025,7.6
+Benni,Will Reichard,s:11792,0,0,,4,1,2024,33.4
+Erik,Bam Knight,s:8122,0,0,,4,1,2025,22.5
+Erik,DeMarco Murray,s:904,0,0,,4,1,2015,24.3
+Erik,Jake Moody,s:10937,0,0,,4,2,"2023,2024",33.1
+Erik,Jared Goff,s:3163,0,0,,4,2,"2023,2024",86.52
+Erik,Jason Myers,s:2747,0,0,,4,2,"2018,2022",33.0
+Erik,Kansas City Chiefs,n:kansas city chiefs,0,0,,4,2,"2022,2024",28.0
+Erik,Michael Wilson,s:10232,0,0,,4,1,2025,52.4
+Erik,Orleans Darkwa,s:1819,0,0,,4,1,2017,38.8
+Erik,Raheem Mostert,s:2749,0,0,,4,2,"2022,2024",20.1
+Erik,Randall Cobb,s:928,0,0,,4,2,"2016,2017",17.3
+Erik,Sean Tucker,s:9506,0,0,,4,1,2025,41.7
+Erik,Tyler Eifert,s:1388,0,0,,4,1,2016,0.0
+Juschka,Bam Knight,s:8122,0,0,,4,1,2022,29.1
+Juschka,Devontae Booker,s:3209,0,0,,4,1,2020,10.1
+Juschka,Duke Johnson,s:2382,0,0,,4,2,"2016,2018",11.2
+Juschka,Geno Smith,s:1373,0,0,,4,2,"2022,2024",50.58
+Juschka,Giorgio Tavecchio,s:1750,0,0,,4,1,2017,17.0
+Juschka,Hayden Hurst,s:4973,0,0,,4,1,2022,14.6
+Juschka,Jason Witten,s:23,0,0,,4,1,2016,15.0
+Juschka,Julius Thomas,s:874,0,0,,4,1,2015,4.1
+Juschka,Kendall Wright,s:1097,0,0,,4,1,2015,21.5
+Juschka,Nyheim Hines,s:5347,0,0,,4,1,2021,23.4
+Juschka,Paul Perkins,s:3211,0,0,,4,1,2017,9.6
+Juschka,Rashaad Penny,s:4985,0,0,,4,2,"2021,2023",25.3
+Juschka,Rondale Moore,s:7601,0,0,,4,1,2021,16.4
+Juschka,Ty'son Williams,s:7098,0,0,,4,1,2021,26.9
+Juschka,Vernon Davis,s:200,0,0,,4,1,2015,10.9
+Kessi,Arian Foster,s:669,0,0,,4,1,2016,10.9
+Kessi,D'Onta Foreman,s:4111,0,0,,4,1,2021,33.4
+Kessi,Jamaal Charles,s:323,0,0,,4,1,2017,9.0
+Kessi,Jason Sanders,s:5119,0,0,,4,1,2023,57.0
+Kessi,Javonte Williams,s:7588,0,0,,4,1,2022,26.0
+Kessi,Josh Gordon,s:1244,0,0,,4,1,2018,23.3
+Kessi,Mike Gillislee,s:1353,0,0,,4,1,2017,43.4
+Kessi,Nick Chubb,s:4988,0,0,,4,2,"2018,2023",4.1
+Kessi,Rhamondre Stevenson,s:7611,0,0,,4,1,2025,24.6
+Kessi,Wendell Smallwood,s:3309,0,0,,4,1,2018,21.4
+Kessi,Will Fuller,s:3157,0,0,,4,1,2021,4.6
+Marv,Aldrick Rosas,s:3827,0,0,,4,1,2021,16.0
+Marv,Alfred Morris,s:1170,0,0,,4,1,2015,27.7
+Marv,Benny Snell,s:6156,0,0,,4,2,"2019,2024",14.9
+Marv,Bo Nix,s:11563,0,0,,4,1,2024,45.08
+Marv,Brenton Strange,s:9480,0,0,,4,1,2025,25.7
+Marv,Courtland Sutton,s:5045,0,0,,4,2,"2023,2024",23.1
+Marv,Derrick Henry,s:3198,0,0,,4,1,2018,17.82
+Marv,Devin Neal,s:12476,0,0,,4,1,2025,30.5
+Marv,Javorius Allen,s:2430,0,0,,4,1,2018,35.5
+Marv,Jonnu Smith,s:4144,0,0,,4,1,2020,15.5
+Marv,K.J. Osborn,s:7066,0,0,,4,1,2023,21.1
+Marv,Martavis Bryant,s:1916,0,0,,4,1,2015,35.8
+Marv,Odell Beckham,s:2078,0,0,,4,1,2021,32.9
+Marv,Philadelphia Eagles,n:philadelphia eagles,0,0,,4,2,"2015,2022",30.0
+Marv,Quentin Johnston,s:9754,0,0,,4,1,2024,13.9
+Marv,Ryan Tannehill,s:1049,0,0,,4,1,2020,77.88
+Marv,Samaje Perine,s:4147,0,0,,4,1,2017,31.7
+Marv,Terrance West,s:1912,0,0,,4,1,2017,24.4
+Marv,Zach Miller,s:749,0,0,,4,1,2016,23.7
+Ritz,Andre Johnson,s:92,0,0,,4,1,2015,5.1
+Ritz,Cam Newton,s:954,0,0,,4,1,2020,28.66
+Ritz,Colin Kaepernick,s:980,0,0,,4,1,2015,52.58
+Ritz,Dalvin Cook,s:4029,0,0,,4,1,2023,9.8
+Ritz,Graham Gano,s:503,0,0,,4,1,2017,25.0
+Ritz,Isaac Guerendo,s:11651,0,0,,4,1,2024,32.3
+Ritz,Jake Moody,s:10937,0,0,,4,1,2023,24.1
+Ritz,Michael Pittman,s:6819,0,0,,4,2,"2021,2025",21.1
+Ritz,Nelson Agholor,s:2325,0,0,,4,1,2015,8.0
+Ritz,Phillip Dorsett,s:2334,0,0,,4,1,2016,16.5
+Ritz,Rashee Rice,s:10229,0,0,,4,1,2024,40.9
+Ritz,Travis Benjamin,s:1077,0,0,,4,1,2016,19.6
+Ritz,Tyrone Tracy,s:11655,0,0,,4,1,2025,32.8
+Ritz,Vernon Davis,s:200,0,0,,4,1,2017,21.5
+Ritz,Will Fuller,s:3157,0,0,,4,1,2017,39.9
+Ritz,Willie Snead,s:1911,0,0,,4,1,2016,13.7
+Simi,Ameer Abdullah,s:2359,0,0,,4,2,"2016,2017",43.0
+Simi,Boston Scott,s:5122,0,0,,4,2,"2020,2021",27.1
+Simi,Brandon Marshall,s:648,0,0,,4,1,2017,13.9
+Simi,C.J. Anderson,s:1451,0,0,,4,1,2015,19.5
+Simi,Dallas Cowboys,n:dallas cowboys,0,0,,4,1,2021,31.0
+Simi,Eli Manning,s:188,0,0,,4,1,2015,48.7
+Simi,Ezekiel Elliott,s:3164,0,0,,4,2,"2023,2024",17.6
+Simi,Hunter Renfrow,s:5955,0,0,,4,1,2021,39.1
+Simi,Kerryon Johnson,s:5068,0,0,,4,1,2020,14.8
+Simi,Los Angeles Rams,n:los angeles rams,0,0,,4,1,2025,27.0
+Simi,Mike Gesicki,s:4993,0,0,,4,1,2020,38.7
+Simi,New Orleans Saints,n:new orleans saints,0,0,,4,2,"2019,2023",19.0
+Simi,Taylor Gabriel,s:1903,0,0,,4,1,2016,32.1
+Simi,Tevin Coleman,s:2378,0,0,,4,1,2015,17.2
+Simi,Will Reichard,s:11792,0,0,,4,1,2025,26.4
+Tommy,Alfred Blue,s:1944,0,0,,4,1,2015,27.5
+Tommy,Arizona Cardinals,n:arizona cardinals,0,0,,4,1,2015,29.0
+Tommy,D'Onta Foreman,s:4111,0,0,,4,1,2023,57.1
+Tommy,Dawson Knox,s:5906,0,0,,4,2,"2021,2022",23.9
+Tommy,Drew Brees,s:289,0,0,,4,1,2020,59.34
+Tommy,Evan Engram,s:4066,0,0,,4,2,"2017,2018",26.5
+Tommy,Jameis Winston,s:2306,0,0,,4,2,"2015,2016",63.46
+Tommy,Jared Goff,s:3163,0,0,,4,2,"2020,2025",65.66
+Tommy,Jaylen Warren,s:8228,0,0,,4,1,2024,8.2
+Tommy,Julius Thomas,s:874,0,0,,4,1,2015,0.0
+Tommy,Marvin Jones,s:1067,0,0,,4,2,"2019,2021",13.3
+Tommy,Mason Crosby,s:59,0,0,,4,1,2017,24.0
+Tommy,Matthew Stafford,s:421,0,0,,4,2,"2019,2020",41.02
+Tommy,O.J. Howard,s:4055,0,0,,4,2,"2018,2019",17.1
+Tommy,Pittsburgh Steelers,n:pittsburgh steelers,0,0,,4,1,2018,17.0
+Tommy,Randall Cobb,s:928,0,0,,4,1,2019,15.2
+Tommy,Robert Woods,s:1352,0,0,,4,1,2022,22.7
+Tommy,Rodrigo Blankenship,s:7062,0,0,,4,1,2020,37.0
+Tommy,Spencer Ware,s:1601,0,0,,4,1,2015,15.2
+Ritz,New England Patriots,n:new england patriots,2,2,"2017,2020",3,1,2021,11.0
+Erik,Seattle Seahawks,n:seattle seahawks,1,1,2016,3,3,"2016,2020,2024",10.0
+Marv,Buffalo Bills,n:buffalo bills,1,1,2023,3,2,"2015,2023",2.0
+Tommy,Buffalo Bills,n:buffalo bills,1,1,2015,3,1,2015,22.0
+Benni,Bilal Powell,s:818,0,0,,3,2,"2016,2017",26.9
+Benni,Cairo Santos,s:2020,0,0,,3,1,2015,18.0
+Benni,Chuba Hubbard,s:7594,0,0,,3,1,2023,31.0
+Benni,Dan Bailey,s:899,0,0,,3,1,2017,24.0
+Benni,Golden Tate,s:642,0,0,,3,1,2016,5.8
+Benni,Jake Ferguson,s:8110,0,0,,3,1,2025,36.2
+Benni,Jameis Winston,s:2306,0,0,,3,2,"2017,2019",62.18
+Benni,Jared Goff,s:3163,0,0,,3,1,2017,51.3
+Benni,Jauan Jennings,s:7049,0,0,,3,2,"2024,2025",32.2
+Benni,Jordan Reed,s:1500,0,0,,3,2,"2017,2018",10.5
+Benni,Kadarius Toney,s:7606,0,0,,3,2,"2021,2022",6.96
+Benni,Matt Bryant,s:127,0,0,,3,1,2018,24.0
+Benni,Melvin Gordon,s:2320,0,0,,3,1,2016,0.0
+Benni,Miami Dolphins,n:miami dolphins,0,0,,3,2,"2020,2021",39.0
+Benni,Michael Badgley,s:5230,0,0,,3,2,"2018,2019",25.0
+Benni,New Orleans Saints,n:new orleans saints,0,0,,3,1,2020,29.0
+Benni,Peyton Barber,s:3594,0,0,,3,1,2018,13.1
+Benni,Rashad Jennings,s:380,0,0,,3,1,2016,11.8
+Benni,Rodrigo Blankenship,s:7062,0,0,,3,1,2020,19.0
+Benni,Ryan Succop,s:391,0,0,,3,2,"2017,2020",14.0
+Benni,Tim Hightower,s:83,0,0,,3,1,2015,52.9
+Benni,Tyrell Williams,s:2583,0,0,,3,1,2018,12.9
+Erik,Adrian Peterson,s:184,0,0,,3,2,"2019,2021",26.6
+Erik,Alexander Mattison,s:5987,0,0,,3,1,2024,20.3
+Erik,Braelon Allen,s:11576,0,0,,3,1,2024,11.7
+Erik,Buffalo Bills,n:buffalo bills,0,0,,3,1,2021,18.0
+Erik,Carson Steele,s:11582,0,0,,3,1,2024,7.2
+Erik,Chase Claypool,s:6886,0,0,,3,1,2020,22.1
+Erik,Chris Boswell,s:1945,0,0,,3,2,"2024,2025",31.5
+Erik,Christian Kirk,s:4950,0,0,,3,1,2022,20.6
+Erik,Christian Watson,s:8167,0,0,,3,1,2025,25.5
+Erik,Dak Prescott,s:3294,0,0,,3,1,2025,52.22
+Erik,Dallas Goedert,s:5022,0,0,,3,1,2020,6.3
+Erik,Darren McFadden,s:326,0,0,,3,2,"2015,2017",7.8
+Erik,Dawson Knox,s:5906,0,0,,3,1,2021,22.9
+Erik,Duke Johnson,s:2382,0,0,,3,2,"2017,2020",23.6
+Erik,Giovani Bernard,s:1386,0,0,,3,2,"2015,2017",41.9
+Erik,Jason Sanders,s:5119,0,0,,3,2,"2021,2024",20.3
+Erik,Jeffery Wilson,s:5284,0,0,,3,2,"2021,2023",6.2
+Erik,Justice Hill,s:5995,0,0,,3,1,2023,8.6
+Erik,Ka'imi Fairbairn,s:3451,0,0,,3,2,"2019,2025",23.8
+Erik,Kyle Pitts,s:7553,0,0,,3,1,2025,14.6
+Erik,Minnesota Vikings,n:minnesota vikings,0,0,,3,1,2016,16.0
+Erik,Rashaad Penny,s:4985,0,0,,3,1,2019,26.1
+Erik,Rishard Matthews,s:1046,0,0,,3,2,"2015,2017",12.5
+Erik,Spencer Ware,s:1601,0,0,,3,2,"2015,2016",51.9
+Erik,Tedd Ginn Jr.,s:695,0,0,,3,2,"2016,2017",21.3
+Erik,Tennessee Titans,n:tennessee titans,0,0,,3,1,2022,8.0
+Erik,Tom Brady,s:167,0,0,,3,1,2022,45.16
+Erik,Tony Romo,s:142,0,0,,3,1,2015,29.14
+Erik,Tyler Higbee,s:3271,0,0,,3,2,"2020,2023",10.1
+Erik,Washington Commanders,n:washington commanders,0,0,,3,3,"2020,2021,2024",3.0
+Erik,Zach Charbonnet,s:9753,0,0,,3,1,2024,45.2
+Juschka,Dalton Schultz,s:5001,0,0,,3,1,2020,11.0
+Juschka,David Njoku,s:4033,0,0,,3,1,2022,15.9
+Juschka,Jalen Reagor,s:6798,0,0,,3,1,2020,11.8
+Juschka,Jamaal Williams,s:4149,0,0,,3,1,2020,5.8
+Juschka,Jauan Jennings,s:7049,0,0,,3,1,2024,12.8
+Juschka,John Ross,s:4038,0,0,,3,1,2019,3.8
+Juschka,Jordan Love,s:6804,0,0,,3,1,2023,50.34
+Juschka,Kenyan Drake,s:3242,0,0,,3,1,2021,18.2
+Juschka,Kyle Pitts,s:7553,0,0,,3,1,2023,9.6
+Juschka,Marquez Valdes-Scantling,s:5086,0,0,,3,1,2022,10.2
+Juschka,Michael Wilson,s:10232,0,0,,3,1,2023,10.6
+Juschka,Mike Boone,s:5209,0,0,,3,1,2022,11.2
+Juschka,Randy Bullock,s:1099,0,0,,3,1,2015,18.0
+Juschka,Richard Rodgers,s:2146,0,0,,3,1,2015,8.2
+Juschka,Ryan Tannehill,s:1049,0,0,,3,1,2021,17.34
+Juschka,Taysom Hill,s:4381,0,0,,3,2,"2022,2023",20.32
+Juschka,Tua Tagovailoa,s:6768,0,0,,3,1,2024,24.12
+Juschka,Tyrod Taylor,s:827,0,0,,3,1,2015,36.82
+Juschka,Zack Moss,s:6845,0,0,,3,1,2020,12.4
+Kessi,Andy Dalton,s:829,0,0,,3,1,2015,67.0
+Kessi,Ben Roethlisberger,s:138,0,0,,3,1,2015,54.38
+Kessi,Corey Davis,s:4036,0,0,,3,1,2020,18.4
+Kessi,Detroit Lions,n:detroit lions,0,0,,3,1,2019,11.0
+Kessi,Jeffery Wilson,s:5284,0,0,,3,1,2021,35.2
+Kessi,Jerick McKinnon,s:2161,0,0,,3,1,2022,61.4
+Kessi,Jordan Love,s:6804,0,0,,3,1,2024,48.16
+Kessi,Ryan Tannehill,s:1049,0,0,,3,1,2020,69.84
+Kessi,Sony Michel,s:4962,0,0,,3,1,2021,38.9
+Kessi,Steve Smith,s:169,0,0,,3,1,2016,2.9
+Kessi,Trey Burton,s:1793,0,0,,3,1,2018,29.2
+Marv,Baker Mayfield,s:4892,0,0,,3,1,2020,59.0
+Marv,Brandon Aubrey,s:11533,0,0,,3,1,2023,30.2
+Marv,Emmanuel Sanders,s:538,0,0,,3,1,2021,10.5
+Marv,Evan Engram,s:4066,0,0,,3,1,2018,16.4
+Marv,Gerald Everett,s:4089,0,0,,3,1,2022,15.2
+Marv,Indianapolis Colts,n:indianapolis colts,0,0,,3,2,"2024,2025",14.0
+Marv,Jameis Winston,s:2306,0,0,,3,1,2018,59.64
+Marv,Jason Witten,s:23,0,0,,3,1,2017,16.6
+Marv,Jimmy Garoppolo,s:1837,0,0,,3,1,2018,48.02
+Marv,Jordan Howard,s:3306,0,0,,3,1,2020,19.2
+Marv,Justin Jackson,s:5131,0,0,,3,1,2018,22.6
+Marv,Kendrick Bourne,s:4454,0,0,,3,1,2021,6.6
+Marv,Ladarius Green,s:1139,0,0,,3,1,2016,9.7
+Marv,Matt Ryan,s:24,0,0,,3,1,2021,52.1
+Marv,New York Jets,n:new york jets,0,0,,3,1,2015,31.0
+Marv,Travis Etienne,s:7543,0,0,,3,1,2021,0.0
+Marv,Tyler Bass,s:7042,0,0,,3,1,2024,29.1
+Ritz,Brett Maher,s:4958,0,0,,3,1,2019,19.0
+Ritz,Caleb Sturgis,s:1358,0,0,,3,1,2016,22.0
+Ritz,Cam Akers,s:6938,0,0,,3,1,2024,24.9
+Ritz,Charles Sims,s:2223,0,0,,3,1,2015,32.3
+Ritz,Detroit Lions,n:detroit lions,0,0,,3,1,2017,14.0
+Ritz,Dustin Hopkins,s:1348,0,0,,3,1,2016,23.0
+Ritz,Green Bay Packers,n:green bay packers,0,0,,3,2,"2021,2022",25.0
+Ritz,J.K. Dobbins,s:6806,0,0,,3,2,"2020,2022",22.2
+Ritz,Jamaal Williams,s:4149,0,0,,3,2,"2019,2020",20.2
+Ritz,James White,s:1848,0,0,,3,2,"2015,2016",19.9
+Ritz,Jared Cook,s:367,0,0,,3,2,"2017,2020",17.4
+Ritz,Jaylen Samuels,s:5107,0,0,,3,1,2018,38.8
+Ritz,Jaylen Waddle,s:7526,0,0,,3,1,2021,41.3
+Ritz,Jonathan Stewart,s:218,0,0,,3,1,2015,19.2
+Ritz,Jordan Reed,s:1500,0,0,,3,1,2018,10.0
+Ritz,Kayshon Boutte,s:9504,0,0,,3,1,2025,25.0
+Ritz,Sterling Shepard,s:3200,0,0,,3,1,2016,7.1
+Ritz,Tank Bigsby,s:9225,0,0,,3,1,2024,34.8
+Ritz,Tyler Eifert,s:1388,0,0,,3,2,"2015,2017",11.5
+Ritz,Younghoe Koo,s:4666,0,0,,3,2,"2023,2024",35.3
+Simi,Austin Seibert,s:6219,0,0,,3,1,2024,40.8
+Simi,Brandon McManus,s:1433,0,0,,3,1,2023,12.0
+Simi,Darren Sproles,s:246,0,0,,3,1,2016,15.1
+Simi,David Johnson,s:2391,0,0,,3,1,2015,8.9
+Simi,Devin Singletary,s:6130,0,0,,3,1,2021,13.5
+Simi,Emmanuel Sanders,s:538,0,0,,3,1,2021,9.1
+Simi,Eric Ebron,s:2118,0,0,,3,2,"2019,2020",13.1
+Simi,Green Bay Packers,n:green bay packers,0,0,,3,2,"2018,2025",19.0
+Simi,Harold Fannin Jr.,s:12506,0,0,,3,1,2025,37.9
+Simi,Jacquizz Rodgers,s:949,0,0,,3,1,2016,30.1
+Simi,Joe Burrow,s:6770,0,0,,3,1,2020,61.24
+Simi,Marvin Jones,s:1067,0,0,,3,2,"2020,2021",17.9
+Simi,Michael Gallup,s:5038,0,0,,3,1,2022,13.8
+Simi,P.J. Walker,s:4335,0,0,,3,1,2022,7.9
+Simi,Quentin Johnston,s:9754,0,0,,3,1,2025,11.9
+Simi,Richard Rodgers,s:2146,0,0,,3,1,2015,7.2
+Simi,T.Y. Hilton,s:1110,0,0,,3,1,2020,13.3
+Simi,Terry McLaurin,s:5927,0,0,,3,1,2019,14.9
+Simi,Travis Fulgham,s:6059,0,0,,3,1,2020,14.6
+Simi,Tucker Kraft,s:9484,0,0,,3,2,"2024,2025",28.3
+Simi,Younghoe Koo,s:4666,0,0,,3,1,2021,21.0
+Simi,Zamir White,s:8139,0,0,,3,1,2024,9.8
+Tommy,Andre Ellington,s:1575,0,0,,3,1,2017,16.7
+Tommy,Antonio Gibson,s:6945,0,0,,3,2,"2020,2023",12.1
+Tommy,Ben Roethlisberger,s:138,0,0,,3,1,2020,42.7
+Tommy,Bilal Powell,s:818,0,0,,3,1,2017,14.9
+Tommy,Cameron Meredith,s:2699,0,0,,3,1,2016,14.9
+Tommy,Demaryius Thomas,s:560,0,0,,3,1,2018,13.9
+Tommy,Eric Ebron,s:2118,0,0,,3,3,"2018,2019,2020",25.6
+Tommy,Jacob Hollister,s:4421,0,0,,3,1,2019,10.0
+Tommy,Joe Burrow,s:6770,0,0,,3,1,2021,54.28
+Tommy,John Ross,s:4038,0,0,,3,2,"2017,2018",5.5
+Tommy,Joshua Kelley,s:7045,0,0,,3,1,2023,6.9
+Tommy,Kenny Golladay,s:4131,0,0,,3,1,2018,10.3
+Tommy,Matt Forte,s:103,0,0,,3,1,2017,15.2
+Tommy,Pat Freiermuth,s:7600,0,0,,3,1,2022,15.9
+Tommy,Pierre Garcon,s:269,0,0,,3,1,2015,19.4
+Tommy,Samaje Perine,s:4147,0,0,,3,1,2022,39.2
+Tommy,Tyler Bass,s:7042,0,0,,3,2,"2020,2024",29.0
+Tommy,Tyrone Tracy,s:11655,0,0,,3,1,2025,24.7
+Tommy,Wil Lutz,s:3678,0,0,,3,1,2024,28.5
+Erik,Dallas Cowboys,n:dallas cowboys,1,1,2024,2,2,"2019,2024",11.0
+Marv,Houston Texans,n:houston texans,1,1,2018,2,2,"2016,2018",2.0
+Marv,Los Angeles Rams,n:los angeles rams,1,1,2019,2,1,2019,9.0
+Ritz,Denver Broncos,n:denver broncos,1,1,2018,2,2,"2018,2025",13.0
+Ritz,Houston Texans,n:houston texans,1,1,2015,2,2,"2015,2017",-2.0
+Simi,Buffalo Bills,n:buffalo bills,1,1,2022,2,1,2022,8.0
+Tommy,Los Angeles Rams,n:los angeles rams,1,1,2018,2,1,2018,21.0
+Benni,A.J. Green,s:830,0,0,,2,2,"2019,2020",3.6
+Benni,Austin Seibert,s:6219,0,0,,2,1,2024,19.2
+Benni,Baker Mayfield,s:4892,0,0,,2,1,2018,37.28
+Benni,Baltimore Ravens,n:baltimore ravens,0,0,,2,2,"2022,2024",7.0
+Benni,Buffalo Bills,n:buffalo bills,0,0,,2,2,"2019,2024",5.0
+Benni,Chris Ivory,s:717,0,0,,2,1,2017,12.9
+Benni,Cleveland Browns,n:cleveland browns,0,0,,2,2,"2022,2025",3.0
+Benni,Daniel Jones,s:5870,0,0,,2,2,"2019,2022",21.34
+Benni,Darren McFadden,s:326,0,0,,2,1,2017,0.0
+Benni,Darren Waller,s:2505,0,0,,2,1,2019,11.1
+Benni,Derrius Guice,s:4949,0,0,,2,1,2019,3.8
+Benni,Eno Benjamin,s:6951,0,0,,2,1,2022,25.8
+Benni,Evan Engram,s:4066,0,0,,2,2,"2020,2023",8.1
+Benni,Greg Joseph,s:5272,0,0,,2,2,"2021,2022",12.0
+Benni,Jacksonville Jaguars,n:jacksonville jaguars,0,0,,2,1,2017,28.0
+Benni,Jahan Dotson,s:8119,0,0,,2,1,2023,6.2
+Benni,Jaleel McLaughlin,s:11439,0,0,,2,1,2023,19.1
+Benni,Jason Myers,s:2747,0,0,,2,1,2020,14.0
+Benni,Jaylen Samuels,s:5107,0,0,,2,1,2019,10.3
+Benni,John Brown,s:2238,0,0,,2,2,"2015,2019",17.5
+Benni,Joique Bell,s:736,0,0,,2,1,2015,5.9
+Benni,Julian Edelman,s:344,0,0,,2,1,2016,7.8
+Benni,Karlos Williams,s:2458,0,0,,2,1,2015,13.0
+Benni,Kyle Monangai,s:12534,0,0,,2,1,2025,28.6
+Benni,Ladarius Green,s:1139,0,0,,2,1,2015,15.5
+Benni,Latavius Murray,s:1476,0,0,,2,1,2021,18.4
+Benni,Markus Wheaton,s:1413,0,0,,2,1,2015,18.7
+Benni,Matthew Stafford,s:421,0,0,,2,2,"2015,2016",21.96
+Benni,Nelson Agholor,s:2325,0,0,,2,1,2018,4.6
+Benni,Pat Freiermuth,s:7600,0,0,,2,2,"2021,2024",11.6
+Benni,Pittsburgh Steelers,n:pittsburgh steelers,0,0,,2,1,2019,35.0
+Benni,Rashod Bateman,s:7571,0,0,,2,1,2022,5.6
+Benni,Robbie Gould,s:49,0,0,,2,1,2019,20.0
+Benni,T.J. Yeldon,s:2341,0,0,,2,2,"2017,2018",9.7
+Benni,Taysom Hill,s:4381,0,0,,2,2,"2022,2024",12.28
+Benni,Terrance Williams,s:1490,0,0,,2,1,2015,14.4
+Benni,Terry McLaurin,s:5927,0,0,,2,1,2025,18.2
+Benni,Treylon Burks,s:8135,0,0,,2,1,2022,8.5
+Benni,Tyler Boyd,s:3225,0,0,,2,1,2020,16.5
+Benni,Tyrod Taylor,s:827,0,0,,2,1,2015,15.64
+Benni,Wendell Smallwood,s:3309,0,0,,2,1,2016,6.6
+Benni,Woody Marks,s:12474,0,0,,2,1,2025,2.4
+Benni,Younghoe Koo,s:4666,0,0,,2,2,"2019,2023",17.9
+Erik,Cedric Tillman,s:10444,0,0,,2,1,2024,13.5
+Erik,Charles Sims,s:2223,0,0,,2,1,2016,19.9
+Erik,Chris Carson,s:4273,0,0,,2,1,2017,17.8
+Erik,Cole Kmet,s:6826,0,0,,2,2,"2023,2024",4.3
+Erik,Colin Kaepernick,s:980,0,0,,2,2,"2015,2016",2.16
+Erik,Courtland Sutton,s:5045,0,0,,2,1,2023,18.7
+Erik,D'Andre Swift,s:6790,0,0,,2,1,2020,13.1
+Erik,D'Ernest Johnson,s:6694,0,0,,2,1,2021,38.5
+Erik,Dan Bailey,s:899,0,0,,2,1,2016,6.0
+Erik,Darius Slayton,s:6149,0,0,,2,1,2020,6.6
+Erik,DeSean Jackson,s:147,0,0,,2,2,"2015,2022",16.2
+Erik,Denard Robinson,s:1449,0,0,,2,1,2015,15.7
+Erik,Dontayvion Wicks,s:9486,0,0,,2,1,2024,2.9
+Erik,Dustin Hopkins,s:1348,0,0,,2,1,2016,11.0
+Erik,Emanuel Wilson,s:11435,0,0,,2,1,2025,25.9
+Erik,Isaiah Likely,s:8131,0,0,,2,2,"2022,2025",8.4
+Erik,Isiah Pacheco,s:8205,0,0,,2,1,2025,0.0
+Erik,J.K. Dobbins,s:6806,0,0,,2,2,"2022,2023",9.7
+Erik,James White,s:1848,0,0,,2,2,"2015,2017",10.0
+Erik,Jason Witten,s:23,0,0,,2,1,2015,23.6
+Erik,Jauan Jennings,s:7049,0,0,,2,1,2024,8.2
+Erik,Jaylen Wright,s:11643,0,0,,2,1,2025,12.4
+Erik,Joe Flacco,s:19,0,0,,2,1,2016,26.62
+Erik,Juwan Johnson,s:7002,0,0,,2,1,2025,7.9
+Erik,Kamar Aiken,s:794,0,0,,2,1,2015,18.8
+Erik,Kareem Hunt,s:4098,0,0,,2,2,"2023,2025",15.0
+Erik,Kenneth Farrow,s:3532,0,0,,2,1,2016,9.0
+Erik,Leonard Fournette,s:3969,0,0,,2,1,2023,0.0
+Erik,Logan Thomas,s:2251,0,0,,2,1,2020,16.4
+Erik,Marquise Brown,s:5848,0,0,,2,1,2025,7.2
+Erik,Marvin Jones,s:1067,0,0,,2,1,2017,12.8
+Erik,Mason Crosby,s:59,0,0,,2,1,2020,10.0
+Erik,Miami Dolphins,n:miami dolphins,0,0,,2,2,"2015,2023",3.0
+Erik,Michael Carter,s:7607,0,0,,2,1,2021,14.4
+Erik,New Orleans Saints,n:new orleans saints,0,0,,2,1,2025,23.0
+Erik,O.J. Howard,s:4055,0,0,,2,1,2019,1.2
+Erik,Roddy White,s:4,0,0,,2,1,2015,8.4
+Erik,Rodrigo Blankenship,s:7062,0,0,,2,1,2020,18.0
+Erik,Ryan Succop,s:391,0,0,,2,1,2021,12.0
+Erik,Shaun Draughn,s:913,0,0,,2,1,2015,9.3
+Erik,Wan'Dale Robinson,s:8126,0,0,,2,1,2025,9.8
+Erik,Zach Ertz,s:1339,0,0,,2,2,"2020,2022",7.5
+Juschka,Austin Seferian-Jenkins,s:2222,0,0,,2,1,2015,2.9
+Juschka,Brandon Bolden,s:1034,0,0,,2,1,2015,11.4
+Juschka,C.J. Stroud,s:9758,0,0,,2,1,2023,28.32
+Juschka,Corey Davis,s:4036,0,0,,2,1,2020,6.7
+Juschka,Danny Woodhead,s:735,0,0,,2,1,2016,21.1
+Juschka,DeAngelo Williams,s:306,0,0,,2,1,2015,0.7
+Juschka,Detroit Lions,n:detroit lions,0,0,,2,1,2017,4.0
+Juschka,Dustin Hopkins,s:1348,0,0,,2,1,2016,11.0
+Juschka,Greg Olsen,s:58,0,0,,2,1,2018,3.3
+Juschka,Isaiah Davis,s:11571,0,0,,2,1,2024,3.8
+Juschka,Jared Goff,s:3163,0,0,,2,1,2020,33.52
+Juschka,Kansas City Chiefs,n:kansas city chiefs,0,0,,2,1,2018,7.0
+Juschka,Kyle Rudolph,s:943,0,0,,2,1,2017,13.1
+Juschka,Matt Ammendola,s:7617,0,0,,2,1,2023,6.0
+Juschka,Matt Breida,s:4455,0,0,,2,1,2023,15.6
+Juschka,Mike Gesicki,s:4993,0,0,,2,1,2022,3.2
+Juschka,Mohamed Sanu,s:1071,0,0,,2,1,2019,7.3
+Juschka,Nick Chubb,s:4988,0,0,,2,1,2023,19.1
+Juschka,Pittsburgh Steelers,n:pittsburgh steelers,0,0,,2,1,2024,5.0
+Juschka,Rishard Matthews,s:1046,0,0,,2,1,2016,15.0
+Juschka,Ryan Fitzpatrick,s:333,0,0,,2,1,2018,28.18
+Juschka,Tedd Ginn Jr.,s:695,0,0,,2,1,2015,21.4
+Juschka,Tyler Conklin,s:5133,0,0,,2,1,2022,5.2
+Juschka,Washington Commanders,n:washington commanders,0,0,,2,1,2018,4.0
+Kessi,Blake Corum,s:11586,0,0,,2,1,2024,2.8
+Kessi,Cody Parkey,s:1974,0,0,,2,1,2018,14.0
+Kessi,Curtis Samuel,s:4082,0,0,,2,1,2020,7.7
+Kessi,Danny Woodhead,s:735,0,0,,2,1,2015,14.7
+Kessi,Darren McFadden,s:326,0,0,,2,1,2015,8.7
+Kessi,Golden Tate,s:642,0,0,,2,1,2015,9.7
+Kessi,Jason Myers,s:2747,0,0,,2,1,2019,15.0
+Kessi,Jordan Reed,s:1500,0,0,,2,1,2016,13.4
+Kessi,Julius Thomas,s:874,0,0,,2,1,2016,1.3
+Kessi,Justice Hill,s:5995,0,0,,2,1,2024,2.9
+Kessi,Marquise Brown,s:5848,0,0,,2,1,2024,0.0
+Kessi,Mason Crosby,s:59,0,0,,2,1,2016,15.0
+Kessi,Michael Floyd,s:1219,0,0,,2,1,2016,0.6
+Kessi,Mike Davis,s:2431,0,0,,2,1,2018,2.6
+Kessi,Shane Vereen,s:814,0,0,,2,1,2016,10.7
+Kessi,Tyrod Taylor,s:827,0,0,,2,1,2017,29.84
+Marv,--empty--,n:empty,0,0,,2,2,"2017,2021",0.0
+Marv,Alfred Blue,s:1944,0,0,,2,1,2015,7.2
+Marv,Austin Seferian-Jenkins,s:2222,0,0,,2,1,2017,10.9
+Marv,C.J. Spiller,s:507,0,0,,2,1,2015,2.6
+Marv,Cole Beasley,s:1144,0,0,,2,1,2020,12.9
+Marv,D'Onta Foreman,s:4111,0,0,,2,1,2021,13.2
+Marv,Dennis Pitta,s:527,0,0,,2,1,2016,5.9
+Marv,Derek Carr,s:2028,0,0,,2,1,2023,22.14
+Marv,Devin Funchess,s:2346,0,0,,2,1,2017,7.7
+Marv,Dorial Green-Beckham,s:2345,0,0,,2,1,2016,3.2
+Marv,Jacquizz Rodgers,s:949,0,0,,2,1,2017,12.3
+Marv,Jordy Nelson,s:175,0,0,,2,1,2018,5.3
+Marv,Josh Gordon,s:1244,0,0,,2,1,2019,1.0
+Marv,Juwan Johnson,s:7002,0,0,,2,1,2023,4.9
+Marv,Kadarius Toney,s:7606,0,0,,2,1,2023,3.8
+Marv,Kenneth Gainwell,s:7567,0,0,,2,1,2021,2.5
+Marv,Kyler Murray,s:5849,0,0,,2,1,2019,53.46
+Marv,Laviska Shenault,s:6814,0,0,,2,1,2021,5.6
+Marv,Matt Prater,s:17,0,0,,2,1,2021,11.0
+Marv,Matthew Stafford,s:421,0,0,,2,1,2015,43.2
+Marv,Peyton Barber,s:3594,0,0,,2,1,2020,0.7
+Marv,Ryan Succop,s:391,0,0,,2,1,2020,12.0
+Marv,Seattle Seahawks,n:seattle seahawks,0,0,,2,1,2016,13.0
+Marv,Ty Johnson,s:6039,0,0,,2,2,"2019,2024",7.2
+Marv,Vincent Jackson,s:128,0,0,,2,1,2015,3.4
+Ritz,C.J. Uzomah,s:2460,0,0,,2,1,2021,5.7
+Ritz,Cairo Santos,s:2020,0,0,,2,2,"2017,2018",17.0
+Ritz,Caleb Williams,s:11560,0,0,,2,1,2025,35.42
+Ritz,Chris Boswell,s:1945,0,0,,2,2,"2017,2018",6.0
+Ritz,Chris Hogan,s:1329,0,0,,2,1,2016,4.4
+Ritz,Darius Slayton,s:6149,0,0,,2,1,2019,9.1
+Ritz,David Johnson,s:2391,0,0,,2,1,2020,39.2
+Ritz,Dontrelle Inman,s:2291,0,0,,2,1,2016,11.2
+Ritz,Drake London,s:8112,0,0,,2,1,2023,6.3
+Ritz,Dylan Sampson,s:12469,0,0,,2,1,2025,17.2
+Ritz,Isaiah Crowell,s:1901,0,0,,2,1,2018,26.1
+Ritz,Joshua Palmer,s:7670,0,0,,2,1,2023,22.0
+Ritz,Justin Herbert,s:6797,0,0,,2,1,2024,21.36
+Ritz,Khalil Herbert,s:7608,0,0,,2,1,2022,11.2
+Ritz,Khalil Shakir,s:8134,0,0,,2,1,2024,12.8
+Ritz,Los Angeles Chargers,n:los angeles chargers,0,0,,2,2,"2017,2018",8.0
+Ritz,Marlon Mack,s:4152,0,0,,2,1,2018,34.7
+Ritz,Marques Colston,s:201,0,0,,2,1,2015,9.9
+Ritz,Mike Williams,s:4068,0,0,,2,2,"2018,2019",4.4
+Ritz,Rashid Shaheed,s:8676,0,0,,2,1,2024,7.7
+Ritz,Sammie Coates,s:2392,0,0,,2,1,2016,0.4
+Ritz,Sony Michel,s:4962,0,0,,2,1,2020,11.6
+Ritz,Tavon Austin,s:1567,0,0,,2,2,"2015,2016",7.4
+Ritz,Tyler Allgeier,s:8132,0,0,,2,1,2022,9.6
+Simi,Adam Humphries,s:2822,0,0,,2,1,2018,10.2
+Simi,Adrian Peterson,s:184,0,0,,2,2,"2019,2020",4.8
+Simi,Antonio Gates,s:322,0,0,,2,1,2016,9.5
+Simi,Chandler Catanzaro,s:2242,0,0,,2,2,"2016,2017",18.0
+Simi,Devontae Booker,s:3209,0,0,,2,2,"2016,2018",10.3
+Simi,Indianapolis Colts,n:indianapolis colts,0,0,,2,1,2023,21.0
+Simi,Jalen Richard,s:3868,0,0,,2,1,2017,3.5
+Simi,James White,s:1848,0,0,,2,1,2019,19.6
+Simi,Jamison Crowder,s:2410,0,0,,2,1,2017,8.1
+Simi,Jared Goff,s:3163,0,0,,2,1,2024,66.4
+Simi,Joey Slye,s:6528,0,0,,2,1,2020,16.0
+Simi,Joshua Kelley,s:7045,0,0,,2,1,2023,5.6
+Simi,Michael Carter,s:7607,0,0,,2,1,2022,1.7
+Simi,Mike Wallace,s:365,0,0,,2,1,2015,10.1
+Simi,Ronald Jones,s:5052,0,0,,2,1,2018,0.0
+Simi,Ryan Fitzpatrick,s:333,0,0,,2,2,"2019,2020",47.7
+Simi,Stephen Anderson,s:3496,0,0,,2,1,2021,15.5
+Simi,Taysom Hill,s:4381,0,0,,2,1,2024,4.7
+Simi,Tony Jones,s:6984,0,0,,2,1,2022,0.2
+Simi,Victor Cruz,s:719,0,0,,2,1,2016,12.0
+Tommy,Adam Vinatieri,s:120,0,0,,2,1,2015,11.0
+Tommy,Antonio Gates,s:322,0,0,,2,1,2015,9.9
+Tommy,Brian Thomas Jr.,s:11631,0,0,,2,1,2024,41.7
+Tommy,Chandler Catanzaro,s:2242,0,0,,2,1,2016,11.0
+Tommy,Courtland Sutton,s:5045,0,0,,2,1,2020,6.6
+Tommy,Damien Harris,s:5890,0,0,,2,1,2020,14.2
+Tommy,Damien Williams,s:1833,0,0,,2,1,2018,42.3
+Tommy,Darren Waller,s:2505,0,0,,2,1,2022,16.6
+Tommy,David Njoku,s:4033,0,0,,2,1,2019,9.7
+Tommy,DeAndre Washington,s:3300,0,0,,2,1,2020,5.2
+Tommy,Derrick Henry,s:3198,0,0,,2,1,2016,9.3
+Tommy,Elijah Mitchell,s:7561,0,0,,2,1,2022,10.2
+Tommy,Graham Gano,s:503,0,0,,2,1,2022,15.0
+Tommy,Green Bay Packers,n:green bay packers,0,0,,2,1,2017,11.0
+Tommy,Jason Sanders,s:5119,0,0,,2,1,2019,16.0
+Tommy,Jaxson Dart,s:12508,0,0,,2,1,2025,22.16
+Tommy,Justin Forsett,s:458,0,0,,2,1,2016,10.2
+Tommy,Keon Coleman,s:11637,0,0,,2,2,"2024,2025",6.7
+Tommy,Kirk Cousins,s:1166,0,0,,2,1,2020,38.5
+Tommy,Kyle Rudolph,s:943,0,0,,2,1,2016,13.0
+Tommy,Kyren Williams,s:8150,0,0,,2,1,2022,3.8
+Tommy,Leonard Fournette,s:3969,0,0,,2,1,2020,31.1
+Tommy,Marcus Mariota,s:2307,0,0,,2,1,2015,14.94
+Tommy,Markus Wheaton,s:1413,0,0,,2,1,2016,12.9
+Tommy,Marquise Goodwin,s:1346,0,0,,2,1,2018,0.0
+Tommy,Michael Badgley,s:5230,0,0,,2,1,2020,22.0
+Tommy,Noah Fant,s:5857,0,0,,2,1,2020,8.1
+Tommy,Nyheim Hines,s:5347,0,0,,2,2,"2018,2021",6.4
+Tommy,T.Y. Hilton,s:1110,0,0,,2,1,2020,13.1
+Tommy,Trey Sermon,s:7593,0,0,,2,1,2021,0.8
+Tommy,Younghoe Koo,s:4666,0,0,,2,1,2021,11.0
+Tommy,Zack Moss,s:6845,0,0,,2,1,2020,12.5
+Ritz,Pittsburgh Steelers,n:pittsburgh steelers,3,3,"2016,2021,2025",1,1,2025,0.0
+Juschka,Philadelphia Eagles,n:philadelphia eagles,2,2,"2018,2023",1,1,2025,0.0
+Marv,Baltimore Ravens,n:baltimore ravens,2,2,"2020,2021",1,1,2020,0.0
+Simi,Carolina Panthers,n:carolina panthers,2,2,"2016,2021",1,1,2019,2.0
+Benni,Los Angeles Chargers,n:los angeles chargers,1,1,2018,1,1,2024,12.0
+Benni,New England Patriots,n:new england patriots,1,1,2022,1,1,2025,8.0
+Benni,New York Giants,n:new york giants,1,1,2017,1,1,2019,-1.0
+Benni,New York Jets,n:new york jets,1,1,2024,1,1,2024,2.0
+Erik,Tampa Bay Buccaneers,n:tampa bay buccaneers,1,1,2022,1,1,2022,1.0
+Kessi,Arizona Cardinals,n:arizona cardinals,1,1,2016,1,1,2021,0.0
+Kessi,Baltimore Ravens,n:baltimore ravens,1,1,2018,1,1,2018,0.0
+Kessi,Buffalo Bills,n:buffalo bills,1,1,2020,1,1,2020,0.0
+Kessi,Tampa Bay Buccaneers,n:tampa bay buccaneers,1,1,2025,1,1,2025,4.0
+Ritz,Kansas City Chiefs,n:kansas city chiefs,1,1,2022,1,1,2020,14.0
+Ritz,Minnesota Vikings,n:minnesota vikings,1,1,2019,1,1,2019,27.0
+Tommy,Houston Texans,n:houston texans,1,1,2017,1,1,2017,19.0
+Benni,Aaron Jones,s:4199,0,0,,1,1,2017,4.2
+Benni,Adam Vinatieri,s:120,0,0,,1,1,2018,4.0
+Benni,Adrian Peterson,s:184,0,0,,1,1,2017,1.8
+Benni,Alex Collins,s:3327,0,0,,1,1,2017,4.6
+Benni,Alshon Jeffery,s:1149,0,0,,1,1,2016,9.2
+Benni,Anthony Richardson,s:9229,0,0,,1,1,2023,4.42
+Benni,Arian Foster,s:669,0,0,,1,1,2015,0.0
+Benni,Austin Seferian-Jenkins,s:2222,0,0,,1,1,2015,3.1
+Benni,Bhayshul Tuten,s:12490,0,0,,1,1,2025,2.2
+Benni,Blake Corum,s:11586,0,0,,1,1,2025,25.1
+Benni,Blake Grupe,s:11058,0,0,,1,1,2024,7.3
+Benni,Bo Nix,s:11563,0,0,,1,1,2025,23.78
+Benni,Braelon Allen,s:11576,0,0,,1,1,2024,2.7
+Benni,Brock Purdy,s:8183,0,0,,1,1,2025,30.9
+Benni,Bryce Brown,s:1026,0,0,,1,1,2015,4.3
+Benni,Cade York,s:8258,0,0,,1,1,2022,6.0
+Benni,Caleb Williams,s:11560,0,0,,1,1,2025,11.78
+Benni,Cam Akers,s:6938,0,0,,1,1,2023,8.9
+Benni,Cameron Dicker,s:8259,0,0,,1,1,2022,8.0
+Benni,Chad Ryland,s:10955,0,0,,1,1,2025,11.2
+Benni,Christine Michael,s:1596,0,0,,1,1,2015,0.0
+Benni,Connor Barth,s:499,0,0,,1,1,2015,6.0
+Benni,Cooper Rush,s:4574,0,0,,1,1,2021,17.2
+Benni,Corey Clement,s:4651,0,0,,1,1,2018,12.9
+Benni,Corey Davis,s:4036,0,0,,1,1,2017,2.8
+Benni,Curtis Samuel,s:4082,0,0,,1,1,2019,2.5
+Benni,Dalton Schultz,s:5001,0,0,,1,1,2023,7.1
+Benni,Daniel Carlson,s:5095,0,0,,1,1,2021,2.0
+Benni,Danny Woodhead,s:735,0,0,,1,1,2017,4.5
+Benni,Darius Slayton,s:6149,0,0,,1,1,2019,0.0
+Benni,DeAndre Washington,s:3300,0,0,,1,1,2019,2.2
+Benni,DeSean Jackson,s:147,0,0,,1,1,2015,0.0
+Benni,Deebo Samuel,s:5872,0,0,,1,1,2020,0.0
+Benni,Derek Carr,s:2028,0,0,,1,1,2015,17.28
+Benni,Devin Duvernay,s:6847,0,0,,1,1,2022,0.5
+Benni,Eli Manning,s:188,0,0,,1,1,2015,8.76
+Benni,Emanuel Wilson,s:11435,0,0,,1,1,2025,1.5
+Benni,Emmanuel Sanders,s:538,0,0,,1,1,2020,1.8
+Benni,Giorgio Tavecchio,s:1750,0,0,,1,1,2018,15.0
+Benni,Green Bay Packers,n:green bay packers,0,0,,1,1,2015,0.0
+Benni,Hunter Henry,s:3214,0,0,,1,1,2019,6.0
+Benni,Isiah Pacheco,s:8205,0,0,,1,1,2022,4.3
+Benni,Jacob Hollister,s:4421,0,0,,1,1,2019,6.4
+Benni,Jacquizz Rodgers,s:949,0,0,,1,1,2017,12.7
+Benni,Jamaal Charles,s:323,0,0,,1,1,2015,0.0
+Benni,Jared Cook,s:367,0,0,,1,1,2021,6.4
+Benni,Jaylen Warren,s:8228,0,0,,1,1,2023,8.6
+Benni,Jeffery Wilson,s:5284,0,0,,1,1,2018,2.6
+Benni,Jeremy Maclin,s:411,0,0,,1,1,2016,10.3
+Benni,Jonathan Williams,s:3312,0,0,,1,1,2019,2.5
+Benni,Jordan Love,s:6804,0,0,,1,1,2024,16.4
+Benni,Jordan Matthews,s:1800,0,0,,1,1,2015,2.1
+Benni,Josh Lambo,s:2671,0,0,,1,1,2015,7.0
+Benni,Joshua Palmer,s:7670,0,0,,1,1,2022,4.4
+Benni,Justin Fields,s:7591,0,0,,1,1,2022,39.38
+Benni,Justin Jackson,s:5131,0,0,,1,1,2019,6.1
+Benni,Keelan Cole,s:4622,0,0,,1,1,2017,10.8
+Benni,Kelvin Benjamin,s:2182,0,0,,1,1,2015,0.0
+Benni,Kevin White,s:2312,0,0,,1,1,2015,0.0
+Benni,Kirk Cousins,s:1166,0,0,,1,1,2018,27.38
+Benni,Logan Thomas,s:2251,0,0,,1,1,2021,3.1
+Benni,Michael Carter,s:7607,0,0,,1,1,2025,6.5
+Benni,Mike Boone,s:5209,0,0,,1,1,2019,3.3
+Benni,Mike Davis,s:2431,0,0,,1,1,2017,3.9
+Benni,Noah Fant,s:5857,0,0,,1,1,2020,1.8
+Benni,Parker Romo,s:8670,0,0,,1,1,2024,15.0
+Benni,Patrick Taylor,s:6963,0,0,,1,1,2024,2.5
+Benni,Rachaad White,s:8136,0,0,,1,1,2022,2.3
+Benni,Randy Bullock,s:1099,0,0,,1,1,2020,0.0
+Benni,Rhamondre Stevenson,s:7611,0,0,,1,1,2025,4.9
+Benni,Romeo Doubs,s:8121,0,0,,1,1,2025,0.5
+Benni,Ronald Jones,s:5052,0,0,,1,1,2020,8.7
+Benni,Samaje Perine,s:4147,0,0,,1,1,2017,3.5
+Benni,Sean Tucker,s:9506,0,0,,1,1,2024,3.8
+Benni,Seattle Seahawks,n:seattle seahawks,0,0,,1,1,2025,2.0
+Benni,T.J. Hockenson,s:5844,0,0,,1,1,2020,11.9
+Benni,Tavon Austin,s:1567,0,0,,1,1,2015,3.8
+Benni,Taylor Gabriel,s:1903,0,0,,1,1,2016,0.0
+Benni,Terrance West,s:1912,0,0,,1,1,2016,8.9
+Benni,Tony Romo,s:142,0,0,,1,1,2015,13.28
+Benni,Travis Coons,s:1929,0,0,,1,1,2017,12.0
+Benni,Trey Sermon,s:7593,0,0,,1,1,2024,12.3
+Benni,Tutu Atwell,s:7562,0,0,,1,1,2023,13.2
+Benni,Ty Montgomery,s:2399,0,0,,1,1,2016,4.0
+Benni,Tyjae Spears,s:9508,0,0,,1,1,2024,3.2
+Benni,Tyler Allgeier,s:8132,0,0,,1,1,2022,11.7
+Benni,Tyler Higbee,s:3271,0,0,,1,1,2019,11.1
+Benni,Tyler Kroft,s:2390,0,0,,1,1,2017,7.2
+Benni,Victor Cruz,s:719,0,0,,1,1,2015,0.0
+Benni,Wayne Gallman,s:4150,0,0,,1,1,2019,1.4
+Erik,Aaron Rodgers,s:96,0,0,,1,1,2019,27.1
+Erik,Allen Lazard,s:5185,0,0,,1,1,2024,1.1
+Erik,Ameer Abdullah,s:2359,0,0,,1,1,2024,5.3
+Erik,Audric Estime,s:11579,0,0,,1,1,2025,3.6
+Erik,Blake Bortles,s:1979,0,0,,1,1,2015,16.02
+Erik,Brian Hill,s:4187,0,0,,1,1,2020,5.5
+Erik,Cam Little,s:11786,0,0,,1,1,2025,6.5
+Erik,Cameron Artis-Payne,s:2477,0,0,,1,1,2015,5.6
+Erik,Cameron Meredith,s:2699,0,0,,1,1,2018,0.0
+Erik,Colby Parkinson,s:6865,0,0,,1,1,2025,2.1
+Erik,Curtis Samuel,s:4082,0,0,,1,1,2022,0.6
+Erik,Dan Carpenter,s:45,0,0,,1,1,2015,6.0
+Erik,Daniel Jones,s:5870,0,0,,1,1,2022,24.64
+Erik,Darrel Williams,s:5549,0,0,,1,1,2019,0.0
+Erik,DeeJay Dallas,s:6931,0,0,,1,1,2020,9.9
+Erik,Delanie Walker,s:284,0,0,,1,1,2015,5.5
+Erik,Derrius Guice,s:4949,0,0,,1,1,2019,4.2
+Erik,Deshaun Watson,s:4017,0,0,,1,1,2022,0.0
+Erik,Diontae Johnson,s:5937,0,0,,1,1,2020,3.7
+Erik,Dontrell Hilliard,s:5536,0,0,,1,1,2021,0.0
+Erik,Elijah Mitchell,s:7561,0,0,,1,1,2023,-0.1
+Erik,Emari Demercado,s:11199,0,0,,1,1,2025,6.1
+Erik,Geronimo Allison,s:3503,0,0,,1,1,2018,6.4
+Erik,Indianapolis Colts,n:indianapolis colts,0,0,,1,1,2025,7.0
+Erik,Isaiah Crowell,s:1901,0,0,,1,1,2015,4.1
+Erik,Jack Doyle,s:1706,0,0,,1,1,2016,3.6
+Erik,Jacquizz Rodgers,s:949,0,0,,1,1,2017,0.0
+Erik,Jake Elliott,s:4195,0,0,,1,1,2017,9.0
+Erik,Jameis Winston,s:2306,0,0,,1,1,2017,12.46
+Erik,Jamison Crowder,s:2410,0,0,,1,1,2017,-0.6
+Erik,Jared Cook,s:367,0,0,,1,1,2019,9.3
+Erik,Jimmy Graham,s:616,0,0,,1,1,2019,1.7
+Erik,Jonathan Williams,s:3312,0,0,,1,1,2019,18.1
+Erik,Justin Fields,s:7591,0,0,,1,1,2025,25.92
+Erik,Kadarius Toney,s:7606,0,0,,1,1,2022,0.0
+Erik,Kai Forbath,s:1287,0,0,,1,1,2016,8.0
+Erik,Kaleb Johnson,s:12504,0,0,,1,1,2025,-0.2
+Erik,Kalen Ballage,s:4994,0,0,,1,1,2020,7.1
+Erik,Keaton Mitchell,s:9511,0,0,,1,1,2023,12.6
+Erik,Keelan Cole,s:4622,0,0,,1,1,2018,4.0
+Erik,Kendre Miller,s:9757,0,0,,1,1,2024,3.1
+Erik,Kerwynn Williams,s:1441,0,0,,1,1,2017,2.2
+Erik,Kyle Monangai,s:12534,0,0,,1,1,2025,7.7
+Erik,Los Angeles Chargers,n:los angeles chargers,0,0,,1,1,2021,4.0
+Erik,Malcolm Brown,s:2588,0,0,,1,1,2019,4.0
+Erik,Mark Andrews,s:5012,0,0,,1,1,2019,17.3
+Erik,Marqise Lee,s:1987,0,0,,1,1,2017,1.8
+Erik,Matt Breida,s:4455,0,0,,1,1,2018,5.1
+Erik,Matt Forte,s:103,0,0,,1,1,2015,0.0
+Erik,Michael Crabtree,s:455,0,0,,1,1,2016,0.0
+Erik,Mike Gillislee,s:1353,0,0,,1,1,2016,3.4
+Erik,Mohamed Sanu,s:1071,0,0,,1,1,2017,2.6
+Erik,Noah Fant,s:5857,0,0,,1,1,2020,4.5
+Erik,Pat Freiermuth,s:7600,0,0,,1,1,2022,7.5
+Erik,Peyton Barber,s:3594,0,0,,1,1,2017,6.3
+Erik,Rex Burkhead,s:1387,0,0,,1,1,2017,3.7
+Erik,Ricky Pearsall,s:11638,0,0,,1,1,2024,7.7
+Erik,Robbie Gould,s:49,0,0,,1,1,2017,8.0
+Erik,Robert Kelley,s:3657,0,0,,1,1,2016,31.7
+Erik,Ronald Jones,s:5052,0,0,,1,1,2021,14.1
+Erik,Russell Gage,s:5110,0,0,,1,1,2020,2.0
+Erik,Sebastian Janikowski,s:118,0,0,,1,1,2016,3.0
+Erik,Sincere McCormick,s:8220,0,0,,1,1,2024,2.5
+Erik,Sterling Shepard,s:3200,0,0,,1,1,2016,2.2
+Erik,Steve Johnson,s:108,0,0,,1,1,2015,4.6
+Erik,Steve Smith,s:169,0,0,,1,1,2015,0.0
+Erik,Tavon Austin,s:1567,0,0,,1,1,2015,0.1
+Erik,Tim Tebow,e:13200,0,0,,1,1,2015,0.0
+Erik,Trey Lance,s:7610,0,0,,1,1,2021,4.4
+Erik,Tyler Loop,s:12711,0,0,,1,1,2025,4.0
+Erik,Van Jefferson,s:6853,0,0,,1,1,2023,2.4
+Erik,Vernon Davis,s:200,0,0,,1,1,2016,1.3
+Erik,Younghoe Koo,s:4666,0,0,,1,1,2019,6.0
+Juschka,Amon-Ra St. Brown,s:7547,0,0,,1,1,2021,17.0
+Juschka,Audric Estime,s:11579,0,0,,1,1,2024,2.5
+Juschka,Cleveland Browns,n:cleveland browns,0,0,,1,1,2020,5.0
+Juschka,Dalton Kincaid,s:10236,0,0,,1,1,2024,1.5
+Juschka,Dan Bailey,s:899,0,0,,1,1,2016,9.0
+Juschka,Doug Baldwin,s:988,0,0,,1,1,2018,0.0
+Juschka,Elijah Mitchell,s:7561,0,0,,1,1,2023,1.0
+Juschka,Jameson Williams,s:8148,0,0,,1,1,2022,0.0
+Juschka,Jamison Crowder,s:2410,0,0,,1,1,2021,4.4
+Juschka,Jason Myers,s:2747,0,0,,1,1,2020,3.0
+Juschka,Jaylen Warren,s:8228,0,0,,1,1,2022,1.5
+Juschka,Josh Lambo,s:2671,0,0,,1,1,2018,3.0
+Juschka,Justin Jackson,s:5131,0,0,,1,1,2021,26.2
+Juschka,Kirk Cousins,s:1166,0,0,,1,1,2021,13.16
+Juschka,Las Vegas Raiders,n:las vegas raiders,0,0,,1,1,2021,-2.0
+Juschka,Los Angeles Rams,n:los angeles rams,0,0,,1,1,2017,0.0
+Juschka,Malcolm Brown,s:2588,0,0,,1,1,2020,4.7
+Juschka,Marquise Goodwin,s:1346,0,0,,1,1,2022,3.3
+Juschka,Mecole Hardman,s:5917,0,0,,1,1,2022,7.6
+Juschka,Mike Wallace,s:365,0,0,,1,1,2015,2.3
+Juschka,Sam Darnold,s:4943,0,0,,1,1,2024,34.58
+Juschka,Sammy Watkins,s:1817,0,0,,1,1,2020,3.8
+Juschka,Tampa Bay Buccaneers,n:tampa bay buccaneers,0,0,,1,1,2021,0.0
+Juschka,Tez Johnson,s:12485,0,0,,1,1,2025,4.3
+Juschka,Tony Pollard,s:5967,0,0,,1,1,2022,2.2
+Juschka,Torrey Smith,s:826,0,0,,1,1,2015,1.1
+Juschka,Travis Coons,s:1929,0,0,,1,1,2015,6.0
+Kessi,--empty--,n:empty,0,0,,1,1,2017,0.0
+Kessi,A.J. Green,s:830,0,0,,1,1,2020,5.1
+Kessi,Alex Collins,s:3327,0,0,,1,1,2017,5.5
+Kessi,Ameer Abdullah,s:2359,0,0,,1,1,2015,4.4
+Kessi,Benny Snell,s:6156,0,0,,1,1,2020,0.0
+Kessi,Bub Means,s:11748,0,0,,1,1,2024,3.7
+Kessi,C.J. Spiller,s:507,0,0,,1,1,2015,1.0
+Kessi,Carson Palmer,s:91,0,0,,1,1,2017,2.88
+Kessi,Chris Boswell,s:1945,0,0,,1,1,2017,6.0
+Kessi,DeAndre Washington,s:3300,0,0,,1,1,2017,1.4
+Kessi,Demaryius Thomas,s:560,0,0,,1,1,2018,11.7
+Kessi,Denver Broncos,n:denver broncos,0,0,,1,1,2015,0.0
+Kessi,Dez Bryant,s:574,0,0,,1,1,2020,0.0
+Kessi,Evan McPherson,s:7839,0,0,,1,1,2022,6.0
+Kessi,Green Bay Packers,n:green bay packers,0,0,,1,1,2024,0.0
+Kessi,Harrison Butker,s:4227,0,0,,1,1,2022,9.4
+Kessi,Isaiah Likely,s:8131,0,0,,1,1,2023,0.4
+Kessi,Jamaal Williams,s:4149,0,0,,1,1,2017,0.1
+Kessi,Jameis Winston,s:2306,0,0,,1,1,2017,3.48
+Kessi,Jarryd Hayne,s:11056,0,0,,1,1,2015,0.0
+Kessi,Jermaine Kearse,s:1290,0,0,,1,1,2017,1.4
+Kessi,Jordan Whittington,s:11623,0,0,,1,1,2024,0.0
+Kessi,Ladarius Green,s:1139,0,0,,1,1,2015,4.7
+Kessi,Matt Breida,s:4455,0,0,,1,1,2021,0.8
+Kessi,Matt Gay,s:6083,0,0,,1,1,2021,8.0
+Kessi,Minnesota Vikings,n:minnesota vikings,0,0,,1,1,2015,8.0
+Kessi,Mo Alie-Cox,s:4054,0,0,,1,1,2021,8.5
+Kessi,Randy Bullock,s:1099,0,0,,1,1,2020,15.0
+Kessi,Rex Burkhead,s:1387,0,0,,1,1,2017,8.3
+Kessi,Sammy Watkins,s:1817,0,0,,1,1,2017,1.7
+Kessi,Tyler Bass,s:7042,0,0,,1,1,2024,10.0
+Kessi,Will Levis,s:9999,0,0,,1,1,2023,5.96
+Marv,Andy Dalton,s:829,0,0,,1,1,2017,18.72
+Marv,Austin Hooper,s:3202,0,0,,1,1,2020,1.5
+Marv,Ben Roethlisberger,s:138,0,0,,1,1,2016,8.68
+Marv,Carson Wentz,s:3161,0,0,,1,1,2017,27.26
+Marv,Charcandrick West,s:2024,0,0,,1,1,2016,7.4
+Marv,Chicago Bears,n:chicago bears,0,0,,1,1,2024,0.0
+Marv,Cody Parkey,s:1974,0,0,,1,1,2018,4.0
+Marv,Dallas Cowboys,n:dallas cowboys,0,0,,1,1,2019,0.0
+Marv,Daniel Carlson,s:5095,0,0,,1,1,2019,7.0
+Marv,David Njoku,s:4033,0,0,,1,1,2022,7.1
+Marv,Detroit Lions,n:detroit lions,0,0,,1,1,2024,7.0
+Marv,Devonta Freeman,s:2168,0,0,,1,1,2021,5.8
+Marv,Dez Bryant,s:574,0,0,,1,1,2018,0.0
+Marv,Eric Ebron,s:2118,0,0,,1,1,2016,9.3
+Marv,Graham Gano,s:503,0,0,,1,1,2022,0.0
+Marv,Irv Smith,s:6126,0,0,,1,1,2022,2.8
+Marv,James Starks,s:762,0,0,,1,1,2015,5.1
+Marv,Jason Sanders,s:5119,0,0,,1,1,2020,6.0
+Marv,Jeffery Wilson,s:5284,0,0,,1,1,2024,1.2
+Marv,Jeremy Hill,s:1892,0,0,,1,1,2018,3.1
+Marv,Jeremy Kerley,s:817,0,0,,1,1,2016,1.2
+Marv,Jeremy Maclin,s:411,0,0,,1,1,2016,7.8
+Marv,Kai Forbath,s:1287,0,0,,1,1,2017,8.0
+Marv,Keaontay Ingram,s:8221,0,0,,1,1,2023,5.1
+Marv,Miami Dolphins,n:miami dolphins,0,0,,1,1,2021,0.0
+Marv,Mike Davis,s:2431,0,0,,1,1,2021,3.5
+Marv,Randy Bullock,s:1099,0,0,,1,1,2021,7.0
+Marv,Rashad Jennings,s:380,0,0,,1,1,2015,1.9
+Marv,Richard Rodgers,s:2146,0,0,,1,1,2015,3.4
+Marv,Rico Dowdle,s:7021,0,0,,1,1,2024,3.2
+Marv,Royce Freeman,s:5046,0,0,,1,1,2023,7.3
+Marv,San Francisco 49ers,n:san francisco 49ers,0,0,,1,1,2021,1.0
+Marv,Tennessee Titans,n:tennessee titans,0,0,,1,1,2015,0.0
+Marv,Thomas Rawls,s:2585,0,0,,1,1,2017,0.4
+Marv,Tom Brady,s:167,0,0,,1,1,2022,11.34
+Marv,Tyler Boyd,s:3225,0,0,,1,1,2019,24.8
+Ritz,Alfred Morris,s:1170,0,0,,1,1,2018,1.8
+Ritz,Andy Borregales,s:4569923,0,0,,1,1,2025,18.8
+Ritz,Blaine Gabbert,s:862,0,0,,1,1,2015,13.66
+Ritz,Blair Walsh,s:1214,0,0,,1,1,2017,6.0
+Ritz,Brandon LaFell,s:613,0,0,,1,1,2016,0.6
+Ritz,C.J. Prosise,s:3204,0,0,,1,1,2016,14.1
+Ritz,Cade Otton,s:8111,0,0,,1,1,2024,4.4
+Ritz,Carolina Panthers,n:carolina panthers,0,0,,1,1,2015,0.0
+Ritz,Chad Ryland,s:10955,0,0,,1,1,2024,16.6
+Ritz,Charles Clay,s:801,0,0,,1,1,2017,3.1
+Ritz,Chase Edmonds,s:5000,0,0,,1,1,2019,1.3
+Ritz,Cleveland Browns,n:cleveland browns,0,0,,1,1,2023,13.0
+Ritz,Clyde Edwards-Helaire,s:6820,0,0,,1,1,2023,6.8
+Ritz,Cole Kmet,s:6826,0,0,,1,1,2023,4.6
+Ritz,Dalton Kincaid,s:10236,0,0,,1,1,2025,8.8
+Ritz,Danny Amendola,s:491,0,0,,1,1,2015,1.1
+Ritz,Danny Woodhead,s:735,0,0,,1,1,2017,3.7
+Ritz,Darnell Mooney,s:7090,0,0,,1,1,2024,3.8
+Ritz,DeSean Jackson,s:147,0,0,,1,1,2018,3.7
+Ritz,Deebo Samuel,s:5872,0,0,,1,1,2019,3.7
+Ritz,Delanie Walker,s:284,0,0,,1,1,2019,6.4
+Ritz,Devin Singletary,s:6130,0,0,,1,1,2023,1.5
+Ritz,Duke Johnson,s:2382,0,0,,1,1,2015,3.2
+Ritz,Elijah Moore,s:7596,0,0,,1,1,2021,5.3
+Ritz,Eno Benjamin,s:6951,0,0,,1,1,2022,4.5
+Ritz,George Kittle,s:4217,0,0,,1,1,2019,5.4
+Ritz,Jahan Dotson,s:8119,0,0,,1,1,2022,1.0
+Ritz,James Conner,s:4137,0,0,,1,1,2019,3.2
+Ritz,Justin Jefferson,s:6794,0,0,,1,1,2025,8.5
+Ritz,K.J. Osborn,s:7066,0,0,,1,1,2021,14.3
+Ritz,Kenneth Gainwell,s:7567,0,0,,1,1,2025,12.6
+Ritz,Kenny Britt,s:366,0,0,,1,1,2016,10.9
+Ritz,Kyle Pitts,s:7553,0,0,,1,1,2025,11.7
+Ritz,Malcolm Brown,s:2588,0,0,,1,1,2019,4.7
+Ritz,Martellus Bennett,s:40,0,0,,1,1,2016,1.4
+Ritz,Matthew Stafford,s:421,0,0,,1,1,2017,22.44
+Ritz,Miami Dolphins,n:miami dolphins,0,0,,1,1,2020,9.0
+Ritz,Mohamed Sanu,s:1071,0,0,,1,1,2016,1.9
+Ritz,Patrick Taylor,s:6963,0,0,,1,1,2024,0.0
+Ritz,Rome Odunze,s:11620,0,0,,1,1,2024,1.0
+Ritz,Russell Wilson,s:1234,0,0,,1,1,2019,16.6
+Ritz,Ryan Griffin,s:1425,0,0,,1,1,2017,7.2
+Ritz,Ryan Succop,s:391,0,0,,1,1,2021,14.0
+Ritz,Sam Ficken,s:3909,0,0,,1,1,2017,3.0
+Ritz,Samaje Perine,s:4147,0,0,,1,1,2024,4.0
+Ritz,Steven Hauschka,s:775,0,0,,1,1,2017,8.0
+Ritz,Taysom Hill,s:4381,0,0,,1,1,2022,4.54
+Ritz,Terrance West,s:1912,0,0,,1,1,2016,2.6
+Ritz,Terry McLaurin,s:5927,0,0,,1,1,2019,8.6
+Ritz,Theo Johnson,s:11597,0,0,,1,1,2025,7.5
+Ritz,Tre Tucker,s:10213,0,0,,1,1,2025,2.2
+Ritz,Tyler Higbee,s:3271,0,0,,1,1,2021,4.6
+Ritz,Tyrell Williams,s:2583,0,0,,1,1,2016,0.4
+Ritz,Zach Miller,s:749,0,0,,1,1,2016,1.4
+Simi,Alfred Morris,s:1170,0,0,,1,1,2018,0.0
+Simi,Austin Hooper,s:3202,0,0,,1,1,2017,0.7
+Simi,Baker Mayfield,s:4892,0,0,,1,1,2019,23.58
+Simi,Brandin Cooks,s:2197,0,0,,1,1,2020,20.1
+Simi,Cairo Santos,s:2020,0,0,,1,1,2015,9.0
+Simi,Cam Little,s:11786,0,0,,1,1,2025,11.7
+Simi,Dawson Knox,s:5906,0,0,,1,1,2022,2.5
+Simi,DeAndre Washington,s:3300,0,0,,1,1,2019,16.6
+Simi,Graham Gano,s:503,0,0,,1,1,2021,3.0
+Simi,Harrison Butker,s:4227,0,0,,1,1,2024,10.6
+Simi,JaMycal Hasty,s:6996,0,0,,1,1,2020,1.3
+Simi,Jameis Winston,s:2306,0,0,,1,1,2019,18.32
+Simi,Jarvis Landry,s:1825,0,0,,1,1,2020,10.28
+Simi,Javonte Williams,s:7588,0,0,,1,1,2024,0.0
+Simi,Jeffery Wilson,s:5284,0,0,,1,1,2020,26.4
+Simi,Jeremy McNichols,s:4219,0,0,,1,1,2021,3.5
+Simi,Jordy Nelson,s:175,0,0,,1,1,2017,1.1
+Simi,Le'Veon Bell,s:1408,0,0,,1,1,2020,6.7
+Simi,Logan Thomas,s:2251,0,0,,1,1,2023,2.0
+Simi,Marlon Mack,s:4152,0,0,,1,1,2021,1.6
+Simi,Mason Crosby,s:59,0,0,,1,1,2021,6.0
+Simi,Matt Gay,s:6083,0,0,,1,1,2025,2.0
+Simi,Mecole Hardman,s:5917,0,0,,1,1,2022,0.0
+Simi,Nyheim Hines,s:5347,0,0,,1,1,2022,0.8
+Simi,Rodrigo Blankenship,s:7062,0,0,,1,1,2021,4.0
+Simi,Ryan Griffin,s:1425,0,0,,1,1,2019,7.3
+Simi,Salvon Ahmed,s:6918,0,0,,1,1,2020,0.3
+Simi,Terrance West,s:1912,0,0,,1,1,2016,11.3
+Simi,Tim Tebow,e:13200,0,0,,1,1,2024,0.0
+Simi,Tyler Higbee,s:3271,0,0,,1,1,2020,2.0
+Simi,Tyrell Williams,s:2583,0,0,,1,1,2016,2.8
+Simi,Vance McDonald,s:1587,0,0,,1,1,2018,2.7
+Simi,Zack Moss,s:6845,0,0,,1,1,2022,7.0
+Tommy,A.J. McCarron,s:1895,0,0,,1,1,2015,11.88
+Tommy,Albert Wilson,s:2025,0,0,,1,1,2018,3.6
+Tommy,Aldrick Rosas,s:3827,0,0,,1,1,2019,5.0
+Tommy,Benny Snell,s:6156,0,0,,1,1,2020,1.0
+Tommy,Breshad Perriman,s:2331,0,0,,1,1,2019,10.2
+Tommy,Brian Quick,s:1208,0,0,,1,1,2016,4.8
+Tommy,Caleb Williams,s:11560,0,0,,1,1,2024,14.06
+Tommy,Cam Newton,s:954,0,0,,1,1,2020,3.96
+Tommy,Carlos Hyde,s:2257,0,0,,1,1,2015,30.2
+Tommy,Chicago Bears,n:chicago bears,0,0,,1,1,2024,8.0
+Tommy,Corey Clement,s:4651,0,0,,1,1,2018,7.5
+Tommy,Curtis Samuel,s:4082,0,0,,1,1,2020,1.2
+Tommy,Darrell Henderson,s:5916,0,0,,1,1,2019,0.0
+Tommy,Delanie Walker,s:284,0,0,,1,1,2018,5.2
+Tommy,Demarcus Robinson,s:3286,0,0,,1,1,2019,0.0
+Tommy,Deon Jackson,s:7551,0,0,,1,1,2023,-1.2
+Tommy,Duke Johnson,s:2382,0,0,,1,1,2015,7.1
+Tommy,Gardner Minshew,s:6011,0,0,,1,1,2020,9.2
+Tommy,Jacoby Brissett,s:3257,0,0,,1,1,2019,13.16
+Tommy,Jakobi Meyers,s:5947,0,0,,1,1,2020,3.8
+Tommy,James Washington,s:5024,0,0,,1,1,2018,0.0
+Tommy,Jared Cook,s:367,0,0,,1,1,2017,12.6
+Tommy,Joshua Palmer,s:7670,0,0,,1,1,2024,1.5
+Tommy,Larry Donnell,s:1759,0,0,,1,1,2015,2.2
+Tommy,Mark Walton,s:4997,0,0,,1,1,2019,4.1
+Tommy,Marlon Mack,s:4152,0,0,,1,1,2018,0.0
+Tommy,Mike Wallace,s:365,0,0,,1,1,2015,4.9
+Tommy,Nick Folk,s:650,0,0,,1,1,2021,7.0
+Tommy,Rashee Rice,s:10229,0,0,,1,1,2023,5.7
+Tommy,Robert Kelley,s:3657,0,0,,1,1,2017,3.0
+Tommy,Salvon Ahmed,s:6918,0,0,,1,1,2020,7.4
+Tommy,Sterling Shepard,s:3200,0,0,,1,1,2016,10.2
+Tommy,Tyler Higbee,s:3271,0,0,,1,1,2022,4.6
+Tommy,Tyler Lockett,s:2374,0,0,,1,1,2015,1.7
+Tommy,Will Fuller,s:3157,0,0,,1,1,2017,1.5
+Marv,Wil Lutz,n:wil lutz,6,6,"2017,2018,2019,2020,2021,2022",0,0,,0.0
+Erik,Christian McCaffrey,n:christian mccaffrey,5,5,"2020,2021,2022,2023,2024",0,0,,0.0
+Simi,Russell Wilson,n:russell wilson,5,5,"2015,2016,2017,2020,2021",0,0,,0.0
+Benni,David Johnson,n:david johnson,4,4,"2017,2018,2020,2021",0,0,,0.0
+Erik,Chris Godwin,n:chris godwin,4,4,"2020,2022,2024,2025",0,0,,0.0
+Juschka,Marshawn Lynch,n:marshawn lynch,4,4,"2015,2017,2018,2020",0,0,,0.0
+Juschka,Stefon Diggs,n:stefon diggs,4,4,"2018,2019,2021,2023",0,0,,0.0
+Kessi,Jonathan Taylor,n:jonathan taylor,4,4,"2020,2022,2023,2024",0,0,,0.0
+Marv,Leonard Fournette,n:leonard fournette,4,4,"2017,2018,2021,2022",0,0,,0.0
+Tommy,San Francisco 49ers,n:san francisco 49ers,4,4,"2015,2021,2022,2025",0,0,,0.0
+Benni,Chris Godwin,n:chris godwin,3,3,"2019,2021,2023",0,0,,0.0
+Benni,Dalvin Cook,n:dalvin cook,3,3,"2017,2019,2021",0,0,,0.0
+Benni,Davante Adams,n:davante adams,3,3,"2019,2021,2023",0,0,,0.0
+Benni,James Conner,n:james conner,3,3,"2019,2022,2025",0,0,,0.0
+Benni,Odell Beckham,n:odell beckham,3,3,"2015,2016,2018",0,0,,0.0
+Benni,Travis Kelce,n:travis kelce,3,3,"2016,2022,2023",0,0,,0.0
+Erik,Calvin Ridley,n:calvin ridley,3,3,"2019,2020,2023",0,0,,0.0
+Erik,CeeDee Lamb,n:ceedee lamb,3,3,"2022,2023,2025",0,0,,0.0
+Erik,Ezekiel Elliott,n:ezekiel elliott,3,3,"2016,2017,2018",0,0,,0.0
+Erik,Travis Kelce,n:travis kelce,3,3,"2015,2017,2018",0,0,,0.0
+Juschka,Demaryius Thomas,n:demaryius thomas,3,3,"2015,2016,2017",0,0,,0.0
+Juschka,Drew Brees,n:drew brees,3,3,"2015,2018,2019",0,0,,0.0
+Juschka,Jarvis Landry,n:jarvis landry,3,3,"2016,2017,2019",0,0,,0.0
+Juschka,Josh Jacobs,n:josh jacobs,3,3,"2020,2022,2025",0,0,,0.0
+Kessi,Cooper Kupp,n:cooper kupp,3,3,"2019,2021,2024",0,0,,0.0
+Kessi,George Kittle,n:george kittle,3,3,"2020,2023,2024",0,0,,0.0
+Marv,A.J. Brown,n:aj brown,3,3,"2021,2022,2024",0,0,,0.0
+Marv,Corey Davis,n:corey davis,3,3,"2017,2018,2019",0,0,,0.0
+Marv,DeAndre Hopkins,n:deandre hopkins,3,3,"2016,2018,2022",0,0,,0.0
+Marv,Joe Mixon,n:joe mixon,3,3,"2017,2021,2022",0,0,,0.0
+Marv,Josh Allen,n:josh allen,3,3,"2021,2024,2025",0,0,,0.0
+Marv,Terry McLaurin,n:terry mclaurin,3,3,"2020,2022,2024",0,0,,0.0
+Marv,Travis Kelce,n:travis kelce,3,3,"2019,2020,2021",0,0,,0.0
+Ritz,Alvin Kamara,n:alvin kamara,3,3,"2018,2022,2025",0,0,,0.0
+Ritz,Amari Cooper,n:amari cooper,3,3,"2019,2021,2022",0,0,,0.0
+Ritz,Keenan Allen,n:keenan allen,3,3,"2016,2017,2020",0,0,,0.0
+Ritz,Mike Evans,n:mike evans,3,3,"2018,2020,2023",0,0,,0.0
+Ritz,Rob Gronkowski,n:rob gronkowski,3,3,"2015,2016,2021",0,0,,0.0
+Simi,A.J. Green,n:aj green,3,3,"2015,2018,2019",0,0,,0.0
+Simi,Derrick Henry,n:derrick henry,3,3,"2019,2022,2024",0,0,,0.0
+Simi,JuJu Smith-Schuster,n:juju smith schuster,3,3,"2019,2020,2022",0,0,,0.0
+Tommy,Alvin Kamara,n:alvin kamara,3,3,"2019,2021,2024",0,0,,0.0
+Tommy,Julian Edelman,n:julian edelman,3,3,"2015,2017,2019",0,0,,0.0
+Tommy,Michael Thomas,n:michael thomas,3,3,"2018,2019,2020",0,0,,0.0
+Tommy,Sammy Watkins,n:sammy watkins,3,3,"2015,2016,2019",0,0,,0.0
+Tommy,Saquon Barkley,n:saquon barkley,3,3,"2023,2024,2025",0,0,,0.0
+Benni,Aaron Rodgers,n:aaron rodgers,2,2,"2018,2019",0,0,,0.0
+Benni,Brandin Cooks,n:brandin cooks,2,2,"2017,2022",0,0,,0.0
+Benni,Christian McCaffrey,n:christian mccaffrey,2,2,"2017,2018",0,0,,0.0
+Benni,Derrius Guice,n:derrius guice,2,2,"2018,2019",0,0,,0.0
+Benni,Javonte Williams,n:javonte williams,2,2,"2021,2024",0,0,,0.0
+Benni,Jaylen Waddle,n:jaylen waddle,2,2,"2022,2024",0,0,,0.0
+Benni,Jordan Reed,n:jordan reed,2,2,"2017,2019",0,0,,0.0
+Benni,Justin Jefferson,n:justin jefferson,2,2,"2021,2025",0,0,,0.0
+Benni,Justin Tucker,n:justin tucker,2,2,"2015,2020",0,0,,0.0
+Benni,Kareem Hunt,n:kareem hunt,2,2,"2021,2022",0,0,,0.0
+Benni,Lamar Jackson,n:lamar jackson,2,2,"2020,2023",0,0,,0.0
+Benni,Malik Nabers,n:malik nabers,2,2,"2024,2025",0,0,,0.0
+Benni,Mark Ingram,n:mark ingram,2,2,"2016,2018",0,0,,0.0
+Benni,Mike Williams,n:mike williams,2,2,"2022,2023",0,0,,0.0
+Benni,Robert Woods,n:robert woods,2,2,"2019,2020",0,0,,0.0
+Benni,Ronald Jones,n:ronald jones,2,2,"2020,2021",0,0,,0.0
+Benni,Sammy Watkins,n:sammy watkins,2,2,"2017,2018",0,0,,0.0
+Benni,T.Y. Hilton,n:ty hilton,2,2,"2017,2019",0,0,,0.0
+Benni,Tom Brady,n:tom brady,2,2,"2016,2022",0,0,,0.0
+Erik,Allen Robinson,n:allen robinson,2,2,"2020,2022",0,0,,0.0
+Erik,Alshon Jeffery,n:alshon jeffery,2,2,"2016,2018",0,0,,0.0
+Erik,Amari Cooper,n:amari cooper,2,2,"2017,2024",0,0,,0.0
+Erik,Brandin Cooks,n:brandin cooks,2,2,"2019,2021",0,0,,0.0
+Erik,Brandon Aiyuk,n:brandon aiyuk,2,2,"2021,2023",0,0,,0.0
+Erik,Breshad Perriman,n:breshad perriman,2,2,"2015,2016",0,0,,0.0
+Erik,C.J. Anderson,n:cj anderson,2,2,"2017,2018",0,0,,0.0
+Erik,Cam Akers,n:cam akers,2,2,"2020,2022",0,0,,0.0
+Erik,Greg Zuerlein,n:greg zuerlein,2,2,"2019,2020",0,0,,0.0
+Erik,Gus Edwards,n:gus edwards,2,2,"2021,2024",0,0,,0.0
+Erik,Jerry Jeudy,n:jerry jeudy,2,2,"2022,2023",0,0,,0.0
+Erik,Joe Mixon,n:joe mixon,2,2,"2023,2024",0,0,,0.0
+Erik,Justin Tucker,n:justin tucker,2,2,"2018,2023",0,0,,0.0
+Erik,Keenan Allen,n:keenan allen,2,2,"2019,2021",0,0,,0.0
+Erik,Kyler Murray,n:kyler murray,2,2,"2020,2024",0,0,,0.0
+Erik,Le'Veon Bell,n:leveon bell,2,2,"2016,2017",0,0,,0.0
+Erik,Mike Evans,n:mike evans,2,2,"2015,2016",0,0,,0.0
+Erik,Najee Harris,n:najee harris,2,2,"2021,2025",0,0,,0.0
+Erik,Robert Woods,n:robert woods,2,2,"2018,2021",0,0,,0.0
+Erik,Russell Wilson,n:russell wilson,2,2,"2018,2022",0,0,,0.0
+Erik,Stephen Gostkowski,n:stephen gostkowski,2,2,"2015,2017",0,0,,0.0
+Juschka,Adrian Peterson,n:adrian peterson,2,2,"2019,2021",0,0,,0.0
+Juschka,Austin Ekeler,n:austin ekeler,2,2,"2019,2021",0,0,,0.0
+Juschka,Brian Robinson,n:brian robinson,2,2,"2023,2024",0,0,,0.0
+Juschka,Chris Ivory,n:chrisory,2,2,"2015,2016",0,0,,0.0
+Juschka,D'Andre Swift,n:dandre swift,2,2,"2024,2025",0,0,,0.0
+Juschka,Davante Adams,n:davante adams,2,2,"2017,2025",0,0,,0.0
+Juschka,Devonta Freeman,n:devonta freeman,2,2,"2016,2017",0,0,,0.0
+Juschka,Drake London,n:drake london,2,2,"2023,2024",0,0,,0.0
+Juschka,Garrett Wilson,n:garrett wilson,2,2,"2024,2025",0,0,,0.0
+Juschka,Ja'Marr Chase,n:jamarr chase,2,2,"2022,2025",0,0,,0.0
+Juschka,Jordan Matthews,n:jordan matthews,2,2,"2015,2016",0,0,,0.0
+Juschka,Kelvin Benjamin,n:kelvin benjamin,2,2,"2015,2017",0,0,,0.0
+Juschka,Larry Fitzgerald,n:larry fitzgerald,2,2,"2018,2019",0,0,,0.0
+Juschka,Mason Crosby,n:mason crosby,2,2,"2016,2022",0,0,,0.0
+Juschka,Melvin Gordon,n:melvin gordon,2,2,"2017,2018",0,0,,0.0
+Juschka,Mike Evans,n:mike evans,2,2,"2022,2025",0,0,,0.0
+Juschka,Sam Ficken,n:sam ficken,2,2,"2020,2023",0,0,,0.0
+Juschka,Travis Etienne,n:travis etienne,2,2,"2024,2025",0,0,,0.0
+Kessi,Aaron Rodgers,n:aaron rodgers,2,2,"2017,2022",0,0,,0.0
+Kessi,Amon-Ra St. Brown,n:amon ra st brown,2,2,"2022,2025",0,0,,0.0
+Kessi,Antonio Brown,n:antonio brown,2,2,"2016,2019",0,0,,0.0
+Kessi,Ben Roethlisberger,n:ben roethlisberger,2,2,"2015,2018",0,0,,0.0
+Kessi,Brandin Cooks,n:brandin cooks,2,2,"2018,2023",0,0,,0.0
+Kessi,Brandon Aubrey,n:brandon aubrey,2,2,"2024,2025",0,0,,0.0
+Kessi,Brandon LaFell,n:brandon lafell,2,2,"2015,2016",0,0,,0.0
+Kessi,D.J. Moore,n:dj moore,2,2,"2018,2020",0,0,,0.0
+Kessi,Darren Waller,n:darren waller,2,2,"2021,2022",0,0,,0.0
+Kessi,Derrick Henry,n:derrick henry,2,2,"2021,2025",0,0,,0.0
+Kessi,Emmanuel Sanders,n:emmanuel sanders,2,2,"2015,2020",0,0,,0.0
+Kessi,Ezekiel Elliott,n:ezekiel elliott,2,2,"2019,2020",0,0,,0.0
+Kessi,Jarvis Landry,n:jarvis landry,2,2,"2018,2020",0,0,,0.0
+Kessi,Jaylen Waddle,n:jaylen waddle,2,2,"2023,2025",0,0,,0.0
+Kessi,Jeremy Hill,n:jeremy hill,2,2,"2015,2017",0,0,,0.0
+Kessi,Joe Mixon,n:joe mixon,2,2,"2019,2025",0,0,,0.0
+Kessi,Julio Jones,n:julio jones,2,2,"2015,2017",0,0,,0.0
+Kessi,Justin Tucker,n:justin tucker,2,2,"2017,2021",0,0,,0.0
+Kessi,Le'Veon Bell,n:leveon bell,2,2,"2015,2018",0,0,,0.0
+Kessi,Patrick Mahomes,n:patrick mahomes,2,2,"2024,2025",0,0,,0.0
+Kessi,Ronald Jones,n:ronald jones,2,2,"2019,2022",0,0,,0.0
+Kessi,Stephen Gostkowski,n:stephen gostkowski,2,2,"2018,2019",0,0,,0.0
+Kessi,Tee Higgins,n:tee higgins,2,2,"2021,2025",0,0,,0.0
+Kessi,Terry McLaurin,n:terry mclaurin,2,2,"2021,2023",0,0,,0.0
+Kessi,Todd Gurley,n:todd gurley,2,2,"2015,2020",0,0,,0.0
+Kessi,Tony Pollard,n:tony pollard,2,2,"2021,2024",0,0,,0.0
+Marv,Andrew Luck,n:andrew luck,2,2,"2016,2018",0,0,,0.0
+Marv,Brandin Cooks,n:brandin cooks,2,2,"2015,2020",0,0,,0.0
+Marv,Breece Hall,n:breece hall,2,2,"2022,2024",0,0,,0.0
+Marv,Cam Newton,n:cam newton,2,2,"2015,2016",0,0,,0.0
+Marv,Dak Prescott,n:dak prescott,2,2,"2020,2022",0,0,,0.0
+Marv,Dan Bailey,n:dan bailey,2,2,"2015,2016",0,0,,0.0
+Marv,Eddie Lacy,n:eddie lacy,2,2,"2015,2017",0,0,,0.0
+Marv,James Cook,n:james cook,2,2,"2024,2025",0,0,,0.0
+Marv,Javonte Williams,n:javonte williams,2,2,"2023,2025",0,0,,0.0
+Marv,JuJu Smith-Schuster,n:juju smith schuster,2,2,"2021,2023",0,0,,0.0
+Marv,Justin Jefferson,n:justin jefferson,2,2,"2022,2023",0,0,,0.0
+Marv,Kenny Golladay,n:kenny golladay,2,2,"2020,2021",0,0,,0.0
+Marv,Marlon Mack,n:marlon mack,2,2,"2019,2020",0,0,,0.0
+Marv,Melvin Gordon,n:melvin gordon,2,2,"2016,2020",0,0,,0.0
+Marv,Michael Thomas,n:michael thomas,2,2,"2017,2023",0,0,,0.0
+Marv,Sony Michel,n:sony michel,2,2,"2018,2019",0,0,,0.0
+Marv,Tyler Lockett,n:tyler lockett,2,2,"2016,2019",0,0,,0.0
+Ritz,Aaron Rodgers,n:aaron rodgers,2,2,"2016,2021",0,0,,0.0
+Ritz,Carlos Hyde,n:carlos hyde,2,2,"2017,2018",0,0,,0.0
+Ritz,Courtland Sutton,n:courtland sutton,2,2,"2019,2023",0,0,,0.0
+Ritz,D.K. Metcalf,n:dk metcalf,2,2,"2023,2024",0,0,,0.0
+Ritz,Davante Adams,n:davante adams,2,2,"2018,2022",0,0,,0.0
+Ritz,Emmanuel Sanders,n:emmanuel sanders,2,2,"2017,2018",0,0,,0.0
+Ritz,Golden Tate,n:golden tate,2,2,"2015,2018",0,0,,0.0
+Ritz,Harrison Butker,n:harrison butker,2,2,"2020,2021",0,0,,0.0
+Ritz,Isiah Pacheco,n:isiah pacheco,2,2,"2024,2025",0,0,,0.0
+Ritz,Joe Burrow,n:joe burrow,2,2,"2024,2025",0,0,,0.0
+Ritz,Josh Jacobs,n:josh jacobs,2,2,"2021,2023",0,0,,0.0
+Ritz,Julian Edelman,n:julian edelman,2,2,"2016,2020",0,0,,0.0
+Ritz,Justin Tucker,n:justin tucker,2,2,"2022,2024",0,0,,0.0
+Ritz,Kareem Hunt,n:kareem hunt,2,2,"2018,2020",0,0,,0.0
+Ritz,Kenneth Walker,n:kenneth walker,2,2,"2022,2024",0,0,,0.0
+Ritz,Kenyan Drake,n:kenyan drake,2,2,"2019,2020",0,0,,0.0
+Ritz,Kyren Williams,n:kyren williams,2,2,"2024,2025",0,0,,0.0
+Ritz,Lamar Miller,n:lamar miller,2,2,"2016,2017",0,0,,0.0
+Ritz,Matt Ryan,n:matt ryan,2,2,"2019,2020",0,0,,0.0
+Ritz,Melvin Gordon,n:melvin gordon,2,2,"2015,2019",0,0,,0.0
+Ritz,Stefon Diggs,n:stefon diggs,2,2,"2020,2024",0,0,,0.0
+Ritz,Tevin Coleman,n:tevin coleman,2,2,"2019,2020",0,0,,0.0
+Ritz,Tom Brady,n:tom brady,2,2,"2017,2021",0,0,,0.0
+Ritz,Tyreek Hill,n:tyreek hill,2,2,"2021,2024",0,0,,0.0
+Ritz,Zach Ertz,n:zach ertz,2,2,"2018,2020",0,0,,0.0
+Simi,Amari Cooper,n:amari cooper,2,2,"2015,2023",0,0,,0.0
+Simi,Antonio Brown,n:antonio brown,2,2,"2017,2018",0,0,,0.0
+Simi,Cam Newton,n:cam newton,2,2,"2018,2019",0,0,,0.0
+Simi,CeeDee Lamb,n:ceedee lamb,2,2,"2021,2024",0,0,,0.0
+Simi,Courtland Sutton,n:courtland sutton,2,2,"2021,2022",0,0,,0.0
+Simi,D.J. Moore,n:dj moore,2,2,"2023,2024",0,0,,0.0
+Simi,David Montgomery,n:david montgomery,2,2,"2019,2023",0,0,,0.0
+Simi,DeAndre Hopkins,n:deandre hopkins,2,2,"2017,2024",0,0,,0.0
+Simi,Deebo Samuel,n:deebo samuel,2,2,"2021,2024",0,0,,0.0
+Simi,Greg Olsen,n:greg olsen,2,2,"2016,2017",0,0,,0.0
+Simi,Jordan Howard,n:jordan howard,2,2,"2017,2019",0,0,,0.0
+Simi,Julio Jones,n:julio jones,2,2,"2016,2020",0,0,,0.0
+Simi,Lamar Miller,n:lamar miller,2,2,"2015,2019",0,0,,0.0
+Simi,Latavius Murray,n:latavius murray,2,2,"2015,2017",0,0,,0.0
+Simi,Mark Andrews,n:mark andrews,2,2,"2021,2022",0,0,,0.0
+Simi,Matt Bryant,n:matt bryant,2,2,"2017,2018",0,0,,0.0
+Simi,Michael Crabtree,n:michael crabtree,2,2,"2016,2018",0,0,,0.0
+Simi,Raheem Mostert,n:raheem mostert,2,2,"2020,2021",0,0,,0.0
+Simi,Saquon Barkley,n:saquon barkley,2,2,"2019,2020",0,0,,0.0
+Simi,Tyler Bass,n:tyler bass,2,2,"2022,2023",0,0,,0.0
+Simi,Tyler Lockett,n:tyler lockett,2,2,"2020,2022",0,0,,0.0
+Simi,Tyreek Hill,n:tyreek hill,2,2,"2019,2025",0,0,,0.0
+Tommy,Aaron Jones,n:aaron jones,2,2,"2024,2025",0,0,,0.0
+Tommy,Adrian Peterson,n:adrian peterson,2,2,"2015,2016",0,0,,0.0
+Tommy,Allen Robinson,n:allen robinson,2,2,"2017,2019",0,0,,0.0
+Tommy,Amari Cooper,n:amari cooper,2,2,"2018,2020",0,0,,0.0
+Tommy,Amon-Ra St. Brown,n:amon ra st brown,2,2,"2023,2024",0,0,,0.0
+Tommy,Austin Ekeler,n:austin ekeler,2,2,"2020,2024",0,0,,0.0
+Tommy,Brandon Aiyuk,n:brandon aiyuk,2,2,"2020,2025",0,0,,0.0
+Tommy,Brock Purdy,n:brock purdy,2,2,"2023,2024",0,0,,0.0
+Tommy,Chase Claypool,n:chase claypool,2,2,"2021,2022",0,0,,0.0
+Tommy,D.K. Metcalf,n:dk metcalf,2,2,"2022,2025",0,0,,0.0
+Tommy,David Montgomery,n:david montgomery,2,2,"2021,2025",0,0,,0.0
+Tommy,De'Von Achane,n:devon achane,2,2,"2023,2025",0,0,,0.0
+Tommy,Devonta Freeman,n:devonta freeman,2,2,"2018,2019",0,0,,0.0
+Tommy,Dez Bryant,n:dez bryant,2,2,"2015,2016",0,0,,0.0
+Tommy,James Conner,n:james conner,2,2,"2020,2021",0,0,,0.0
+Tommy,Julio Jones,n:julio jones,2,2,"2019,2021",0,0,,0.0
+Tommy,Justin Herbert,n:justin herbert,2,2,"2021,2025",0,0,,0.0
+Tommy,Keenan Allen,n:keenan allen,2,2,"2023,2024",0,0,,0.0
+Tommy,Mike Evans,n:mike evans,2,2,"2017,2021",0,0,,0.0
+Tommy,Miles Sanders,n:miles sanders,2,2,"2022,2023",0,0,,0.0
+Tommy,Rob Gronkowski,n:rob gronkowski,2,2,"2017,2020",0,0,,0.0
+Tommy,Todd Gurley,n:todd gurley,2,2,"2017,2018",0,0,,0.0
+Tommy,Travis Etienne,n:travis etienne,2,2,"2022,2023",0,0,,0.0
+Tommy,Tyreek Hill,n:tyreek hill,2,2,"2020,2022",0,0,,0.0
+Benni,A.J. Brown,n:aj brown,1,1,2020,0,0,,0.0
+Benni,Adam Thielen,n:adam thielen,1,1,2018,0,0,,0.0
+Benni,Adrian Peterson,n:adrian peterson,1,1,2017,0,0,,0.0
+Benni,Allen Robinson,n:allen robinson,1,1,2021,0,0,,0.0
+Benni,Alvin Kamara,n:alvin kamara,1,1,2023,0,0,,0.0
+Benni,Antonio Gates,n:antonio gates,1,1,2015,0,0,,0.0
+Benni,Ben Roethlisberger,n:ben roethlisberger,1,1,2016,0,0,,0.0
+Benni,Bijan Robinson,n:bijan robinson,1,1,2024,0,0,,0.0
+Benni,Brandon Aiyuk,n:brandon aiyuk,1,1,2024,0,0,,0.0
+Benni,Brandon Marshall,n:brandon marshall,1,1,2016,0,0,,0.0
+Benni,C.J. Anderson,n:cj anderson,1,1,2015,0,0,,0.0
+Benni,Caleb Williams,n:caleb williams,1,1,2024,0,0,,0.0
+Benni,Cam Akers,n:cam akers,1,1,2023,0,0,,0.0
+Benni,Cam Skattebo,n:cam skattebo,1,1,2025,0,0,,0.0
+Benni,Chandler Catanzaro,n:chandler catanzaro,1,1,2016,0,0,,0.0
+Benni,Cooper Kupp,n:cooper kupp,1,1,2022,0,0,,0.0
+Benni,Corey Coleman,n:corey coleman,1,1,2016,0,0,,0.0
+Benni,Dak Prescott,n:dak prescott,1,1,2021,0,0,,0.0
+Benni,Dameon Pierce,n:dameon pierce,1,1,2023,0,0,,0.0
+Benni,Damien Williams,n:damien williams,1,1,2020,0,0,,0.0
+Benni,Dan Bailey,n:dan bailey,1,1,2017,0,0,,0.0
+Benni,Dante Pettis,n:dante pettis,1,1,2019,0,0,,0.0
+Benni,Darius Slayton,n:darius slayton,1,1,2020,0,0,,0.0
+Benni,DeAndre Hopkins,n:deandre hopkins,1,1,2015,0,0,,0.0
+Benni,DeAngelo Williams,n:deangelo williams,1,1,2016,0,0,,0.0
+Benni,DeSean Jackson,n:desean jackson,1,1,2015,0,0,,0.0
+Benni,DeVante Parker,n:devante parker,1,1,2020,0,0,,0.0
+Benni,Delanie Walker,n:delanie walker,1,1,2015,0,0,,0.0
+Benni,Derrick Henry,n:derrick henry,1,1,2020,0,0,,0.0
+Benni,Devin Funchess,n:devin funchess,1,1,2018,0,0,,0.0
+Benni,Devin Singletary,n:devin singletary,1,1,2024,0,0,,0.0
+Benni,Dez Bryant,n:dez bryant,1,1,2018,0,0,,0.0
+Benni,Doug Baldwin,n:doug baldwin,1,1,2016,0,0,,0.0
+Benni,Doug Martin,n:doug martin,1,1,2017,0,0,,0.0
+Benni,Drew Brees,n:drew brees,1,1,2017,0,0,,0.0
+Benni,Dwayne Allen,n:dwayne allen,1,1,2015,0,0,,0.0
+Benni,Elijah Moore,n:elijah moore,1,1,2022,0,0,,0.0
+Benni,Evan Engram,n:evan engram,1,1,2023,0,0,,0.0
+Benni,Ezekiel Elliott,n:ezekiel elliott,1,1,2021,0,0,,0.0
+Benni,Gabe Davis,n:gabe davis,1,1,2022,0,0,,0.0
+Benni,George Kittle,n:george kittle,1,1,2025,0,0,,0.0
+Benni,Giovani Bernard,n:giovani bernard,1,1,2016,0,0,,0.0
+Benni,Hunter Henry,n:hunter henry,1,1,2019,0,0,,0.0
+Benni,Isaiah Crowell,n:isaiah crowell,1,1,2015,0,0,,0.0
+Benni,Jahmyr Gibbs,n:jahmyr gibbs,1,1,2024,0,0,,0.0
+Benni,Jake Bates,n:jake bates,1,1,2025,0,0,,0.0
+Benni,Jalen Hurts,n:jalen hurts,1,1,2024,0,0,,0.0
+Benni,James Robinson,n:james robinson,1,1,2022,0,0,,0.0
+Benni,Jameson Williams,n:jameson williams,1,1,2025,0,0,,0.0
+Benni,Jauan Jennings,n:jauan jennings,1,1,2025,0,0,,0.0
+Benni,Jaxon Smith-Njigba,n:jaxon smith njigba,1,1,2023,0,0,,0.0
+Benni,Jay Ajayi,n:jay ajayi,1,1,2016,0,0,,0.0
+Benni,Jayden Daniels,n:jayden daniels,1,1,2025,0,0,,0.0
+Benni,Jeremy Maclin,n:jeremy maclin,1,1,2017,0,0,,0.0
+Benni,Joique Bell,n:joique bell,1,1,2015,0,0,,0.0
+Benni,Jonathan Taylor,n:jonathan taylor,1,1,2025,0,0,,0.0
+Benni,Jordan Addison,n:jordan addison,1,1,2023,0,0,,0.0
+Benni,Jordy Nelson,n:jordy nelson,1,1,2017,0,0,,0.0
+Benni,Josh Allen,n:josh allen,1,1,2020,0,0,,0.0
+Benni,Josh Gordon,n:josh gordon,1,1,2018,0,0,,0.0
+Benni,Keenan Allen,n:keenan allen,1,1,2015,0,0,,0.0
+Benni,Kenneth Walker,n:kenneth walker,1,1,2023,0,0,,0.0
+Benni,Kerryon Johnson,n:kerryon johnson,1,1,2019,0,0,,0.0
+Benni,Kyle Pitts,n:kyle pitts,1,1,2021,0,0,,0.0
+Benni,Kyler Murray,n:kyler murray,1,1,2019,0,0,,0.0
+Benni,LeSean McCoy,n:lesean mccoy,1,1,2015,0,0,,0.0
+Benni,Mark Andrews,n:mark andrews,1,1,2020,0,0,,0.0
+Benni,Martavis Bryant,n:martavis bryant,1,1,2017,0,0,,0.0
+Benni,Marvin Jones,n:marvin jones,1,1,2018,0,0,,0.0
+Benni,Matt Forte,n:matt forte,1,1,2016,0,0,,0.0
+Benni,Matthew Stafford,n:matthew stafford,1,1,2015,0,0,,0.0
+Benni,Michael Gallup,n:michael gallup,1,1,2020,0,0,,0.0
+Benni,Michael Pittman,n:michael pittman,1,1,2021,0,0,,0.0
+Benni,N'Keal Harry,n:nkeal harry,1,1,2019,0,0,,0.0
+Benni,Nick Chubb,n:nick chubb,1,1,2020,0,0,,0.0
+Benni,Patrick Mahomes,n:patrick mahomes,1,1,2022,0,0,,0.0
+Benni,Peyton Manning,n:peyton manning,1,1,2015,0,0,,0.0
+Benni,RJ Harvey,n:rj harvey,1,1,2025,0,0,,0.0
+Benni,Rashaad Penny,n:rashaad penny,1,1,2022,0,0,,0.0
+Benni,Rex Burkhead,n:rex burkhead,1,1,2018,0,0,,0.0
+Benni,Rome Odunze,n:rome odunze,1,1,2024,0,0,,0.0
+Benni,Ryan Tannehill,n:ryan tannehill,1,1,2021,0,0,,0.0
+Benni,Sam LaPorta,n:sam laporta,1,1,2024,0,0,,0.0
+Benni,Saquon Barkley,n:saquon barkley,1,1,2022,0,0,,0.0
+Benni,Sterling Shepard,n:sterling shepard,1,1,2016,0,0,,0.0
+Benni,T.J. Hockenson,n:tj hockenson,1,1,2025,0,0,,0.0
+Benni,Tank Dell,n:tank dell,1,1,2024,0,0,,0.0
+Benni,Tee Higgins,n:tee higgins,1,1,2024,0,0,,0.0
+Benni,Tetairoa McMillan,n:tetairoa mcmillan,1,1,2025,0,0,,0.0
+Benni,Travis Hunter,n:travis hunter,1,1,2025,0,0,,0.0
+Benni,Trey Burton,n:trey burton,1,1,2018,0,0,,0.0
+Benni,Treylon Burks,n:treylon burks,1,1,2023,0,0,,0.0
+Benni,Tyler Boyd,n:tyler boyd,1,1,2020,0,0,,0.0
+Benni,Tyreek Hill,n:tyreek hill,1,1,2023,0,0,,0.0
+Benni,Xavier Worthy,n:xavier worthy,1,1,2024,0,0,,0.0
+Benni,Younghoe Koo,n:younghoe koo,1,1,2023,0,0,,0.0
+Erik,Aaron Jones,n:aaron jones,1,1,2019,0,0,,0.0
+Erik,Andrew Luck,n:andrew luck,1,1,2017,0,0,,0.0
+Erik,Antonio Brown,n:antonio brown,1,1,2015,0,0,,0.0
+Erik,Antonio Gibson,n:antonio gibson,1,1,2021,0,0,,0.0
+Erik,Baker Mayfield,n:baker mayfield,1,1,2019,0,0,,0.0
+Erik,Cam Newton,n:cam newton,1,1,2017,0,0,,0.0
+Erik,Cameron Meredith,n:cameron meredith,1,1,2017,0,0,,0.0
+Erik,Chase Brown,n:chase brown,1,1,2024,0,0,,0.0
+Erik,Chase Edmonds,n:chase edmonds,1,1,2021,0,0,,0.0
+Erik,Chase McLaughlin,n:chase mclaughlin,1,1,2025,0,0,,0.0
+Erik,Chuba Hubbard,n:chuba hubbard,1,1,2025,0,0,,0.0
+Erik,Clyde Edwards-Helaire,n:clyde edwards helaire,1,1,2020,0,0,,0.0
+Erik,Colin Kaepernick,n:colin kaepernick,1,1,2018,0,0,,0.0
+Erik,Cooper Kupp,n:cooper kupp,1,1,2023,0,0,,0.0
+Erik,D.J. Moore,n:dj moore,1,1,2022,0,0,,0.0
+Erik,Damien Harris,n:damien harris,1,1,2023,0,0,,0.0
+Erik,Darnell Mooney,n:darnell mooney,1,1,2022,0,0,,0.0
+Erik,Darren Waller,n:darren waller,1,1,2023,0,0,,0.0
+Erik,David Johnson,n:david johnson,1,1,2019,0,0,,0.0
+Erik,David Montgomery,n:david montgomery,1,1,2020,0,0,,0.0
+Erik,David Njoku,n:david njoku,1,1,2025,0,0,,0.0
+Erik,DeMarco Murray,n:demarco murray,1,1,2015,0,0,,0.0
+Erik,DeVante Parker,n:devante parker,1,1,2018,0,0,,0.0
+Erik,DeVonta Smith,n:devonta smith,1,1,2025,0,0,,0.0
+Erik,Deebo Samuel,n:deebo samuel,1,1,2025,0,0,,0.0
+Erik,Demaryius Thomas,n:demaryius thomas,1,1,2018,0,0,,0.0
+Erik,Derrick Henry,n:derrick henry,1,1,2017,0,0,,0.0
+Erik,Derrius Guice,n:derrius guice,1,1,2020,0,0,,0.0
+Erik,Devin Singletary,n:devin singletary,1,1,2022,0,0,,0.0
+Erik,Diontae Johnson,n:diontae johnson,1,1,2020,0,0,,0.0
+Erik,Dorial Green-Beckham,n:dorial green beckham,1,1,2016,0,0,,0.0
+Erik,Drake London,n:drake london,1,1,2025,0,0,,0.0
+Erik,Duke Johnson,n:duke johnson,1,1,2016,0,0,,0.0
+Erik,Frank Gore,n:frank gore,1,1,2016,0,0,,0.0
+Erik,George Kittle,n:george kittle,1,1,2022,0,0,,0.0
+Erik,George Pickens,n:george pickens,1,1,2024,0,0,,0.0
+Erik,Geronimo Allison,n:geronimo allison,1,1,2019,0,0,,0.0
+Erik,Giovani Bernard,n:giovani bernard,1,1,2015,0,0,,0.0
+Erik,J.K. Dobbins,n:jk dobbins,1,1,2023,0,0,,0.0
+Erik,Jamaal Charles,n:jamaal charles,1,1,2015,0,0,,0.0
+Erik,Jamaal Williams,n:jamaal williams,1,1,2018,0,0,,0.0
+Erik,Jamison Crowder,n:jamison crowder,1,1,2017,0,0,,0.0
+Erik,Jason Sanders,n:jason sanders,1,1,2024,0,0,,0.0
+Erik,Jeremy Langford,n:jeremy langford,1,1,2016,0,0,,0.0
+Erik,Jeremy Maclin,n:jeremy maclin,1,1,2016,0,0,,0.0
+Erik,Jerome Ford,n:jerome ford,1,1,2024,0,0,,0.0
+Erik,Jordan Cameron,n:jordan cameron,1,1,2015,0,0,,0.0
+Erik,Jordan Howard,n:jordan howard,1,1,2018,0,0,,0.0
+Erik,Jordan Mason,n:jordan mason,1,1,2025,0,0,,0.0
+Erik,Josh Jacobs,n:josh jacobs,1,1,2019,0,0,,0.0
+Erik,Justin Herbert,n:justin herbert,1,1,2023,0,0,,0.0
+Erik,Kaleb Johnson,n:kaleb johnson,1,1,2025,0,0,,0.0
+Erik,Kenneth Walker,n:kenneth walker,1,1,2025,0,0,,0.0
+Erik,Keâ€™Shawn Vaughn,n:keâ€™shawn vaughn,1,1,2020,0,0,,0.0
+Erik,Ladarius Green,n:ladarius green,1,1,2016,0,0,,0.0
+Erik,Lamar Jackson,n:lamar jackson,1,1,2025,0,0,,0.0
+Erik,Lamar Miller,n:lamar miller,1,1,2018,0,0,,0.0
+Erik,Latavius Murray,n:latavius murray,1,1,2019,0,0,,0.0
+Erik,Mark Ingram,n:mark ingram,1,1,2019,0,0,,0.0
+Erik,Marvin Harrison,n:marvin harrison,1,1,2024,0,0,,0.0
+Erik,Matthew Stafford,n:matthew stafford,1,1,2021,0,0,,0.0
+Erik,Michael Thomas,n:michael thomas,1,1,2021,0,0,,0.0
+Erik,Mike Davis,n:mike davis,1,1,2021,0,0,,0.0
+Erik,Mike Williams,n:mike williams,1,1,2021,0,0,,0.0
+Erik,Miles Sanders,n:miles sanders,1,1,2020,0,0,,0.0
+Erik,Nick Chubb,n:nick chubb,1,1,2022,0,0,,0.0
+Erik,Nico Collins,n:nico collins,1,1,2025,0,0,,0.0
+Erik,O.J. Howard,n:oj howard,1,1,2019,0,0,,0.0
+Erik,Odell Beckham,n:odell beckham,1,1,2019,0,0,,0.0
+Erik,Philip Rivers,n:philip rivers,1,1,2015,0,0,,0.0
+Erik,Puka Nacua,n:puka nacua,1,1,2024,0,0,,0.0
+Erik,Rachaad White,n:rachaad white,1,1,2023,0,0,,0.0
+Erik,Raheem Mostert,n:raheem mostert,1,1,2024,0,0,,0.0
+Erik,Randall Cobb,n:randall cobb,1,1,2016,0,0,,0.0
+Erik,Rashaad Penny,n:rashaad penny,1,1,2019,0,0,,0.0
+Erik,Rashad Jennings,n:rashad jennings,1,1,2015,0,0,,0.0
+Erik,Rashod Bateman,n:rashod bateman,1,1,2022,0,0,,0.0
+Erik,Rhamondre Stevenson,n:rhamondre stevenson,1,1,2022,0,0,,0.0
+Erik,Stefon Diggs,n:stefon diggs,1,1,2017,0,0,,0.0
+Erik,T.J. Hockenson,n:tj hockenson,1,1,2021,0,0,,0.0
+Erik,T.Y. Hilton,n:ty hilton,1,1,2015,0,0,,0.0
+Erik,Terrelle Pryor,n:terrelle pryor,1,1,2017,0,0,,0.0
+Erik,Todd Gurley,n:todd gurley,1,1,2016,0,0,,0.0
+Erik,Tony Romo,n:tony romo,1,1,2015,0,0,,0.0
+Erik,TreVeyon Henderson,n:treveyon henderson,1,1,2025,0,0,,0.0
+Erik,Trey McBride,n:trey mcbride,1,1,2024,0,0,,0.0
+Erik,Ty Montgomery,n:ty montgomery,1,1,2017,0,0,,0.0
+Erik,Tyler Eifert,n:tyler eifert,1,1,2016,0,0,,0.0
+Erik,Tyler Higbee,n:tyler higbee,1,1,2020,0,0,,0.0
+Erik,Tyler Lockett,n:tyler lockett,1,1,2023,0,0,,0.0
+Erik,Zack Moss,n:zack moss,1,1,2021,0,0,,0.0
+Juschka,A.J. Green,n:aj green,1,1,2016,0,0,,0.0
+Juschka,Aaron Jones,n:aaron jones,1,1,2021,0,0,,0.0
+Juschka,Adam Thielen,n:adam thielen,1,1,2020,0,0,,0.0
+Juschka,Alvin Kamara,n:alvin kamara,1,1,2020,0,0,,0.0
+Juschka,Andy Dalton,n:andy dalton,1,1,2021,0,0,,0.0
+Juschka,Atlanta Falcons,n:atlanta falcons,1,1,2017,0,0,,0.0
+Juschka,Baker Mayfield,n:baker mayfield,1,1,2025,0,0,,0.0
+Juschka,Baltimore Ravens,n:baltimore ravens,1,1,2025,0,0,,0.0
+Juschka,Brandon McManus,n:brandon mcmanus,1,1,2017,0,0,,0.0
+Juschka,Breece Hall,n:breece hall,1,1,2023,0,0,,0.0
+Juschka,Calvin Ridley,n:calvin ridley,1,1,2025,0,0,,0.0
+Juschka,Carolina Panthers,n:carolina panthers,1,1,2022,0,0,,0.0
+Juschka,Carson Palmer,n:carson palmer,1,1,2016,0,0,,0.0
+Juschka,Chris Carson,n:chris carson,1,1,2021,0,0,,0.0
+Juschka,Chris Olave,n:chris olave,1,1,2023,0,0,,0.0
+Juschka,Christian Kirk,n:christian kirk,1,1,2024,0,0,,0.0
+Juschka,Christian McCaffrey,n:christian mccaffrey,1,1,2025,0,0,,0.0
+Juschka,Coby Fleener,n:coby fleener,1,1,2015,0,0,,0.0
+Juschka,Cooper Kupp,n:cooper kupp,1,1,2020,0,0,,0.0
+Juschka,Cordarrelle Patterson,n:cordarrelle patterson,1,1,2022,0,0,,0.0
+Juschka,Curtis Samuel,n:curtis samuel,1,1,2021,0,0,,0.0
+Juschka,D.J. Chark,n:dj chark,1,1,2020,0,0,,0.0
+Juschka,Dak Prescott,n:dak prescott,1,1,2024,0,0,,0.0
+Juschka,Damien Williams,n:damien williams,1,1,2019,0,0,,0.0
+Juschka,Danny Woodhead,n:danny woodhead,1,1,2016,0,0,,0.0
+Juschka,Darren Waller,n:darren waller,1,1,2020,0,0,,0.0
+Juschka,David Montgomery,n:david montgomery,1,1,2022,0,0,,0.0
+Juschka,De'Von Achane,n:devon achane,1,1,2024,0,0,,0.0
+Juschka,DeAndre Hopkins,n:deandre hopkins,1,1,2019,0,0,,0.0
+Juschka,DeVonta Smith,n:devonta smith,1,1,2023,0,0,,0.0
+Juschka,Delanie Walker,n:delanie walker,1,1,2016,0,0,,0.0
+Juschka,Devin Singletary,n:devin singletary,1,1,2020,0,0,,0.0
+Juschka,Diontae Johnson,n:diontae johnson,1,1,2022,0,0,,0.0
+Juschka,Doug Baldwin,n:doug baldwin,1,1,2018,0,0,,0.0
+Juschka,Duke Johnson,n:duke johnson,1,1,2018,0,0,,0.0
+Juschka,Dustin Hopkins,n:dustin hopkins,1,1,2022,0,0,,0.0
+Juschka,Eli Manning,n:eli manning,1,1,2016,0,0,,0.0
+Juschka,Elijah Mitchell,n:elijah mitchell,1,1,2023,0,0,,0.0
+Juschka,Emmanuel Sanders,n:emmanuel sanders,1,1,2016,0,0,,0.0
+Juschka,Evan Engram,n:evan engram,1,1,2019,0,0,,0.0
+Juschka,Gardner Minshew,n:gardner minshew,1,1,2021,0,0,,0.0
+Juschka,Gary Barnidge,n:gary barnidge,1,1,2016,0,0,,0.0
+Juschka,Golden Tate,n:golden tate,1,1,2017,0,0,,0.0
+Juschka,Graham Gano,n:graham gano,1,1,2021,0,0,,0.0
+Juschka,Green Bay Packers,n:green bay packers,1,1,2015,0,0,,0.0
+Juschka,Greg Olsen,n:greg olsen,1,1,2018,0,0,,0.0
+Juschka,Greg Zuerlein,n:greg zuerlein,1,1,2018,0,0,,0.0
+Juschka,Harrison Butker,n:harrison butker,1,1,2019,0,0,,0.0
+Juschka,Hollywood Brown,n:hollywood brown,1,1,2022,0,0,,0.0
+Juschka,Houston Texans,n:houston texans,1,1,2016,0,0,,0.0
+Juschka,J.K. Dobbins,n:jk dobbins,1,1,2020,0,0,,0.0
+Juschka,Jahmyr Gibbs,n:jahmyr gibbs,1,1,2023,0,0,,0.0
+Juschka,Jalen Reagor,n:jalen reagor,1,1,2020,0,0,,0.0
+Juschka,James Conner,n:james conner,1,1,2024,0,0,,0.0
+Juschka,James White,n:james white,1,1,2019,0,0,,0.0
+Juschka,Jay Cutler,n:jay cutler,1,1,2018,0,0,,0.0
+Juschka,Jayden Reed,n:jayden reed,1,1,2025,0,0,,0.0
+Juschka,Joe Burrow,n:joe burrow,1,1,2023,0,0,,0.0
+Juschka,Jonathan Stewart,n:jonathan stewart,1,1,2017,0,0,,0.0
+Juschka,Jordy Nelson,n:jordy nelson,1,1,2015,0,0,,0.0
+Juschka,Josh Allen,n:josh allen,1,1,2022,0,0,,0.0
+Juschka,Julian Edelman,n:julian edelman,1,1,2018,0,0,,0.0
+Juschka,Justin Jefferson,n:justin jefferson,1,1,2024,0,0,,0.0
+Juschka,Kaâ€™imi Fairbairn,n:kaâ€™imi fairbairn,1,1,2021,0,0,,0.0
+Juschka,Keelan Cole,n:keelan cole,1,1,2021,0,0,,0.0
+Juschka,Khalil Herbert,n:khalil herbert,1,1,2023,0,0,,0.0
+Juschka,Kyle Pitts,n:kyle pitts,1,1,2023,0,0,,0.0
+Juschka,Kyle Rudolph,n:kyle rudolph,1,1,2017,0,0,,0.0
+Juschka,Lamar Jackson,n:lamar jackson,1,1,2021,0,0,,0.0
+Juschka,LeSean McCoy,n:lesean mccoy,1,1,2016,0,0,,0.0
+Juschka,Leonard Fournette,n:leonard fournette,1,1,2019,0,0,,0.0
+Juschka,Los Angeles Chargers,n:los angeles chargers,1,1,2019,0,0,,0.0
+Juschka,Mark Andrews,n:mark andrews,1,1,2025,0,0,,0.0
+Juschka,Mark Ingram,n:mark ingram,1,1,2015,0,0,,0.0
+Juschka,Marquez Valdes-Scantling,n:marquez valdes scantling,1,1,2022,0,0,,0.0
+Juschka,Matt Ryan,n:matt ryan,1,1,2017,0,0,,0.0
+Juschka,Mecole Hardman,n:mecole hardman,1,1,2022,0,0,,0.0
+Juschka,Michael Pittman,n:michael pittman,1,1,2024,0,0,,0.0
+Juschka,Mitchell Trubisky,n:mitchell trubisky,1,1,2021,0,0,,0.0
+Juschka,Mohamed Sanu,n:mohamed sanu,1,1,2019,0,0,,0.0
+Juschka,Najee Harris,n:najee harris,1,1,2022,0,0,,0.0
+Juschka,Nick Chubb,n:nick chubb,1,1,2023,0,0,,0.0
+Juschka,Nick Folk,n:nick folk,1,1,2021,0,0,,0.0
+Juschka,Odell Beckham,n:odell beckham,1,1,2020,0,0,,0.0
+Juschka,Patrick Mahomes,n:patrick mahomes,1,1,2020,0,0,,0.0
+Juschka,Paul Perkins,n:paul perkins,1,1,2017,0,0,,0.0
+Juschka,Randy Bullock,n:randy bullock,1,1,2015,0,0,,0.0
+Juschka,Rashaad Penny,n:rashaad penny,1,1,2023,0,0,,0.0
+Juschka,Rico Dowdle,n:rico dowdle,1,1,2025,0,0,,0.0
+Juschka,Rob Gronkowski,n:rob gronkowski,1,1,2024,0,0,,0.0
+Juschka,Ryan Mathews,n:ryan mathews,1,1,2015,0,0,,0.0
+Juschka,San Francisco 49ers,n:san francisco 49ers,1,1,2020,0,0,,0.0
+Juschka,Saquon Barkley,n:saquon barkley,1,1,2018,0,0,,0.0
+Juschka,Stephen Gostkowski,n:stephen gostkowski,1,1,2021,0,0,,0.0
+Juschka,Steve Smith,n:steve smith,1,1,2015,0,0,,0.0
+Juschka,Tevin Coleman,n:tevin coleman,1,1,2018,0,0,,0.0
+Juschka,Tim Patrick,n:tim patrick,1,1,2022,0,0,,0.0
+Juschka,Todd Gurley,n:todd gurley,1,1,2019,0,0,,0.0
+Juschka,Torrey Smith,n:torrey smith,1,1,2015,0,0,,0.0
+Juschka,Tua Tagovailoa,n:tua tagovailoa,1,1,2024,0,0,,0.0
+Juschka,Tyjae Spears,n:tyjae spears,1,1,2025,0,0,,0.0
+Juschka,Tyler Lockett,n:tyler lockett,1,1,2024,0,0,,0.0
+Juschka,Tyreek Hill,n:tyreek hill,1,1,2018,0,0,,0.0
+Juschka,Vernon Davis,n:vernon davis,1,1,2015,0,0,,0.0
+Juschka,Willie Snead,n:willie snead,1,1,2017,0,0,,0.0
+Juschka,Younghoe Koo,n:younghoe koo,1,1,2024,0,0,,0.0
+Juschka,Zack Moss,n:zack moss,1,1,2020,0,0,,0.0
+Kessi,A.J. Green,n:aj green,1,1,2020,0,0,,0.0
+Kessi,Aaron Jones,n:aaron jones,1,1,2022,0,0,,0.0
+Kessi,Allen Lazard,n:allen lazard,1,1,2022,0,0,,0.0
+Kessi,Alshon Jeffery,n:alshon jeffery,1,1,2019,0,0,,0.0
+Kessi,Andre Ellington,n:andre ellington,1,1,2015,0,0,,0.0
+Kessi,Andrew Luck,n:andrew luck,1,1,2019,0,0,,0.0
+Kessi,Arian Foster,n:arian foster,1,1,2016,0,0,,0.0
+Kessi,Bijan Robinson,n:bijan robinson,1,1,2023,0,0,,0.0
+Kessi,Blake Corum,n:blake corum,1,1,2024,0,0,,0.0
+Kessi,Brandon McManus,n:brandon mcmanus,1,1,2016,0,0,,0.0
+Kessi,Brock Bowers,n:brock bowers,1,1,2025,0,0,,0.0
+Kessi,Calvin Ridley,n:calvin ridley,1,1,2024,0,0,,0.0
+Kessi,Cam Akers,n:cam akers,1,1,2021,0,0,,0.0
+Kessi,Carlos Hyde,n:carlos hyde,1,1,2016,0,0,,0.0
+Kessi,Carson Wentz,n:carson wentz,1,1,2018,0,0,,0.0
+Kessi,Chase Brown,n:chase brown,1,1,2025,0,0,,0.0
+Kessi,Chris Olave,n:chris olave,1,1,2024,0,0,,0.0
+Kessi,Cleveland Browns,n:cleveland browns,1,1,2024,0,0,,0.0
+Kessi,Cody Kessler,n:cody kessler,1,1,2016,0,0,,0.0
+Kessi,Courtland Sutton,n:courtland sutton,1,1,2025,0,0,,0.0
+Kessi,D.K. Metcalf,n:dk metcalf,1,1,2021,0,0,,0.0
+Kessi,Damien Harris,n:damien harris,1,1,2021,0,0,,0.0
+Kessi,Daniel Carlson,n:daniel carlson,1,1,2023,0,0,,0.0
+Kessi,Darren McFadden,n:darren mcfadden,1,1,2015,0,0,,0.0
+Kessi,Davante Adams,n:davante adams,1,1,2020,0,0,,0.0
+Kessi,David Montgomery,n:david montgomery,1,1,2024,0,0,,0.0
+Kessi,DeAndre Hopkins,n:deandre hopkins,1,1,2023,0,0,,0.0
+Kessi,DeMarco Murray,n:demarco murray,1,1,2017,0,0,,0.0
+Kessi,DeSean Jackson,n:desean jackson,1,1,2016,0,0,,0.0
+Kessi,DeVonta Smith,n:devonta smith,1,1,2022,0,0,,0.0
+Kessi,Derek Carr,n:derek carr,1,1,2016,0,0,,0.0
+Kessi,Deshaun Watson,n:deshaun watson,1,1,2020,0,0,,0.0
+Kessi,Dion Lewis,n:dion lewis,1,1,2016,0,0,,0.0
+Kessi,Doug Martin,n:doug martin,1,1,2016,0,0,,0.0
+Kessi,Drake London,n:drake london,1,1,2022,0,0,,0.0
+Kessi,Drew Brees,n:drew brees,1,1,2016,0,0,,0.0
+Kessi,Gabe Davis,n:gabe davis,1,1,2023,0,0,,0.0
+Kessi,Garrett Wilson,n:garrett wilson,1,1,2023,0,0,,0.0
+Kessi,Greg Olsen,n:greg olsen,1,1,2015,0,0,,0.0
+Kessi,Hollywood Brown,n:hollywood brown,1,1,2024,0,0,,0.0
+Kessi,Houston Texans,n:houston texans,1,1,2019,0,0,,0.0
+Kessi,Indianapolis Colts,n:indianapolis colts,1,1,2015,0,0,,0.0
+Kessi,J.K. Dobbins,n:jk dobbins,1,1,2025,0,0,,0.0
+Kessi,Ja'Marr Chase,n:jamarr chase,1,1,2024,0,0,,0.0
+Kessi,Jalen Hurts,n:jalen hurts,1,1,2023,0,0,,0.0
+Kessi,James Conner,n:james conner,1,1,2023,0,0,,0.0
+Kessi,James White,n:james white,1,1,2017,0,0,,0.0
+Kessi,Jamison Crowder,n:jamison crowder,1,1,2018,0,0,,0.0
+Kessi,Javonte Williams,n:javonte williams,1,1,2022,0,0,,0.0
+Kessi,Jeff Wilson,n:jeff wilson,1,1,2023,0,0,,0.0
+Kessi,Jerry Jeudy,n:jerry jeudy,1,1,2020,0,0,,0.0
+Kessi,Jimmy Graham,n:jimmy graham,1,1,2017,0,0,,0.0
+Kessi,Joe Burrow,n:joe burrow,1,1,2022,0,0,,0.0
+Kessi,Jordan Reed,n:jordan reed,1,1,2016,0,0,,0.0
+Kessi,Jordy Nelson,n:jordy nelson,1,1,2016,0,0,,0.0
+Kessi,Keenan Allen,n:keenan allen,1,1,2022,0,0,,0.0
+Kessi,Kelvin Benjamin,n:kelvin benjamin,1,1,2016,0,0,,0.0
+Kessi,Kenny Golladay,n:kenny golladay,1,1,2019,0,0,,0.0
+Kessi,Kevin White,n:kevin white,1,1,2015,0,0,,0.0
+Kessi,Khalil Shakir,n:khalil shakir,1,1,2025,0,0,,0.0
+Kessi,Kyler Murray,n:kyler murray,1,1,2021,0,0,,0.0
+Kessi,Larry Fitzgerald,n:larry fitzgerald,1,1,2017,0,0,,0.0
+Kessi,LeSean McCoy,n:lesean mccoy,1,1,2018,0,0,,0.0
+Kessi,Mark Ingram,n:mark ingram,1,1,2020,0,0,,0.0
+Kessi,Martellus Bennett,n:martellus bennett,1,1,2017,0,0,,0.0
+Kessi,Matt Bryant,n:matt bryant,1,1,2015,0,0,,0.0
+Kessi,Melvin Gordon,n:melvin gordon,1,1,2022,0,0,,0.0
+Kessi,Miami Dolphins,n:miami dolphins,1,1,2015,0,0,,0.0
+Kessi,Michael Pittman,n:michael pittman,1,1,2022,0,0,,0.0
+Kessi,Mike Gillislee,n:mike gillislee,1,1,2017,0,0,,0.0
+Kessi,Mike Wallace,n:mike wallace,1,1,2017,0,0,,0.0
+Kessi,N'Keal Harry,n:nkeal harry,1,1,2020,0,0,,0.0
+Kessi,Najee Harris,n:najee harris,1,1,2024,0,0,,0.0
+Kessi,Nick Chubb,n:nick chubb,1,1,2018,0,0,,0.0
+Kessi,Noah Fant,n:noah fant,1,1,2021,0,0,,0.0
+Kessi,Peyton Barber,n:peyton barber,1,1,2019,0,0,,0.0
+Kessi,Phillip Lindsay,n:phillip lindsay,1,1,2020,0,0,,0.0
+Kessi,Quinshon Judkins,n:quinshon judkins,1,1,2025,0,0,,0.0
+Kessi,Rashaad Penny,n:rashaad penny,1,1,2018,0,0,,0.0
+Kessi,Rhamondre Stevenson,n:rhamondre stevenson,1,1,2025,0,0,,0.0
+Kessi,Rob Gronkowski,n:rob gronkowski,1,1,2018,0,0,,0.0
+Kessi,Robby Anderson,n:robby anderson,1,1,2019,0,0,,0.0
+Kessi,Robert Tonyan,n:robert tonyan,1,1,2021,0,0,,0.0
+Kessi,Royce Freeman,n:royce freeman,1,1,2018,0,0,,0.0
+Kessi,Samaje Perine,n:samaje perine,1,1,2023,0,0,,0.0
+Kessi,Spencer Ware,n:spencer ware,1,1,2017,0,0,,0.0
+Kessi,Sterling Shepard,n:sterling shepard,1,1,2019,0,0,,0.0
+Kessi,T.Y. Hilton,n:ty hilton,1,1,2018,0,0,,0.0
+Kessi,Tarik Cohen,n:tarik cohen,1,1,2019,0,0,,0.0
+Kessi,Tom Brady,n:tom brady,1,1,2015,0,0,,0.0
+Kessi,Trey Lance,n:trey lance,1,1,2022,0,0,,0.0
+Kessi,Tyler Higbee,n:tyler higbee,1,1,2021,0,0,,0.0
+Kessi,Tyreek Hill,n:tyreek hill,1,1,2017,0,0,,0.0
+Kessi,Tyrell Williams,n:tyrell williams,1,1,2017,0,0,,0.0
+Kessi,Will Fuller,n:will fuller,1,1,2021,0,0,,0.0
+Kessi,Zach Charbonnet,n:zach charbonnet,1,1,2023,0,0,,0.0
+Kessi,Zach Ertz,n:zach ertz,1,1,2019,0,0,,0.0
+Kessi,Zack Moss,n:zack moss,1,1,2024,0,0,,0.0
+Marv,A.T. Perry,n:at perry,1,1,2024,0,0,,0.0
+Marv,Aaron Rodgers,n:aaron rodgers,1,1,2015,0,0,,0.0
+Marv,Alfred Morris,n:alfred morris,1,1,2015,0,0,,0.0
+Marv,Allen Robinson,n:allen robinson,1,1,2018,0,0,,0.0
+Marv,Alshon Jeffery,n:alshon jeffery,1,1,2017,0,0,,0.0
+Marv,Amari Cooper,n:amari cooper,1,1,2016,0,0,,0.0
+Marv,Anthony Miller,n:anthony miller,1,1,2020,0,0,,0.0
+Marv,Anthony Richardson,n:anthony richardson,1,1,2024,0,0,,0.0
+Marv,Arizona Cardinals,n:arizona cardinals,1,1,2015,0,0,,0.0
+Marv,Ashton Jeanty,n:ashton jeanty,1,1,2025,0,0,,0.0
+Marv,Austin Hooper,n:austin hooper,1,1,2020,0,0,,0.0
+Marv,Brandon Marshall,n:brandon marshall,1,1,2015,0,0,,0.0
+Marv,C.J. Spiller,n:cj spiller,1,1,2015,0,0,,0.0
+Marv,Calvin Johnson,n:calvin johnson,1,1,2015,0,0,,0.0
+Marv,Charles Johnson,n:charles johnson,1,1,2015,0,0,,0.0
+Marv,Chase Edmonds,n:chase edmonds,1,1,2022,0,0,,0.0
+Marv,Chris Carson,n:chris carson,1,1,2020,0,0,,0.0
+Marv,Chris Olave,n:chris olave,1,1,2025,0,0,,0.0
+Marv,Christian Kirk,n:christian kirk,1,1,2019,0,0,,0.0
+Marv,Christian McCaffrey,n:christian mccaffrey,1,1,2019,0,0,,0.0
+Marv,Clyde Edwards-Helaire,n:clyde edwards helaire,1,1,2021,0,0,,0.0
+Marv,Coby Fleener,n:coby fleener,1,1,2016,0,0,,0.0
+Marv,Colin Kaepernick,n:colin kaepernick,1,1,2016,0,0,,0.0
+Marv,Cooper Kupp,n:cooper kupp,1,1,2025,0,0,,0.0
+Marv,Courtland Sutton,n:courtland sutton,1,1,2024,0,0,,0.0
+Marv,D.J. Moore,n:dj moore,1,1,2019,0,0,,0.0
+Marv,D.K. Metcalf,n:dk metcalf,1,1,2020,0,0,,0.0
+Marv,Dalvin Cook,n:dalvin cook,1,1,2020,0,0,,0.0
+Marv,Damien Harris,n:damien harris,1,1,2022,0,0,,0.0
+Marv,Davante Adams,n:davante adams,1,1,2024,0,0,,0.0
+Marv,David Johnson,n:david johnson,1,1,2016,0,0,,0.0
+Marv,David Marvin,n:david marvin,1,1,2018,0,0,,0.0
+Marv,David Njoku,n:david njoku,1,1,2017,0,0,,0.0
+Marv,Deebo Samuel,n:deebo samuel,1,1,2023,0,0,,0.0
+Marv,Delanie Walker,n:delanie walker,1,1,2017,0,0,,0.0
+Marv,Derrick Henry,n:derrick henry,1,1,2018,0,0,,0.0
+Marv,Deshaun Watson,n:deshaun watson,1,1,2019,0,0,,0.0
+Marv,Diontae Johnson,n:diontae johnson,1,1,2024,0,0,,0.0
+Marv,Doug Baldwin,n:doug baldwin,1,1,2017,0,0,,0.0
+Marv,Evan Engram,n:evan engram,1,1,2018,0,0,,0.0
+Marv,Frank Gore,n:frank gore,1,1,2015,0,0,,0.0
+Marv,George Pickens,n:george pickens,1,1,2023,0,0,,0.0
+Marv,Golden Tate,n:golden tate,1,1,2016,0,0,,0.0
+Marv,Harrison Butker,n:harrison butker,1,1,2023,0,0,,0.0
+Marv,Henry Ruggs III,n:henry ruggs,1,1,2025,0,0,,0.0
+Marv,Hunter Renfrow,n:hunter renfrow,1,1,2022,0,0,,0.0
+Marv,Isiah Pacheco,n:isiah pacheco,1,1,2023,0,0,,0.0
+Marv,Jamaal Williams,n:jamaal williams,1,1,2023,0,0,,0.0
+Marv,Jarvis Landry,n:jarvis landry,1,1,2015,0,0,,0.0
+Marv,Jay Ajayi,n:jay ajayi,1,1,2017,0,0,,0.0
+Marv,Jaylen Waddle,n:jaylen waddle,1,1,2021,0,0,,0.0
+Marv,Jerick McKinnon,n:jerick mckinnon,1,1,2018,0,0,,0.0
+Marv,Jerry Jeudy,n:jerry jeudy,1,1,2025,0,0,,0.0
+Marv,Jimmy Garoppolo,n:jimmy garoppolo,1,1,2018,0,0,,0.0
+Marv,Jimmy Graham,n:jimmy graham,1,1,2015,0,0,,0.0
+Marv,Jonathan Taylor,n:jonathan taylor,1,1,2021,0,0,,0.0
+Marv,Jordan Howard,n:jordan howard,1,1,2020,0,0,,0.0
+Marv,Jordy Nelson,n:jordy nelson,1,1,2018,0,0,,0.0
+Marv,Julio Jones,n:julio jones,1,1,2018,0,0,,0.0
+Marv,Justin Fields,n:justin fields,1,1,2023,0,0,,0.0
+Marv,Justin Herbert,n:justin herbert,1,1,2022,0,0,,0.0
+Marv,Kadarius Toney,n:kadarius toney,1,1,2023,0,0,,0.0
+Marv,Keenan Allen,n:keenan allen,1,1,2018,0,0,,0.0
+Marv,Kyle Pitts,n:kyle pitts,1,1,2024,0,0,,0.0
+Marv,Laviska Shenault Jr.,n:laviska shenault,1,1,2021,0,0,,0.0
+Marv,LeGarrette Blount,n:legarrette blount,1,1,2017,0,0,,0.0
+Marv,LeSean McCoy,n:lesean mccoy,1,1,2019,0,0,,0.0
+Marv,Marcus Mariota,n:marcus mariota,1,1,2017,0,0,,0.0
+Marv,Mark Andrews,n:mark andrews,1,1,2023,0,0,,0.0
+Marv,Marvin Harrison,n:marvin harrison,1,1,2025,0,0,,0.0
+Marv,Mike Evans,n:mike evans,1,1,2019,0,0,,0.0
+Marv,Miles Sanders,n:miles sanders,1,1,2019,0,0,,0.0
+Marv,Myles Gaskin,n:myles gaskin,1,1,2021,0,0,,0.0
+Marv,Nick Chubb,n:nick chubb,1,1,2024,0,0,,0.0
+Marv,Noah Fant,n:noah fant,1,1,2019,0,0,,0.0
+Marv,Omarion Hampton,n:omarion hampton,1,1,2025,0,0,,0.0
+Marv,Puka Nacua,n:puka nacua,1,1,2025,0,0,,0.0
+Marv,Rachaad White,n:rachaad white,1,1,2024,0,0,,0.0
+Marv,Rhamondre Stevenson,n:rhamondre stevenson,1,1,2023,0,0,,0.0
+Marv,Ryan Mathews,n:ryan mathews,1,1,2016,0,0,,0.0
+Marv,Sam LaPorta,n:sam laporta,1,1,2025,0,0,,0.0
+Marv,Samaje Perine,n:samaje perine,1,1,2017,0,0,,0.0
+Marv,T.J. Hockenson,n:tj hockenson,1,1,2022,0,0,,0.0
+Marv,T.Y. Hilton,n:ty hilton,1,1,2016,0,0,,0.0
+Marv,Thomas Rawls,n:thomas rawls,1,1,2016,0,0,,0.0
+Marv,Tony Pollard,n:tony pollard,1,1,2023,0,0,,0.0
+Marv,Travis Etienne,n:travis etienne,1,1,2021,0,0,,0.0
+Marv,Trey Benson,n:trey benson,1,1,2024,0,0,,0.0
+Marv,Tyrone Tracy,n:tyrone tracy,1,1,2025,0,0,,0.0
+Marv,Washington Commanders,n:washington commanders,1,1,2025,0,0,,0.0
+Marv,Xavier Worthy,n:xavier worthy,1,1,2025,0,0,,0.0
+Marv,Zay Flowers,n:zay flowers,1,1,2024,0,0,,0.0
+Ritz,A.J. Dillon,n:aj dillon,1,1,2023,0,0,,0.0
+Ritz,A.J. Green,n:aj green,1,1,2017,0,0,,0.0
+Ritz,Aaron Jones,n:aaron jones,1,1,2020,0,0,,0.0
+Ritz,Adam Thielen,n:adam thielen,1,1,2021,0,0,,0.0
+Ritz,Ameer Abdullah,n:ameer abdullah,1,1,2017,0,0,,0.0
+Ritz,Andre Johnson,n:andre johnson,1,1,2015,0,0,,0.0
+Ritz,Andre Williams,n:andre williams,1,1,2015,0,0,,0.0
+Ritz,Antonio Gibson,n:antonio gibson,1,1,2022,0,0,,0.0
+Ritz,Arian Foster,n:arian foster,1,1,2015,0,0,,0.0
+Ritz,Austin Ekeler,n:austin ekeler,1,1,2022,0,0,,0.0
+Ritz,Austin MacGinnis,n:austin macginnis,1,1,2022,0,0,,0.0
+Ritz,Bijan Robinson,n:bijan robinson,1,1,2025,0,0,,0.0
+Ritz,Blake Bortles,n:blake bortles,1,1,2016,0,0,,0.0
+Ritz,Brandon Aiyuk,n:brandon aiyuk,1,1,2022,0,0,,0.0
+Ritz,Brian Robinson,n:brian robinson,1,1,2025,0,0,,0.0
+Ritz,C.J. Anderson,n:cj anderson,1,1,2016,0,0,,0.0
+Ritz,Cameron Dicker,n:cameron dicker,1,1,2025,0,0,,0.0
+Ritz,Chris Thompson,n:chris thompson,1,1,2018,0,0,,0.0
+Ritz,Christian Watson,n:christian watson,1,1,2023,0,0,,0.0
+Ritz,Colin Kaepernick,n:colin kaepernick,1,1,2015,0,0,,0.0
+Ritz,D.J. Moore,n:dj moore,1,1,2025,0,0,,0.0
+Ritz,Dalton Schultz,n:dalton schultz,1,1,2022,0,0,,0.0
+Ritz,Dalvin Cook,n:dalvin cook,1,1,2023,0,0,,0.0
+Ritz,Danny Woodhead,n:danny woodhead,1,1,2017,0,0,,0.0
+Ritz,David Njoku,n:david njoku,1,1,2023,0,0,,0.0
+Ritz,Dawson Knox,n:dawson knox,1,1,2022,0,0,,0.0
+Ritz,DeAndre Hopkins,n:deandre hopkins,1,1,2020,0,0,,0.0
+Ritz,DeMarco Murray,n:demarco murray,1,1,2016,0,0,,0.0
+Ritz,DeVonta Smith,n:devonta smith,1,1,2021,0,0,,0.0
+Ritz,Derrick Henry,n:derrick henry,1,1,2023,0,0,,0.0
+Ritz,Deshaun Watson,n:deshaun watson,1,1,2018,0,0,,0.0
+Ritz,Devin Singletary,n:devin singletary,1,1,2023,0,0,,0.0
+Ritz,Donte Moncrief,n:donte moncrief,1,1,2016,0,0,,0.0
+Ritz,Dâ€™Andre Swift,n:dâ€™andre swift,1,1,2021,0,0,,0.0
+Ritz,Eric Decker,n:eric decker,1,1,2017,0,0,,0.0
+Ritz,Evan McPherson,n:evan mcpherson,1,1,2023,0,0,,0.0
+Ritz,Ezekiel Elliott,n:ezekiel elliott,1,1,2022,0,0,,0.0
+Ritz,Frank Gore,n:frank gore,1,1,2017,0,0,,0.0
+Ritz,George Kittle,n:george kittle,1,1,2019,0,0,,0.0
+Ritz,Graham Gano,n:graham gano,1,1,2016,0,0,,0.0
+Ritz,Isaac Guerendo,n:isaac guerendo,1,1,2025,0,0,,0.0
+Ritz,Isaiah Crowell,n:isaiah crowell,1,1,2018,0,0,,0.0
+Ritz,Ja'Marr Chase,n:jamarr chase,1,1,2021,0,0,,0.0
+Ritz,James Cook,n:james cook,1,1,2023,0,0,,0.0
+Ritz,Jaxon Smith-Njigba,n:jaxon smith njigba,1,1,2025,0,0,,0.0
+Ritz,Jaylen Warren,n:jaylen warren,1,1,2025,0,0,,0.0
+Ritz,Jeremy Maclin,n:jeremy maclin,1,1,2015,0,0,,0.0
+Ritz,Joe Mixon,n:joe mixon,1,1,2018,0,0,,0.0
+Ritz,Jonathan Stewart,n:jonathan stewart,1,1,2015,0,0,,0.0
+Ritz,Jonathon Brooks,n:jonathon brooks,1,1,2024,0,0,,0.0
+Ritz,Justin Forsett,n:justin forsett,1,1,2015,0,0,,0.0
+Ritz,Kerryon Johnson,n:kerryon johnson,1,1,2018,0,0,,0.0
+Ritz,Ladd McConkey,n:ladd mcconkey,1,1,2025,0,0,,0.0
+Ritz,Lamar Jackson,n:lamar jackson,1,1,2022,0,0,,0.0
+Ritz,Laquon Treadwell,n:laquon treadwell,1,1,2016,0,0,,0.0
+Ritz,Le'Veon Bell,n:leveon bell,1,1,2019,0,0,,0.0
+Ritz,LeSean McCoy,n:lesean mccoy,1,1,2017,0,0,,0.0
+Ritz,Mark Andrews,n:mark andrews,1,1,2024,0,0,,0.0
+Ritz,Marvin Jones,n:marvin jones,1,1,2019,0,0,,0.0
+Ritz,Mason Crosby,n:mason crosby,1,1,2015,0,0,,0.0
+Ritz,Matt Jones,n:matt jones,1,1,2016,0,0,,0.0
+Ritz,Michael Crabtree,n:michael crabtree,1,1,2017,0,0,,0.0
+Ritz,Michael Thomas,n:michael thomas,1,1,2022,0,0,,0.0
+Ritz,Mike Williams,n:mike williams,1,1,2019,0,0,,0.0
+Ritz,Miles Sanders,n:miles sanders,1,1,2021,0,0,,0.0
+Ritz,Napoleon Maxwell,n:napoleon maxwell,1,1,2024,0,0,,0.0
+Ritz,Nelson Agholor,n:nelson agholor,1,1,2015,0,0,,0.0
+Ritz,Nick Chubb,n:nick chubb,1,1,2019,0,0,,0.0
+Ritz,Noah Rauschenberg,n:noah rauschenberg,1,1,2024,0,0,,0.0
+Ritz,Patrick Mahomes,n:patrick mahomes,1,1,2023,0,0,,0.0
+Ritz,Phillip Lindsay,n:phillip lindsay,1,1,2019,0,0,,0.0
+Ritz,Pierre Garcon,n:pierre garcon,1,1,2017,0,0,,0.0
+Ritz,Pierre GarÃ§on,n:pierre garã§on,1,1,2018,0,0,,0.0
+Ritz,Randall Cobb,n:randall cobb,1,1,2015,0,0,,0.0
+Ritz,Rashee Rice,n:rashee rice,1,1,2024,0,0,,0.0
+Ritz,Ricky Pearsall,n:ricky pearsall,1,1,2025,0,0,,0.0
+Ritz,Russell Wilson,n:russell wilson,1,1,2019,0,0,,0.0
+Ritz,Ryan Tannehill,n:ryan tannehill,1,1,2015,0,0,,0.0
+Ritz,Saquon Barkley,n:saquon barkley,1,1,2021,0,0,,0.0
+Ritz,Sony Michel,n:sony michel,1,1,2020,0,0,,0.0
+Ritz,Stephen Gostkowski,n:stephen gostkowski,1,1,2016,0,0,,0.0
+Ritz,Tavon Austin,n:tavon austin,1,1,2016,0,0,,0.0
+Ritz,Tee Higgins,n:tee higgins,1,1,2023,0,0,,0.0
+Ritz,Travis Kelce,n:travis kelce,1,1,2025,0,0,,0.0
+Ritz,Tyler Boyd,n:tyler boyd,1,1,2019,0,0,,0.0
+Ritz,Tyler Eifert,n:tyler eifert,1,1,2017,0,0,,0.0
+Ritz,Tyler Lockett,n:tyler lockett,1,1,2021,0,0,,0.0
+Ritz,Valentino Ambrosio,n:valentino ambrosio,1,1,2024,0,0,,0.0
+Ritz,Will Fuller,n:will fuller,1,1,2020,0,0,,0.0
+Simi,A.J. Brown,n:aj brown,1,1,2023,0,0,,0.0
+Simi,A.J. Dillon,n:aj dillon,1,1,2022,0,0,,0.0
+Simi,Aaron Jones,n:aaron jones,1,1,2023,0,0,,0.0
+Simi,Adam Thielen,n:adam thielen,1,1,2019,0,0,,0.0
+Simi,Adam Vinatieri,n:adam vinatieri,1,1,2015,0,0,,0.0
+Simi,Alexander Mattison,n:alexander mattison,1,1,2023,0,0,,0.0
+Simi,Allen Lazard,n:allen lazard,1,1,2023,0,0,,0.0
+Simi,Allen Robinson,n:allen robinson,1,1,2016,0,0,,0.0
+Simi,Ameer Abdullah,n:ameer abdullah,1,1,2016,0,0,,0.0
+Simi,Andy Dalton,n:andy dalton,1,1,2016,0,0,,0.0
+Simi,Antonio Gates,n:antonio gates,1,1,2016,0,0,,0.0
+Simi,Austin Ekeler,n:austin ekeler,1,1,2023,0,0,,0.0
+Simi,Brandon Marshall,n:brandon marshall,1,1,2017,0,0,,0.0
+Simi,Breece Hall,n:breece hall,1,1,2025,0,0,,0.0
+Simi,Brian Thomas,n:brian thomas,1,1,2025,0,0,,0.0
+Simi,Bucky Irving,n:bucky irving,1,1,2025,0,0,,0.0
+Simi,C.J. Stroud,n:cj stroud,1,1,2024,0,0,,0.0
+Simi,Calvin Ridley,n:calvin ridley,1,1,2021,0,0,,0.0
+Simi,Chris Boswell,n:chris boswell,1,1,2025,0,0,,0.0
+Simi,Christian Kirk,n:christian kirk,1,1,2023,0,0,,0.0
+Simi,Clyde Edwards-Helaire,n:clyde edwards helaire,1,1,2022,0,0,,0.0
+Simi,Cody Parkey,n:cody parkey,1,1,2015,0,0,,0.0
+Simi,D'Andre Swift,n:dandre swift,1,1,2022,0,0,,0.0
+Simi,D.K. Metcalf,n:dk metcalf,1,1,2019,0,0,,0.0
+Simi,Dallas Goedert,n:dallas goedert,1,1,2022,0,0,,0.0
+Simi,Dalton Kincaid,n:dalton kincaid,1,1,2024,0,0,,0.0
+Simi,Dalvin Cook,n:dalvin cook,1,1,2018,0,0,,0.0
+Simi,Devontae Booker,n:devontae booker,1,1,2018,0,0,,0.0
+Simi,Dez Bryant,n:dez bryant,1,1,2017,0,0,,0.0
+Simi,Dion Lewis,n:dion lewis,1,1,2018,0,0,,0.0
+Simi,Donte Moncrief,n:donte moncrief,1,1,2017,0,0,,0.0
+Simi,Dorial Green-Beckham,n:dorial green beckham,1,1,2015,0,0,,0.0
+Simi,Eddie Lacy,n:eddie lacy,1,1,2016,0,0,,0.0
+Simi,Elijah Mitchell,n:elijah mitchell,1,1,2022,0,0,,0.0
+Simi,Eric Decker,n:eric decker,1,1,2016,0,0,,0.0
+Simi,Eric Ebron,n:eric ebron,1,1,2019,0,0,,0.0
+Simi,Evan Engram,n:evan engram,1,1,2020,0,0,,0.0
+Simi,Ezekiel Elliott,n:ezekiel elliott,1,1,2024,0,0,,0.0
+Simi,Henry Ruggs III,n:henry ruggs,1,1,2020,0,0,,0.0
+Simi,Isaiah Crowell,n:isaiah crowell,1,1,2017,0,0,,0.0
+Simi,J.K. Dobbins,n:jk dobbins,1,1,2021,0,0,,0.0
+Simi,Jahmyr Gibbs,n:jahmyr gibbs,1,1,2025,0,0,,0.0
+Simi,Jalen Hurts,n:jalen hurts,1,1,2025,0,0,,0.0
+Simi,Jared Cook,n:jared cook,1,1,2019,0,0,,0.0
+Simi,Jaxon Smith-Njigba,n:jaxon smith njigba,1,1,2024,0,0,,0.0
+Simi,Jay Ajayi,n:jay ajayi,1,1,2018,0,0,,0.0
+Simi,Jayden Reed,n:jayden reed,1,1,2024,0,0,,0.0
+Simi,Jeremy Hill,n:jeremy hill,1,1,2016,0,0,,0.0
+Simi,Jimmy Graham,n:jimmy graham,1,1,2018,0,0,,0.0
+Simi,Joe Burrow,n:joe burrow,1,1,2020,0,0,,0.0
+Simi,Joe Mixon,n:joe mixon,1,1,2020,0,0,,0.0
+Simi,Jonathan Stewart,n:jonathan stewart,1,1,2016,0,0,,0.0
+Simi,Jonnu Smith,n:jonnu smith,1,1,2025,0,0,,0.0
+Simi,Jordan Addison,n:jordan addison,1,1,2025,0,0,,0.0
+Simi,Joseph Randle,n:joseph randle,1,1,2015,0,0,,0.0
+Simi,Josh Jacobs,n:josh jacobs,1,1,2024,0,0,,0.0
+Simi,Justin Tucker,n:justin tucker,1,1,2019,0,0,,0.0
+Simi,Kareem Hunt,n:kareem hunt,1,1,2017,0,0,,0.0
+Simi,Kenny Britt,n:kenny britt,1,1,2017,0,0,,0.0
+Simi,Kenyan Drake,n:kenyan drake,1,1,2018,0,0,,0.0
+Simi,Kerryon Johnson,n:kerryon johnson,1,1,2020,0,0,,0.0
+Simi,Kyler Murray,n:kyler murray,1,1,2022,0,0,,0.0
+Simi,Leonard Fournette,n:leonard fournette,1,1,2020,0,0,,0.0
+Simi,Mark Ingram,n:mark ingram,1,1,2017,0,0,,0.0
+Simi,Martellus Bennett,n:martellus bennett,1,1,2015,0,0,,0.0
+Simi,Matt Forte,n:matt forte,1,1,2015,0,0,,0.0
+Simi,Matt Prater,n:matt prater,1,1,2020,0,0,,0.0
+Simi,Matt Ryan,n:matt ryan,1,1,2015,0,0,,0.0
+Simi,Melvin Gordon,n:melvin gordon,1,1,2021,0,0,,0.0
+Simi,Michael Floyd,n:michael floyd,1,1,2016,0,0,,0.0
+Simi,Michael Pittman,n:michael pittman,1,1,2023,0,0,,0.0
+Simi,Mike Evans,n:mike evans,1,1,2024,0,0,,0.0
+Simi,Najee Harris,n:najee harris,1,1,2023,0,0,,0.0
+Simi,Nick Chubb,n:nick chubb,1,1,2021,0,0,,0.0
+Simi,Odell Beckham,n:odell beckham,1,1,2021,0,0,,0.0
+Simi,Patrick Mahomes,n:patrick mahomes,1,1,2021,0,0,,0.0
+Simi,Rachaad White,n:rachaad white,1,1,2025,0,0,,0.0
+Simi,Rashee Rice,n:rashee rice,1,1,2025,0,0,,0.0
+Simi,Rhamondre Stevenson,n:rhamondre stevenson,1,1,2024,0,0,,0.0
+Simi,Robby Anderson,n:robby anderson,1,1,2021,0,0,,0.0
+Simi,Robert Griffin III,n:robert griffin,1,1,2018,0,0,,0.0
+Simi,Ronald Jones,n:ronald jones,1,1,2018,0,0,,0.0
+Simi,Sam Ficken,n:sam ficken,1,1,2021,0,0,,0.0
+Simi,Stefon Diggs,n:stefon diggs,1,1,2022,0,0,,0.0
+Simi,Sterling Shepard,n:sterling shepard,1,1,2018,0,0,,0.0
+Simi,Steven Hauschka,n:steven hauschka,1,1,2016,0,0,,0.0
+Simi,T.J. Hockenson,n:tj hockenson,1,1,2023,0,0,,0.0
+Simi,T.Y. Hilton,n:ty hilton,1,1,2020,0,0,,0.0
+Simi,Tee Higgins,n:tee higgins,1,1,2022,0,0,,0.0
+Simi,Tony Pollard,n:tony pollard,1,1,2025,0,0,,0.0
+Simi,Trevor Lawrence,n:trevor lawrence,1,1,2023,0,0,,0.0
+Simi,Zach Charbonnet,n:zach charbonnet,1,1,2025,0,0,,0.0
+Simi,Zach Ertz,n:zach ertz,1,1,2015,0,0,,0.0
+Simi,Zamir White,n:zamir white,1,1,2024,0,0,,0.0
+Simi,Zay Flowers,n:zay flowers,1,1,2025,0,0,,0.0
+Tommy,A.J. Brown,n:aj brown,1,1,2025,0,0,,0.0
+Tommy,Adam Thielen,n:adam thielen,1,1,2022,0,0,,0.0
+Tommy,Aldrick Rosas,n:aldrick rosas,1,1,2019,0,0,,0.0
+Tommy,Alex Collins,n:alex collins,1,1,2018,0,0,,0.0
+Tommy,Alshon Jeffery,n:alshon jeffery,1,1,2015,0,0,,0.0
+Tommy,Andrew Luck,n:andrew luck,1,1,2015,0,0,,0.0
+Tommy,Antonio Gibson,n:antonio gibson,1,1,2023,0,0,,0.0
+Tommy,Bilal Powell,n:bilal powell,1,1,2017,0,0,,0.0
+Tommy,Brandin Cooks,n:brandin cooks,1,1,2016,0,0,,0.0
+Tommy,Brock Bowers,n:brock bowers,1,1,2024,0,0,,0.0
+Tommy,Cairo Santos,n:cairo santos,1,1,2016,0,0,,0.0
+Tommy,Carlos Hyde,n:carlos hyde,1,1,2015,0,0,,0.0
+Tommy,CeeDee Lamb,n:ceedee lamb,1,1,2020,0,0,,0.0
+Tommy,Chris Carson,n:chris carson,1,1,2019,0,0,,0.0
+Tommy,Chris Hogan,n:chris hogan,1,1,2018,0,0,,0.0
+Tommy,Chris Olave,n:chris olave,1,1,2022,0,0,,0.0
+Tommy,Christian Hackenberg,n:christian hackenberg,1,1,2018,0,0,,0.0
+Tommy,Christian Watson,n:christian watson,1,1,2024,0,0,,0.0
+Tommy,Cooper Kupp,n:cooper kupp,1,1,2018,0,0,,0.0
+Tommy,Courtland Sutton,n:courtland sutton,1,1,2020,0,0,,0.0
+Tommy,D'Andre Swift,n:dandre swift,1,1,2023,0,0,,0.0
+Tommy,D.J. Moore,n:dj moore,1,1,2021,0,0,,0.0
+Tommy,Dallas Cowboys,n:dallas cowboys,1,1,2023,0,0,,0.0
+Tommy,Dallas Goedert,n:dallas goedert,1,1,2023,0,0,,0.0
+Tommy,Dalvin Cook,n:dalvin cook,1,1,2022,0,0,,0.0
+Tommy,Darrell Henderson,n:darrell henderson,1,1,2019,0,0,,0.0
+Tommy,David Njoku,n:david njoku,1,1,2019,0,0,,0.0
+Tommy,DeAndre Hopkins,n:deandre hopkins,1,1,2021,0,0,,0.0
+Tommy,DeSean Jackson,n:desean jackson,1,1,2017,0,0,,0.0
+Tommy,DeVonta Smith,n:devonta smith,1,1,2024,0,0,,0.0
+Tommy,Dede Westbrook,n:dede westbrook,1,1,2019,0,0,,0.0
+Tommy,Deebo Samuel,n:deebo samuel,1,1,2022,0,0,,0.0
+Tommy,Delanie Walker,n:delanie walker,1,1,2018,0,0,,0.0
+Tommy,Derek Carr,n:derek carr,1,1,2017,0,0,,0.0
+Tommy,Diontae Johnson,n:diontae johnson,1,1,2023,0,0,,0.0
+Tommy,Dâ€™Andre Swift,n:dâ€™andre swift,1,1,2020,0,0,,0.0
+Tommy,George Kittle,n:george kittle,1,1,2021,0,0,,0.0
+Tommy,George Pickens,n:george pickens,1,1,2025,0,0,,0.0
+Tommy,Harrison Butker,n:harrison butker,1,1,2024,0,0,,0.0
+Tommy,Hunter Henry,n:hunter henry,1,1,2016,0,0,,0.0
+Tommy,Indianapolis Colts,n:indianapolis colts,1,1,2017,0,0,,0.0
+Tommy,J.K. Dobbins,n:jk dobbins,1,1,2022,0,0,,0.0
+Tommy,Ja'Marr Chase,n:jamarr chase,1,1,2023,0,0,,0.0
+Tommy,Jalen Hurts,n:jalen hurts,1,1,2022,0,0,,0.0
+Tommy,Jamaal Charles,n:jamaal charles,1,1,2016,0,0,,0.0
+Tommy,Jameis Winston,n:jameis winston,1,1,2016,0,0,,0.0
+Tommy,James Robinson,n:james robinson,1,1,2021,0,0,,0.0
+Tommy,Jaylen Warren,n:jaylen warren,1,1,2024,0,0,,0.0
+Tommy,Jerry Jeudy,n:jerry jeudy,1,1,2021,0,0,,0.0
+Tommy,Jimmy Graham,n:jimmy graham,1,1,2016,0,0,,0.0
+Tommy,John Brown,n:john brown,1,1,2016,0,0,,0.0
+Tommy,Josh Allen,n:josh allen,1,1,2023,0,0,,0.0
+Tommy,JuJu Smith-Schuster,n:juju smith schuster,1,1,2018,0,0,,0.0
+Tommy,Julius Thomas,n:julius thomas,1,1,2015,0,0,,0.0
+Tommy,Kai Forbath,n:kai forbath,1,1,2018,0,0,,0.0
+Tommy,Kansas City Chiefs,n:kansas city chiefs,1,1,2016,0,0,,0.0
+Tommy,Kareem Hunt,n:kareem hunt,1,1,2019,0,0,,0.0
+Tommy,Kyle Pitts,n:kyle pitts,1,1,2022,0,0,,0.0
+Tommy,Lamar Jackson,n:lamar jackson,1,1,2024,0,0,,0.0
+Tommy,Larry Fitzgerald,n:larry fitzgerald,1,1,2016,0,0,,0.0
+Tommy,Latavius Murray,n:latavius murray,1,1,2016,0,0,,0.0
+Tommy,Le'Veon Bell,n:leveon bell,1,1,2020,0,0,,0.0
+Tommy,LeGarrette Blount,n:legarrette blount,1,1,2015,0,0,,0.0
+Tommy,Marcus Mariota,n:marcus mariota,1,1,2015,0,0,,0.0
+Tommy,Marlon Mack,n:marlon mack,1,1,2018,0,0,,0.0
+Tommy,Marquise Brown,n:marquise brown,1,1,2020,0,0,,0.0
+Tommy,Marquise Goodwin,n:marquise goodwin,1,1,2018,0,0,,0.0
+Tommy,Mason Crosby,n:mason crosby,1,1,2017,0,0,,0.0
+Tommy,Matt Forte,n:matt forte,1,1,2017,0,0,,0.0
+Tommy,Matthew Stafford,n:matthew stafford,1,1,2020,0,0,,0.0
+Tommy,Moritz Boehringer,n:moritz boehringer,1,1,2016,0,0,,0.0
+Tommy,Nico Collins,n:nico collins,1,1,2024,0,0,,0.0
+Tommy,Odell Beckham,n:odell beckham,1,1,2017,0,0,,0.0
+Tommy,Patrick Mahomes,n:patrick mahomes,1,1,2019,0,0,,0.0
+Tommy,Pierre Garcon,n:pierre garcon,1,1,2015,0,0,,0.0
+Tommy,Raheem Mostert,n:raheem mostert,1,1,2022,0,0,,0.0
+Tommy,Rob Kelley,n:rob kelley,1,1,2017,0,0,,0.0
+Tommy,Robbie Gould,n:robbie gould,1,1,2020,0,0,,0.0
+Tommy,Robert Woods,n:robert woods,1,1,2022,0,0,,0.0
+Tommy,Rome Odunze,n:rome odunze,1,1,2025,0,0,,0.0
+Tommy,Steven Hauschka,n:steven hauschka,1,1,2015,0,0,,0.0
+Tommy,T.J. Hockenson,n:tj hockenson,1,1,2020,0,0,,0.0
+Tommy,T.J. Yeldon,n:tj yeldon,1,1,2015,0,0,,0.0
+Tommy,Tank Bigsby,n:tank bigsby,1,1,2025,0,0,,0.0
+Tommy,Terry McLaurin,n:terry mclaurin,1,1,2025,0,0,,0.0
+Tommy,Tevin Coleman,n:tevin coleman,1,1,2017,0,0,,0.0
+Tommy,Tom Brady,n:tom brady,1,1,2018,0,0,,0.0
+Tommy,Tony Romo,n:tony romo,1,1,2016,0,0,,0.0
+Tommy,Travis Kelce,n:travis kelce,1,1,2024,0,0,,0.0
+Tommy,Trey McBride,n:trey mcbride,1,1,2025,0,0,,0.0
+Tommy,Trey Sermon,n:trey sermon,1,1,2021,0,0,,0.0
+Tommy,Tyler Warren,n:tyler warren,1,1,2025,0,0,,0.0
+Tommy,Will Fuller,n:will fuller,1,1,2019,0,0,,0.0
+Tommy,Younghoe Koo,n:younghoe koo,1,1,2021,0,0,,0.0
+Tommy,Zay Flowers,n:zay flowers,1,1,2023,0,0,,0.0
