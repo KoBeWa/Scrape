@@ -1,0 +1,47 @@
+name: Build Owner-Player Frequencies
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "scripts/owner_player_frequencies.py"
+      - "output/teamgamecenter_all_2015_2025_w1_16.csv"
+      - "output/history-drafts/**"
+      - ".github/workflows/build-owner-player-frequencies.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run script
+        run: |
+          python scripts/owner_player_frequencies.py
+
+      - name: Commit & push outputs
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "actions@github.com"
+
+          git add public/data/league/owner_player_draft_freq.csv \
+                  public/data/league/owner_player_roster_freq.csv \
+                  public/data/league/owner_player_combined_freq.csv || true
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update owner-player frequencies ($(date -u +'%Y-%m-%dT%H:%MZ'))"
+          git push
