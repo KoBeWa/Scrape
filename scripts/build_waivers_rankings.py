@@ -29,6 +29,23 @@ def norm_name(s: str) -> str:
         .strip()
     )
 
+def fmt_num(x, decimals=2):
+    """
+    Formatiert Zahlen als String mit Dezimal-Komma.
+    - None/'' -> ''
+    - 12.3 -> '12,30'
+    """
+    if x is None:
+        return ""
+    try:
+        v = float(x)
+    except:
+        s = str(x).strip()
+        return "" if s.lower() in ("", "nan", "none") else s
+
+    s = f"{v:.{decimals}f}"
+    return s.replace(".", ",")
+
 def abbrev_key(name: str) -> str:
     parts = norm_name(name).split()
     if not parts:
@@ -448,12 +465,29 @@ def main():
         "PickupShare","Reliability","EarlyFactor",
         "PickupScore","PickupScorePos"
     ]
-
+    
+    float_cols_2 = {
+        "PointsAfterPickup","AvgPoints","MaxWeekPoints","SeasonTTL","SeasonAVG","SeasonVORP",
+        "PickupScore","PickupScorePos"
+    }
+    float_cols_3 = {"PickupShare","Reliability","EarlyFactor"}
+    
     with out_waivers.open("w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f, delimiter=";", quoting=csv.QUOTE_MINIMAL)
+        w = csv.writer(f, delimiter=";")
         w.writerow(cols)
+    
         for r in sorted(records, key=lambda x: (-x["Year"], -x.get("PickupScore", 0), -x["PointsAfterPickup"], x["Owner"], x["Player"])):
-            w.writerow([r.get(c, "") for c in cols])
+            row_out = []
+            for c in cols:
+                val = r.get(c, "")
+                if c in float_cols_2:
+                    row_out.append(fmt_num(val, 2))
+                elif c in float_cols_3:
+                    row_out.append(fmt_num(val, 3))
+                else:
+                    # ints bleiben ints (Year/Week counts), strings bleiben strings
+                    row_out.append(val)
+            w.writerow(row_out)
 
     # --- Owner-Yearly Ranking ---
     # Kennzahlen:
@@ -496,11 +530,25 @@ def main():
         "BestPickupScore","BestPickupPlayer",
         "TotalPickupPoints","AvgPickupPoints",
     ]
+    
+    float_cols_owner = {
+        "TotalPickupScore","AvgPickupScore","Top3AvgScore",
+        "BestPickupScore","TotalPickupPoints","AvgPickupPoints"
+    }
+    
     with out_owner.open("w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f, delimiter=";", quoting=csv.QUOTE_MINIMAL)
+        w = csv.writer(f, delimiter=";")
         w.writerow(owner_cols)
+    
         for r in sorted(owner_rows, key=lambda x: (-x["Year"], -x["TotalPickupScore"], -x["TotalPickupPoints"], x["Owner"])):
-            w.writerow([r.get(c, "") for c in owner_cols])
+            row_out = []
+            for c in owner_cols:
+                val = r.get(c, "")
+                if c in float_cols_owner:
+                    row_out.append(fmt_num(val, 2))
+                else:
+                    row_out.append(val)
+            w.writerow(row_out)
 
     print(f"✓ Wrote {out_waivers} ({len(records)} pickups)")
     print(f"✓ Wrote {out_owner} ({len(owner_rows)} owner-year rows)")
