@@ -488,7 +488,7 @@ def main():
                 "AvgPickupPoints": round(mean(points), 2) if points else 0.0,
             })
 
-    out_owner = OUT_DIR / "waivers_owner_yearly.tsv"
+    out_owner = OUT_DIR / "waivers_owner_yearly.csv"
     owner_cols = [
         "Year","Owner",
         "PickupsCount",
@@ -497,7 +497,7 @@ def main():
         "TotalPickupPoints","AvgPickupPoints",
     ]
     with out_owner.open("w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f, delimiter="\t")
+        w = csv.writer(f, delimiter=";", quoting=csv.QUOTE_MINIMAL)
         w.writerow(owner_cols)
         for r in sorted(owner_rows, key=lambda x: (-x["Year"], -x["TotalPickupScore"], -x["TotalPickupPoints"], x["Owner"])):
             w.writerow([r.get(c, "") for c in owner_cols])
