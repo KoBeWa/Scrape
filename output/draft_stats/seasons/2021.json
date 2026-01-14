@@ -128,27 +128,27 @@
   "ownerRanking": [
     {
       "owner": "Marv",
-      "avgGrade4": 4.3036565422,
+      "avgGrade4": 4.303333333333333,
       "picks": 15
     },
     {
       "owner": "Ritz",
-      "avgGrade4": 2.7258352205999996,
+      "avgGrade4": 2.726,
       "picks": 15
     },
     {
       "owner": "Simi",
-      "avgGrade4": 2.420709913266667,
+      "avgGrade4": 2.4206666666666674,
       "picks": 15
     },
     {
       "owner": "Benni",
-      "avgGrade4": 1.0641632576666666,
+      "avgGrade4": 1.064,
       "picks": 15
     },
     {
       "owner": "Tommy",
-      "avgGrade4": 0.6979978444666664,
+      "avgGrade4": 0.6979999999999997,
       "picks": 15
     },
     {
@@ -347,7 +347,7 @@
         },
         {
           "owner": "Simi",
-          "avgGrade4": 4.306333205333334,
+          "avgGrade4": 4.3066666666666675,
           "picks": 6
         },
         {
@@ -504,7 +504,7 @@
         "pickInRound": null,
         "overallPick": 114,
         "isKeeper": 0,
-        "grade4": 0.932448865
+        "grade4": 0.93
       },
       "worstPick": {
         "season": 2021,
@@ -516,32 +516,32 @@
         "pickInRound": null,
         "overallPick": 55,
         "isKeeper": 0,
-        "grade4": -6.827350533
+        "grade4": -6.83
       },
       "ownerRanking": [
         {
           "owner": "Benni",
-          "avgGrade4": 0.932448865,
+          "avgGrade4": 0.93,
           "picks": 1
         },
         {
           "owner": "Tommy",
-          "avgGrade4": -0.870032333,
+          "avgGrade4": -0.87,
           "picks": 1
         },
         {
           "owner": "Ritz",
-          "avgGrade4": -1.162471691,
+          "avgGrade4": -1.16,
           "picks": 1
         },
         {
           "owner": "Marv",
-          "avgGrade4": -4.015151867,
+          "avgGrade4": -4.02,
           "picks": 1
         },
         {
           "owner": "Simi",
-          "avgGrade4": -6.827350533,
+          "avgGrade4": -6.83,
           "picks": 1
         }
       ]
