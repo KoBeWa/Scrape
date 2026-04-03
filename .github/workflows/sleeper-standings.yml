@@ -26,7 +26,7 @@ jobs:
 
       - name: Run standings scraper
         env:
-          SLEEPER_LEAGUE_ID: ${{ secrets.SLEEPER_LEAGUE_ID }}
+          SLEEPER_LEAGUE_ID: ${{ 1250388942214156288 }}
           SEASON: ${{ inputs.season }}   # leer -> dein Script kann aus league.season ableiten
         run: python scrapeSleeperStandings.py
 
