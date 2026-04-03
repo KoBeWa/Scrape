@@ -8,7 +8,7 @@ BASE = "https://api.sleeper.app/v1"
 OUT_DIR = Path("./output")
 DATA_DIR = Path("./data")
 
-LEAGUE_ID = os.getenv("SLEEPER_LEAGUE_ID", "").strip()
+LEAGUE_ID = os.getenv("1250388942214156288", "").strip()
 ENV_SEASON = os.getenv("SEASON")  # optional
 
 # ---------------- API ---------------- #
