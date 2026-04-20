@@ -11,24 +11,26 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 with open("draft.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-profiles = data["profiles"]
 bucket = "rookies-headshots"
 
-for player in profiles:
-    player_id = player["person"]["id"]
+for player in data["profiles"]:
     name = player["person"]["displayName"]
-    url = player.get("headshot")
+    position = player.get("position")
+    college = player["person"]["collegeNames"][0] if player["person"].get("collegeNames") else None
 
+    url = player.get("headshot")
     if not url:
         continue
 
     url = url.replace("{formatInstructions}", "w_300")
 
     try:
+        # Bild holen
         img = requests.get(url, timeout=10).content
-        file_path = f"{player_id}.jpg"
 
-        # Upload
+        file_path = f"{player['person']['id']}.jpg"
+
+        # Upload Storage
         supabase.storage.from_(bucket).upload(
             file_path,
             img,
@@ -37,10 +39,13 @@ for player in profiles:
 
         public_url = supabase.storage.from_(bucket).get_public_url(file_path)
 
-        # DB Update (anpassen!)
-        supabase.table("players").update({
+        # 🔥 WICHTIG: in deine Tabelle schreiben
+        supabase.table("mock_draft_prospects").upsert({
+            "player_name": name,
+            "position": position,
+            "college": college,
             "headshot_url": public_url
-        }).eq("player_id", player_id).execute()
+        }).execute()
 
         print("OK:", name)
 
