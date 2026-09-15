@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #0B0C0D; }
+  a { color: #E7C06A; text-decoration: none; }
+  a:hover { color: #F3D89B; }
+</style>
+</helmet>
+<div data-render-ready="{{ readyFlag }}" style="min-height:100vh; background:#0B0C0D; padding:64px 48px 120px; display:flex; flex-direction:column; align-items:center; gap:56px; font-family:'Space Grotesk',Helvetica,sans-serif;">
+
+  <div style="display:flex; flex-direction:column; gap:10px; align-items:center; max-width:1080px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.22em; text-transform:uppercase; color:#E7C06A;">Weekly Template · Dienstags</div>
+    <div style="font-size:15px; line-height:1.5; color:#8A8F94; text-align:center; max-width:680px;">6 Slides im Format 4:5 (1080×1350). Zahlen und Lineups pflegst du oben im Datenblock – Layout bleibt gleich.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.6; color:#C9CDD1; text-align:center; max-width:820px; white-space:pre-wrap;">{{ sourceNote }}</div>
+  </div>
+
+  <div data-screen-label="01 Cover" style="width:1080px; height:1350px; flex:none; position:relative; overflow:hidden; background:#15181A; display:flex; flex-direction:column; justify-content:space-between; padding:80px; box-sizing:border-box;">
+    <div style="position:absolute; top:-320px; right:-320px; width:1000px; height:1000px; border-radius:50%; background:radial-gradient(circle at center, rgba(231,192,106,0.22), rgba(231,192,106,0) 66%);"></div>
+    <div style="position:absolute; left:-140px; bottom:-120px; width:700px; height:700px; border-radius:50%; background:radial-gradient(circle at center, rgba(231,192,106,0.10), rgba(231,192,106,0) 68%);"></div>
+    <div style="position:absolute; inset:40px; border:1px solid rgba(231,192,106,0.22); pointer-events:none;"></div>
+    <div style="position:absolute; left:50%; top:200px; transform:translateX(-50%); font-size:640px; line-height:1; font-weight:700; color:rgba(245,242,236,0.045); letter-spacing:-0.06em; pointer-events:none; white-space:nowrap;">{{ weekNum }}</div>
+    <div style="display:flex; justify-content:space-between; align-items:center; position:relative;">
+      <img src="assets/ttt-logo-gold.png" alt="TTT" style="width:200px; height:auto; display:block;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:22px; letter-spacing:0.2em; color:#8A8F94; text-transform:uppercase;">{{ seasonLabel }} · Recap</div>
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; gap:28px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; letter-spacing:0.34em; color:#E7C06A; text-transform:uppercase;">TimTebowTournament</div>
+      <div style="display:flex; align-items:baseline; gap:28px;">
+        <div style="font-size:110px; line-height:0.9; font-weight:600; color:#8A8F94; letter-spacing:-0.02em;">WEEK</div>
+        <div style="font-size:330px; line-height:0.78; font-weight:700; color:#F5F2EC; letter-spacing:-0.06em;">{{ weekNum }}</div>
+      </div>
+      <div style="width:120px; height:6px; background:#E7C06A; margin-top:14px;"></div>
+      <div style="font-size:60px; line-height:1.08; font-weight:700; color:#F5F2EC; max-width:900px; text-wrap:pretty;">{{ coverHook }}</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; letter-spacing:0.12em; color:#E7C06A;">{{ coverHookSub }}</div>
+    </div>
+    <div style="position:relative; display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; letter-spacing:0.2em; color:#8A8F94; text-transform:uppercase;">Standings · 4 Matchups · Lineups</div>
+      <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:24px; letter-spacing:0.2em; color:#F5F2EC; text-transform:uppercase;">
+        <span>Swipe</span>
+        <span style="display:inline-block; width:52px; height:2px; background:#E7C06A;"></span>
+        <span style="color:#E7C06A;">▶</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="02 Standings" style="width:1080px; height:1350px; flex:none; background:#15181A; display:flex; flex-direction:column; padding:80px; box-sizing:border-box; gap:48px;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:20px; letter-spacing:0.28em; color:#E7C06A; text-transform:uppercase;">{{ weekLabel }}</div>
+        <div style="font-size:82px; font-weight:700; color:#F5F2EC; letter-spacing:-0.02em; line-height:1;">Standings</div>
+      </div>
+      <img src="assets/ttt-logo-gold.png" alt="TTT" style="width:110px; height:auto; display:block;">
+    </div>
+    <div style="display:grid; grid-template-columns:64px minmax(0,1fr) 130px 175px 125px; gap:0 16px; font-family:'JetBrains Mono',monospace; font-size:22px; letter-spacing:0.16em; color:#8A8F94; text-transform:uppercase; padding:0 24px 14px; border-bottom:1px solid rgba(231,192,106,0.35); margin-bottom:-38px;">
+      <div>#</div>
+      <div>Manager</div>
+      <div style="text-align:right;">Rec</div>
+      <div style="text-align:right;">Points</div>
+      <div style="text-align:right;">Week</div>
+    </div>
+    <div style="display:flex; flex-direction:column; flex:1; gap:10px;">
+      <sc-for list="{{ standings }}" as="t" hint-placeholder-count="8">
+        <div style="position:relative; display:grid; grid-template-columns:64px minmax(0,1fr) 130px 175px 125px; gap:0 16px; align-items:center; flex:1; padding:0 24px; background:{{ t.rowBg }}; border:1px solid {{ t.rowBorder }}; border-radius:6px; overflow:hidden;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:40px; font-weight:700; color:{{ t.rankColor }};">{{ t.rank }}</div>
+          <div style="display:flex; align-items:center; gap:16px; min-width:0;">
+            <div style="font-size:46px; font-weight:700; color:{{ t.ownerColor }}; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ t.owner }}</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:700; color:{{ t.streakColor }}; letter-spacing:0.1em; padding:4px 10px; border:1px solid {{ t.streakColor }}; border-radius:4px; flex:none;">{{ t.streak }}</div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:34px; font-weight:700; color:{{ t.recordColor }}; text-align:right;">{{ t.record }}</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:{{ t.pfColor }}; text-align:right;">{{ t.pf }}</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:{{ t.weekColor }}; text-align:right;">{{ t.weekPts }}</div>
+        </div>
+        <sc-if value="{{ t.playoffLine }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:center; gap:18px; padding:6px 24px;">
+            <div style="flex:1; height:1px; background:rgba(231,192,106,0.35);"></div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:20px; letter-spacing:0.28em; color:#E7C06A; text-transform:uppercase;">Playoffs</div>
+            <div style="flex:1; height:1px; background:rgba(231,192,106,0.35);"></div>
+          </div>
+        </sc-if>
+      </sc-for>
+    </div>
+  </div>
+
+  <sc-for list="{{ matchups }}" as="m" hint-placeholder-count="4">
+    <div data-screen-label="{{ m.screenLabel }}" style="width:1080px; height:1350px; flex:none; background:#15181A; display:flex; flex-direction:column; padding:60px 72px 44px; box-sizing:border-box; gap:0;">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:26px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:20px; letter-spacing:0.28em; color:#E7C06A; text-transform:uppercase;">{{ m.kicker }}</div>
+        <img src="assets/ttt-logo-gold.png" alt="TTT" style="width:88px; height:auto; display:block;">
+      </div>
+      <div style="display:grid; grid-template-columns:minmax(0,1fr) 220px minmax(0,1fr); align-items:end; gap:14px; padding-bottom:24px; border-bottom:1px solid rgba(231,192,106,0.28);">
+        <div style="display:flex; flex-direction:column; gap:6px; min-width:0;">
+          <div style="display:flex; align-items:center; gap:12px; min-width:0;">
+            <div style="font-size:{{ m.aNameSize }}; font-weight:700; color:#F5F2EC; line-height:1.25; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;">{{ m.aOwner }}</div>
+            <sc-if value="{{ m.aWin }}" hint-placeholder-val="{{ false }}"><div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:700; color:#15181A; background:#E7C06A; padding:4px 10px; border-radius:4px; flex:none;">W</div></sc-if>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#8A8F94;">{{ m.aMeta }}</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:60px; font-weight:700; color:{{ m.aColor }}; line-height:1; margin-top:8px;">{{ m.aProj }}</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding-bottom:18px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#6F757A;">VS</div>
+          <sc-if value="{{ m.hasH2h }}" hint-placeholder-val="{{ false }}"><div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#8A8F94; white-space:nowrap;">{{ m.h2h }}</div></sc-if>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-end; min-width:0;">
+          <div style="display:flex; align-items:center; gap:12px; min-width:0; flex-direction:row-reverse;">
+            <div style="font-size:{{ m.bNameSize }}; font-weight:700; color:#F5F2EC; line-height:1.25; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;">{{ m.bOwner }}</div>
+            <sc-if value="{{ m.bWin }}" hint-placeholder-val="{{ false }}"><div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:700; color:#15181A; background:#E7C06A; padding:4px 10px; border-radius:4px; flex:none;">W</div></sc-if>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#8A8F94;">{{ m.bMeta }}</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:60px; font-weight:700; color:{{ m.bColor }}; line-height:1; margin-top:8px;">{{ m.bProj }}</div>
+        </div>
+      </div>
+      <div style="padding:20px 0 10px; display:flex; flex-direction:column; gap:6px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="display:flex; align-items:baseline; gap:14px; flex:none;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:22px; letter-spacing:0.18em; color:#6F757A; text-transform:uppercase; white-space:nowrap; flex:none;">{{ m.chartTitle }}</div>
+          </div>
+          <sc-if value="{{ m.showLegend }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; gap:22px; align-items:center; flex:none;">
+            <div style="display:flex; gap:9px; align-items:center;">
+              <div style="width:26px; height:5px; border-radius:3px; background:#E7C06A;"></div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#F5F2EC;">{{ m.legendGold }}</div>
+            </div>
+            <div style="display:flex; gap:9px; align-items:center;">
+              <div style="width:26px; height:5px; border-radius:3px; background:#AEB6BE;"></div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#F5F2EC;">{{ m.legendGrey }}</div>
+            </div>
+          </div>
+          </sc-if>
+        </div>
+        <div data-om-raster="true">{{ m.chart }}</div>
+      </div>
+      <div style="display:flex; flex-direction:column; flex:1; gap:6px;">
+        <sc-for list="{{ m.rows }}" as="r" hint-placeholder-count="9">
+          <div style="display:grid; grid-template-columns:minmax(0,1fr) 84px minmax(0,1fr); align-items:center; gap:10px; flex:1; padding:0 18px; border-radius:6px; background:rgba(245,242,236,0.035);">
+            <div style="display:flex; align-items:baseline; gap:14px; min-width:0;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:30px; font-weight:700; color:{{ r.aPtsColor }}; width:96px; flex:none;">{{ r.aPts }}</div>
+              <div style="font-size:30px; font-weight:{{ r.aWeight }}; color:{{ r.aNameColor }}; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;">{{ r.aName }}</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:700; letter-spacing:0.12em; color:#8A8F94; text-align:center;">{{ r.pos }}</div>
+            <div style="display:flex; align-items:baseline; gap:14px; justify-content:flex-end; min-width:0;">
+              <div style="font-size:30px; font-weight:{{ r.bWeight }}; color:{{ r.bNameColor }}; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;">{{ r.bName }}</div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:30px; font-weight:700; color:{{ r.bPtsColor }}; width:96px; flex:none; text-align:right;">{{ r.bPts }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ m.hasTake }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:20px; padding:20px 26px; border-radius:8px; background:rgba(231,192,106,0.08); border:1px solid rgba(231,192,106,0.3); display:flex; gap:18px; align-items:flex-start;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:44px; line-height:1; color:#E7C06A; flex:none;">“</div>
+        <div style="font-size:30px; line-height:1.35; color:#F5F2EC; text-wrap:pretty;">{{ m.take }}</div>
+      </div>
+      </sc-if>
+    </div>
+  </sc-for>
+
+  <div style="width:1080px; box-sizing:border-box; border:1px solid rgba(245,242,236,0.12); padding:40px 44px; display:flex; flex-direction:column; gap:18px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:15px; letter-spacing:0.22em; color:#E7C06A; text-transform:uppercase;">Caption für den Post (nicht im Bild)</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:17px; line-height:1.7; color:#C9CDD1; white-space:pre-wrap;">{{ caption }}</div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;week&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:1,&quot;max&quot;:18,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Woche&quot;},&quot;coverHeadline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Woche 1: einer geht 1-0, einer geht auf Tilt.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Woche&quot;},&quot;gold&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E7C06A&quot;,&quot;options&quot;:[&quot;#E7C06A&quot;,&quot;#D4A542&quot;,&quot;#F0D79B&quot;,&quot;#C9A227&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Design&quot;},&quot;showProjections&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Design&quot;},&quot;chartMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;points&quot;,&quot;options&quot;:[&quot;winprob&quot;,&quot;points&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Design&quot;}}">
+// ════════════════════════════════════════════════════════════════
+//  WÖCHENTLICH HIER PFLEGEN
+//  MANAGER-Zeile: Name | Record | Streak | Punkte Week1,Week2,…
+//  (Reihenfolge = Standings-Platzierung, Points = Summe automatisch,
+//   letzte Punktzahl = Score/Projektion dieser Woche)
+// ════════════════════════════════════════════════════════════════
+const WEEK = 1;
+const SEASON = "Season 2026";
+
+// ── Sleeper ──────────────────────────────────────────────────────
+// League-ID gesetzt -> Standings, Matchups, Lineups, Punkte und
+// Projektionen kommen live von Sleeper; MANAGERS/MATCHUPS unten sind
+// dann nur Fallback. SLEEPER_LEAGUE = null -> manuelle Daten.
+const SLEEPER_LEAGUE = "1321866747418001408";
+// Sleeper-Anzeigename -> Name im Post (leer lassen = Sleeper-Name)
+const NAMES = {
+  "kesso": "Kessi",
+  "NubischerPrinz": "Simi",
+  "theBIGLebronski": "Tommy",
+  "lancemourdock": "Marv",
+  "LosSausages": "Ritz",
+  "ShamH": "Benni",
+  "Jottage": "Erik",
+};
+// Trash-Talk pro Matchup (Reihenfolge = Sleeper-Matchup-ID 1..4)
+const TAKES = [
+  "",
+  "",
+  "",
+  "",
+];
+
+// ── Wochen-JSON aus dem Repo (GitHub Action, dienstags 12 Uhr) ──
+// Enthält Sleeper-Snapshot, PBP-Events, Trash-Talk. Fehlt die Datei,
+// fällt das Template auf Live-Sleeper + PBP_FILE zurück.
+const DATA_BASE = "https://raw.githubusercontent.com/KoBeWa/Scrape/master/instagram/data/";
+const DATA_SEASON = 2026;
+
+// ── Play-by-Play-Quelle (nflverse load_pbp-Export als CSV) ──────
+// Liegt eine passende Datei vor, zeichnet die Grafik den Verlauf
+// play-by-play mit echter Uhrzeit statt der manuellen Quarter-Werte.
+// PBP_FILE = null  -> immer manuelle Daten benutzen.
+const PBP_FILE = "uploads/play_by_play_2026.csv";
+const PBP_WEEK = WEEK;       // Week, die aus der Datei gefiltert wird
+const PBP_SCORING = "half";  // "ppr" | "half" | "standard" – TTT spielt Half-PPR
+// DEF-/Points-allowed-Regeln stehen in pbp.js (Konstante DEF)
+const TZ_OFFSET = 2;         // UTC -> deutsche Zeit (2 = Sommerzeit)
+
+const MANAGERS = [
+  "Benni|3-0|W3|138.2,126.6,133.6",
+  "Erik|2-1|W1|124.8,118.0,128.4",
+  "Ritz|2-1|L1|131.4,110.2,119.2",
+  "Marv|2-1|W2|112.6,118.8,113.5",
+  "Kessi|1-2|L2|108.4,120.2,109.5",
+  "Tommy|1-2|W1|104.2,112.8,104.5",
+  "Simi|1-2|L1|98.6,104.4,102.7",
+  "Juschka|0-3|L3|92.4,88.6,95.3",
+];
+
+const COVER_HEADLINE = "Woche 1: einer geht 1-0, einer geht auf Tilt.";
+const COVER_SUB = "Alle Matchups, alle Starter, null Ausreden. Standings-Update im Swipe.";
+const STANDINGS_NOTE = "Juschka steht bei 0-3 und hat seit Week 1 keinen Waiver-Claim gesetzt. Autodraft-Energie.";
+
+// Spielfenster der Woche: Kürzel | Start | Ende (deutsche Zeit, Tage Do–Di)
+// Nur Fenster, in denen wirklich gespielt wird. Freitag/Samstag und die
+// Nächte dazwischen fallen aus der X-Achse raus; innerhalb eines Fensters
+// wird nach echter Zeit skaliert und in Quarter unterteilt.
+const WINDOWS = [
+  "TNF|Do 02:20|Do 05:30",
+  "SUN EARLY|So 19:00|So 22:05",
+  "SUN LATE|So 22:05|Mo 01:15",
+  "SNF|Mo 02:20|Mo 05:30",
+  "MNF|Di 02:15|Di 05:30",
+];
+
+// Matchups dieser Woche: Manager A vs Manager B + Starting Lineups
+// slotsA / slotsB = Punkte pro QUARTER, gruppiert nach Fenster:
+//   Fenster mit Komma trennen, Quarter innerhalb eines Fensters mit "/".
+//   Beispiel "0/6/0/12" = Q1 6 Pkt, Q4 12 Pkt in diesem Fenster.
+//   Weniger als 4 Quarter oder weniger Fenster angeben = Linie endet dort
+//   (Live-Zwischenstand). Der Matchup-Score oben ist die Summe.
+// Lineup-Zeile: POS | Spieler | NFL-Team | Punkte
+const MATCHUPS = [
+  {
+    a: "Benni", b: "Juschka",
+    slotsA: "1.4/3.8/0/4.0, 12.6/19.4/16.2/13.2, 6.2/14.8/9.4/8.2, 2.8/0/4.6/5.4, 3.1/2.4/0/6.1",
+    slotsB: "0/2.2/1.8/1.5, 9.4/11.2/14.8/8.8, 4.6/8.2/7.4/7.6, 1.2/3.4/0/4.8, 0/2.6/3.1/2.7",
+    take: "Benni spielt um den Bye, Juschka gegen die Auto-Lineup-Funktion. Spread: gnadenlos.",
+    lineupA: [
+      "QB|Sam Darnold|SEA|23.1", "RB|Christian McCaffrey|SF|18.6", "RB|George Holani|SEA|6.2",
+      "WR|Jaxon Smith-Njigba|SEA|19.4", "WR|Puka Nacua|LAR|14.1", "TE|AJ Barner|SEA|8.8",
+      "FLEX|Rashid Shaheed|SEA|13.6", "K|Jason Myers|SEA|9.2", "DEF|Seahawks|SEA|8.4",
+    ],
+    lineupB: [
+      "QB|Drake Maye|NE|15.3", "RB|Rhamondre Stevenson|NE|11.8", "RB|Kyren Williams|LAR|14.4",
+      "WR|Mack Hollins|NE|11.2", "WR|Cooper Kupp|SEA|10.6", "TE|Hunter Henry|NE|8.1",
+      "FLEX|Demarcus Robinson|NE|8.9", "K|Joshua Karty|LAR|7.8", "DEF|Patriots|NE|5.5",
+    ],
+  },
+  {
+    a: "Erik", b: "Ritz",
+    slotsA: "0/4.2/1.6/2.8, 11.4/16.8/12.2/11.7, 7.8/9.4/8.6/8.6, 3.4/2.1/4.2/3.7, 0/6.4/2.3/4.2",
+    slotsB: "2.1/0/3.2/2.2, 14.6/18.2/13.4/12.1, 5.4/11.2/7.2/6.4, 0/4.8/3.1/4.0, 2.4/3.6/0/5.3",
+    take: "Zwei 2-1-Teams, neun Punkte Unterschied auf dem Papier. Der Monday-Night-Flex entscheidet.",
+    lineupA: [
+      "QB|Jalen Hurts|PHI|21.4", "RB|Saquon Barkley|PHI|17.9", "RB|Kenneth Walker III|SEA|13.1",
+      "WR|A.J. Brown|PHI|16.2", "WR|DK Metcalf|PIT|13.4", "TE|Sam LaPorta|DET|11.6",
+      "FLEX|Jayden Reed|GB|11.1", "K|Jake Bates|DET|8.6", "DEF|Eagles|PHI|7.9",
+    ],
+    lineupB: [
+      "QB|Patrick Mahomes|KC|20.8", "RB|Jahmyr Gibbs|DET|18.4", "RB|James Cook|BUF|13.9",
+      "WR|Rashee Rice|KC|14.8", "WR|Garrett Wilson|NYJ|13.2", "TE|Travis Kelce|KC|12.1",
+      "FLEX|Xavier Worthy|KC|11.9", "K|Harrison Butker|KC|9.1", "DEF|Chiefs|KC|7.5",
+    ],
+  },
+  {
+    a: "Marv", b: "Kessi",
+    slotsA: "2.4/1.8/0/4.7, 10.2/15.4/12.8/10.3, 6.8/8.4/8.2/7.8, 0/5.2/3.4/3.8, 1.9/4.2/2.1/4.1",
+    slotsB: "0/3.4/2.1/1.4, 9.8/13.2/11.4/10.7, 5.2/9.6/7.4/7.6, 4.1/0/5.2/4.8, 0/4.4/3.8/5.4",
+    take: "Kessi hatte letzte Woche 31 Punkte auf der Bench. Marv muss nur zuschauen und nichts kaputt machen.",
+    lineupA: [
+      "QB|Lamar Jackson|BAL|22.6", "RB|Derrick Henry|BAL|16.8", "RB|Chase Brown|CIN|12.4",
+      "WR|Amon-Ra St. Brown|DET|16.1", "WR|Malik Nabers|NYG|14.2", "TE|George Kittle|SF|11.2",
+      "FLEX|Tee Higgins|CIN|12.4", "K|Chris Boswell|PIT|8.9", "DEF|Ravens|BAL|7.1",
+    ],
+    lineupB: [
+      "QB|Joe Burrow|CIN|20.2", "RB|Josh Jacobs|GB|15.6", "RB|Bucky Irving|TB|12.9",
+      "WR|CeeDee Lamb|DAL|15.8", "WR|Drake London|ATL|13.1", "TE|Brock Bowers|LV|12.6",
+      "FLEX|Courtland Sutton|DEN|10.4", "K|Ka'imi Fairbairn|HOU|8.2", "DEF|Steelers|PIT|6.9",
+    ],
+  },
+  {
+    a: "Tommy", b: "Simi",
+    slotsA: "1.2/2.4/0/4.3, 9.4/13.8/11.2/10.2, 5.8/7.6/7.4/7.3, 0/3.2/2.8/4.4, 2.2/3.4/1.8/5.1",
+    slotsB: "0/1.8/2.4/2.7, 8.6/12.4/11.8/10.0, 4.8/8.2/6.6/6.8, 3.2/0/4.6/5.4, 1.4/4.2/2.6/5.2",
+    take: "Loser-Bowl mit Ansage: wer hier verliert, redet bis Week 6 nicht mehr über Playoffs.",
+    lineupA: [
+      "QB|Jordan Love|GB|19.1", "RB|Kyren Williams|LAR|15.1", "RB|Breece Hall|NYJ|12.2",
+      "WR|Puka Nacua|LAR|15.4", "WR|Terry McLaurin|WAS|12.8", "TE|Mark Andrews|BAL|9.8",
+      "FLEX|Jerry Jeudy|CLE|10.1", "K|Jason Myers|SEA|7.9", "DEF|Vikings|MIN|7.2",
+    ],
+    lineupB: [
+      "QB|Caleb Williams|CHI|18.4", "RB|Alvin Kamara|NO|14.2", "RB|Aaron Jones|MIN|11.9",
+      "WR|Mike Evans|TB|14.1", "WR|Zay Flowers|BAL|12.4", "TE|Dalton Kincaid|BUF|9.4",
+      "FLEX|Rome Odunze|CHI|9.8", "K|Tyler Bass|BUF|7.7", "DEF|Bills|BUF|6.9",
+    ],
+  },
+];
+
+const CAPTION = `WEEK 3 IST DA 🏈
+Standings, alle 4 Matchups, komplette Starting Lineups und der Punkteverlauf — swipe durch und schau, ob dein Lineup überhaupt startfähig ist.
+
+Juschka: 0-3. Kein Waiver-Claim seit Week 1. Wir glauben an dich, aber nicht mehr lange.
+
+#TimTebowTournament #FantasyFootball #Week3 #NFL`;
+
+const GOLD = "#E7C06A";
+const INK = "#F5F2EC";
+const MUTED = "#9AA0A6";
+const GREY = "#7E848A";
+const RED = "#D9705E";
+
+const h = React.createElement;
+
+class Component extends DCLogic {
+  state = { pbp: null, pbpNote: null, sleeper: null, sleeperNote: null };
+
+  urlParams = (() => { try { return new URLSearchParams(window.location.search); } catch (e) { return new URLSearchParams(); } })();
+  urlWeek = this.urlParams.get("week") ? parseInt(this.urlParams.get("week"), 10) : null;
+
+  async componentDidMount() {
+    const week = this.props.week ?? this.urlWeek ?? WEEK;
+    const dataUrl = this.urlParams.get("data");
+    if (DATA_BASE || dataUrl) {
+      try {
+        const res = await fetch(dataUrl || (DATA_BASE + DATA_SEASON + "/week" + String(week).padStart(2, "0") + ".json"), { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const d = await res.json();
+        const mod = await import("./pbp.js");
+        this.setState({
+          sleeper: d.sleeper || null,
+          pbp: d.pbp && d.pbp.windows && d.pbp.windows.length ? { data: d.pbp, seriesFor: mod.seriesFor } : null,
+          pbpNote: d.pbp ? null : "Repo-JSON ohne PBP",
+          repo: { takes: d.takes || [], cover: d.cover, coverSub: d.coverSub, standingsNote: d.standingsNote, caption: d.autoCaption || d.caption, builtAt: d.builtAt },
+          ready: true,
+        });
+        return;
+      } catch (e) {
+        this.setState({ sleeperNote: "Repo-JSON fehlt (" + (e.message || e) + ") → live" });
+      }
+    }
+    if (SLEEPER_LEAGUE) {
+      (async () => {
+        try {
+          const mod = await import("./sleeper.js");
+          const week = this.props.week ?? this.urlWeek ?? WEEK;
+          const data = await mod.loadLeague(SLEEPER_LEAGUE, week, { scoring: PBP_SCORING, names: NAMES });
+          this.setState({ sleeper: data, ready: true });
+        } catch (e) {
+          this.setState({ sleeperNote: "Sleeper-Fehler: " + (e.message || e) });
+        }
+      })();
+    }
+    if (!PBP_FILE) return;
+    (async () => {
+      try {
+        const mod = await import("./pbp.js");
+        const res = await fetch(PBP_FILE);
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = mod.parsePbp(await res.text(), { week: this.props.week ?? PBP_WEEK, scoring: PBP_SCORING, tzOffset: TZ_OFFSET });
+        this.setState({ pbp: { data: data, seriesFor: mod.seriesFor } });
+      } catch (e) {
+        this.setState({ pbpNote: "manuell (PBP: " + (e.message || e) + ")" });
+      }
+    })();
+  }
+
+  // X-Layout der Spielfenster (zeitlich skaliert, Pausen rausgeschnitten)
+  layoutWins(wins, W, padL, padR, GAP) {
+    const totalDur = wins.reduce((t, w) => t + Math.max(w.t1 - w.t0, 1), 0);
+    const inner = W - padL - padR - GAP * (wins.length - 1);
+    let cursor = padL;
+    wins.forEach(w => {
+      w.dur = Math.max(w.t1 - w.t0, 1);
+      w.x0 = cursor; w.w = inner * w.dur / totalDur; w.x1 = w.x0 + w.w; cursor = w.x1 + GAP;
+    });
+    return t => {
+      for (let i = 0; i < wins.length; i++) {
+        const w = wins[i];
+        if (t <= w.t1) return t < w.t0 ? w.x0 : w.x0 + w.w * (t - w.t0) / w.dur;
+      }
+      return wins[wins.length - 1].x1;
+    };
+  }
+
+  // Win Probability Team A über die Woche.
+  // Modell: Vorsprung + Rest-Projektion A − Rest-Projektion B, normalverteilt.
+  // Rest-Projektion = Projektion × verbleibender Spielanteil des eigenen NFL-Spiels.
+  winProb(sA, sB, LA, LB, wins, games) {
+    const K = 0.6;                                     // Streuung ≈ 60 % der Projektion
+    const t0 = wins[0].t0, tEnd = wins[wins.length - 1].t1;
+    const totalDur = wins.reduce((s, w) => s + (w.t1 - w.t0), 0);
+    const globalRem = t => wins.reduce((s, w) => s + Math.max(0, w.t1 - Math.max(t, w.t0)), 0) / totalDur;
+    const clamp = v => Math.max(0, Math.min(1, v));
+    const gameFor = team => games ? games.find(g => g.home === team || g.away === team) : null;
+    const rem = (L, t) => {
+      let mu = 0, va = 0;
+      L.forEach(p => {
+        const pr = p.proj != null ? p.proj : (parseFloat(p.pts) || 0);
+        const g = gameFor(p.nfl);
+        const frac = g ? clamp((g.end - t) / (g.end - g.start)) : (games ? 0 : globalRem(t));
+        mu += pr * frac; va += Math.pow(K * pr, 2) * frac;
+      });
+      return { mu, va };
+    };
+    const cumAt = (s, t) => { let v = 0; for (const p of s) { if (p.t <= t) v = p.v; else break; } return v; };
+    const phi = z => {
+      const t = 1 / (1 + 0.2316419 * Math.abs(z)), d = 0.3989423 * Math.exp(-z * z / 2);
+      const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+      return z > 0 ? 1 - p : p;
+    };
+    const step = tEnd > 1e9 ? 20 * 60000 : 1 / 3;   // 20 Minuten (ms oder Stunden)
+    const times = new Set([t0, tEnd]);
+    sA.concat(sB).forEach(p => times.add(p.t));
+    wins.forEach(w => { times.add(w.t0); times.add(w.t1); for (let t = w.t0 + step; t < w.t1; t += step) times.add(t); });
+    return Array.from(times).sort((a, b) => a - b).map(t => {
+      const lead = cumAt(sA, t) - cumAt(sB, t);
+      const ra = rem(LA, t), rb = rem(LB, t);
+      return { t, wp: phi((lead + ra.mu - rb.mu) / Math.sqrt(ra.va + rb.va + 0.3)) };
+    });
+  }
+
+  wpChart(samples, wins, gold, aName, bName, key) {
+    const W = 936, H = 250, padL = 128, padR = 104, padT = 30, padB = 16, GAP = 22;
+    if (!wins.length || !samples.length) return null;
+    const x = this.layoutWins(wins, W, padL, padR, GAP);
+    const GREY2 = "#AEB6BE", yTop = padT, yBot = H - padB, yMid = (yTop + yBot) / 2;
+    const y = wp => yTop + (1 - wp) * (yBot - yTop);
+    const p = samples.map(s => ({ x: x(s.t), y: y(s.wp), wp: s.wp }));
+    const first = p[0], last = p[p.length - 1];
+    const linePts = p.map(q => q.x + "," + q.y).join(" ");
+    const area = linePts + " " + last.x + "," + yMid + " " + first.x + "," + yMid;
+    const pct = wp => Math.round((wp >= 0.5 ? wp : 1 - wp) * 100) + " %";
+    const col = wp => wp >= 0.5 ? gold : GREY2;
+    const aWins = last.wp >= 0.5;
+    const peak = p.reduce((b, q) => (aWins ? q.wp < b.wp : q.wp > b.wp) ? q : b, p[0]);
+    const showPeak = aWins ? peak.wp < 0.4 : peak.wp > 0.6;
+    const mono = "'JetBrains Mono',monospace";
+    const short = s => String(s).length > 7 ? String(s).slice(0, 6) + "…" : String(s);
+    const cA = "wpA" + key, cB = "wpB" + key;
+    return h("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", height: H, style: { display: "block", overflow: "visible" } },
+      h("defs", null,
+        h("clipPath", { id: cA }, h("rect", { x: 0, y: 0, width: W, height: yMid })),
+        h("clipPath", { id: cB }, h("rect", { x: 0, y: yMid, width: W, height: H - yMid }))
+      ),
+      wins.map((w, i) => h("g", { key: "w" + i },
+        h("rect", { x: w.x0, y: yTop, width: w.w, height: yBot - yTop, fill: i % 2 ? "rgba(245,242,236,0.03)" : "rgba(245,242,236,0.05)" })
+      )),
+      h("line", { x1: padL, x2: W - padR, y1: yTop, y2: yTop, stroke: "rgba(245,242,236,0.12)", strokeWidth: 1 }),
+      h("line", { x1: padL, x2: W - padR, y1: yBot, y2: yBot, stroke: "rgba(245,242,236,0.12)", strokeWidth: 1 }),
+      h("line", { x1: padL, x2: W - padR, y1: yMid, y2: yMid, stroke: "rgba(245,242,236,0.35)", strokeWidth: 2, strokeDasharray: "6 6" }),
+      h("text", { x: padL - 16, y: yTop + 9, textAnchor: "end", fill: gold, fontSize: 24, fontWeight: 700, fontFamily: mono }, short(aName)),
+      h("text", { x: padL - 16, y: yMid + 8, textAnchor: "end", fill: "#8A8F94", fontSize: 22, fontFamily: mono }, "50 %"),
+      h("text", { x: padL - 16, y: yBot + 9, textAnchor: "end", fill: GREY2, fontSize: 24, fontWeight: 700, fontFamily: mono }, short(bName)),
+      h("polygon", { points: area, fill: gold, opacity: 0.22, clipPath: "url(#" + cA + ")" }),
+      h("polygon", { points: area, fill: GREY2, opacity: 0.22, clipPath: "url(#" + cB + ")" }),
+      h("polyline", { points: linePts, fill: "none", stroke: gold, strokeWidth: 5, strokeLinejoin: "round", clipPath: "url(#" + cA + ")" }),
+      h("polyline", { points: linePts, fill: "none", stroke: GREY2, strokeWidth: 5, strokeLinejoin: "round", clipPath: "url(#" + cB + ")" }),
+      h("text", { x: first.x + 10, y: first.wp >= 0.5 ? first.y - 12 : first.y + 30, fill: col(first.wp), fontSize: 24, fontWeight: 700, fontFamily: mono }, pct(first.wp)),
+      showPeak ? h("g", null,
+        h("circle", { cx: peak.x, cy: peak.y, r: 7, fill: "#15181A", stroke: col(peak.wp), strokeWidth: 3 }),
+        h("text", { x: peak.x + 12, y: peak.wp >= 0.5 ? peak.y - 12 : peak.y + 30, fill: col(peak.wp), fontSize: 22, fontWeight: 700, fontFamily: mono }, "Peak " + pct(peak.wp))
+      ) : null,
+      h("text", { x: last.x + 14, y: last.y + 9, fill: col(last.wp), fontSize: 28, fontWeight: 700, fontFamily: mono }, pct(last.wp))
+    );
+  }
+
+  // Verlauf über echte Spielfenster; Punkte sitzen an ihrer echten Uhrzeit
+  chart(sA, sB, wins, gold, quarters, aWin, idx, finalA, finalB) {
+    const GREY = "#AEB6BE";
+    const W = 936, H = 250, padL = 64, padR = 134, padT = 22, padB = 14, GAP = 18;
+    if (!wins.length) return null;
+    const x = this.layoutWins(wins, W, padL, padR, GAP);
+    const maxVal = Math.max.apply(null, sA.concat(sB).map(p => p.v).concat([20]));
+    const hi = Math.ceil((maxVal * 1.08) / 25) * 25;
+    const y = v => padT + (hi - v) * (H - padT - padB) / hi;
+
+    // Stufenlinie: Linie bis zum rechten Rand, Endwert rechts, keine Fläche
+    const xEnd = W - padR;
+    const line = (pts, color, thick, fillA, dy, finalV) => {
+      if (!pts.length) return null;
+      const p = pts.map(q => ({ x: x(q.t), y: y(q.v), v: q.v }));
+      const all = [{ x: wins[0].x0, y: y(0) }].concat(p);
+      const poly = all.reduce((acc, q, i) => i === 0 ? [q.x + "," + q.y] : acc.concat([q.x + "," + all[i - 1].y, q.x + "," + q.y]), []);
+      const last = p[p.length - 1];
+      poly.push(xEnd + "," + last.y);
+      return h("g", { key: "s" + color },
+        h("polyline", { points: poly.join(" "), fill: "none", stroke: color, strokeWidth: thick, strokeLinejoin: "round", strokeLinecap: "round" }),
+        h("text", { x: xEnd + 12, y: last.y + dy, fill: color, fontSize: 26, fontWeight: 700, fontFamily: "'JetBrains Mono',monospace" }, Number(finalV != null ? finalV : last.v).toFixed(2))
+      );
+    };
+    const aEnd = sA.length ? sA[sA.length - 1].v : 0, bEnd = sB.length ? sB[sB.length - 1].v : 0;
+    const close = Math.abs(y(aEnd) - y(bEnd)) < 34;
+    const aDy = close ? (aEnd >= bEnd ? -8 : 26) : 9, bDy = close ? (bEnd > aEnd ? -8 : 26) : 9;
+    const fmtWin = w => w.label + (w.sub ? " " + String(w.sub).split(" ·")[0] : "");
+
+    // Zeitbereiche, in denen der Sieger vorne lag -> goldene Hintergrundbänder
+    const leadBands = () => {
+      const win = aWin ? sA : sB, lose = aWin ? sB : sA;
+      const ts = Array.from(new Set(win.concat(lose).map(q => q.t))).sort((p, q) => p - q);
+      const at = (s, t) => { let v = 0; for (const q of s) { if (q.t <= t) v = q.v; else break; } return v; };
+      const out = [], outB = []; let open = null, openB = null;
+      ts.forEach(t => {
+        const a = at(win, t), b = at(lose, t);
+        const ahead = a > b, behind = b > a;
+        if (ahead && open == null) open = t;
+        if (!ahead && open != null) { out.push([open, t]); open = null; }
+        if (behind && openB == null) openB = t;
+        if (!behind && openB != null) { outB.push([openB, t]); openB = null; }
+      });
+      if (open != null) out.push([open, null]);
+      if (openB != null) outB.push([openB, null]);
+      // Fläche unter der führenden Linie: gold (Sieger) bzw. grau (Verlierer), Clip auf die Phasen
+      const areaPoly = s => {
+        const p = s.map(q => ({ x: x(q.t), y: y(q.v) }));
+        if (!p.length) return "";
+        const all = [{ x: wins[0].x0, y: y(0) }].concat(p);
+        const poly = all.reduce((acc, q, i) => i === 0 ? [q.x + "," + q.y] : acc.concat([q.x + "," + all[i - 1].y, q.x + "," + q.y]), []);
+        poly.push(xEnd + "," + p[p.length - 1].y, xEnd + "," + y(0));
+        return poly.join(" ");
+      };
+      const clip = (id, bands) => h("clipPath", { id: id }, bands.map(([t0, t1], i) => h("rect", { key: "c" + i, x: x(t0), y: 0, width: Math.max((t1 == null ? xEnd : x(t1)) - x(t0), 2), height: H })));
+      const cid = "lead" + idx, cidB = "trail" + idx;
+      return h("g", null,
+        h("defs", null, clip(cid, out), clip(cidB, outB)),
+        h("polygon", { points: areaPoly(win), fill: gold, opacity: 0.14, clipPath: "url(#" + cid + ")" }),
+        h("polygon", { points: areaPoly(lose), fill: GREY, opacity: 0.12, clipPath: "url(#" + cidB + ")" })
+      );
+    };
+
+    return h("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", height: H, style: { display: "block", overflow: "hidden" } },
+      h("rect", { x: padL, y: padT, width: W - padR - padL, height: y(0) - padT, rx: 6, fill: "rgba(245,242,236,0.035)" }),
+      leadBands(),
+      [hi / 2, hi].map((v, i) => h("g", { key: "g" + i },
+        h("line", { x1: padL, x2: W - padR, y1: y(v), y2: y(v), stroke: "rgba(245,242,236,0.10)", strokeWidth: 1, strokeDasharray: "4 6" }),
+        h("text", { x: padL - 12, y: y(v) + 8, textAnchor: "end", fill: "#8A8F94", fontSize: 22, fontFamily: "'JetBrains Mono',monospace" }, String(Math.round(v)))
+      )),
+      h("line", { x1: padL, x2: W - padR, y1: y(0), y2: y(0), stroke: "rgba(245,242,236,0.18)", strokeWidth: 1 }),
+      aWin ? line(sB, GREY, 3, 0.10, bDy, finalB) : line(sA, GREY, 3, 0.10, aDy, finalA),
+      aWin ? line(sA, gold, 4, 0.14, aDy, finalA) : line(sB, gold, 4, 0.14, bDy, finalB)
+    );
+  }
+
+  manualWindows() {
+    const DAYS = ["Do", "Fr", "Sa", "So", "Mo", "Di"];
+    const hoursOf = str => {
+      const m = String(str).trim().match(/^(\w+)\s+(\d{1,2}):(\d{2})$/);
+      if (!m) return 0;
+      const d = DAYS.indexOf(m[1]);
+      return (d < 0 ? 0 : d) * 24 + parseInt(m[2], 10) + parseInt(m[3], 10) / 60;
+    };
+    return WINDOWS.map(r => {
+      const [label, from, to] = r.split("|").map(t => t.trim());
+      return { label: label, sub: "Q1 Q2 Q3 Q4", t0: hoursOf(from), t1: hoursOf(to) };
+    });
+  }
+
+  renderVals() {
+    const week = this.props.week ?? this.urlWeek ?? WEEK;
+    const gold = this.props.gold ?? GOLD;
+    const showPts = this.props.showProjections ?? true;
+    const pad = String(week).padStart(2, "0");
+    const f1 = v => Number(v).toFixed(2);
+    const pbp = this.state.pbp;
+    const src = this.state.sleeper;
+    const chartMode = this.props.chartMode ?? "points";
+
+    const parsed = src ? src.managers : MANAGERS.map(row => {
+      const [owner, record, streak, scores] = row.split("|").map(s => s.trim());
+      const arr = scores.split(",").map(s => parseFloat(s.trim()));
+      return { owner, record, streak, scores: arr, total: arr.reduce((s, v) => s + v, 0) };
+    });
+    const by = {};
+    parsed.forEach(p => { by[p.owner] = p; });
+
+    const maxPf = Math.max.apply(null, parsed.map(p => p.total || 0).concat([1]));
+    const wkPts = p => { const sc = p.scores || []; return sc.length ? sc[Math.min(week, sc.length) - 1] || 0 : 0; };
+    const topWk = parsed.reduce((b, p) => wkPts(p) > wkPts(b) ? p : b, parsed[0]);
+    const standings = parsed.map((p, i) => ({
+      rank: String(i + 1), owner: p.owner, record: p.record, pf: f1(p.total), streak: p.streak,
+      rankColor: i === 0 ? "#15181A" : (i < 4 ? gold : "#5F656A"),
+      ownerColor: i === 0 ? "#15181A" : INK, recordColor: i === 0 ? "#15181A" : INK, pfColor: i === 0 ? "#15181A" : "#C9CDD1",
+      streakColor: i === 0 ? "#15181A" : (p.streak.startsWith("W") ? gold : RED),
+      rowBg: i === 0 ? gold : "rgba(245,242,236,0.035)",
+      rowBorder: i === 0 ? gold : (i < 4 ? "rgba(231,192,106,0.22)" : "rgba(245,242,236,0.06)"),
+      weekPts: f1(wkPts(p)), weekColor: p === topWk ? (i === 0 ? "#15181A" : gold) : "#9AA0A6",
+      playoffLine: i === 3 && parsed.length > 4,
+    }));
+
+    const parseRow = s => { const [pos, name, nfl, pts] = s.split("|").map(x => x.trim()); return { pos, name, nfl, pts }; };
+    // "q/q/q/q, q/q/q/q, …" -> kumulierte Werte pro Quarter
+    const cum = str => {
+      let t = 0;
+      const out = [];
+      (str || "").split(",").forEach(win => {
+        win.split("/").map(v => parseFloat(v.trim())).forEach(v => {
+          if (!isNaN(v)) { t += v; out.push(Math.round(t * 10) / 10); }
+        });
+      });
+      return out;
+    };
+
+    const list = src
+      ? src.matchups.map((m, i) => ({ a: m.a, b: m.b, lineupA: m.lineupA, lineupB: m.lineupB, ptsA: m.ptsA, ptsB: m.ptsB, h2h: m.h2h, take: (this.state.repo && this.state.repo.takes[i]) || TAKES[i] || "", slotsA: "", slotsB: "" }))
+      : MATCHUPS.map(m => ({ a: m.a, b: m.b, lineupA: m.lineupA.map(parseRow), lineupB: m.lineupB.map(parseRow), take: m.take, slotsA: m.slotsA, slotsB: m.slotsB }));
+
+    const matchups = list.map((m, i) => {
+      const base = by[m.a] || { record: "", streak: "" }, baseB = by[m.b] || { record: "", streak: "" };
+      const LA = m.lineupA, LB = m.lineupB;
+
+      let wins = this.manualWindows();
+      let quarters = true;
+      let note = this.state.pbpNote || "manuell";
+      let sA = null, sB = null, ptsA = null, ptsB = null, games = null;
+
+      if (pbp && pbp.data.windows.length) {
+        const w = pbp.data.windows.map(x => ({ label: x.label, sub: x.sub + (x.count > 1 ? " · " + x.count + "G" : ""), t0: x.t0, t1: x.t1 }));
+        const ra = pbp.seriesFor(pbp.data.events, LA);
+        const rb = pbp.seriesFor(pbp.data.events, LB);
+        const hitA = Object.keys(ra.byPlayer).length, hitB = Object.keys(rb.byPlayer).length;
+        // Nur umschalten, wenn die Datei wirklich beide Lineups abdeckt
+        if (hitA >= 5 && hitB >= 5) {
+          wins = w; quarters = false; games = pbp.data.gameList;
+          // Kalibrierung: Verlauf aus PBP, Endwert pro Spieler = Sleeper-Punkte
+          const calib = (r, L) => {
+            if (!src) return r.points;
+            const target = {}, seen = {};
+            L.forEach(p => { target[p.name] = parseFloat(p.pts) || 0; });
+            const f = {}; Object.keys(r.byPlayer).forEach(n => { f[n] = r.byPlayer[n] ? (target[n] ?? r.byPlayer[n]) / r.byPlayer[n] : 1; });
+            let total = 0;
+            const out = r.points.map((q, i) => {
+              const prev = i ? r.points[i - 1] : null;
+              const prevTot = prev ? prev.v : 0;
+              // Delta dieses Plays gehört zum Spieler q.name -> skalieren
+              total += (q.v - prevTot) * (f[q.name] ?? 1);
+              return Object.assign({}, q, { v: Math.round(total * 100) / 100 });
+            });
+            // Spieler ohne PBP-Treffer (nicht gematcht) am Ende addieren
+            const missing = L.reduce((s, p) => s + (r.byPlayer[p.name] == null ? (parseFloat(p.pts) || 0) : 0), 0);
+            if (missing && out.length) out[out.length - 1] = Object.assign({}, out[out.length - 1], { v: Math.round((total + missing) * 100) / 100 });
+            return out;
+          };
+          sA = calib(ra, LA); sB = calib(rb, LB);
+          ptsA = ra.byPlayer; ptsB = rb.byPlayer;
+          note = "PBP · " + (ra.points.length + rb.points.length) + " Plays";
+        }
+      }
+
+      if (!sA && m.slotsA) {
+        const qt = (arr) => arr.map((v, k) => {
+          const w = wins[Math.floor(k / 4)];
+          return { t: w ? w.t0 + (w.t1 - w.t0) * ((k % 4) + 1) / 4 : 0, v: v };
+        });
+        sA = qt(cum(m.slotsA)); sB = qt(cum(m.slotsB));
+      }
+      if (!sA) {
+        // Sleeper ohne PBP: Endpunkte gleichmäßig auf die Fenster verteilen
+        const spread = total => wins.map((w, k) => ({ t: w.t1, v: Math.round(total * (k + 1) / wins.length * 10) / 10 }));
+        sA = spread(m.ptsA || 0); sB = spread(m.ptsB || 0);
+        note = "Sleeper · ohne PBP";
+      }
+
+      const aProj = m.ptsA != null ? m.ptsA : (sA.length ? sA[sA.length - 1].v : 0);
+      const bProj = m.ptsB != null ? m.ptsB : (sB.length ? sB[sB.length - 1].v : 0);
+      const aWin = aProj >= bProj;
+
+      const val = (map, p) => (map && !src) ? (map[p.name] == null ? "–" : f1(map[p.name])) : p.pts;
+      const topA = Math.max.apply(null, LA.map(p => parseFloat(val(ptsA, p)) || 0));
+      const topB = Math.max.apply(null, LB.map(p => parseFloat(val(ptsB, p)) || 0));
+      const rows = LA.map((a, k) => {
+        const b = LB[k] || { name: "—", nfl: "", pts: "0" };
+        const av = val(ptsA, a), bv = val(ptsB, b);
+        const aHot = (parseFloat(av) || 0) >= (parseFloat(bv) || 0);
+        const aTop = (parseFloat(av) || 0) === topA && topA > 0, bTop = (parseFloat(bv) || 0) === topB && topB > 0;
+        return {
+          pos: a.pos,
+          aName: a.name, aTeamNfl: a.nfl, aPts: showPts ? av : "",
+          bName: b.name, bTeamNfl: b.nfl, bPts: showPts ? bv : "",
+          aPtsColor: aHot ? gold : MUTED,
+          bPtsColor: aHot ? MUTED : gold,
+          aNameColor: aTop ? gold : INK, bNameColor: bTop ? gold : INK,
+          aWeight: aTop ? 700 : 500, bWeight: bTop ? 700 : 500,
+        };
+      });
+
+      return {
+        screenLabel: "0" + (3 + i) + " Matchup " + (i + 1),
+        kicker: "Week " + pad + " · Matchup " + (i + 1) + "/" + MATCHUPS.length,
+        aOwner: m.a, bOwner: m.b,
+        aNameSize: (m.a.length > 12 ? 40 : (m.a.length > 8 ? 50 : 60)) + "px",
+        bNameSize: (m.b.length > 12 ? 40 : (m.b.length > 8 ? 50 : 60)) + "px",
+        aMeta: base.record + " · " + base.streak, bMeta: baseB.record + " · " + baseB.streak,
+        h2h: m.h2h && m.h2h.games ? "H2H " + m.h2h.wins + "-" + m.h2h.losses + (m.h2h.ties ? "-" + m.h2h.ties : "") + " · seit 2015" : "",
+        hasH2h: !!(m.h2h && m.h2h.games),
+        aProj: f1(aProj), bProj: f1(bProj),
+        aColor: aWin ? gold : INK, bColor: aWin ? INK : gold,
+        aWin: aWin, bWin: !aWin, diff: Math.abs(aProj - bProj).toFixed(2),
+        aCardBg: aWin ? "rgba(231,192,106,0.08)" : "rgba(245,242,236,0.035)", bCardBg: aWin ? "rgba(245,242,236,0.035)" : "rgba(231,192,106,0.08)",
+        aCardBorder: aWin ? "rgba(231,192,106,0.5)" : "rgba(245,242,236,0.08)", bCardBorder: aWin ? "rgba(245,242,236,0.08)" : "rgba(231,192,106,0.5)",
+        take: m.take, hasTake: !!(m.take && String(m.take).trim()), rows: rows, chartNote: note,
+        chartTitle: chartMode === "points" ? "Punkte-Verlauf" : "Win Probability",
+        showLegend: chartMode === "points",
+        legendGold: aWin ? m.a : m.b, legendGrey: aWin ? m.b : m.a,
+        chart: chartMode === "points"
+          ? this.chart(sA, sB, wins, gold, quarters, aWin, i, m.ptsA, m.ptsB)
+          : this.wpChart(this.winProb(sA, sB, LA, LB, wins, games), wins, gold, m.a, m.b, i),
+      };
+    });
+
+    const rp = this.state.repo || {};
+    const sourceNote = [
+      rp.builtAt ? "Repo-JSON ✓ gebaut " + rp.builtAt : (this.state.sleeperNote || ""),
+      src ? "Sleeper ✓ " + src.leagueName + " · Week " + src.week + " · Manager: " + src.managers.map(p => p.owner).join(", ") + (src.hasProjections ? " · Projektionen ✓" : " · keine Projektionen") : (this.state.sleeperNote || (SLEEPER_LEAGUE ? "Sleeper lädt …" : "Sleeper aus – manuelle Daten")),
+      pbp ? "PBP ✓ " + pbp.data.games + " Spiele · " + pbp.data.events.length + " Events" : (this.state.pbpNote || "PBP lädt …"),
+      matchups.length ? "Chart: " + matchups.map(x => x.chartNote).join(" | ") : "",
+    ].join("\n");
+
+    const top = parsed.reduce((best, p) => p.total > best.total ? p : best, parsed[0]);
+    // Cover-Hook: knappstes Matchup der Woche (überschreibbar via Takes "## Cover")
+    const closest = matchups.reduce((best, m) => {
+      const d = Math.abs(parseFloat(m.aProj) - parseFloat(m.bProj));
+      return !best || d < best.d ? { d, m } : best;
+    }, null);
+    const weekHighest = matchups.reduce((best, m) => {
+      const hi = Math.max(parseFloat(m.aProj), parseFloat(m.bProj));
+      return hi > best.v ? { v: hi, name: parseFloat(m.aProj) >= parseFloat(m.bProj) ? m.aOwner : m.bOwner } : best;
+    }, { v: 0, name: "" });
+    const autoHook = (closest ? (closest.d < 5 ? "Entschieden mit " + closest.d.toFixed(2) + " Punkten." : closest.m.aOwner + " vs " + closest.m.bOwner + " – das Spiel der Woche.") : "");
+    // Auto-Hook hat Vorrang; Takes "## Cover" nur, wenn dort bewusst Text steht UND autoHook leer ist -> siehe README
+    const coverHook = autoHook || rp.cover || COVER_HEADLINE;
+    const coverHookSub = closest ? closest.m.aOwner + " " + closest.m.aProj + " : " + closest.m.bProj + " " + closest.m.bOwner : (rp.coverSub || "");
+
+    return {
+      seasonLabel: SEASON,
+      weekLabel: "Week " + pad,
+      weekBig: "WEEK " + pad, weekNum: String(week), coverHook, coverHookSub, readyFlag: this.state.ready ? "1" : "0",
+      coverHeadline: this.props.coverHeadline ?? (rp.cover || COVER_HEADLINE),
+      coverSub: rp.coverSub || COVER_SUB,
+      standingsNote: rp.standingsNote || STANDINGS_NOTE,
+      teamCount: String(parsed.length),
+      topScore: f1(top.total), topWeekScore: f1(wkPts(topWk)), topWeekName: topWk.owner,
+      leaderName: standings[0].owner,
+      standings: standings, matchups: matchups,
+      caption: rp.caption || CAPTION, sourceNote: sourceNote,
+    };
+  }
+}
+</script>
+</body>
+</html>
