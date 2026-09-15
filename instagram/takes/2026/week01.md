@@ -5,10 +5,10 @@ Leer lassen = kein Text. Nach dem Speichern den Workflow
 "Instagram Weekly Post Data" manuell starten oder auf Dienstag warten.
 
 ## Cover
-Woche 1: einer geht 1-0, einer geht auf Tilt.
+(leer = automatischer Hook: knappstes Matchup der Woche)
 
 ## Cover Sub
-Alle Matchups, alle Starter, null Ausreden. Standings-Update im Swipe.
+
 
 ## Standings Note
 

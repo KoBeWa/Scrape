@@ -139,7 +139,7 @@ def load_sleeper(league_id, week):
             pts = sp[i] if sp and i < len(sp) else (m.get("players_points") or {}).get(pid) or 0
             slot = slots[i] if i < len(slots) else d["pos"]
             out.append({"pos": slot, "name": d["name"], "nfl": d["team"] or (pid if d["pos"] == "DEF" else ""),
-                        "pts": f"{pts or 0:.1f}", "proj": proj.get(pid)})
+                        "pts": f"{pts or 0:.2f}", "proj": proj.get(pid)})
         return out
 
     cur = per_week[week - 1] if week - 1 < len(per_week) else []
@@ -161,11 +161,16 @@ def load_sleeper(league_id, week):
 
 # ── nflverse PBP -> Scoring-Events ──────────────────────────────────
 def load_pbp(season, week):
-    url = f"https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.csv.gz"
-    print("PBP laden:", url, file=sys.stderr)
-    r = requests.get(url, timeout=300)
-    r.raise_for_status()
-    text = gzip.decompress(r.content).decode("utf-8", errors="replace")
+    local = os.path.join(ROOT, "instagram", "pbp", str(season), f"week{week:02d}.csv.gz")
+    if os.path.exists(local):
+        print("PBP lokal:", local, file=sys.stderr)          # von fetch_pbp.py (täglich 08:00)
+        text = gzip.open(local, "rt", encoding="utf-8").read()
+    else:
+        url = f"https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.csv.gz"
+        print("PBP laden:", url, file=sys.stderr)
+        r = requests.get(url, timeout=300)
+        r.raise_for_status()
+        text = gzip.decompress(r.content).decode("utf-8", errors="replace")
     rec = REC_PTS[SCORING]
     games, events = {}, []
 
@@ -280,6 +285,96 @@ def load_pbp(season, week):
                           "home": g["home"], "away": g["away"]} for g in lst]}
 
 
+
+# ── Liga-Historie (data/processed/seasons/*/matchups.json) ──────────
+def load_history():
+    """Alle Matchups seit 2015 als flache Liste: season, week, a, b, pa, pb, playoff."""
+    base = os.path.join(ROOT, "data", "processed", "seasons")
+    out = []
+    if not os.path.isdir(base):
+        return out
+    for s in sorted(os.listdir(base)):
+        p = os.path.join(base, s, "matchups.json")
+        if not os.path.exists(p):
+            continue
+        try:
+            for m in json.load(open(p, encoding="utf-8")):
+                a, b = m.get("home_team"), m.get("away_team")
+                if not a or not b or m.get("home_points") is None or m.get("away_points") is None:
+                    continue
+                out.append({"season": int(m.get("season") or s), "week": int(m.get("week") or 0), "a": a, "b": b,
+                            "pa": float(m["home_points"]), "pb": float(m["away_points"]), "playoff": bool(m.get("is_playoff"))})
+        except Exception as ex:
+            print("Historie", s, "unlesbar:", ex, file=sys.stderr)
+    return out
+
+
+def h2h(history, a, b, exclude=None):
+    """Head-to-Head a vs b: wins/losses/ties aus Sicht von a + letztes Duell."""
+    wa = wb = t = 0
+    last = None
+    for m in history:
+        if exclude and (m["season"], m["week"]) == exclude:
+            continue
+        if {m["a"], m["b"]} != {a, b}:
+            continue
+        pa, pb = (m["pa"], m["pb"]) if m["a"] == a else (m["pb"], m["pa"])
+        if pa > pb: wa += 1
+        elif pb > pa: wb += 1
+        else: t += 1
+        if last is None or (m["season"], m["week"]) > (last["season"], last["week"]):
+            last = {"season": m["season"], "week": m["week"], "pa": pa, "pb": pb, "playoff": m["playoff"]}
+    return {"wins": wa, "losses": wb, "ties": t, "games": wa + wb + t, "last": last}
+
+
+def team_facts(history, name, pts):
+    """Kontext zu einem Wochen-Score: Karriere-Rang, Karriere-Hoch, Schnitt."""
+    scores = []
+    for m in history:
+        if m["a"] == name: scores.append(m["pa"])
+        elif m["b"] == name: scores.append(m["pb"])
+    if not scores:
+        return {}
+    hi = max(scores); lo = min(scores); avg = sum(scores) / len(scores)
+    rank = 1 + sum(1 for s in scores if s > pts)
+    return {"games": len(scores), "high": round(hi, 2), "low": round(lo, 2), "avg": round(avg, 2), "rank": rank}
+
+
+def build_caption(season, week, sleeper, history, takes):
+    """Automatische Instagram-Caption mit H2H und Liga-Historie."""
+    mgr = sleeper["managers"]
+    ms = sleeper["matchups"]
+    lines = [f"WEEK {week} RECAP 🏈  #TimTebowTournament {season}", ""]
+    facts = []
+    for m in ms:
+        a, b, pa, pb = m["a"], m["b"], m["ptsA"], m["ptsB"]
+        win, lose, pw, pl = (a, b, pa, pb) if pa >= pb else (b, a, pb, pa)
+        diff = abs(pa - pb)
+        rec = h2h(history, win, lose)
+        h = f"H2H jetzt {rec['wins'] + 1}-{rec['losses']}" + (f"-{rec['ties']}" if rec["ties"] else "") if rec["games"] else "erstes Duell überhaupt"
+        tag = "Blowout" if diff >= 30 else ("Thriller" if diff < 5 else "")
+        lines.append(f"▸ {win} {pw:.2f} : {pl:.2f} {lose}" + (f" · {tag}" if tag else "") + f" · {h}")
+        tf = team_facts(history, win, pw)
+        if tf and tf.get("rank", 99) <= 3:
+            facts.append(f"{win}: {pw:.2f} ist die #{tf['rank']} Score seiner Karriere ({tf['games']} Spiele).")
+        if rec["games"] and rec["last"] and rec["last"]["pa"] < rec["last"]["pb"]:
+            facts.append(f"{win} revanchiert sich für die Pleite gegen {lose} in {rec['last']['season']} (Week {rec['last']['week']}).")
+        lf = team_facts(history, lose, pl)
+        if lf and lf.get("games") and pl <= lf["low"] + 0.01:
+            facts.append(f"{lose}: {pl:.2f} – niedrigster Score seiner Karriere.")
+    lines.append("")
+    top = max(mgr, key=lambda p: (p["scores"][week - 1] if len(p["scores"]) >= week else 0))
+    lines.append(f"🔥 Top Score: {top['owner']} {top['scores'][week - 1]:.2f}")
+    lead = mgr[0]
+    lines.append(f"👑 Leader: {lead['owner']} ({lead['record']})")
+    if facts:
+        lines += ["", "📚 Aus der Liga-Historie:"] + [f"• {f}" for f in facts[:3]]
+    if takes.get("caption"):
+        lines += ["", takes["caption"]]
+    lines += ["", f"#FantasyFootball #NFL #Week{week} #Sleeper #TTT{season}"]
+    return "\n".join(lines)
+
+
 # ── Trash-Talk aus Markdown (instagram/takes/weekNN.md) ─────────────
 def load_takes(season, week):
     path = os.path.join(ROOT, "instagram", "takes", str(season), f"week{week:02d}.md")
@@ -329,9 +424,17 @@ def main():
         except Exception as ex:
             print("PBP fehlgeschlagen:", ex, file=sys.stderr)
 
+    takes = load_takes(season, week)
+    history = load_history()
+    print(f"Historie: {len(history)} Matchups", file=sys.stderr)
+    for m in sleeper["matchups"]:
+        m["h2h"] = h2h(history, m["a"], m["b"])            # aus Sicht von a, vor dieser Woche
+        m["factsA"] = team_facts(history, m["a"], m["ptsA"])
+        m["factsB"] = team_facts(history, m["b"], m["ptsB"])
     out = {"season": season, "week": week, "scoring": SCORING, "tzOffset": TZ_OFFSET_H,
            "builtAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-           "sleeper": sleeper, "pbp": pbp, **load_takes(season, week)}
+           "sleeper": sleeper, "pbp": pbp, **takes,
+           "autoCaption": build_caption(season, week, sleeper, history, takes)}
     d = os.path.join(ROOT, "instagram", "data", str(season))
     os.makedirs(d, exist_ok=True)
     path = os.path.join(d, f"week{week:02d}.json")
