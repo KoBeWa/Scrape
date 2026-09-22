@@ -338,13 +338,29 @@ const RED = "#D9705E";
 const h = React.createElement;
 
 class Component extends DCLogic {
-  state = { pbp: null, pbpNote: null, sleeper: null, sleeperNote: null };
+  state = { pbp: null, pbpNote: null, sleeper: null, sleeperNote: null, week: null };
 
   urlParams = (() => { try { return new URLSearchParams(window.location.search); } catch (e) { return new URLSearchParams(); } })();
   urlWeek = this.urlParams.get("week") ? parseInt(this.urlParams.get("week"), 10) : null;
 
+  // Aktuelle Woche automatisch: Sleeper-State, bei noch nicht gespielter Woche die letzte abgeschlossene
+  async resolveWeek() {
+    const explicit = this.props.week ?? this.urlWeek;
+    if (explicit) return explicit;
+    try {
+      const s = await (await fetch("https://api.sleeper.app/v1/state/nfl", { cache: "no-store" })).json();
+      let w = s.display_week || s.week || WEEK;
+      if (SLEEPER_LEAGUE && w > 1) {
+        const ms = await (await fetch("https://api.sleeper.app/v1/league/" + SLEEPER_LEAGUE + "/matchups/" + w, { cache: "no-store" })).json();
+        if (!(ms || []).some(m => (m.points || 0) > 0)) w = w - 1;
+      }
+      return w;
+    } catch (e) { return WEEK; }
+  }
+
   async componentDidMount() {
-    const week = this.props.week ?? this.urlWeek ?? WEEK;
+    const week = await this.resolveWeek();
+    this.setState({ week: week });
     const dataUrl = this.urlParams.get("data");
     if (DATA_BASE || dataUrl) {
       try {
@@ -368,7 +384,6 @@ class Component extends DCLogic {
       (async () => {
         try {
           const mod = await import("./sleeper.js");
-          const week = this.props.week ?? this.urlWeek ?? WEEK;
           const data = await mod.loadLeague(SLEEPER_LEAGUE, week, { scoring: PBP_SCORING, names: NAMES });
           this.setState({ sleeper: data, ready: true });
         } catch (e) {
@@ -382,7 +397,7 @@ class Component extends DCLogic {
         const mod = await import("./pbp.js");
         const res = await fetch(PBP_FILE);
         if (!res.ok) throw new Error("HTTP " + res.status);
-        const data = mod.parsePbp(await res.text(), { week: this.props.week ?? PBP_WEEK, scoring: PBP_SCORING, tzOffset: TZ_OFFSET });
+        const data = mod.parsePbp(await res.text(), { week: week, scoring: PBP_SCORING, tzOffset: TZ_OFFSET });
         this.setState({ pbp: { data: data, seriesFor: mod.seriesFor } });
       } catch (e) {
         this.setState({ pbpNote: "manuell (PBP: " + (e.message || e) + ")" });
@@ -581,7 +596,7 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const week = this.props.week ?? this.urlWeek ?? WEEK;
+    const week = this.props.week ?? this.urlWeek ?? this.state.week ?? WEEK;
     const gold = this.props.gold ?? GOLD;
     const showPts = this.props.showProjections ?? true;
     const pad = String(week).padStart(2, "0");
