@@ -126,6 +126,97 @@ def sb_rpc(fn: str, args: dict | None = None):
     return r.json() if r.text else None
 
 
+def sb_get(path: str) -> list[dict]:
+    """GET all rows of a PostgREST query, paging through 1000-row responses."""
+    rows, offset = [], 0
+    while True:
+        r = requests.get(f"{SUPABASE_URL}/rest/v1/{path}",
+                         headers=sb_headers({"Range": f"{offset}-{offset + 999}"}), timeout=120)
+        if r.status_code >= 300:
+            raise SystemExit(f"GET {path.split('?')[0]} failed: {r.status_code} {r.text[:500]}")
+        batch = r.json()
+        rows += batch
+        if len(batch) < 1000:
+            return rows
+        offset += 1000
+
+
+NFLVERSE_PLAYERS = "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv"
+PLAYER_COLS = ["gsis_id", "espn_id", "display_name", "first_name", "last_name", "position",
+               "position_group", "headshot", "latest_team", "status", "height", "weight",
+               "college_name", "jersey_number", "rookie_season", "last_season", "draft_year",
+               "draft_round", "draft_pick", "draft_team"]
+PLAYER_INT_COLS = {"height", "weight", "jersey_number", "rookie_season", "last_season",
+                   "draft_year", "draft_round", "draft_pick"}
+_SUFFIX = re.compile(r"\b(jr|sr|ii|iii|iv|v)\b\.?", re.I)
+
+
+def name_key(name: str) -> str:
+    return _norm(_SUFFIX.sub("", name or ""))
+
+
+def load_nflverse_players() -> list[dict]:
+    r = requests.get(NFLVERSE_PLAYERS, timeout=300)
+    r.raise_for_status()
+    return [rec for rec in csv.DictReader(io.StringIO(r.content.decode("utf-8"))) if rec.get("gsis_id")]
+
+
+def sync_players(nfl_players: list[dict]):
+    """Refresh public.players (ids, headshots) so new rookies resolve too."""
+    rows = []
+    for rec in nfl_players:
+        row = {}
+        for c in PLAYER_COLS:
+            v = rec.get(c)
+            v = None if v in (None, "", "NA") else v
+            if v is not None and c in PLAYER_INT_COLS:
+                try:
+                    v = int(float(v))
+                except ValueError:
+                    v = None
+            row[c] = v
+        rows.append(row)
+    sb_upsert("players", rows, "gsis_id")
+    log(f"  players: {len(rows)} rows")
+
+
+class EspnIds:
+    """Sleeper player -> ESPN id. Sleeper often has no espn_id for newer
+    players, so fall back to nflverse (via gsis id, then via a unique name +
+    position match, ignoring suffixes like Jr./III)."""
+
+    def __init__(self, players: dict, nfl_players: list[dict]):
+        self.players = players
+        self.by_gsis: dict[str, str] = {}
+        self.by_name: dict[tuple[str, str], str | None] = {}
+        for r in nfl_players:
+            espn = (r.get("espn_id") or "").strip()
+            if not espn or espn == "NA":
+                continue
+            self.by_gsis[r["gsis_id"]] = espn
+            pos = (r.get("position") or "").upper()
+            names = {r.get("display_name"), f"{r.get('first_name')} {r.get('last_name')}",
+                     f"{r.get('common_first_name')} {r.get('last_name')}",
+                     f"{r.get('football_name')} {r.get('last_name')}"}
+            for n in names:
+                key = (name_key(n or ""), pos)
+                if key[0]:
+                    # ambiguous names map to None so they are never guessed
+                    self.by_name[key] = espn if self.by_name.get(key, espn) == espn else None
+
+    def get(self, pid: str) -> str:
+        p = self.players.get(pid) or {}
+        if p.get("position") == "DEF":
+            return ""
+        if p.get("espn_id"):
+            return str(p["espn_id"])
+        gsis = (p.get("gsis_id") or "").strip()
+        if gsis in self.by_gsis:
+            return self.by_gsis[gsis]
+        pos = (p.get("position") or "").upper()
+        return self.by_name.get((name_key(player_name(self.players, pid)), pos)) or ""
+
+
 # ── League ───────────────────────────────────────────────────────────────────
 
 def find_season_league(any_league_id: str, season: int) -> dict:
@@ -191,7 +282,7 @@ def player_name(players: dict, pid: str) -> str:
     return p.get("full_name") or f"{p.get('first_name', '')} {p.get('last_name', '')}".strip() or pid
 
 
-def lineup_rows(season, week, manager, entry, roster_positions, players):
+def lineup_rows(season, week, manager, entry, roster_positions, players, espn: EspnIds):
     """Starters by their Sleeper slot order, bench sorted by points (BN1..BN7)."""
     pts = entry.get("players_points") or {}
     starters = entry.get("starters") or []
@@ -206,7 +297,7 @@ def lineup_rows(season, week, manager, entry, roster_positions, players):
             "season_year": season, "week": week, "manager_id": manager, "slot": slot,
             "player_name": player_name(players, pid),
             "sleeper_id": "" if is_def else pid,
-            "espn_id": "" if is_def else str(p.get("espn_id") or ""),
+            "espn_id": espn.get(pid),
             "points": round(float(pts.get(pid, 0) or 0), 2), "is_starter": starter,
         }
 
@@ -334,6 +425,8 @@ def main():
 
     managers = manager_by_roster(league_id)
     players = sleeper("players/nfl")
+    nfl_players = load_nflverse_players()
+    espn = EspnIds(players, nfl_players)
 
     sb_upsert("seasons", [{"year": season, "reg_season_weeks": reg_weeks,
                            "playoff_teams": PLAYOFF_TEAMS, "total_managers": TEAMS}], "year")
@@ -366,7 +459,7 @@ def main():
 
         lineups = []
         for e in entries:
-            lineups += lineup_rows(season, week, managers[e["roster_id"]], e, roster_positions, players)
+            lineups += lineup_rows(season, week, managers[e["roster_id"]], e, roster_positions, players, espn)
         sb_delete("weekly_lineups", {"season_year": season, "week": week})
         sb_insert("weekly_lineups", lineups)
         log(f"  week {week}: {len(matchup_rows)} matchups, {len(lineups)} lineup rows")
@@ -414,7 +507,8 @@ def main():
             sb_upsert("playoff_results", po, "season_year,manager_id")
             log("  playoff_results written")
 
-    log("NFL player stats …")
+    log("NFL players and stats …")
+    sync_players(nfl_players)
     sync_player_stats(season, sorted(scores))
 
     log("Rebuilding records and achievements …")
