@@ -1,0 +1,52 @@
+name: Sync Saison → Supabase
+
+# Holt jede Woche die Ergebnisse, Lineups und Standings der laufenden Saison von
+# Sleeper sowie die NFL-Stats von nflverse und schreibt sie nach Supabase.
+# Danach werden Rekorde und Achievements neu berechnet.
+
+on:
+  schedule:
+    # Dienstags 08:17 UTC (10:17 deutsche Sommerzeit) von September bis Januar,
+    # nach dem Monday Night Game. Außerhalb der Saison tut der Lauf nichts.
+    - cron: "17 8 * 9-12,1 2"
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Saison (leer = aktuelle)"
+        required: false
+        default: ""
+      weeks:
+        description: "Wochen, z. B. 1-6 (leer = alle abgeschlossenen)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Nur anzeigen, nichts schreiben"
+        type: boolean
+        default: false
+
+concurrency:
+  group: sync-supabase
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install requests
+
+      - name: Sync
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SLEEPER_LEAGUE_ID: ${{ secrets.SLEEPER_LEAGUE_ID }}
+          SEASON: ${{ inputs.season }}
+          WEEKS: ${{ inputs.weeks }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: python sync_supabase.py
