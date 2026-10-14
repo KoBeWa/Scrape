@@ -33,7 +33,8 @@ SLEEPER = "https://api.sleeper.app/v1"
 NFLVERSE_STATS = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_{season}.csv"
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
-SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+# SUPABASE_KEY is the name the other Scrape workflows use
+SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_KEY", "")
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
 
 BENCH_SLOTS = 7
@@ -303,7 +304,9 @@ DEFAULT_LEAGUE_ID = "1321866747418001408"  # 2026 season
 
 def main():
     if not (SUPABASE_URL and SUPABASE_KEY) and not DRY_RUN:
-        raise SystemExit("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required")
+        missing = [n for n, v in (("SUPABASE_URL", SUPABASE_URL),
+                                  ("SUPABASE_SERVICE_ROLE_KEY / SUPABASE_KEY", SUPABASE_KEY)) if not v]
+        raise SystemExit("Missing repository secret(s): " + ", ".join(missing))
     state = sleeper("state/nfl")
     season = int(os.environ.get("SEASON") or state["season"])
     league = find_season_league((os.environ.get("SLEEPER_LEAGUE_ID") or DEFAULT_LEAGUE_ID).strip(), season)

@@ -45,6 +45,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           SLEEPER_LEAGUE_ID: ${{ vars.SLEEPER_LEAGUE_ID }}
           SEASON: ${{ inputs.season }}
           WEEKS: ${{ inputs.weeks }}
