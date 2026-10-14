@@ -537,6 +537,7 @@ def main():
 
     log("Rebuilding records and achievements …")
     log(f"  {sb_rpc('refresh_league_derived')}")
+    sb_rpc("refresh_player_stats")  # player pages (materialized views)
     log("Done.")
 
 
