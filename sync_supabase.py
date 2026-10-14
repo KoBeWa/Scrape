@@ -29,6 +29,8 @@ from collections import defaultdict
 
 import requests
 
+from draft_grades import draft_rows
+
 SLEEPER = "https://api.sleeper.app/v1"
 NFLVERSE_STATS = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_{season}.csv"
 
@@ -511,6 +513,9 @@ def main():
     sync_players(nfl_players)
     sync_player_stats(season, sorted(scores))
 
+    log("Draft …")
+    sync_draft(season, league_id, managers, players, espn, nfl_players)
+
     log("Rebuilding records and achievements …")
     log(f"  {sb_rpc('refresh_league_derived')}")
     log("Done.")
@@ -557,6 +562,18 @@ def count_transactions(league_id: str, reg_weeks: int, managers: dict[int, str])
                 for rid in rids:
                     trades[managers[rid]] += 1
     return moves, trades
+
+
+def sync_draft(season, league_id, managers, players, espn, nfl_players):
+    """draft_picks with season-to-date values (see draft_grades.py)."""
+    drafts = [d for d in sleeper(f"league/{league_id}/drafts") or [] if d.get("status") == "complete"]
+    if not drafts:
+        log("  no completed draft yet")
+        return
+    picks = sleeper(f"draft/{drafts[0]['draft_id']}/picks") or []
+    rows = draft_rows(season, picks, managers, players, espn, nfl_players, log=log)
+    sb_upsert("draft_picks", rows, "season_year,overall_pick")
+    log(f"  draft_picks: {len(rows)} rows")
 
 
 def draft_positions(league_id: str, managers: dict[int, str]) -> dict[str, int]:
