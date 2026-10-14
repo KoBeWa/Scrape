@@ -30,6 +30,7 @@ from collections import defaultdict
 import requests
 
 from draft_grades import draft_rows
+from transactions import score_rows, transaction_rows
 
 SLEEPER = "https://api.sleeper.app/v1"
 NFLVERSE_STATS = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_{season}.csv"
@@ -191,20 +192,35 @@ class EspnIds:
         self.players = players
         self.by_gsis: dict[str, str] = {}
         self.by_name: dict[tuple[str, str], str | None] = {}
+        self.gsis_by_name: dict[tuple[str, str], str | None] = {}
         for r in nfl_players:
             espn = (r.get("espn_id") or "").strip()
-            if not espn or espn == "NA":
-                continue
-            self.by_gsis[r["gsis_id"]] = espn
+            espn = "" if espn == "NA" else espn
+            if espn:
+                self.by_gsis[r["gsis_id"]] = espn
             pos = (r.get("position") or "").upper()
             names = {r.get("display_name"), f"{r.get('first_name')} {r.get('last_name')}",
                      f"{r.get('common_first_name')} {r.get('last_name')}",
                      f"{r.get('football_name')} {r.get('last_name')}"}
             for n in names:
                 key = (name_key(n or ""), pos)
-                if key[0]:
-                    # ambiguous names map to None so they are never guessed
+                if not key[0]:
+                    continue
+                # ambiguous names map to None so they are never guessed
+                if espn:
                     self.by_name[key] = espn if self.by_name.get(key, espn) == espn else None
+                gs = r["gsis_id"]
+                self.gsis_by_name[key] = gs if self.gsis_by_name.get(key, gs) == gs else None
+
+    def gsis(self, pid: str) -> str | None:
+        p = self.players.get(pid) or {}
+        if p.get("position") == "DEF":
+            return None
+        gsis = (p.get("gsis_id") or "").strip()
+        if gsis:
+            return gsis
+        pos = (p.get("position") or "").upper()
+        return self.gsis_by_name.get((name_key(player_name(self.players, pid)), pos))
 
     def get(self, pid: str) -> str:
         p = self.players.get(pid) or {}
@@ -513,6 +529,9 @@ def main():
     sync_players(nfl_players)
     sync_player_stats(season, sorted(scores))
 
+    log("Transactions …")
+    sync_transactions(season, league_id, managers, players, espn, nfl_players)
+
     log("Draft …")
     sync_draft(season, league_id, managers, players, espn, nfl_players)
 
@@ -562,6 +581,23 @@ def count_transactions(league_id: str, reg_weeks: int, managers: dict[int, str])
                 for rid in rids:
                     trades[managers[rid]] += 1
     return moves, trades
+
+
+def sync_transactions(season, league_id, managers, players, espn, nfl_players):
+    """All transactions of the season, replaced on every run (values are rest-of-season)."""
+    txs = []
+    for leg in range(1, 19):
+        txs += sleeper(f"league/{league_id}/transactions/{leg}") or []
+    items, pts = transaction_rows(season, txs, managers, players, espn, nfl_players)
+    scores = score_rows(season, items, pts)
+    sb_delete("fa_transaction_scores", {"season_year": season})
+    sb_delete("fa_transactions", {"season_year": season})
+    for i in range(0, len(items), 500):
+        sb_insert("fa_transactions", items[i:i + 500])
+    for i in range(0, len(scores), 500):
+        sb_insert("fa_transaction_scores", scores[i:i + 500])
+    sb_rpc("refresh_transaction_scores")
+    log(f"  fa_transactions: {len(items)} rows, fa_transaction_scores: {len(scores)} rows")
 
 
 def sync_draft(season, league_id, managers, players, espn, nfl_players):

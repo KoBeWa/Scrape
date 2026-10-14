@@ -71,6 +71,30 @@ def _dst_tier(pa: float) -> int:
         else 0 if pa <= 27 else -1 if pa <= 34 else -4
 
 
+def dst_weekly(season: int) -> pd.DataFrame | None:
+    """Team defense points per week (standard scoring incl. points-allowed tiers)."""
+    t = _csv(f"{NFLVERSE}/stats_team/stats_team_week_{season}.csv.gz")
+    g = _csv(f"{NFLVERSE}/schedules/games.csv")
+    if t is None or g is None:
+        return None
+    t = t[(t.season_type == "REG") & (t.week <= 16)].copy()
+    t = t.fillna({c: 0 for c in t.columns if t[c].dtype != object})
+    g = g[(g.season == season) & (g.game_type == "REG")]
+    pa = {}
+    for r in g.itertuples():
+        pa[(r.home_team, r.week)] = r.away_score
+        pa[(r.away_team, r.week)] = r.home_score
+    tc = lambda c: t[c] if c in t.columns else 0  # noqa: E731
+    allowed = [pa.get((a, w)) for a, w in zip(t.team, t.week)]
+    t = t.assign(pts=(
+        tc("def_sacks") + 2 * tc("def_interceptions") + 2 * tc("fumble_recovery_opp")
+        + 6 * (tc("def_tds") + tc("special_teams_tds")) + 2 * tc("def_safeties")
+        + 2 * (tc("def_fg_blocks") + tc("def_punt_blocks") + tc("def_pat_blocks"))
+        + pd.Series([_dst_tier(x) if x == x and x is not None else 0 for x in allowed], index=t.index)
+    ))
+    return t.pivot_table(index="team", columns="week", values="pts", aggfunc="sum")
+
+
 def season_universe(season: int, nfl_players: list[dict]) -> pd.DataFrame | None:
     """One row per player/DST with weekly points (NaN = did not play)."""
     d = _csv(f"{NFLVERSE}/stats_player/stats_player_week_{season}.csv.gz")
@@ -109,27 +133,9 @@ def season_universe(season: int, nfl_players: list[dict]) -> pd.DataFrame | None
                 if pd.isna(players.at[gsis, week]):
                     players.at[gsis, week] = 0.0
 
-    # Team defenses: standard scoring incl. points-allowed tiers
-    t = _csv(f"{NFLVERSE}/stats_team/stats_team_week_{season}.csv.gz")
-    g = _csv(f"{NFLVERSE}/schedules/games.csv")
+    dw = dst_weekly(season)
     dst = pd.DataFrame()
-    if t is not None and g is not None:
-        t = t[(t.season_type == "REG") & (t.week <= 16)].copy()
-        t = t.fillna({c: 0 for c in t.columns if t[c].dtype != object})
-        g = g[(g.season == season) & (g.game_type == "REG")]
-        pa = {}
-        for r in g.itertuples():
-            pa[(r.home_team, r.week)] = r.away_score
-            pa[(r.away_team, r.week)] = r.home_score
-        tc = lambda c: t[c] if c in t.columns else 0  # noqa: E731
-        allowed = [pa.get((a, w)) for a, w in zip(t.team, t.week)]
-        t = t.assign(pts=(
-            tc("def_sacks") + 2 * tc("def_interceptions") + 2 * tc("fumble_recovery_opp")
-            + 6 * (tc("def_tds") + tc("special_teams_tds")) + 2 * tc("def_safeties")
-            + 2 * (tc("def_fg_blocks") + tc("def_punt_blocks") + tc("def_pat_blocks"))
-            + pd.Series([_dst_tier(x) if x == x and x is not None else 0 for x in allowed], index=t.index)
-        ))
-        dw = t.pivot_table(index="team", columns="week", values="pts", aggfunc="sum")
+    if dw is not None:
         dst = pd.DataFrame({"player_display_name": [TEAM_NAMES.get(a, a) for a in dw.index],
                             "pos": "DST"}, index="DST:" + dw.index).join(dw.set_axis("DST:" + dw.index))
 
