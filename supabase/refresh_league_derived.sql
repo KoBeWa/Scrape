@@ -40,3 +40,8 @@ $$;
 
 revoke all on function public.refresh_league_derived() from public, anon, authenticated;
 grant execute on function public.refresh_league_derived() to service_role;
+
+-- Die Neuberechnung dauert länger als das API-Standardlimit von 8 s.
+-- Der Service-Key bekommt deshalb 5 Minuten (betrifft nur service_role).
+alter role service_role set statement_timeout = '5min';
+notify pgrst, 'reload config';
