@@ -9,8 +9,9 @@ records and achievements (public.refresh_league_derived()).
 
 Environment:
   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY   (required)
-  SLEEPER_LEAGUE_ID   any league id of the dynasty; the current season's
-                      league is found through the previous_league_id chain
+  SLEEPER_LEAGUE_ID   optional, any league id of the dynasty (default: the
+                      2026 league); the requested season's league is found
+                      through the previous_league_id chain
   SEASON              optional, default: current NFL season (Sleeper state)
   WEEKS               optional, e.g. "1-6" (default: all completed weeks)
   DRY_RUN=1           print what would be written, write nothing
@@ -297,12 +298,15 @@ def parse_weeks(spec: str) -> list[int] | None:
     return sorted(out)
 
 
+DEFAULT_LEAGUE_ID = "1321866747418001408"  # 2026 season
+
+
 def main():
     if not (SUPABASE_URL and SUPABASE_KEY) and not DRY_RUN:
         raise SystemExit("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required")
     state = sleeper("state/nfl")
     season = int(os.environ.get("SEASON") or state["season"])
-    league = find_season_league(os.environ["SLEEPER_LEAGUE_ID"].strip(), season)
+    league = find_season_league((os.environ.get("SLEEPER_LEAGUE_ID") or DEFAULT_LEAGUE_ID).strip(), season)
     league_id = league["league_id"]
     settings = league.get("settings") or {}
     playoff_start = int(settings.get("playoff_week_start") or 15)
