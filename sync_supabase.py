@@ -14,6 +14,8 @@ Environment:
                       through the previous_league_id chain
   SEASON              optional, default: current NFL season (Sleeper state)
   WEEKS               optional, e.g. "1-6" (default: all completed weeks)
+  ONLY                optional, "transactions" rebuilds only the transactions
+                      of SEASON (matchups, lineups and draft stay untouched)
   DRY_RUN=1           print what would be written, write nothing
 """
 
@@ -426,6 +428,17 @@ def main():
     last_week = reg_weeks + 2
     roster_positions = league.get("roster_positions") or []
     log(f"Season {season}: league {league_id} ({league.get('name')}), status {league.get('status')}")
+
+    if os.environ.get("ONLY", "").strip() == "transactions":
+        managers = manager_by_roster(league_id)
+        players = sleeper("players/nfl")
+        nfl_players = load_nflverse_players()
+        log("Transactions …")
+        sync_transactions(season, league_id, managers, players, EspnIds(players, nfl_players), nfl_players)
+        log(f"  {sb_rpc('refresh_league_derived')}")
+        sb_rpc("refresh_player_stats")
+        log("Done.")
+        return
 
     # Completed weeks: everything before the current NFL week of this season
     if int(state["season"]) > season or league.get("status") == "complete":

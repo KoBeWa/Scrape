@@ -19,6 +19,11 @@ on:
         description: "Wochen, z. B. 1-6 (leer = alle abgeschlossenen)"
         required: false
         default: ""
+      only:
+        description: "Nur ein Teil (leer = alles)"
+        type: choice
+        options: ["", "transactions"]
+        default: ""
       dry_run:
         description: "Nur anzeigen, nichts schreiben"
         type: boolean
@@ -49,5 +54,6 @@ jobs:
           SLEEPER_LEAGUE_ID: ${{ vars.SLEEPER_LEAGUE_ID }}
           SEASON: ${{ inputs.season }}
           WEEKS: ${{ inputs.weeks }}
+          ONLY: ${{ inputs.only }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
         run: python sync_supabase.py
