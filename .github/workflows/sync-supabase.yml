@@ -22,7 +22,7 @@ on:
       only:
         description: "Nur ein Teil (leer = alles)"
         type: choice
-        options: ["", "transactions"]
+        options: ["", "transactions", "elo"]
         default: ""
       dry_run:
         description: "Nur anzeigen, nichts schreiben"
