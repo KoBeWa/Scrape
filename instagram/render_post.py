@@ -47,7 +47,7 @@ def main():
     print("render:", url, file=sys.stderr)
 
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(executable_path="/opt/pw-browsers/chromium-1194/chrome-linux/chrome")
         page = browser.new_page(viewport={"width": 1400, "height": 1600}, device_scale_factor=a.scale)
         page.goto(url, wait_until="networkidle")
         page.wait_for_selector('[data-render-ready="1"]', timeout=60000)
