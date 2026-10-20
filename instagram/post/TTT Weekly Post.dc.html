@@ -775,8 +775,8 @@ class Component extends DCLogic {
     }, { v: 0, name: "" });
     const autoHook = (closest ? (closest.d < 5 ? "Entschieden mit " + closest.d.toFixed(2) + " Punkten." : closest.m.aOwner + " vs " + closest.m.bOwner + " – das Spiel der Woche.") : "");
     // Auto-Hook hat Vorrang; Takes "## Cover" nur, wenn dort bewusst Text steht UND autoHook leer ist -> siehe README
-    const coverHook = autoHook || rp.cover || COVER_HEADLINE;
-    const coverHookSub = closest ? closest.m.aOwner + " " + closest.m.aProj + " : " + closest.m.bProj + " " + closest.m.bOwner : (rp.coverSub || "");
+    const coverHook = rp.cover || autoHook || COVER_HEADLINE;
+    const coverHookSub = rp.coverSub || (closest ? closest.m.aOwner + " " + closest.m.aProj + " : " + closest.m.bProj + " " + closest.m.bOwner : "");
 
     return {
       seasonLabel: SEASON,
