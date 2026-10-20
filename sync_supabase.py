@@ -5,7 +5,8 @@ Writes, for every completed week of the season:
   weekly_matchups, weekly_lineups, season_results, seasons
 and once the playoffs are done also playoff_results. Weekly NFL player stats
 come from nflverse (player_weekly_stats). Finally the database rebuilds
-records and achievements (public.refresh_league_derived()).
+records and achievements (public.refresh_league_derived()) and Elo ratings
+are recalculated from all matchups since 2015 (elo.py).
 
 Environment:
   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY   (required)
@@ -14,6 +15,9 @@ Environment:
                       through the previous_league_id chain
   SEASON              optional, default: current NFL season (Sleeper state)
   WEEKS               optional, e.g. "1-6" (default: all completed weeks)
+  ONLY                optional, "transactions" rebuilds only the transactions
+                      of SEASON, "elo" only the Elo ratings (matchups, lineups
+                      and draft stay untouched)
   DRY_RUN=1           print what would be written, write nothing
 """
 
@@ -30,6 +34,7 @@ from collections import defaultdict
 import requests
 
 from draft_grades import draft_rows
+from elo import compute_elo
 from transactions import score_rows, transaction_rows
 
 SLEEPER = "https://api.sleeper.app/v1"
@@ -427,6 +432,22 @@ def main():
     roster_positions = league.get("roster_positions") or []
     log(f"Season {season}: league {league_id} ({league.get('name')}), status {league.get('status')}")
 
+    only = os.environ.get("ONLY", "").strip()
+    if only == "elo":
+        sync_elo()
+        log("Done.")
+        return
+    if only == "transactions":
+        managers = manager_by_roster(league_id)
+        players = sleeper("players/nfl")
+        nfl_players = load_nflverse_players()
+        log("Transactions …")
+        sync_transactions(season, league_id, managers, players, EspnIds(players, nfl_players), nfl_players)
+        log(f"  {sb_rpc('refresh_league_derived')}")
+        sb_rpc("refresh_player_stats")
+        log("Done.")
+        return
+
     # Completed weeks: everything before the current NFL week of this season
     if int(state["season"]) > season or league.get("status") == "complete":
         done = last_week
@@ -535,6 +556,9 @@ def main():
     log("Draft …")
     sync_draft(season, league_id, managers, players, espn, nfl_players)
 
+    log("Elo …")
+    sync_elo()
+
     log("Rebuilding records and achievements …")
     log(f"  {sb_rpc('refresh_league_derived')}")
     sb_rpc("refresh_player_stats")  # player pages (materialized views)
@@ -599,6 +623,16 @@ def sync_transactions(season, league_id, managers, players, espn, nfl_players):
         sb_insert("fa_transaction_scores", scores[i:i + 500])
     sb_rpc("refresh_transaction_scores")
     log(f"  fa_transactions: {len(items)} rows, fa_transaction_scores: {len(scores)} rows")
+
+
+def sync_elo():
+    """Recalculate elo_ratings from every matchup since 2015 (deterministic, so
+    rows of past seasons come out unchanged)."""
+    matchups = sb_get("weekly_matchups?select=id,season_year,week,manager_a,score_a,manager_b,score_b,is_playoff"
+                      "&order=season_year,week,id")
+    rows = compute_elo(matchups)
+    sb_upsert("elo_ratings", rows, "season_year,week,manager_id")
+    log(f"  elo_ratings: {len(rows)} rows up to {rows[-1]['season_year']} week {rows[-1]['week']}" if rows else "  no matchups")
 
 
 def sync_draft(season, league_id, managers, players, espn, nfl_players):
