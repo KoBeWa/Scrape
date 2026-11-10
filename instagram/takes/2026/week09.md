@@ -5,9 +5,10 @@ Leer lassen = kein Text. Nach dem Speichern den Workflow
 "Instagram Weekly Post Data" manuell starten oder auf Dienstag warten.
 
 ## Cover
-
+Tommy's Losing Streak geht weiter.
 
 ## Cover Sub
+1-8. L5. Kein Ende in Sicht.
 
 
 ## Standings Note
