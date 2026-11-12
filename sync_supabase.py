@@ -6,7 +6,9 @@ Writes, for every completed week of the season:
 and once the playoffs are done also playoff_results. Weekly NFL player stats
 come from nflverse (player_weekly_stats). Finally the database rebuilds
 records and achievements (public.refresh_league_derived()) and Elo ratings
-are recalculated from all matchups since 2015 (elo.py).
+are recalculated from all matchups since 2015 (elo.py). For the upcoming week
+the Sleeper player projections and the projected matchups are stored in
+player_projections / matchup_projections (see supabase/projections.sql).
 
 Environment:
   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY   (required)
@@ -16,8 +18,10 @@ Environment:
   SEASON              optional, default: current NFL season (Sleeper state)
   WEEKS               optional, e.g. "1-6" (default: all completed weeks)
   ONLY                optional, "transactions" rebuilds only the transactions
-                      of SEASON, "elo" only the Elo ratings (matchups, lineups
-                      and draft stay untouched)
+                      of SEASON, "elo" only the Elo ratings, "projections" only
+                      the Sleeper projections of the upcoming week (WEEKS may
+                      name another week); matchups, lineups and draft stay
+                      untouched
   DRY_RUN=1           print what would be written, write nothing
 """
 
@@ -26,6 +30,7 @@ from __future__ import annotations
 import csv
 import io
 import json
+import math
 import os
 import re
 import sys
@@ -38,6 +43,7 @@ from elo import compute_elo
 from transactions import score_rows, transaction_rows
 
 SLEEPER = "https://api.sleeper.app/v1"
+SLEEPER_PROJECTIONS = "https://api.sleeper.com/projections/nfl/{season}/{week}"
 NFLVERSE_STATS = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_{season}.csv"
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
@@ -437,6 +443,15 @@ def main():
         sync_elo()
         log("Done.")
         return
+    if only == "projections":
+        week = (parse_weeks(os.environ.get("WEEKS", "")) or [upcoming_week(state, season, last_week)])[0]
+        if not week:
+            log("No upcoming week to project – nothing to do")
+            return
+        sync_projections(season, week, league_id, roster_positions, sleeper("players/nfl"),
+                         manager_by_roster(league_id), reg_weeks)
+        log("Done.")
+        return
     if only == "transactions":
         managers = manager_by_roster(league_id)
         players = sleeper("players/nfl")
@@ -459,6 +474,10 @@ def main():
     weeks = [w for w in weeks if 1 <= w <= last_week]
     if not weeks:
         log("No completed weeks yet – nothing to do")
+        nxt = upcoming_week(state, season, last_week)
+        if nxt:
+            sync_projections(season, nxt, league_id, roster_positions, sleeper("players/nfl"),
+                             manager_by_roster(league_id), reg_weeks)
         return
     log(f"Weeks: {weeks}")
 
@@ -559,6 +578,14 @@ def main():
     log("Elo …")
     sync_elo()
 
+    nxt = upcoming_week(state, season, last_week)
+    if nxt:
+        log(f"Projections week {nxt} …")
+        try:  # projections are a bonus – never stop the rest of the sync because of them
+            sync_projections(season, nxt, league_id, roster_positions, players, managers, reg_weeks)
+        except (requests.RequestException, SystemExit) as e:
+            log(f"  projections skipped: {e}")
+
     log("Rebuilding records and achievements …")
     log(f"  {sb_rpc('refresh_league_derived')}")
     sb_rpc("refresh_player_stats")  # player pages (materialized views)
@@ -633,6 +660,76 @@ def sync_elo():
     rows = compute_elo(matchups)
     sb_upsert("elo_ratings", rows, "season_year,week,manager_id")
     log(f"  elo_ratings: {len(rows)} rows up to {rows[-1]['season_year']} week {rows[-1]['week']}" if rows else "  no matchups")
+
+
+def upcoming_week(state: dict, season: int, last_week: int) -> int | None:
+    """The NFL week that is about to be played (None outside this season's games)."""
+    if int(state["season"]) != season or state.get("season_type") not in ("regular", "post"):
+        return None
+    week = int(state["week"])
+    return week if 1 <= week <= last_week else None
+
+
+def sync_projections(season, week, league_id, roster_positions, players, managers, reg_weeks):
+    """Sleeper's player projections of `week` plus the projected result of every
+    matchup (best possible lineup of the whole roster, as in the Preview post).
+    Replaces the rows of that week on every run, so projections stay current."""
+    pos = "&".join(f"position[]={p}" for p in ("QB", "RB", "WR", "TE", "K", "DEF"))
+    r = requests.get(SLEEPER_PROJECTIONS.format(season=season, week=week)
+                     + f"?season_type=regular&{pos}&order_by=pts_half_ppr", timeout=120)
+    r.raise_for_status()
+    rows, half = {}, {}
+    for e in r.json() or []:
+        pid = str(e.get("player_id") or "")
+        st = e.get("stats") or {}
+        if not pid or st.get("pts_half_ppr") is None:
+            continue
+        pl = e.get("player") or {}
+        half[pid] = float(st["pts_half_ppr"])
+        rows[pid] = {
+            "season_year": season, "week": week, "sleeper_id": pid,
+            "player_name": player_name(players, pid),
+            "position": pl.get("position") or e.get("position") or (players.get(pid) or {}).get("position"),
+            "team": e.get("team") or pl.get("team") or (players.get(pid) or {}).get("team"),
+            "pts_half_ppr": round(float(st["pts_half_ppr"]), 2),
+            "pts_ppr": round(float(st.get("pts_ppr") or 0), 2),
+            "pts_std": round(float(st.get("pts_std") or 0), 2),
+        }
+    if not rows:
+        log(f"  week {week}: Sleeper has no projections yet – skipped")
+        return
+    sb_delete("player_projections", {"season_year": season, "week": week})
+    sb_insert("player_projections", list(rows.values()))
+    log(f"  player_projections: {len(rows)} rows")
+
+    entries = sleeper(f"league/{league_id}/matchups/{week}") or []
+    by_mid = defaultdict(list)
+    for e in entries:
+        if e.get("matchup_id") is not None:
+            by_mid[e["matchup_id"]].append(e)
+    pairs = [v for v in by_mid.values() if len(v) == 2]
+    if len(pairs) < TEAMS // 2:
+        log(f"  week {week}: matchups not set yet – matchup_projections skipped")
+        return
+
+    def best(e):  # reuse optimal_points with projected instead of actual points
+        return optimal_points({"players": e.get("players") or [],
+                               "players_points": {pid: half.get(pid, 0.0) for pid in e.get("players") or []}},
+                              roster_positions, players)
+
+    out = []
+    for a, b in pairs:
+        ma, mb = managers[a["roster_id"]], managers[b["roster_id"]]
+        pa, pb = best(a), best(b)
+        out.append({
+            "season_year": season, "week": week, "manager_a": ma, "manager_b": mb,
+            "proj_a": pa, "proj_b": pb,
+            "win_prob_a": round(1 / (1 + math.exp(-(pa - pb) / (22 / 1.7))), 4),
+            "is_playoff": week > reg_weeks,
+        })
+    sb_delete("matchup_projections", {"season_year": season, "week": week})
+    sb_insert("matchup_projections", out)
+    log(f"  matchup_projections: {len(out)} rows")
 
 
 def sync_draft(season, league_id, managers, players, espn, nfl_players):
