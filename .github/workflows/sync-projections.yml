@@ -1,0 +1,54 @@
+name: Sleeper Projections → Supabase
+
+# Holt donnerstags die Sleeper-Projections der anstehenden Woche und die
+# projizierten Matchups und schreibt sie nach Supabase (player_projections,
+# matchup_projections). Der Dienstags-Sync (sync-supabase.yml) schreibt sie
+# ebenfalls, dann sind aber die Aufstellungen noch nicht final.
+
+on:
+  schedule:
+    # Donnerstags 07:43 UTC von September bis Januar, vor dem Thursday Night Game
+    - cron: "43 7 * 9-12,1 4"
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Saison (leer = aktuelle)"
+        required: false
+        default: ""
+      week:
+        description: "Woche (leer = anstehende Woche)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Nur anzeigen, nichts schreiben"
+        type: boolean
+        default: false
+
+concurrency:
+  group: sync-supabase
+  cancel-in-progress: false
+
+jobs:
+  projections:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install requests pandas numpy
+
+      - name: Projections
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SLEEPER_LEAGUE_ID: ${{ vars.SLEEPER_LEAGUE_ID }}
+          SEASON: ${{ inputs.season }}
+          WEEKS: ${{ inputs.week }}
+          ONLY: projections
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: python sync_supabase.py
