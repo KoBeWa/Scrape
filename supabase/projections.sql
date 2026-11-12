@@ -17,7 +17,7 @@ create table if not exists public.player_projections (
 );
 
 -- Projected result per matchup: best possible lineup of the whole roster
--- (half-PPR), win_prob_a = logistic of the point difference (as in the Preview post).
+-- (half-PPR), win_prob_a = normal CDF of the point difference (sd 45, close to Sleeper's win %).
 create table if not exists public.matchup_projections (
   season_year integer not null,
   week        integer not null,

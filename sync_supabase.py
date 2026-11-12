@@ -662,6 +662,14 @@ def sync_elo():
     log(f"  elo_ratings: {len(rows)} rows up to {rows[-1]['season_year']} week {rows[-1]['week']}" if rows else "  no matchups")
 
 
+WIN_PROB_SD = 45.0  # std. dev. of the point difference; matches Sleeper's win % (e.g. 70 pts -> 95 %, 9 pts -> 57 %)
+
+
+def win_prob(diff: float) -> float:
+    """Chance that the team ahead by `diff` projected points wins (normal CDF)."""
+    return 0.5 * math.erfc(-diff / WIN_PROB_SD / math.sqrt(2))
+
+
 def upcoming_week(state: dict, season: int, last_week: int) -> int | None:
     """The NFL week that is about to be played (None outside this season's games)."""
     if int(state["season"]) != season or state.get("season_type") not in ("regular", "post"):
@@ -724,7 +732,7 @@ def sync_projections(season, week, league_id, roster_positions, players, manager
         out.append({
             "season_year": season, "week": week, "manager_a": ma, "manager_b": mb,
             "proj_a": pa, "proj_b": pb,
-            "win_prob_a": round(1 / (1 + math.exp(-(pa - pb) / (22 / 1.7))), 4),
+            "win_prob_a": round(win_prob(pa - pb), 4),
             "is_playoff": week > reg_weeks,
         })
     sb_delete("matchup_projections", {"season_year": season, "week": week})
