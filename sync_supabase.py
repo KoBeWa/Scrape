@@ -20,8 +20,8 @@ Environment:
   ONLY                optional, "transactions" rebuilds only the transactions
                       of SEASON, "elo" only the Elo ratings, "projections" only
                       the Sleeper projections of the upcoming week (WEEKS may
-                      name another week); matchups, lineups and draft stay
-                      untouched
+                      name another week), "playoffs" only the playoff odds;
+                      matchups, lineups and draft stay untouched
   DRY_RUN=1           print what would be written, write nothing
 """
 
@@ -40,6 +40,7 @@ import requests
 
 from draft_grades import draft_rows
 from elo import compute_elo
+from playoff_odds import SIMS, expected_scores, odds_rows, simulate, team_params, win_probability
 from transactions import score_rows, transaction_rows
 
 SLEEPER = "https://api.sleeper.app/v1"
@@ -470,6 +471,12 @@ def main():
         done = min(int(state["week"]) - 1, last_week)
     else:
         done = 0
+    if only == "playoffs":
+        log("Playoff odds …")
+        sync_playoff_odds(season, league_id, reg_weeks, done, manager_by_roster(league_id),
+                          sleeper("players/nfl"), roster_positions)
+        log("Done.")
+        return
     weeks = parse_weeks(os.environ.get("WEEKS", "")) or list(range(1, done + 1))
     weeks = [w for w in weeks if 1 <= w <= last_week]
     if not weeks:
@@ -586,6 +593,12 @@ def main():
         except (requests.RequestException, SystemExit) as e:
             log(f"  projections skipped: {e}")
 
+    log("Playoff odds …")
+    try:  # a bonus like the projections – never stop the rest of the sync because of it
+        sync_playoff_odds(season, league_id, reg_weeks, done, managers, players, roster_positions)
+    except (requests.RequestException, SystemExit) as e:
+        log(f"  playoff odds skipped: {e}")
+
     log("Rebuilding records and achievements …")
     log(f"  {sb_rpc('refresh_league_derived')}")
     sb_rpc("refresh_player_stats")  # player pages (materialized views)
@@ -678,16 +691,28 @@ def upcoming_week(state: dict, season: int, last_week: int) -> int | None:
     return week if 1 <= week <= last_week else None
 
 
-def sync_projections(season, week, league_id, roster_positions, players, managers, reg_weeks):
-    """Sleeper's player projections of `week` plus the projected result of every
-    matchup (best possible lineup of the whole roster, as in the Preview post).
-    Replaces the rows of that week on every run, so projections stay current."""
+def fetch_projections(season: int, week: int) -> list[dict]:
+    """Sleeper's player projections of one week (all fantasy positions)."""
     pos = "&".join(f"position[]={p}" for p in ("QB", "RB", "WR", "TE", "K", "DEF"))
     r = requests.get(SLEEPER_PROJECTIONS.format(season=season, week=week)
                      + f"?season_type=regular&{pos}&order_by=pts_half_ppr", timeout=120)
     r.raise_for_status()
+    return r.json() or []
+
+
+def projected_best(entry, half: dict[str, float], roster_positions, players) -> float:
+    """Best possible lineup of a roster with projected instead of actual points."""
+    return optimal_points({"players": entry.get("players") or [],
+                           "players_points": {pid: half.get(pid, 0.0) for pid in entry.get("players") or []}},
+                          roster_positions, players)
+
+
+def sync_projections(season, week, league_id, roster_positions, players, managers, reg_weeks):
+    """Sleeper's player projections of `week` plus the projected result of every
+    matchup (best possible lineup of the whole roster, as in the Preview post).
+    Replaces the rows of that week on every run, so projections stay current."""
     rows, half = {}, {}
-    for e in r.json() or []:
+    for e in fetch_projections(season, week):
         pid = str(e.get("player_id") or "")
         st = e.get("stats") or {}
         if not pid or st.get("pts_half_ppr") is None:
@@ -720,10 +745,8 @@ def sync_projections(season, week, league_id, roster_positions, players, manager
         log(f"  week {week}: matchups not set yet – matchup_projections skipped")
         return
 
-    def best(e):  # reuse optimal_points with projected instead of actual points
-        return optimal_points({"players": e.get("players") or [],
-                               "players_points": {pid: half.get(pid, 0.0) for pid in e.get("players") or []}},
-                              roster_positions, players)
+    def best(e):
+        return projected_best(e, half, roster_positions, players)
 
     out = []
     for a, b in pairs:
@@ -738,6 +761,85 @@ def sync_projections(season, week, league_id, roster_positions, players, manager
     sb_delete("matchup_projections", {"season_year": season, "week": week})
     sb_insert("matchup_projections", out)
     log(f"  matchup_projections: {len(out)} rows")
+
+
+def sync_playoff_odds(season, league_id, reg_weeks, done, managers, players, roster_positions):
+    """Playoff odds after the last completed week (see playoff_odds.py), the projected
+    remaining schedule, and odds for earlier weeks of the season that are still missing."""
+    if done < 1 or done > reg_weeks:
+        log("  no regular-season week completed or regular season over – skipped")
+        return
+    names = sorted(set(managers.values()))
+    pairs: dict[int, list[tuple[str, str]]] = {}
+    scores: dict[int, dict[str, float]] = {}
+    entries_by_week: dict[int, list[dict]] = {}
+    for w in range(1, reg_weeks + 1):
+        entries = sleeper(f"league/{league_id}/matchups/{w}") or []
+        entries_by_week[w] = entries
+        by_mid = defaultdict(list)
+        for e in entries:
+            if e.get("matchup_id") is not None:
+                by_mid[e["matchup_id"]].append(managers[e["roster_id"]])
+        pairs[w] = [tuple(v) for v in by_mid.values() if len(v) == 2]
+        if w <= done:
+            scores[w] = {managers[e["roster_id"]]: float(e.get("points") or 0) for e in entries}
+
+    def record_after(k):
+        rec = {m: [0, 0, 0, 0.0] for m in names}
+        for w in range(1, k + 1):
+            for a, b in pairs[w]:
+                sa, sb = scores[w][a], scores[w][b]
+                rec[a][3] += sa
+                rec[b][3] += sb
+                if sa > sb: rec[a][0] += 1; rec[b][1] += 1
+                elif sb > sa: rec[b][0] += 1; rec[a][1] += 1
+                else: rec[a][2] += 1; rec[b][2] += 1
+        return {m: tuple(v) for m, v in rec.items()}
+
+    def played_after(k):
+        return {m: [scores[w][m] for w in range(1, k + 1) if m in scores[w]] for m in names}
+
+    def remaining_after(k):
+        return [(w, a, b) for w in range(k + 1, reg_weeks + 1) for a, b in pairs[w]]
+
+    # Current odds with Sleeper's projections for every remaining week
+    proj: dict[tuple[int, str], float] = {}
+    for w in range(done + 1, reg_weeks + 1):
+        half = {str(e.get("player_id")): float((e.get("stats") or {}).get("pts_half_ppr") or 0)
+                for e in fetch_projections(season, w) if e.get("player_id")}
+        for e in entries_by_week[w]:
+            proj[(w, managers[e["roster_id"]])] = projected_best(e, half, roster_positions, players)
+    mean, sd, _ = team_params(played_after(done))
+    remaining = remaining_after(done)
+    mu = expected_scores(remaining, mean, proj)
+    record = record_after(done)
+    result = simulate(names, record, remaining, mu, sd, PLAYOFF_TEAMS)
+    rows = odds_rows(season, done, "projections", names, record, result, SIMS)
+
+    # Earlier weeks of this season that have no odds yet: season averages only
+    have = {int(r["week"]) for r in sb_get(f"playoff_odds?select=week&season_year=eq.{season}")} if not DRY_RUN else set()
+    for k in range(1, done):
+        if k in have:
+            continue
+        m_k, sd_k, _ = team_params(played_after(k))
+        rem_k = remaining_after(k)
+        rec_k = record_after(k)
+        res_k = simulate(names, rec_k, rem_k, expected_scores(rem_k, m_k, None), sd_k, PLAYOFF_TEAMS)
+        rows += odds_rows(season, k, "averages", names, rec_k, res_k, SIMS)
+    sb_upsert("playoff_odds", rows, "season_year,week,manager_id")
+
+    sched = []
+    for w, a, b in remaining:
+        p = win_probability(mu[(w, a)], sd[a], mu[(w, b)], sd[b])
+        for me, opp, pw in ((a, b, p), (b, a, 1 - p)):
+            sched.append({"season_year": season, "week": w, "manager_id": me, "opponent_id": opp,
+                          "proj_points": round(mu[(w, me)], 1), "opp_proj_points": round(mu[(w, opp)], 1),
+                          "win_prob": round(pw, 4)})
+    sb_delete("playoff_schedule", {"season_year": season})
+    sb_insert("playoff_schedule", sched)
+    best = max(names, key=lambda m: result[m]["playoff_pct"])
+    log(f"  playoff_odds: {len(rows)} rows (after week {done}), playoff_schedule: {len(sched)} rows;"
+        f" top {best} {result[best]['playoff_pct']:.0%}")
 
 
 def sync_draft(season, league_id, managers, players, espn, nfl_players):
