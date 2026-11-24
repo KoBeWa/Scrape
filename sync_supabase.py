@@ -813,7 +813,7 @@ def sync_playoff_odds(season, league_id, reg_weeks, done, managers, players, ros
     remaining = remaining_after(done)
     mu = expected_scores(remaining, mean, proj)
     record = record_after(done)
-    result = simulate(names, record, remaining, mu, sd, PLAYOFF_TEAMS)
+    result = simulate(names, record, remaining, mu, sd, PLAYOFF_TEAMS, with_scenarios=True)
     rows = odds_rows(season, done, "projections", names, record, result, SIMS)
 
     # Earlier weeks of this season that have no odds yet: season averages only
