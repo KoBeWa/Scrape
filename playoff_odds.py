@@ -72,7 +72,8 @@ def win_probability(mu_a: float, sd_a: float, mu_b: float, sd_b: float) -> float
 
 def simulate(managers: list[str], record: dict[str, tuple[int, int, int, float]],
              remaining: list[tuple[int, str, str]], mu: dict[tuple[int, str], float],
-             sd: dict[str, float], playoff_teams: int, sims: int = SIMS, seed: int = 7) -> dict[str, dict]:
+             sd: dict[str, float], playoff_teams: int, sims: int = SIMS, seed: int = 7,
+             with_scenarios: bool = False) -> dict[str, dict]:
     """Play the remaining weeks `sims` times. `record` is (wins, losses, ties, points for)."""
     rng = np.random.default_rng(seed)
     idx = {m: i for i, m in enumerate(managers)}
@@ -129,6 +130,116 @@ def simulate(managers: list[str], record: dict[str, tuple[int, int, int, float]]
                 by_wins[str(k)] = [round(float(sel.mean()), 4), round(float(made[sel, i].mean()), 4)]
         res["odds_by_wins"] = by_wins
         out[m] = res
+    if with_scenarios:
+        for m, sc in scenarios(managers, made, added, left).items():
+            out[m]["scenarios"] = sc
+    return out
+
+
+SURE = 0.99           # "sicher drin" / "raus" at 99 % / 1 %
+COND = 0.95           # a rival condition counts when it lifts the odds to at least this
+MIN_SIMS = 40         # ignore slices of the simulation smaller than this
+
+
+def scenarios(managers: list[str], made: np.ndarray, added: np.ndarray, left: dict[str, int]) -> dict[str, dict]:
+    """Paths to the playoffs per manager, read off the simulation.
+
+    For every number of remaining games a manager wins (0..games left): the chance, and when it is
+    neither sure nor gone, the least demanding rival results that settle it ("Ritz wins at most 1 of
+    his 3 games", alone or two rivals together), plus the rival result that would knock them out.
+    `rivals` holds the two rivals whose results matter most as a grid: own wins x rival wins ->
+    [chance, share of simulations] (chance null where too few simulations land).
+    """
+    idx = {m: i for i, m in enumerate(managers)}
+    race = {m: float(made[:, idx[m]].mean()) for m in managers}
+    out = {}
+    for m in managers:
+        i, n = idx[m], left[m]
+        # Only rivals still in the race are named; a team that is in or out either way is no condition
+        others = [r for r in managers if r != m and left[r] > 0 and 0.005 < race[r] < 0.995]
+        rows = []
+        for a in range(n + 1):
+            sel = added[:, i] == a
+            cnt = int(sel.sum())
+            if cnt < MIN_SIMS:
+                rows.append({"wins": a, "share": round(cnt / len(sel), 4), "pct": None, "status": "rare"})
+                continue
+            p = float(made[sel, i].mean())
+            row = {"wins": a, "share": round(cnt / len(sel), 4), "pct": round(p, 4)}
+            if p >= SURE:
+                row["status"] = "in"
+            elif p <= 1 - SURE:
+                row["status"] = "out"
+            else:
+                row["status"] = "open"
+                singles = []  # (rival, max wins, chance, share of this row, mask)
+                for r in others:
+                    for b in range(left[r]):
+                        s2 = sel & (added[:, idx[r]] <= b)
+                        c2 = int(s2.sum())
+                        if c2 >= MIN_SIMS:
+                            singles.append((r, b, float(made[s2, i].mean()), c2 / cnt, s2))
+                pairs = []
+                for x in range(len(singles)):
+                    for y in range(x + 1, len(singles)):
+                        r1, b1, _, _, m1 = singles[x]
+                        r2, b2, _, _, m2 = singles[y]
+                        if r1 == r2:
+                            continue
+                        both = m1 & m2
+                        c3 = int(both.sum())
+                        if c3 >= MIN_SIMS:
+                            pairs.append(([(r1, b1), (r2, b2)], float(made[both, i].mean()), c3 / cnt))
+                # Prefer what makes it sure, then what makes it very likely; one rival before two
+                pick = None
+                for level in (SURE, COND):
+                    one = [([(r, b)], q, sh) for r, b, q, sh, _ in singles if q >= level and q - p >= 0.03]
+                    two = [c for c in pairs if c[1] >= level and c[1] - p >= 0.03]
+                    for cands in (one, two):
+                        if cands:
+                            pick = max(cands, key=lambda c: (c[2], c[1]))
+                            break
+                    if pick:
+                        break
+                if pick:
+                    row["needs"] = [{"rival": r, "max_wins": b, "games": left[r]} for r, b in pick[0]]
+                    row["needs_pct"], row["needs_share"] = round(pick[1], 4), round(pick[2], 4)
+                # What knocks them out: a rival winning at least this many
+                danger = []
+                for r in others:
+                    for b in range(1, left[r] + 1):
+                        s2 = sel & (added[:, idx[r]] >= b)
+                        c2 = int(s2.sum())
+                        if c2 >= MIN_SIMS:
+                            q = float(made[s2, i].mean())
+                            if q <= 1 - COND:
+                                danger.append((c2, r, b, q))
+                if danger:
+                    c2, r, b, q = max(danger, key=lambda x: (-x[2], x[0]))
+                    row["out_if"] = {"rival": r, "min_wins": b, "games": left[r], "pct": round(q, 4)}
+            rows.append(row)
+
+        # The rivals whose results move this manager's chance the most
+        grids = []
+        for r in others:
+            j, k = idx[r], left[r]
+            grid, impact = [], 0.0
+            for a in range(n + 1):
+                sel_a = added[:, i] == a
+                line, ps = [], []
+                for b in range(k + 1):
+                    s2 = sel_a & (added[:, j] == b)
+                    c2 = int(s2.sum())
+                    pct = round(float(made[s2, i].mean()), 4) if c2 >= MIN_SIMS else None
+                    line.append([pct, round(c2 / len(sel_a), 4)])
+                    if pct is not None:
+                        ps.append(pct)
+                grid.append(line)
+                if len(ps) > 1:
+                    impact += float(sel_a.mean()) * (max(ps) - min(ps))
+            grids.append((impact, {"rival": r, "games": k, "grid": grid}))
+        grids.sort(key=lambda g: -g[0])
+        out[m] = {"games": n, "rows": rows, "rivals": [g for imp, g in grids[:2] if imp > 0.01]}
     return out
 
 
@@ -150,6 +261,7 @@ def odds_rows(season: int, week: int, model: str, managers: list[str],
             "odds_if_win": None if r["odds_if_win"] is None else round(r["odds_if_win"], 4),
             "odds_if_loss": None if r["odds_if_loss"] is None else round(r["odds_if_loss"], 4),
             "odds_by_wins": r["odds_by_wins"],
+            "scenarios": r.get("scenarios"),
             "sims": sims,
         })
     return rows
